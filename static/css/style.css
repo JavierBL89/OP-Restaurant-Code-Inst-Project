@@ -1,0 +1,21 @@
+
+
+/* ---------- HEADER -------------------*/
+header {
+    margin-top: 10px;
+}
+
+
+/*------- SECTION 1 -------------*/
+
+div .bg-image {
+    width: 100%;
+    background-color: bisque;
+    height: 350px;
+}
+
+div .bookings{
+    width: 75%;
+    background-color: white;
+    height: 300px;
+}
