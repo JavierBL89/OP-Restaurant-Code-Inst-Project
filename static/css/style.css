@@ -1,4 +1,6 @@
-
+body{
+    font-family: 'Roboto Slab', serif;
+}
 
 /* ---------- HEADER -------------------*/
 header {
@@ -52,17 +54,26 @@ div .bg-image {
 div .bookings{
     width: 70%;
     height: 200px;
-    background-color: rgb(238, 148, 148);
+    background-color: hsl(0, 99%, 27%);
     margin-top: 160px;
 }
 
 
 
-/*----- SECTION 2 ----- */
+/*----- AWARDS SECTION  ----- */
 
+.michelin-img img{
+    margin-top: 50px;
+    height: 100px
+}
 #awards{
     margin-top: 150px;
 }
+
+
+/*---- WORKTEAM SECTION */
+
+
 
 @media only screen and (min-width: 768px){
 
