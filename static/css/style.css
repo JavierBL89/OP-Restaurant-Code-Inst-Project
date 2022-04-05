@@ -40,6 +40,39 @@ nav .nav-link {
 
 /*------- SECTION 1 -------------*/
 
+div .bg-image {
+    width: 100%;
+    background-image: url("https://res.cloudinary.com/dthlibbj7/image/upload/o_78/v1649152444/room_dvaada.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: bisque;
+    height: 250px;
+}
+
+div .bookings{
+    width: 70%;
+    height: 200px;
+    background-color: rgb(238, 148, 148);
+    margin-top: 160px;
+}
+
+
+
+@media only screen and (min-width: 768px){
+
+    div .bg-image {
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 500px;
+     }
+
+}
+
+@media only screen and (min-width: 600px){
+
+}
+
+@media only screen and (max-width: 600px) {
 
 
 }
