@@ -73,7 +73,17 @@ div .bookings{
 
 /*---- WORKTEAM SECTION */
 
-
+#workteam {
+    margin-top: 50px;
+}
+#workteam img{
+    width: 70%;
+    height: 150px;
+    margin: 15px;
+    /* background-image: url("https://res.cloudinary.com/dthlibbj7/image/upload/v1649188361/workteam_byh0jp.jpg");
+    background-repeat: no-repeat;
+    background-size: cover; */
+}
 
 @media only screen and (min-width: 768px){
 
