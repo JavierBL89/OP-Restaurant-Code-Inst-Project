@@ -58,6 +58,12 @@ div .bookings{
 
 
 
+/*----- SECTION 2 ----- */
+
+#awards{
+    margin-top: 150px;
+}
+
 @media only screen and (min-width: 768px){
 
     div .bg-image {
