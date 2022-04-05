@@ -2,20 +2,44 @@
 
 /* ---------- HEADER -------------------*/
 header {
-    margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #cac7c7;
+    font-family: 'Roboto Slab', serif;
+    font-size: 400;
 }
+
+nav .nav-link {
+    /* color: #000; */
+    color: rgb(68, 68, 68);
+
+}
+
+.separator{
+    background-color: #727272;
+    height: 1px;
+    width: 25%;
+    margin: 15px auto 0 ;
+}
+
+
+.logo h2{   
+     font-family: 'Roboto Slab', serif;
+    font-weight: 800;
+    font-size: 2.3rem;
+    color: #727272;
+}
+
+.logo p {
+    font-family: 'Beau Rivage', cursive;
+    font-size: 1.5rem;
+    color: rgb(68, 68, 68);
+}
+
 
 
 /*------- SECTION 1 -------------*/
 
-div .bg-image {
-    width: 100%;
-    background-color: bisque;
-    height: 350px;
-}
 
-div .bookings{
-    width: 75%;
-    background-color: white;
-    height: 300px;
+
 }
