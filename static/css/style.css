@@ -51,11 +51,15 @@ div li{
     }
     
     nav .nav-link {
-        margin-top: auto;
-        margin-left: auto;
         color: rgb(120 120 120);
         }
-
+    
+    nav .puto{
+        display: flex;
+    }
+    nav .puta{
+        display: flex;
+    }
     nav ul {
         
     }
