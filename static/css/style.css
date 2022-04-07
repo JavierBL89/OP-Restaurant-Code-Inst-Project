@@ -1,26 +1,21 @@
 body{
     font-family: 'Roboto Slab', serif;
-    background-color: blue;
 }
 
 div li{
     list-style-type: none;
 }
 
+
 /* ---------- HEADER -------------------*/
-header {
-    padding-top: 10px;
-    padding-bottom: 10px;
+
+.navbar {
     background-color: #cac7c7;
     font-family: 'Roboto Slab', serif;
     font-size: 400;
-}
-
-nav .nav-link {
-    /* color: #000; */
-    color: rgb(68, 68, 68);
 
 }
+
 
 .separator{
     background-color: #727272;
@@ -40,12 +35,32 @@ nav .nav-link {
 .logo p {
     font-family: 'Beau Rivage', cursive;
     font-size: 1.5rem;
-    color: rgb(68, 68, 68);
+    color: #838383;
 }
 
 
 
-/*------- SECTION 1 -------------*/
+
+
+
+@media only screen and (max-width: 600px) {
+
+    .navbar .container-fluid {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    
+    nav .nav-link {
+        margin-top: auto;
+        margin-left: auto;
+        color: rgb(120 120 120);
+        }
+
+    nav ul {
+        
+    }
+
+    /*------- SECTION 1 -------------*/
 
 div .bg-image {
     width: 100%;
@@ -119,24 +134,66 @@ footer{
     margin: 10px;
 }
 
-.copy-right{
-    margin-top: 20px;
-    font-size: 14px;
-}
-
 div .icons{
+    display: inline-flex;
+    margin-top: 40px;
     justify-content: space-around;
     padding-left: 60px;
     padding-right: 60px;
 }
 
+.copy-right{
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+
+
+}
+
 @media only screen and (min-width: 768px){
+    
+    /***************************************  HEADER SECTION **********************/
+   
+
+    .navbar {
+        /* background-color: #cac7c7;
+        font-family: 'Roboto Slab', serif;
+        font-size: 400; */
+        padding-left: 7%;
+        padding-right: 7%;
+    }
+
+    nav .nav-link {
+        margin-top: 30px;
+        margin-left: 40px;
+        color: rgb(120 120 120);
+        }
+    
+    .logo h2 {
+        font-size: 4.2rem;
+        /* position: relative; */
+    }
+
+    .logo p{
+        font-size: 1.8rem;
+        margin-top: 45px;
+        margin-left: 15px;
+    }
 
     div .bg-image {
         background-size: cover;
         background-repeat: no-repeat;
         height: 500px;
      }
+
+     /********************* FOOTER *****************/
+
+     div .icons{
+        justify-content: space-around;
+        padding-left: 60px;
+        padding-right: 60px;
+    }
 
 }
 
@@ -149,10 +206,3 @@ div .icons{
 
 }
 
-@media only screen and (max-width: 600px) {
-
-    div .icons{
-        display: inline-flex;
-        margin-top: 40px;
-    }
-}
