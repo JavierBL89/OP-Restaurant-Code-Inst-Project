@@ -16,6 +16,38 @@ div li{
 
 }
 
+nav .nav-item a{
+background-color: inherit;
+padding-left: 6px;
+padding-right: 6px;
+border-top: solid 1px #cac7c7;
+border-right: solid 1px #cac7c7;
+border-left: solid 1px #cac7c7;
+}
+
+
+nav .nav-item a:hover{
+animation-name: border;
+animation-duration: 1.7s;
+animation-fill-mode: forwards;
+transition: ease-in;
+}
+
+@keyframes border {
+    from{
+        border-top: solid 1px #cac7c7;
+border-right: solid 1px #cac7c7;
+border-left: solid 1px #cac7c7;
+    }
+    to{
+        border-top: solid 1px black;
+    border-right: solid 1px black;
+    border-left: solid 1px black;
+    }
+    
+}
+
+
 
 .separator{
     background-color: #727272;
@@ -36,11 +68,21 @@ div li{
     font-family: 'Beau Rivage', cursive;
     font-size: 1.5rem;
     color: #838383;
+    animation-name: flash;
+    animation-duration: 3s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
 }
 
-
-
-
+@keyframes flash {
+    from {
+        color: #838383;
+    }
+    to {
+        color: white;
+    }
+    
+}
 
 
 @media only screen and (max-width: 600px) {
@@ -50,19 +92,21 @@ div li{
         flex-direction: column-reverse;
     }
     
-    nav .nav-link {
+    nav .nav-item {
         color: rgb(120 120 120);
+        /* padding-left: 2px;
+        padding-right: 2px; */
+        font-size: 0.750rem;
+        }
+
+    .logo p {
+        font-family: 'Beau Rivage', cursive;
+        font-size: 1.4rem;
+        color: #838383;
+        margin-top: 15px;
+        margin-left: 5px;
         }
     
-    nav .puto{
-        display: flex;
-    }
-    nav .puta{
-        display: flex;
-    }
-    nav ul {
-        
-    }
 
     /*------- SECTION 1 -------------*/
 
@@ -83,24 +127,24 @@ div .bookings{
 }
 
 
-
 /*----- AWARDS SECTION  ----- */
 
 .michelin-img img{
     margin-top: 50px;
     height: 100px
 }
+
 #awards{
     margin-top: 150px;
 }
 
-
-/*---- WORKTEAM SECTION */
+/********************** WORKTEAM SECTION */
 
 #workteam {
     margin-top: 50px;
 }
-#workteam img{
+
+#workteam img {
     width: 70%;
     height: 150px;
     margin: 15px;
@@ -109,13 +153,12 @@ div .bookings{
     background-size: cover; */
 }
 
-
 /***** FOOTER SECTION ******/
-
 
 footer{
     margin-top: 50px;
 }
+
 .fa-phone {
     margin-top: 16px;
     margin-right: 15px;
@@ -130,6 +173,7 @@ footer{
     margin-top: 5px;
     margin-right: 15px;
 }
+
  .address p:first-child{
     margin-bottom: 0;
 }
@@ -151,11 +195,67 @@ div .icons{
     font-size: 14px;
 }
 
-
-
 }
 
-@media only screen and (min-width: 768px){
+
+@media only screen and (max-width: 980px){
+
+    div .icons{
+        display: inline-flex;
+    }
+
+    nav .nav-link {
+        margin-left: 5px;
+        margin-right: 33px;
+        font-size: 0.900rem;
+        color: rgb(120 120 120);
+        }
+
+    nav .nav-item .nav-link{
+        /* background-color: inherit; */
+        padding-left: 6px;
+        padding-right: 6px;
+    }
+
+        .navbar .container-fluid {
+            display: flex;
+            flex-direction: column-reverse;
+        }
+        
+        nav .nav-item {
+            color: rgb(120 120 120);
+            padding-left: 2px;
+            padding-right: 2px;
+            font-size: 0.750rem;
+            }
+    
+        .logo p {
+            font-family: 'Beau Rivage', cursive;
+            font-size: 1.4rem;
+            color: #838383;
+            margin-top: 15px;
+            margin-left: 5px;
+            }
+
+    /******************** CALL TO ACTION SECTION ************/
+    div .bg-image {
+        width: 100%;
+        background-image: url("https://res.cloudinary.com/dthlibbj7/image/upload/o_78/v1649152444/room_dvaada.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 500px;
+     }
+    
+    div .bookings {
+        width: 70%;
+        height: 200px;
+        background-color: hsl(0, 99%, 27%);
+        margin-top: 160px;
+    }
+}
+
+
+@media only screen and (min-width: 1000px){
     
     /***************************************  HEADER SECTION **********************/
    
@@ -176,7 +276,6 @@ div .icons{
     
     .logo h2 {
         font-size: 4.2rem;
-        /* position: relative; */
     }
 
     .logo p{
@@ -185,12 +284,23 @@ div .icons{
         margin-left: 15px;
     }
 
+
+    /***************************** CALL TO ACTION SECTION   **************/
     div .bg-image {
+        width: 100%;
+        background-image: url("https://res.cloudinary.com/dthlibbj7/image/upload/o_78/v1649152444/room_dvaada.jpg");
         background-size: cover;
         background-repeat: no-repeat;
         height: 500px;
      }
-
+    
+    div .bookings {
+        width: 70%;
+        height: 200px;
+        background-color: hsl(0, 99%, 27%);
+        margin-top: 160px;
+    }
+    
      /********************* FOOTER *****************/
 
      div .icons{
@@ -201,12 +311,4 @@ div .icons{
 
 }
 
-@media only screen and (min-width: 600px){
-
-    div .icons{
-        display: inline-flex;
-    }
-
-
-}
 
