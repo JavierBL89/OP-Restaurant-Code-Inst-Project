@@ -139,14 +139,22 @@ div .bookings{
 
 /*----- AWARDS SECTION  ----- */
 
-.michelin-img img{
+.michelin-img-box img{
     margin-top: 50px;
-    height: 100px
+    height: 100px;
+    /* width: 10%; */
 }
 
 #awards{
     margin-top: 150px;
 }
+
+.awards{
+    margin-top: 50px;
+    margin-left: 20px;
+}
+
+
 
 /********************** WORKTEAM SECTION */
 
