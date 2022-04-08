@@ -47,8 +47,6 @@ border-left: solid 1px #cac7c7;
     
 }
 
-
-
 .separator{
     background-color: #727272;
     height: 1px;
@@ -85,25 +83,37 @@ border-left: solid 1px #cac7c7;
 }
 
 
-@media only screen and (max-width: 600px) {
+@media only screen and (min-width: 320px) and (max-width: 600px) {    /***********************************************/
 
     .navbar .container-fluid {
         display: flex;
         flex-direction: column-reverse;
+        padding-left: 5%;
+        padding-right: 5%;
     }
     
     nav .nav-item {
         color: rgb(120 120 120);
         /* padding-left: 2px;
         padding-right: 2px; */
-        font-size: 0.750rem;
+        }
+        nav .nav-link {
+            margin-left: 5px;
+            margin-right: 30px;
+            font-size: 0.650rem;
+            color: rgb(120 120 120);
+            }
+    
+        nav .nav-item .nav-link{
+            padding-left: 6px;
+            padding-right: 6px;
         }
 
     .logo p {
         font-family: 'Beau Rivage', cursive;
-        font-size: 1.4rem;
+        font-size: 1.2rem;
         color: #838383;
-        margin-top: 15px;
+        margin-top: 20px;
         margin-left: 5px;
         }
     
@@ -197,8 +207,7 @@ div .icons{
 
 }
 
-
-@media only screen and (max-width: 980px){
+@media only screen and (min-width:600px) and (max-width:950px){
 
     div .icons{
         display: inline-flex;
@@ -252,10 +261,38 @@ div .icons{
         background-color: hsl(0, 99%, 27%);
         margin-top: 160px;
     }
+
+    /*************************** AWARDS SECTION */
+
+    .container-awards .about {
+        padding-right: 10%;
+        padding-left: 10%;
+    }
+    
+    .container-awards, .container-workteam{
+        padding: 10% 15%;
+
+}
+    .awards p{
+    margin-bottom: 50px;
+    padding-left: 5%;
+    }
+
+.michelin-img-box{
+    padding-top: 6%;
+    padding-bottom: 8%;
+}
+
+.michelin-img-box img {
+    width: 30%;
+    height: 100px;
+}
+
 }
 
 
 @media only screen and (min-width: 1000px){
+    
     
     /***************************************  HEADER SECTION **********************/
    
@@ -300,7 +337,32 @@ div .icons{
         background-color: hsl(0, 99%, 27%);
         margin-top: 160px;
     }
+
+    /*************************** AWARDS SECTION */
+
+    .container-awards .about {
+        padding-right: 18%;
+        padding-left: 18%;
+    }
     
+    .container-awards, .container-workteam{
+        padding: 10% 15%;
+
+}
+    .awards p{
+    margin-bottom: 50px;
+    }
+
+.michelin-img-box{
+    padding-top: 6%;
+    padding-bottom: 8%;
+}
+
+.michelin-img-box img {
+    width: 20%;
+    height: 110px;
+}
+
      /********************* FOOTER *****************/
 
      div .icons{
