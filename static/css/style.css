@@ -84,6 +84,30 @@ border-left: solid 1px #cac7c7;
 
 @media only screen and (min-width: 320px) and (max-width: 600px) {    /***********************************************/
 
+
+    
+/******* HEADDINGS*/
+
+.headding h4{
+    margin-top: 100px;
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+}
+.dots{
+    margin-bottom: 30px;
+}
+
+.headding h1{
+    font-family: 'Roboto Slab', serif;
+    font-size: 1.4rem;
+    font-weight: 300;
+    margin-top: 100px;
+    margin-bottom: 100px;
+
+}
+
+/********* HEADER*/
+
     .navbar .container-fluid {
         display: flex;
         flex-direction: column-reverse;
@@ -230,9 +254,25 @@ div .icons{
 
 @media only screen and (min-width:600px) and (max-width:950px){
 
-    div .icons{
-        display: inline-flex;
-    }
+
+/******* HEADDINGS*/
+
+.headding h4{
+    margin-top: 100px;
+    margin-bottom: 40px;
+}
+.dots{
+    margin-bottom: 50px;
+}
+
+.headding h1{
+    font-family: 'Roboto Slab', serif;
+    font-weight: 300;
+    margin-bottom: 100px;
+
+}
+
+/******* HEADER*/
 
     nav .nav-link {
         margin-left: 5px;
@@ -268,6 +308,7 @@ div .icons{
             }
 
     /******************** CALL TO ACTION SECTION ************/
+
     div .bg-image {
         width: 100%;
         background-image: url("https://res.cloudinary.com/dthlibbj7/image/upload/o_78/v1649152444/room_dvaada.jpg");
@@ -339,12 +380,31 @@ div .icons{
 .team-img-box{
    margin-top: 90px;
 }
+
+
+/****** FOOTER*/
+div .icons{
+    display: inline-flex;
+}
+
 }
 
 
 @media only screen and (min-width: 1000px){
     
-    
+.headding h4{
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+.dots{
+    margin-bottom: 50px;
+}
+
+.headding h1{
+    font-family: 'Roboto Slab', serif;
+    font-weight: 300;
+
+}
     /***************************************  HEADER SECTION **********************/
    
 
@@ -413,6 +473,35 @@ div .icons{
     width: 20%;
     height: 110px;
 }
+
+/********************** WORKTEAM SECTION */
+
+#workteam {
+    margin-bottom: 50px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.team-img-box, .chef-img-box{
+    width: 380px;
+    margin: 40px auto auto;
+    }
+
+#workteam img {
+    width: 100%;
+    height: 200px;
+}
+
+.container-workteam .row{
+    margin-top: 140px;
+}
+.container-workteam p{
+    margin-top: 45px;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+
 
      /********************* FOOTER *****************/
 
