@@ -203,7 +203,7 @@ div .bookings{
 }
 
 .container-workteam p{
-    margin-top: 25px;
+    margin-top: 50px;
 }
 
 
@@ -212,6 +212,19 @@ div .bookings{
 
 footer{
     margin-top: 50px;
+}
+
+.copy-right{
+    margin-top: 50px;
+    font-size: 15px;
+}
+
+footer .container-fluid{
+    margin-top: 60px;
+}
+
+.footer-link{
+    margin: 15px;
 }
 
 .fa-phone {
@@ -246,13 +259,13 @@ div .icons{
 }
 
 .copy-right{
-    margin-top: 20px;
+    margin-top: 30px;
     font-size: 14px;
 }
 
 }
 
-@media only screen and (min-width:600px) and (max-width:950px){
+@media only screen and (min-width:640px) and (max-width:950px){
 
 
 /******* HEADDINGS*/
@@ -326,7 +339,8 @@ div .icons{
 
     /*************************** AWARDS SECTION */
 
-    .container-awards .about {
+    /* .container-awards */
+     .about {
         padding-right: 10%;
         padding-left: 10%;
     }
@@ -385,6 +399,23 @@ div .icons{
 /****** FOOTER*/
 div .icons{
     display: inline-flex;
+    margin-top: 60px;
+    justify-content: space-around;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+
+.copy-right{
+    margin-top: 50px;
+    font-size: 15px;
+}
+
+footer .container-fluid{
+    margin-top: 60px;
+}
+.footer-link{
+    margin: 15px;
 }
 
 }
@@ -443,9 +474,11 @@ div .icons{
      }
     
     div .bookings {
-        width: 70%;
-        height: 200px;
-        background-color: hsl(0, 99%, 27%);
+        width: 60%;
+        height: 250px;
+background-image: url("https://res.cloudinary.com/dthlibbj7/image/upload/v1649409020/mesa-3_brvicm.jpg");
+background-size: cover;
+background-repeat: no-repeat;
         margin-top: 160px;
     }
 
@@ -504,11 +537,40 @@ div .icons{
 
 
      /********************* FOOTER *****************/
+    footer .container-fluid{
+        margin-top: 100px;
+        padding: 0 12%;
+    }
+    
+    .footer-link{
+        margin-top: 20px;
+
+    }
+
+    .contact-container i{
+        position: relative;
+        top: 7px;
+        margin-right: 15px;
+    }
+
+    .phone i{
+        position: relative;
+        top: 15px;
+    }
 
      div .icons{
         justify-content: space-around;
         padding-left: 60px;
         padding-right: 60px;
+    }
+
+    .icons div{
+        margin-top: 20px;
+    }
+
+    .copy-right{
+        margin-top: 70px;
+        font-size: 14px;
     }
 
 }
