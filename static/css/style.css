@@ -1,10 +1,42 @@
 body{
     font-family: 'Roboto Slab', serif;
+    color: hsl(0, 0%, 35%);
+
 }
 
 div li{
     list-style-type: none;
 }
+
+.headding h5{
+        color: hsl(0, 5%, 71%); 
+    }
+
+.headding h1{
+    color: #000000;
+}
+
+.awards span{
+    margin-right: 10px;
+    color: #4c4b4b;
+
+}
+
+.awards p{
+    margin-bottom: 100px;
+    color: #4c4b4b;
+    }
+
+.dots{
+    margin-bottom: 100px;
+    color: hsl(0, 0%, 71%);
+    }
+
+
+    .container-workteam p{
+        color: hsl(0, 1%, 57%);
+        letter-spacing: 1px;
+    }
 
 
 /* ---------- HEADER -------------------*/
@@ -82,17 +114,21 @@ border-left: solid 1px #cac7c7;
 }
 
 
-@media only screen and (min-width: 320px) and (max-width: 600px) {    /***********************************************/
+@media only screen and (min-width: 320px) and (max-width: 600px) {    /************************** MOBILE MEDIA */
 
 
     
 /******* HEADDINGS*/
 
-.headding h4{
+.headding h5{
     margin-top: 100px;
-    margin-bottom: 40px;
-    font-size: 1.1rem;
+    margin-bottom: 50px;
+    color: hsl(0, 5%, 71%);
+    font-size: 1.2rem;
+    letter-spacing: 5px;
+    line-height: 45px;
 }
+
 .dots{
     margin-bottom: 30px;
 }
@@ -101,10 +137,14 @@ border-left: solid 1px #cac7c7;
     font-family: 'Roboto Slab', serif;
     font-size: 1.4rem;
     font-weight: 300;
-    margin-top: 100px;
-    margin-bottom: 100px;
+    margin-top: 110px;
+    margin-bottom: 130px;
 
 }
+
+
+
+
 
 /********* HEADER*/
 
@@ -183,6 +223,7 @@ div .bookings{
 
 
 
+
 /********************** WORKTEAM SECTION */
 
 #workteam {
@@ -205,7 +246,6 @@ div .bookings{
 .container-workteam p{
     margin-top: 50px;
 }
-
 
 
 /***** FOOTER SECTION ******/
@@ -270,20 +310,23 @@ div .icons{
 
 /******* HEADDINGS*/
 
-.headding h4{
+.headding h5{
     margin-top: 100px;
-    margin-bottom: 40px;
-}
-.dots{
     margin-bottom: 50px;
+    color: hsl(0, 5%, 71%);
+    font-size: 1.2rem;
+    letter-spacing: 5px;
+    line-height: 45px;
 }
 
 .headding h1{
     font-family: 'Roboto Slab', serif;
     font-weight: 300;
-    margin-bottom: 100px;
+    margin-bottom: 150px;
 
 }
+
+
 
 /******* HEADER*/
 
@@ -351,7 +394,7 @@ div .icons{
 }
     .awards p{
     margin-bottom: 50px;
-    padding-left: 5%;
+    padding-left: 15%;
     }
 
 .michelin-img-box{
@@ -422,13 +465,14 @@ footer .container-fluid{
 
 
 @media only screen and (min-width: 1000px){
-    
-.headding h4{
-    margin-top: 100px;
-    margin-bottom: 50px;
-}
-.dots{
-    margin-bottom: 50px;
+
+/************ HEADINGS */
+
+.headding h5{
+    margin-top: 120px;
+    margin-bottom: 70px;
+    color: hsl(0, 5%, 71%);
+    letter-spacing: 5px;
 }
 
 .headding h1{
@@ -436,6 +480,9 @@ footer .container-fluid{
     font-weight: 300;
 
 }
+
+
+
     /***************************************  HEADER SECTION **********************/
    
 
@@ -476,9 +523,9 @@ footer .container-fluid{
     div .bookings {
         width: 60%;
         height: 250px;
-background-image: url("https://res.cloudinary.com/dthlibbj7/image/upload/v1649409020/mesa-3_brvicm.jpg");
-background-size: cover;
-background-repeat: no-repeat;
+        background-image: url("https://res.cloudinary.com/dthlibbj7/image/upload/v1649409020/mesa-3_brvicm.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
         margin-top: 160px;
     }
 
@@ -493,9 +540,6 @@ background-repeat: no-repeat;
         padding: 10% 15%;
 
 }
-    .awards p{
-    margin-bottom: 50px;
-    }
 
 .michelin-img-box{
     padding-top: 6%;
