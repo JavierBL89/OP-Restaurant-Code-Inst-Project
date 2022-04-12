@@ -38,7 +38,6 @@ div li{
     .container-workteam p{
         color: hsl(0, 1%, 57%);
         letter-spacing: 1px;
-    
     }
 
 /**************** ABOUT*/
@@ -46,7 +45,6 @@ div li{
 .about p{
     letter-spacing: 2px;
     margin-bottom: 120px;
-
 }
 
 /*************** HEADER */
@@ -542,16 +540,39 @@ footer .container-fluid{
     
     div .bookings {
         width: 60%;
-        height: 250px;
-        background-image: url("https://res.cloudinary.com/dthlibbj7/image/upload/v1649409020/mesa-3_brvicm.jpg");
+        height: 420px;
+        border-radius: 20px;
+        background-image: url("https://res.cloudinary.com/dthlibbj7/image/upload/v1649630116/mesa-4_kgnrro.webp");
         background-size: cover;
         background-repeat: no-repeat;
-        margin-top: 160px;
+        margin-top: 390px;
+        padding: 3%;
     }
 
+    .reservations-buttom{
+        border: solid 1px black;
+        /* border-bottom: none; */
+        width: inherit;
+        margin: 0 auto;
+        padding-top: 7px;
+    }
+
+    .contact-icons p{
+        margin-left: 10px;
+        margin-bottom: 10px;
+
+    }
+    .contact-icons i{
+        margin-top: 5px;
+    }
+
+    .contact-icons .phone-b i{
+        margin-top: 15px;
+    }
     /*************************** AWARDS SECTION */
 
     .container-awards .about {
+        margin-top: 250px;
         padding-right: 18%;
         padding-left: 18%;
     }
@@ -587,19 +608,17 @@ footer .container-fluid{
 #workteam img {
     width: 100%;
     height: 210px;
-
 }
 
 .container-workteam .row{
     margin-top: 190px;
 }
+
 .container-workteam p{
     margin-top: 45px;
     padding-left: 5%;
     padding-right: 5%;
 }
-
-
 
      /********************* FOOTER *****************/
     footer .container-fluid{
@@ -613,7 +632,6 @@ footer .container-fluid{
     
     .footer-link{
         margin-top: 20px;
-
     }
 
     .contact-container i{
