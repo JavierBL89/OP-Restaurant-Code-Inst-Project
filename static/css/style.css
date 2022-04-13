@@ -9,6 +9,43 @@ div li{
     list-style-type: none;
 }
 
+
+div .bg-image {
+    background-image: url("https://res.cloudinary.com/dthlibbj7/image/upload/o_78/v1649152444/room_dvaada.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+ }
+
+/********** CALL TO ACTION SECTION*/
+
+div .bookings { 
+    background-image: url("https://res.cloudinary.com/dthlibbj7/image/upload/v1649630116/mesa-4_kgnrro.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+}
+
+.reservations-button{
+    border: solid 1px black;
+    width: inherit;
+    margin: 40px auto;
+    padding-top: 7px;
+}
+
+
+.contact-icons p{
+    margin-left: 10px;
+    margin-bottom: 10px;
+
+}
+.contact-icons i{
+    margin-top: 5px;
+}
+
+.contact-icons .phone-b i{
+    margin-top: 15px;
+}
+
 /******* HEADINGS*/
 
 .headding h5{
@@ -83,7 +120,6 @@ border-left: solid 1px #cac7c7;
     border-right: solid 1px black;
     border-left: solid 1px black;
     }
-    
 }
 
 .separator{
@@ -150,9 +186,6 @@ border-left: solid 1px #cac7c7;
 }
 
 
-
-
-
 /********* HEADER*/
 
     .navbar .container-fluid {
@@ -188,27 +221,53 @@ border-left: solid 1px #cac7c7;
         margin-left: 5px;
         }
     
-
-    /*------- SECTION 1 -------------*/
+/*************** CALL TO ACTION SECTION */
 
 div .bg-image {
     width: 100%;
-    background-image: url("https://res.cloudinary.com/dthlibbj7/image/upload/o_78/v1649152444/room_dvaada.jpg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-color: bisque;
     height: 250px;
 }
 
-div .bookings{
-    width: 70%;
-    height: 200px;
-    background-color: hsl(0, 99%, 27%);
-    margin-top: 160px;
+div .bookings {
+    width: 90%;
+    height: 510px;
+    margin-top: 240px;
+    padding: 7% 6%;
 }
 
+.reservations-button {
+    border: solid 1px black;
+    width: inherit;
+    margin: 20px auto;
+    padding-top: 7px;
+}
+
+.reservations-button h5{
+    font-size: 0.850rem;
+}
+
+.bookings div h3{
+    font-size: 0.800rem;
+  }
+  
+  .bookings div p{
+      font-size: 0.750rem;
+  }
+
+  .contact-icons p{
+    margin-left: -5px;
+    margin-bottom: 10px;
+}
+
+.contact-icons .phone-b i {
+    margin-top: 12px;
+}
 
 /*----- AWARDS SECTION  ----- */
+
+.about {
+    margin-top: 550px;
+}
 
 .michelin-img-box img{
     margin-top: 50px;
@@ -380,25 +439,42 @@ div .icons{
 
     div .bg-image {
         width: 100%;
-        background-image: url("https://res.cloudinary.com/dthlibbj7/image/upload/o_78/v1649152444/room_dvaada.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;
         height: 500px;
      }
     
     div .bookings {
         width: 70%;
-        height: 200px;
-        background-color: hsl(0, 99%, 27%);
-        margin-top: 160px;
+        height: 420px;
+        margin-top: 420px;
+        padding: 4% 5%;
     }
+
+    .reservations-button {
+        border: solid 1px black;
+        width: inherit;
+        margin: 40p auto;
+        padding-top: 7px;
+    }
+
+    .reservations-button h5{
+        font-size: 1rem;
+    }
+
+    .bookings div h3{
+        font-size: 1rem;
+      }
+      
+      .bookings div p{
+          font-size: 0.800rem;
+      }
+
 
     /*************************** AWARDS SECTION */
 
-    /* .container-awards */
      .about {
         padding-right: 10%;
         padding-left: 10%;
+        margin-top: 520px;
     }
     
     .container-awards, .container-workteam{
@@ -532,30 +608,32 @@ footer .container-fluid{
     /***************************** CALL TO ACTION SECTION   **************/
     div .bg-image {
         width: 100%;
-        background-image: url("https://res.cloudinary.com/dthlibbj7/image/upload/o_78/v1649152444/room_dvaada.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;
         height: 500px;
      }
     
     div .bookings {
         width: 60%;
         height: 420px;
-        border-radius: 20px;
-        background-image: url("https://res.cloudinary.com/dthlibbj7/image/upload/v1649630116/mesa-4_kgnrro.webp");
-        background-size: cover;
-        background-repeat: no-repeat;
-        margin-top: 390px;
-        padding: 3%;
+        margin-top: 420px;
+        padding: 4% 5%;
+    
     }
 
-    .reservations-buttom{
+    /* .reservations-button {
         border: solid 1px black;
-        /* border-bottom: none; */
+        border-bottom: none;
         width: inherit;
         margin: 0 auto;
         padding-top: 7px;
-    }
+    } */
+
+    .bookings div h3{
+        font-size: 1.1rem;
+      }
+      
+      .bookings div p{
+          font-size: 0.850rem;
+      }
 
     .contact-icons p{
         margin-left: 10px;
@@ -569,10 +647,11 @@ footer .container-fluid{
     .contact-icons .phone-b i{
         margin-top: 15px;
     }
+
     /*************************** AWARDS SECTION */
 
     .container-awards .about {
-        margin-top: 250px;
+        margin-top: 430px;
         padding-right: 18%;
         padding-left: 18%;
     }
