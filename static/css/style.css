@@ -25,13 +25,12 @@ div .bookings {
     border-radius: 20px;
 }
 
-.reservations-button{
+.reservations-button {
     border: solid 1px black;
     width: inherit;
     margin: 40px auto;
     padding-top: 7px;
 }
-
 
 .contact-icons p{
     margin-left: 10px;
@@ -244,6 +243,8 @@ div .bookings {
 
 .reservations-button h5{
     font-size: 0.850rem;
+    letter-spacing: 2px;
+
 }
 
 .bookings div h3{
@@ -457,7 +458,9 @@ div .icons{
     }
 
     .reservations-button h5{
-        font-size: 1rem;
+        font-size: 0.950rem;
+        letter-spacing: 2px;
+
     }
 
     .bookings div h3{
@@ -619,20 +622,17 @@ footer .container-fluid{
     
     }
 
-    /* .reservations-button {
-        border: solid 1px black;
-        border-bottom: none;
-        width: inherit;
-        margin: 0 auto;
-        padding-top: 7px;
-    } */
+    .reservations-button h5{
+        font-size: 1rem;
+        letter-spacing: 2px;
+    }
 
     .bookings div h3{
-        font-size: 1.1rem;
+        font-size: 1rem;
       }
       
       .bookings div p{
-          font-size: 0.850rem;
+          font-size: 0.800rem;
       }
 
     .contact-icons p{
@@ -658,7 +658,6 @@ footer .container-fluid{
     
     .container-awards, .container-workteam{
         padding: 10% 15%;
-
 }
 
 .michelin-img-box{
