@@ -56,6 +56,7 @@ div .bookings {
 }
 
 /***** AWARDS SECTION*/
+
 .awards span{
     margin-right: 10px;
     color: #4c4b4b;
@@ -81,6 +82,20 @@ div .bookings {
 .about p{
     letter-spacing: 2px;
     margin-bottom: 120px;
+}
+
+
+/***************** GALLERY*/
+.carousel-item img{
+    width: 100%;
+}
+
+.carousel-indicators button img{
+    width: 100%;
+}
+
+.controls {
+    background-color: rgb(228, 225, 225);
 }
 
 /*************** HEADER */
@@ -290,9 +305,6 @@ div .bookings {
     margin-left: 20px;
 }
 
-
-
-
 /********************** WORKTEAM SECTION */
 
 #workteam {
@@ -321,6 +333,37 @@ div .bookings {
 .container-workteam .row{
     margin-top: 100px;
 }
+
+/***********  GALLERY */
+#gallery{
+    margin-top: 150px;
+    margin-bottom: 50px;
+}
+
+
+.media-container{
+    margin-bottom: 150px;
+    margin-top: 100px;
+}
+
+.carousel{
+    height: 500px;
+    width:  100%;
+ margin: 0 auto;
+}
+
+.col .carousel-inner{
+margin: 0 auto;
+}
+
+.carousel-item {
+    height: 400px;
+    padding: 7% 0;
+  }
+
+  .carousel-item img{
+      margin-top: 90px;
+  }
 
 
 /***** FOOTER SECTION ******/
@@ -400,7 +443,6 @@ div .icons{
     margin-bottom: 150px;
 
 }
-
 
 
 /******* HEADER*/
@@ -536,6 +578,37 @@ div .icons{
 .team-img-box{
    margin-top: 90px;
 }
+
+
+/***********  GALLERY */
+#gallery{
+    margin-top: 150px;
+    margin-bottom: 50px;
+}
+
+.media-container{
+    margin-bottom: 200px;
+    margin-top: 190px;
+}
+
+.carousel{
+    height: 500px;
+    width:  700px;
+ margin: 0 auto;
+}
+
+.col .carousel-inner{
+margin: 0 auto;
+}
+
+.carousel-item {
+    height: 450px;
+    padding: 7% 15%;
+  }
+
+  .carousel-item img{
+      margin-top: 30px;
+  }
 
 
 /****** FOOTER*/
@@ -674,14 +747,20 @@ footer .container-fluid{
 
 /************ GALLERY SECTION*/
 
-/* .media-container{
-    height: 300px;
-    width: 60%;
-} */
+#gallery{
+    margin-top: 150px;
+    margin-bottom: 50px;
+}
+
+.media-container{
+    margin-bottom: 300px;
+    margin-top: 190px;
+
+}
 
 .carousel{
     height: 500px;
-    width:  800px;
+    width:  1000px;
  margin: 0 auto;
 }
 
@@ -690,27 +769,23 @@ margin: 0 auto;
 }
 
 .carousel-item {
+    height: 550px;
     padding: 7% 15%;
   }
 
-.carousel-item img{
+/* .carousel-item img{
     width: 100%;
-    /* margin-top: 160px; */
-
-}
-
-.carousel-indicators button{
-    width: 300px;
-    /* height: 300px */
 }
 
 .carousel-indicators button img{
     width: 100%;
-}
-.controls {
+} */
+
+/* .controls {
     background-color: #686767;
-    padding-left: 40px;
+    padding-left: 40px; */
 }
+
 /********************** WORKTEAM SECTION */
 
 #workteam {
