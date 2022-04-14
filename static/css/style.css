@@ -19,13 +19,19 @@ div .bg-image {
 /********** CALL TO ACTION SECTION*/
 
 div .bookings { 
-    background-image: url("https://res.cloudinary.com/dthlibbj7/image/upload/v1649630116/mesa-4_kgnrro.webp");
+    /* background-image: url("https://res.cloudinary.com/dthlibbj7/image/upload/v1649630116/mesa-4_kgnrro.webp");
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
     border-radius: 20px;
     position: relative;
     z-index: 2;
+    background-color: black;
+    opacity: 0.6;
+    color: white;
+
 }
+
+
 
 .reservations-button {
     border: solid 1px black;
@@ -769,8 +775,9 @@ footer .container-fluid{
     div .bookings {
         width: 60%;
         height: 420px;
-        margin-top: 420px;
+        margin-top: 40px;
         padding: 4% 5%;
+        back
     
     }
 
