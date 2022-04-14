@@ -9,7 +9,6 @@ div li{
     list-style-type: none;
 }
 
-
 div .bg-image {
     background-image: url("https://res.cloudinary.com/dthlibbj7/image/upload/o_78/v1649152444/room_dvaada.jpg");
     background-size: cover;
@@ -97,6 +96,19 @@ div .bookings {
 .controls {
     background-color: rgb(228, 225, 225);
 }
+
+
+/************ MENUS */
+
+.menus-container .row div a{
+    color: #4c4b4b;
+    text-decoration: none;
+}
+
+ .menus-separator{
+    color: hsl(0, 0%, 71%);
+
+ }
 
 /*************** HEADER */
 
@@ -365,6 +377,23 @@ margin: 0 auto;
       margin-top: 90px;
   }
 
+  /************** MENUS */
+
+  #menus{
+    margin-top: 150px;
+    margin-bottom: 50px;
+    padding-right: 18%;
+    padding-left: 18%;
+}
+
+.menus-container {
+    margin-bottom: 200px;
+    margin-top: 140px;
+}
+
+.menus-container .row div{
+    margin: 40px 0;
+}
 
 /***** FOOTER SECTION ******/
 
@@ -610,6 +639,19 @@ margin: 0 auto;
       margin-top: 30px;
   }
 
+  /************** MENUS */
+
+#menus{
+    margin-top: 150px;
+    margin-bottom: 50px;
+    padding-right: 18%;
+    padding-left: 18%;
+}
+
+.menus-container {
+    margin-bottom: 240px;
+    margin-top: 190px;
+}
 
 /****** FOOTER*/
 div .icons{
@@ -784,7 +826,7 @@ margin: 0 auto;
 /* .controls {
     background-color: #686767;
     padding-left: 40px; */
-}
+/* } */
 
 /********************** WORKTEAM SECTION */
 
@@ -812,6 +854,21 @@ margin: 0 auto;
     margin-top: 45px;
     padding-left: 5%;
     padding-right: 5%;
+}
+
+
+/*********** MENUS */
+
+#menus{
+    margin-top: 150px;
+    margin-bottom: 50px;
+    padding-right: 18%;
+    padding-left: 18%;
+}
+
+.menus-container {
+    margin-bottom: 300px;
+    margin-top: 190px;
 }
 
      /********************* FOOTER *****************/
