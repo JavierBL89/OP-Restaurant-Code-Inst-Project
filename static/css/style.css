@@ -1,6 +1,23 @@
 /******************************* COMMON PROPERTIES*/
 
 
+/* .container-awards:nth-child(3n):hover{
+    border-right: solid 1px rgb(255, 255, 255);
+border-left: solid 1px rgb(255, 251, 251);
+    animation-name: section-border;
+    animation-duration: 1.7s;
+animation-fill-mode: forwards;
+transition: ease-in;
+} */
+
+.puta:hover{
+    border-top: solid 1px rgb(255, 255, 255);;
+    border-right: solid 1px rgb(255, 255, 255);
+    border-left: solid 1px rgb(255, 251, 251);
+        
+}
+
+
 body{
     font-family: 'Roboto Slab', serif;
     color: hsl(0, 0%, 35%);
@@ -60,6 +77,12 @@ div .bookings {
 
 .headding h1{
     color: #000000;
+    padding-top: 10px;
+    margin-left: 30%;
+    margin-right: 30%;
+    border-top: solid 1px rgb(255, 255, 255);;
+    border-right: solid 1px rgb(255, 255, 255);
+    border-left: solid 1px rgb(255, 251, 251);
 }
 
 /***** AWARDS SECTION*/
@@ -205,6 +228,27 @@ border-left: solid 1px #cac7c7;
     }
 }
 
+
+.headding h1:hover{
+    border-top: solid 1px rgb(255, 255, 255);;
+    border-right: solid 1px rgb(255, 255, 255);
+    border-left: solid 1px rgb(255, 251, 251);
+    animation-name: headdings-border;
+    animation-duration: 1.7s;
+    animation-fill-mode: both;
+    transition: ease-in;
+}
+@keyframes  headdings-border {
+    from{
+        border-top: solid 1px rgb(255, 255, 255);;
+        border-right: solid 1px rgb(255, 255, 255);
+        border-left: solid 1px rgb(255, 251, 251);    }
+    to{
+        border-top: solid 1px rgb(0, 0, 0);;
+        border-right: solid 1px rgb(0, 0, 0);
+        border-left: solid 1px rgb(0, 0, 0);
+    }
+}
 .logo p {
     font-family: 'Beau Rivage', cursive;
     font-size: 1.5rem;

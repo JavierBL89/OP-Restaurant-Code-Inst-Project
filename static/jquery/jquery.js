@@ -15,3 +15,8 @@ jQuery(function(){
         }, 3000);
     
   });
+
+
+  $("#awards").on("mouseover", function(){
+    $(".headding h1").addClass("puta");
+  });
