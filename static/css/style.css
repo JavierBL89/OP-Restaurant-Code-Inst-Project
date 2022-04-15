@@ -300,7 +300,7 @@ div .bg-image {
 div .bookings {
     width: 90%;
     height: 510px;
-    margin-top: 240px;
+    margin-top: 40px;
     padding: 7% 6%;
 }
 
@@ -510,8 +510,8 @@ div .icons{
 .headding h1{
     font-family: 'Roboto Slab', serif;
     font-weight: 300;
-    margin-bottom: 150px;
-
+    margin-bottom: 250px;
+    margin-top: 120px;
 }
 
 
@@ -560,7 +560,7 @@ div .icons{
     div .bookings {
         width: 70%;
         height: 420px;
-        margin-top: 420px;
+        margin-top: 50px;
         padding: 4% 5%;
     }
 
@@ -591,13 +591,18 @@ div .icons{
      .about {
         padding-right: 10%;
         padding-left: 10%;
-        margin-top: 520px;
+        /* margin-top: 50px; */
     }
     
     .container-awards, .container-workteam{
         padding: 10% 15%;
 
 }
+
+/* .container-awards .headding h1{
+    margin-top: 150px;
+} */
+
     .awards p{
     margin-bottom: 50px;
     padding-left: 15%;
@@ -617,7 +622,7 @@ div .icons{
 /********************** WORKTEAM SECTION */
 
 #workteam {
-    margin-top: 50px;
+    /* margin-top: 50px; */
     margin-bottom: 50px;
     padding-left: 15px;
     padding-right: 15px;
@@ -652,13 +657,14 @@ div .icons{
 
 /***********  GALLERY */
 #gallery{
-    margin-top: 150px;
+    /* margin-top: 150px; */
     margin-bottom: 50px;
 }
 
 .media-container{
     margin-bottom: 200px;
-    margin-top: 190px;
+    padding-top: 10%;
+    /* margin-top: 190px; */
 }
 
 .carousel{
@@ -673,7 +679,7 @@ margin: 0 auto;
 
 .carousel-item {
     height: 450px;
-    padding: 7% 15%;
+    padding: 0 15%;
   }
 
   .carousel-item img{
@@ -683,7 +689,7 @@ margin: 0 auto;
   /************** MENUS */
 
 #menus{
-    margin-top: 150px;
+    /* margin-top: 150px; */
     margin-bottom: 50px;
     padding-right: 18%;
     padding-left: 18%;
@@ -691,7 +697,8 @@ margin: 0 auto;
 
 .menus-container {
     margin-bottom: 240px;
-    margin-top: 190px;
+    padding: 11% 15%;
+    /* margin-top: 190px; */
 }
 
 /****** FOOTER*/
@@ -733,7 +740,8 @@ footer .container-fluid{
 .headding h1{
     font-family: 'Roboto Slab', serif;
     font-weight: 300;
-
+    margin-top: 80px;
+    margin-bottom: 250px;
 }
 
 
@@ -808,7 +816,7 @@ footer .container-fluid{
     /*************************** AWARDS SECTION */
 
     .container-awards .about {
-        margin-top: 180px;
+        /* margin-top: 50px; */
         padding-right: 18%;
         padding-left: 18%;
     }
@@ -900,7 +908,10 @@ margin: 0 auto;
     padding-right: 5%;
 }
 
+.container-workteam .headding h1{
+    margin-bottom: 210px;
 
+}
 /*********** MENUS */
 
 #menus{
