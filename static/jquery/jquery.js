@@ -7,3 +7,11 @@
 //         // $('.myanchor').addClass('anchor');
 //     }
 // });
+
+jQuery(function(){
+    setTimeout(
+        function() {
+            $(".bookings").slideDown(2000, "linear");
+        }, 3000);
+    
+  });
