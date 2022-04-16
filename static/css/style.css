@@ -1,22 +1,12 @@
 /******************************* COMMON PROPERTIES*/
 
 
-/* .container-awards:nth-child(3n):hover{
-    border-right: solid 1px rgb(255, 255, 255);
-border-left: solid 1px rgb(255, 251, 251);
-    animation-name: section-border;
-    animation-duration: 1.7s;
-animation-fill-mode: forwards;
-transition: ease-in;
-} */
-
 .puta:hover{
     border-top: solid 1px rgb(255, 255, 255);;
     border-right: solid 1px rgb(255, 255, 255);
     border-left: solid 1px rgb(255, 251, 251);
         
 }
-
 
 body{
     font-family: 'Roboto Slab', serif;
@@ -165,7 +155,6 @@ nav .separator{
 }
 
 
-
 .separator{
     background-color: #727272;
     height: 1px;
@@ -238,7 +227,8 @@ border-left: solid 1px #cac7c7;
     animation-fill-mode: both;
     transition: ease-in;
 }
-@keyframes  headdings-border {
+
+@keyframes headdings-border {
     from{
         border-top: solid 1px rgb(255, 255, 255);;
         border-right: solid 1px rgb(255, 255, 255);
@@ -249,6 +239,7 @@ border-left: solid 1px #cac7c7;
         border-left: solid 1px rgb(0, 0, 0);
     }
 }
+
 .logo p {
     font-family: 'Beau Rivage', cursive;
     font-size: 1.5rem;
@@ -256,7 +247,7 @@ border-left: solid 1px #cac7c7;
     animation-name: flash;
     animation-duration: 3s;
     animation-delay: 3s;
-    animation-fill-mode: forwards;
+    animation-fill-mode: both;
 }
 
 @keyframes flash {
