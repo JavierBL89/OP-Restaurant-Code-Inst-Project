@@ -1,13 +1,6 @@
 /******************************* COMMON PROPERTIES*/
 
 
-.puta:hover{
-    border-top: solid 1px rgb(255, 255, 255);;
-    border-right: solid 1px rgb(255, 255, 255);
-    border-left: solid 1px rgb(255, 251, 251);
-        
-}
-
 body{
     font-family: 'Roboto Slab', serif;
     color: hsl(0, 0%, 35%);
@@ -260,6 +253,12 @@ border-left: solid 1px #cac7c7;
     
 }
 
+/* JQUERY ADDCLASS*/
+.hover:hover{
+    border-top: solid 1px rgb(255, 255, 255);;
+    border-right: solid 1px rgb(255, 255, 255);
+    border-left: solid 1px rgb(255, 251, 251);       
+}
 
 @media only screen and (min-width: 320px) and (max-width: 600px) {    /************************** MOBILE MEDIA */
 
@@ -732,7 +731,7 @@ margin: 0 auto;
 
 .menus-container {
     margin-bottom: 240px;
-    padding: 11% 15%;
+    padding: auto 15%;
     /* margin-top: 190px; */
 }
 

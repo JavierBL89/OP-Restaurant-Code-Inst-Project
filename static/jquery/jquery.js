@@ -1,22 +1,17 @@
-// $(function(){
-//     if($(window).width < 700){
-//         $('ul')[0].removeAttribute("class");
-//         $('body').css("background-color", "blue")
-//         // $('.btn').addClass('backup-btn').removeClass('btn');
-//         // $('.mybtn').addClass('dropdown-toggle').attr("data-toggle", "dropdown");
-//         // $('.myanchor').addClass('anchor');
-//     }
-// });
 
+/* Ddocument onload */
 jQuery(function(){
+    /* modal animation*/
     setTimeout(
         function() {
-            $(".bookings").slideDown(2000, "linear");
+          $(".bookings").slideDown(2000, "linear");
         }, 3000);
     
+    /* headding mousehover */
+    $(document).on("mouseover", function(){
+      $(".headding h1").addClass("hover");
+      });
   });
 
 
-  $("#awards").on("mouseover", function(){
-    $(".headding h1").addClass("puta");
-  });
+  
