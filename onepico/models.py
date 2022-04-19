@@ -1,26 +1,35 @@
 from django.db import models
-from enum import enum
+from enum import Enum
+from phonenumber_field.modelfields import PhoneNumberField
+
 
 # Create your models here.
 
 STATUS = ((0, "failed"), (1, "booked"))
+PREFIX = [(
+    ('+353'),
+    ('+34')
+)]
 
-class Room(enum):
+class Room(Enum):
     for_two = 2
     for_three = 1
     for_four = 4
 
-class Booking(model.Models):
-    name = models.CharField(max_length=15, min_length=2, blank=True)
-    surname = models.CharField(max_length=15, min_length=2, blank=True)
+
+class Booking(models.Model):
+    name = models.CharField(max_length=15, blank=True)
+    surname = models.CharField(max_length=15, blank=True)
     people = models.IntegerField()
-    phone = models.IntegerField()
+    prefix = models.IntegerField(choices=PREFIX, default=+353)
+    phone = PhoneNumberField(null=False, blank=False, unique=True)
     date = models.DateTimeField()
-    time = 
+    time = models.DateTimeField()
     email = models.EmailField(max_length = 100)
     excerpt = models.TextField(blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
-    status = models.IntegerField(choises=STATUS, default=0)
+    status = models.IntegerField(choices=STATUS, default=0)
+
     
     def __str__(self):
         return f'{self.name} {self.surname} {self.people} {self.date} {self.slot_time}'

@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'cloudinary_storage',
+    'phonenumber_field',
     'django.contrib.staticfiles',
     'cloudinary',
     'onepico'
