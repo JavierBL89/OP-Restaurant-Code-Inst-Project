@@ -7,3 +7,7 @@ class HomePage(View):
 
     def get(self, request):
         return render(request, 'index.html')
+
+
+class BookTable(View):
+    pass

@@ -4,11 +4,12 @@ from enum import Enum
 
 # Create your models here.
 
-STATUS = ((0, "failed"), (1, "booked"))
+STATUS = ((0, "draft"), (1, "booked"))
 PREFIX = [(
     ('+353'),
     ('+34'),
 )]
+
 
 class Room(Enum):
     for_two = 2
@@ -22,8 +23,8 @@ class Booking(models.Model):
     people = models.IntegerField()
     prefix = models.IntegerField(choices=PREFIX, default=+353)
     phone = models.IntegerField(null=False, blank=False, unique=True)
-    date = models.DateTimeField()
-    time = models.DateTimeField()
+    date = models.DateField()
+    time = models.TimeField()
     email = models.EmailField(max_length = 100)
     excerpt = models.TextField(blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
