@@ -1,6 +1,5 @@
 from django.db import models
 from enum import Enum
-from phonenumber_field.modelfields import PhoneNumberField
 
 
 # Create your models here.
@@ -8,7 +7,7 @@ from phonenumber_field.modelfields import PhoneNumberField
 STATUS = ((0, "failed"), (1, "booked"))
 PREFIX = [(
     ('+353'),
-    ('+34')
+    ('+34'),
 )]
 
 class Room(Enum):
@@ -22,7 +21,7 @@ class Booking(models.Model):
     surname = models.CharField(max_length=15, blank=True)
     people = models.IntegerField()
     prefix = models.IntegerField(choices=PREFIX, default=+353)
-    phone = PhoneNumberField(null=False, blank=False, unique=True)
+    phone = models.IntegerField(null=False, blank=False, unique=True)
     date = models.DateTimeField()
     time = models.DateTimeField()
     email = models.EmailField(max_length = 100)
