@@ -1,5 +1,43 @@
 /******************************* COMMON PROPERTIES*/
 
+.form-control {
+    margin-bottom: 10px;
+    background-color: #292929;
+    color: white;
+    border-color: rgb(131, 131, 131);
+}
+
+.form-control:focus {
+    background-color: inherit;
+}
+
+/* .form-control .phone-number-box{
+    width: 50px;
+} */
+.form-control[name="prefix"]{
+    width: 40%;
+    font-size: 0.900rem;
+
+}
+
+.form-control[name="phone"]{
+    width: 50%;
+    margin-left: 15px;
+}
+
+.form-control[type="date"]{
+    font-size: 0.900rem;
+}
+.form-control::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgb(190, 190, 190);
+    opacity: 1; /* Firefox */
+    font-size: 0.900rem;
+  }
+
+  #startDate::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgb(190, 190, 190);
+    opacity: 1; /* Firefox */
+  }
 
 body{
     font-family: 'Roboto Slab', serif;

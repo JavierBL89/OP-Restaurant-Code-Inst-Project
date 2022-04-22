@@ -57,7 +57,7 @@
 
                     <div class="col-lg-6">
                         <!-- <label for="validationCustom01" class="form-label">First name</label> -->
-                        <input type="text" class="form-control" id="validationCustom01" value="Name" name="name" required>
+                        <input type="text" class="form-control" id="validationCustom01" value="" name="name" placeholder="Name" required>
                         <div class="valid-feedback">
                           Looks good!
                         </div>
@@ -66,7 +66,7 @@
                           </div>
 
                           <!-- <label for="validationCustom01" class="form-label">First name</label> -->
-                          <input type="text" class="form-control" id="validationCustom01" value="Last name" name="l_name" required>
+                          <input type="text" class="form-control" id="validationCustom01" value="" name="l_name" placeholder="Last name" required>
                           <div class="valid-feedback">
                             Looks good!
                           </div>
@@ -75,22 +75,26 @@
                             </div>
 
                             <!-- <label for="validationCustom04" class="form-label">Prefix</label> -->
-                            <select type="number" name="prefix" class="form-select" id="validationCustom04" required>
-                              <option type="number" name="prefix" selected disabled value="">+353</option>
-                              <option>+34</option>
-                            </select>
-                            <div class="invalid-feedback">
-                              Please select a valid state.
+                            <div class="phone-number-box d-flex">
+                                <select type="number" name="prefix" class="form-select form-control" id="validationCustom04" required>
+                                    <option type="number" name="prefix" selected disabled value="">+353</option>
+                                    <option>+34</option>
+                                  </select>
+                                  <div class="invalid-feedback">
+                                    Please select a valid state.
+                                  </div>
+
+                                  <input type="text" class="form-control" id="validationCustom01" value="" name="phone" placeholder="83125896" required>
+                                  <div class="valid-feedback">
+                                    Looks good!
+                                  </div>
+                                  <div class="invalid-feedback">
+                                      Please choose a username.
+                                    </div>
                             </div>
+                            
 
                             <!-- <label for="validationCustom01" class="form-label">First name</label> -->
-                          <input type="text" class="form-control" id="validationCustom01" value="83125896" name="phone" required>
-                          <div class="valid-feedback">
-                            Looks good!
-                          </div>
-                          <div class="invalid-feedback">
-                              Please choose a username.
-                            </div>
                     </div>
 
                     <div class="col-lg-6">
@@ -111,6 +115,9 @@
                         <div class="invalid-feedback">
                               Please choose a username.
                             </div>
+
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="2" placeholder="Booking comments"></textarea>
+
 
                     </div>
                 </div>      
