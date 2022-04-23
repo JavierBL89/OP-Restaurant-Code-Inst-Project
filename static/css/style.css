@@ -1,43 +1,5 @@
 /******************************* COMMON PROPERTIES*/
 
-.form-control {
-    margin-bottom: 10px;
-    background-color: #292929;
-    color: white;
-    border-color: rgb(131, 131, 131);
-}
-
-.form-control:focus {
-    background-color: inherit;
-}
-
-/* .form-control .phone-number-box{
-    width: 50px;
-} */
-.form-control[name="prefix"]{
-    width: 40%;
-    font-size: 0.900rem;
-
-}
-
-.form-control[name="phone"]{
-    width: 50%;
-    margin-left: 15px;
-}
-
-.form-control[type="date"]{
-    font-size: 0.900rem;
-}
-.form-control::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: rgb(190, 190, 190);
-    opacity: 1; /* Firefox */
-    font-size: 0.900rem;
-  }
-
-  #startDate::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: rgb(190, 190, 190);
-    opacity: 1; /* Firefox */
-  }
 
 body{
     font-family: 'Roboto Slab', serif;
@@ -64,7 +26,7 @@ div .bookings {
     position: relative;
     z-index: 2;
     background-color: rgb(53, 53, 53);
-    opacity: 0.7;
+    opacity: 0.8;
     color: white;
     display: none;    
 
@@ -89,6 +51,78 @@ div .bookings {
 .contact-icons .phone-b i{
     margin-top: 15px;
 }
+
+
+/*** BOOKING FORM */
+
+.form-control {
+    margin-bottom: 10px;
+    background-color: #292929;
+    color: rgb(255, 255, 255);
+    border-color: rgb(131, 131, 131);
+    font-size: 0.800rem;
+    letter-spacing: 1px;
+}
+
+.input:-webkit-autofill,input:-webkit-autofill, input:-webkit-autofill:focus{
+    -webkit-background-color: #292929;
+    -webkit-text-fill-color: rgb(255, 255, 255);
+     transition: background-color 5000s ease-in-out 0s;
+}
+
+.form-control:focus {
+    background-color: inherit;
+    box-shadow: none;
+    color: rgb(255, 255, 255);
+    font-size: 0.800rem;
+    border-color: rgb(131, 131, 131);
+}
+
+.form-control[name="prefix"]{
+    width: 40%;
+    background-color: #292929; 
+    font-size: 0.800rem;
+    opacity: 0.7;
+}
+
+.form-control[name="phone"]{
+    width: 50%;
+    margin-left: 15px;
+}
+
+input[type="date"]{
+    font-size: 0.800rem;
+    opacity: 0.7;
+} 
+
+.form-control::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgb(190, 190, 190);
+    font-size: 0.800rem;
+  }
+
+button[type="submit"]{
+    width: 75%;
+    margin-top: 40px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: rgb(3, 3, 3);
+    font-weight: bold;
+    background-color: rgb(185, 185, 185);
+    letter-spacing: 3px;
+}
+
+button[type="submit"]:hover{
+    font-weight: bold;
+    background-color: #000000;
+    opacity: 1;
+    color: rgb(185, 185, 185);
+}
+
+button[type="submit"]:focus{
+    box-shadow: none;
+}
+
+/**************************************** CONTENT */
 
 /******* HEADINGS*/
 
@@ -137,6 +171,7 @@ div .bookings {
 
 
 /***************** GALLERY*/
+
 .carousel-item img{
     width: 100%;
 }
@@ -148,7 +183,6 @@ div .bookings {
 .controls {
     background-color: rgb(228, 225, 225);
 }
-
 
 /************ MENUS */
 
@@ -184,7 +218,6 @@ border-left: solid 1px #cac7c7;
 nav .separator{
     margin-top: 10px;
 }
-
 
 .separator{
     background-color: #727272;
