@@ -1,5 +1,14 @@
 /******************************* COMMON PROPERTIES*/
 
+.was-validated .form-select:invalid:not([multiple]):not([size]), .was-validated .form-select:invalid:not([multiple])[size="1"]  {
+    padding-right: 0;
+    background-image: inherit;
+}
+form label{
+    display: none;
+}
+
+
 
 body{
     font-family: 'Roboto Slab', serif;
@@ -227,7 +236,7 @@ nav .separator{
 }
 
 .logo h2{   
-     font-family: 'Roboto Slab', serif;
+    font-family: 'Roboto Slab', serif;
     font-weight: 800;
     font-size: 2.3rem;
     color: #727272;
@@ -304,25 +313,28 @@ border-left: solid 1px #cac7c7;
     }
 }
 
-.logo p {
+nav .logo p {
     font-family: 'Beau Rivage', cursive;
     font-size: 1.5rem;
     color: #838383;
     animation-name: flash;
     animation-duration: 3s;
     animation-delay: 3s;
-    animation-fill-mode: both;
+    -webkit-animation-fill-mode: forwards;
 }
 
+
 @keyframes flash {
-    from {
+
+    from{
         color: #838383;
     }
-    to {
-        color: white;
+    to{
+        color: #ffffff;
+
     }
-    
 }
+
 
 /* JQUERY ADDCLASS*/
 .hover:hover{

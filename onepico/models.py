@@ -5,10 +5,11 @@ from enum import Enum
 # Create your models here.
 
 STATUS = ((0, "draft"), (1, "booked"))
-PREFIX = [(
-    ('+353'),
-    ('+34'),
-)]
+# PREFIX = [
+#     ('+353'),
+#     ('+34'),
+#     ('+35'),
+# ]
 
 
 class Room(Enum):
@@ -18,18 +19,19 @@ class Room(Enum):
 
 
 class Booking(models.Model):
-    name = models.CharField(max_length=15, blank=True)
-    surname = models.CharField(max_length=15, blank=True)
-    people = models.IntegerField()
-    prefix = models.IntegerField(choices=PREFIX, default=+353)
-    phone = models.IntegerField(null=False, blank=False, unique=True)
+    # booking_id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=30, blank=True)
+    surname = models.CharField(max_length=30, blank=True)
+    people = models.BigIntegerField()
+    prefix = models.BigIntegerField()
+    phone = models.BigIntegerField(null=False, blank=False)
     date = models.DateField()
-    time = models.TimeField()
+    start_time = models.TimeField()
     email = models.EmailField(max_length = 100)
-    excerpt = models.TextField(blank=True)
+    excerpt = models.CharField(null=True, blank=True, max_length=500)
     created_on = models.DateTimeField(auto_now_add=True)
-    status = models.IntegerField(choices=STATUS, default=0)
+    status = models.BigIntegerField(choices=STATUS, default=0)
 
     
     def __str__(self):
-        return f'{self.name} {self.surname} {self.people} {self.date} {self.slot_time}'
+        return f'{self.name} {self.surname} {self.people} {self.date} {self.start_time}'

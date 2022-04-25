@@ -52,74 +52,85 @@
         </div>
 
         <div class="booking-form-box">
-                <form class=" g-3 needs-validation" novalidate>
-                 <div class="row">
-
-                    <div class="col-lg-6">
-                        <!-- <label for="validationCustom01" class="form-label">First name</label> -->
-                        <input type="text" class="form-control" id="validationCustom01" value="" name="name" placeholder="Name" required>
-                        <div class="valid-feedback">
-                          Looks good!
-                        </div>
-                        <div class="invalid-feedback">
-                            Please choose a username.
-                          </div>
-
-                          <!-- <label for="validationCustom01" class="form-label">First name</label> -->
-                          <input type="text" class="form-control" id="validationCustom01" value="" name="l_name" placeholder="Last name" required>
-                          <div class="valid-feedback">
-                            Looks good!
-                          </div>
-                          <div class="invalid-feedback">
-                              Please choose a username.
+            
+                <form class="g-3 needs-validation" id="booking_form" name="RegForm" method="" action="{% url 'home' %}" onclick="validation(event)" novalidate>
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <!-- <label for="validationCustom01" class="form-label">First name</label> -->
+                            <input type="text" class="name form-control" id="validationCustom01" name="name" placeholder="Name" required>
+                            <!-- <div class="valid-feedback">
+                              Looks good!
                             </div>
-
-                            <!-- <label for="validationCustom04" class="form-label">Prefix</label> -->
-                            <div class="phone-number-box d-flex">
-                                <select type="number" name="prefix" class="form-select form-control" id="validationCustom04" required>
-                                    <option type="number" name="prefix" selected disabled value="">+353</option>
-                                    <option>+34</option>
-                                  </select>
-                                  <div class="invalid-feedback">
-                                    Please select a valid state.
-                                  </div>
-
-                                  <input type="text" class="form-control" id="validationCustom01" value="" name="phone" placeholder="83125896" required>
-                                  <div class="valid-feedback">
+                            <div class="invalid-feedback">
+                                Please choose a username.
+                              </div> -->
+    
+                              <input type="text" class="form-control" id="validationCustom01" value="" name="l_name" placeholder="Last name" required>
+                              <!-- <div class="valid-feedback">
+                                Looks good!
+                              </div>
+                              <div class="invalid-feedback">
+                                  Please choose a username.
+                                </div> -->
+    
+                                <div class="phone-number-box d-flex">
+                                    <select type="number" name="prefix" class="form-select form-control" id="validationCustom04" required>
+                                        <option type="number" name="prefix" selected value="">+353</option>
+                                        <option>+34</option>
+                                      </select>
+                                      <!-- <div class="invalid-feedback">
+                                        Please select a valid state.
+                                      </div>
+     -->
+                                      <input type="text" class="form-control phone" id="validationCustom01" value="" name="phone" placeholder="83125896" required>
+                                      <!-- <div class="valid-feedback">
+                                        Looks good!
+                                      </div>
+                                      <div class="invalid-feedback">
+                                          Please choose a username.
+                                        </div> -->
+                                </div>
+                                
+                                <input type="email" name="email" class="form-control" id="validationCustom01" aria-describedby="emailHelp" placeholder="Enter email" required>
+                                <!-- <div class="valid-feedback">
                                     Looks good!
                                   </div>
                                   <div class="invalid-feedback">
                                       Please choose a username.
-                                    </div>
-                            </div>
-                            
-
-                            <!-- <label for="validationCustom01" class="form-label">First name</label> -->
-                    </div>
-
-                    <div class="col-lg-6">
-                        <input id="startDate" class="form-control" type="date" />
-                        <div class="valid-feedback">
-                            Looks good!
+                                    </div> -->
+                                <!-- <label for="validationCustom01" class="form-label">First name</label> -->
+                        </div>
+    
+                        <div class="col-lg-6">
+                            <input id="startDate" class="form-control" name="date" type="date" required/>
+                            <!-- <div class="valid-feedback">
+                                Looks good!
+                                </div>
+                                <div class="invalid-feedback">
+                                    Please choose a username.
+                                </div> -->
+    
+                            <input type="text" class="form-control" id="timePicker" name="start_time" placeholder="12:30" required>
+    
+                            <input type="number" class="form-control" id="validationCustom01" value="" name="party_size" required placeholder="Party size">
+                            <!-- <div class="valid-feedback">
+                                Looks good!
                             </div>
                             <div class="invalid-feedback">
-                                Please choose a username.
-                            </div>
-
-                        <input type="text" class="form-control" id="timePicker" placeholder="12:30">
-
-                        <input type="number" class="form-control" id="validationCustom01" value="" name="party_size" required placeholder="Party size">
-                        <div class="valid-feedback">
-                            Looks good!
+                                  Please choose a username.
+                                </div> -->
+    
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="2" name="booking_comment" placeholder="Booking comments"></textarea>
+    
+                        
                         </div>
-                        <div class="invalid-feedback">
-                              Please choose a username.
-                            </div>
-
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="2" placeholder="Booking comments"></textarea>
-
-                    
+                
                     </div>
+                    
+
+                 <div class="row">
+
                     <div class="booking-button-box text-center">
                         <button type="submit" class="btn btn-outline-secondary">BOOK TABLE</button>
                     </div>

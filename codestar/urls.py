@@ -19,5 +19,6 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('onepico.urls'), name='onepico_urls'),
-    # path('bookings/', include('onepico.urls'), name='bookings'),
+    path('summernote/', include('django_summernote.urls')),
+    # path('book_table', include('onepico.urls'), name='book_table'),
 ]
