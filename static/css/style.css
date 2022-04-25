@@ -8,7 +8,12 @@ form label{
     display: none;
 }
 
-
+.form-control.error{
+    border-color: red;
+}
+.form-control.success{
+    border-color: rgb(0, 162, 11);
+}
 
 body{
     font-family: 'Roboto Slab', serif;

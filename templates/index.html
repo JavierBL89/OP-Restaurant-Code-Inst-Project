@@ -53,12 +53,12 @@
 
         <div class="booking-form-box">
             
-                <form class="g-3 needs-validation" id="booking_form" name="RegForm" method="" action="{% url 'home' %}" onclick="validation(event)" novalidate>
+                <form class="g-3 needs-validation" id="booking_form" name="RegForm" method="" action="{% url 'home' %}" onclick="handleSubmit(event)" novalidate>
                     {% csrf_token %}
                     <div class="row">
                         <div class="col-lg-6">
                             <!-- <label for="validationCustom01" class="form-label">First name</label> -->
-                            <input type="text" class="name form-control" id="validationCustom01" name="name" placeholder="Name" required>
+                            <input type="text" id="name" class="form-control" id="validationCustom01" name="name" placeholder="Name" required>
                             <!-- <div class="valid-feedback">
                               Looks good!
                             </div>
@@ -66,7 +66,7 @@
                                 Please choose a username.
                               </div> -->
     
-                              <input type="text" class="form-control" id="validationCustom01" value="" name="l_name" placeholder="Last name" required>
+                              <input type="text" id="l_name" class="form-control" id="validationCustom01" value="" name="l_name" placeholder="Last name" required>
                               <!-- <div class="valid-feedback">
                                 Looks good!
                               </div>
@@ -75,7 +75,7 @@
                                 </div> -->
     
                                 <div class="phone-number-box d-flex">
-                                    <select type="number" name="prefix" class="form-select form-control" id="validationCustom04" required>
+                                    <select type="number" id="prefix" name="prefix" class="form-select form-control" id="validationCustom04" required>
                                         <option type="number" name="prefix" selected value="">+353</option>
                                         <option>+34</option>
                                       </select>
@@ -83,7 +83,7 @@
                                         Please select a valid state.
                                       </div>
      -->
-                                      <input type="text" class="form-control phone" id="validationCustom01" value="" name="phone" placeholder="83125896" required>
+                                      <input type="text" id="phone" class="form-control phone" id="validationCustom01" value="" name="phone" placeholder="83125896" required>
                                       <!-- <div class="valid-feedback">
                                         Looks good!
                                       </div>
@@ -92,7 +92,7 @@
                                         </div> -->
                                 </div>
                                 
-                                <input type="email" name="email" class="form-control" id="validationCustom01" aria-describedby="emailHelp" placeholder="Enter email" required>
+                                <input type="email" id="email" name="email" class="form-control" id="validationCustom01" aria-describedby="emailHelp" placeholder="Enter email" required>
                                 <!-- <div class="valid-feedback">
                                     Looks good!
                                   </div>
@@ -103,7 +103,7 @@
                         </div>
     
                         <div class="col-lg-6">
-                            <input id="startDate" class="form-control" name="date" type="date" required/>
+                            <input id="startDate" id="date" class="form-control" name="date" type="date" required/>
                             <!-- <div class="valid-feedback">
                                 Looks good!
                                 </div>
@@ -113,7 +113,7 @@
     
                             <input type="text" class="form-control" id="timePicker" name="start_time" placeholder="12:30" required>
     
-                            <input type="number" class="form-control" id="validationCustom01" value="" name="party_size" required placeholder="Party size">
+                            <input type="number" class="form-control" id="party_size" value="" name="party_size" required placeholder="Party size">
                             <!-- <div class="valid-feedback">
                                 Looks good!
                             </div>
@@ -121,7 +121,7 @@
                                   Please choose a username.
                                 </div> -->
     
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="2" name="booking_comment" placeholder="Booking comments"></textarea>
+                            <textarea class="form-control" id="comment" rows="2" name="booking_comment" placeholder="Booking comments"></textarea>
     
                         
                         </div>
