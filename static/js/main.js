@@ -35,8 +35,8 @@ function validateInputs(){
   const phoneValue = phone.value.trim()
   const emailValue = email.value.trim()
   const dateValue = date.value.trim()
-  const start_timeValue = start_time.value.trim()
-  // const party_sizeValue =party_size.value.trim()
+  const start_timeValue = document.querySelector("#start_time option").value.trim();
+  const party_sizeValue =party_size.value.trim()
 
     if(nameValue === ""){
       setErrorForBlank(fname, "Field cannot be blank");
@@ -68,13 +68,22 @@ function validateInputs(){
       dateValidation(dateValue)
     }
 
-    if(start_timeValue === ""){
-      date.className = "form-control error"
+    if(start_timeValue === "Time slot"){
+      console.log("puta");
+      start_time.className = "form-control error"
     }else{
+      setSuccessFor(start_time)
       // timeValidation(dateValue)
     }
 
+    if(party_sizeValue === ""){
+      setErrorForBlank(party_size, "Select party size");
+    }else{
+      checkPartySize(party_sizeValue)
+    }
+
 }
+
 
 /**
  * 
@@ -97,13 +106,13 @@ function dateValidation(dateValue){
         console.log("PERFECT");
         setSuccessFor(date)
       }else{
-        setErrorFor(date, "Day must be ahead")
+        setErrorForDate(date, "Day must be ahead")
       }
     }else{
-      setErrorFor(date, "Month must be ahead")
+      setErrorForDate(date, "Month must be ahead")
     }
   }else{
-    setErrorFor(date, "Year must be ahead")
+    setErrorForDate(date, "Year must be ahead")
   }
 }
 
@@ -131,13 +140,16 @@ function checkLength(input){
   const userDataValue = input.value.trim();
 
   if(userData == "name" && userDataValue.length <= 2){
+    fname.className = "form-control error"
     document.querySelector(".nameError").innerText = "Must contain min 3 characters"
   }
   else if(userData == "l_name" && userDataValue.length <= 2){
+    surname.className = "form-control error"
     document.querySelector(".lastNameError").innerText = "Must contain min 3 characters"
   }
   else if(userData == "phone" && userDataValue.length <=7 || userDataValue.length >=11){
-    document.querySelector(".phoneError").innerText = "Must from 8 to 9 numbers"
+    phone.className = "form-control error"
+    document.querySelector(".phoneError").innerText = "Must have from 8 to 9 numbers"
   }
   else{
     setSuccessFor(input)
@@ -146,11 +158,31 @@ function checkLength(input){
 }
 
 /**
- * ERROR WARNINGS AN MESSAGES
+ * ERROR MESSAGES FOR INCORRECT DATE
  */
-function setErrorFor(anything, message){
-  anything.className = "form-control error"
+function setErrorForDate(bookingDate, message){
+  bookingDate.className = "form-control error"
   document.querySelector(".dateError").innerText = message;
+}
+
+/**
+ * ERROR MESSAGES FOR INCORRECT PARTY SIZE
+ */
+function checkPartySize(party_sizeValue){
+  const minos = "-";
+
+  if(party_sizeValue >= 13){
+    party_size.className = "form-control error"
+    document.querySelector(".partyError").innerText = "For parties over 12px contact us";
+  }
+  else if(party_sizeValue.match(minos) || party_sizeValue === "0"){
+    party_size.className = "form-control error"
+    document.querySelector(".partyError").innerText = "Please select a valid party size";
+  }
+  else{
+    setSuccessFor(party_size)
+  }
+  
 }
 
 /**
@@ -169,41 +201,3 @@ function setSuccessFor(input){
 }
 
 
-// function validation(event) {
-
-//     'use strict'
-  
-//     // Fetch all the forms we want to apply custom Bootstrap validation styles to
-//     var forms = document.querySelectorAll('.validation')
-//     let name = document.querySelectorAll('.name')[0].value;
-
-//     // Loop over them and prevent submission
-//     Array.prototype.slice.call(forms)
-//       .forEach(function (form) {
-//         form.addEventListener('submit', function (event) {
-//           // if (!form.checkValidity()) {
-//           event.preventDefault()
-//           event.stopPropagation()
-//           if(form.getAttribute("name").innerText == ""){
-//             return console.log("puta")
-//           }
-  
-//           // }
-        
-
-  
-//           // form.classList.add('was-validated')
-//         }, false)
-//       })
-//   }
-
-  // function formatValidation(event){
-  
-  //   var phone = document.querySelectorAll('.phone')[0].value;
-
-  //   if(phone.length > 9){
-  //     console.log(phone.length)
-  //     $(".phone").addClass("non-valid")
-  //   }
-
-  // }
