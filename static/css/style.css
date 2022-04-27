@@ -8,10 +8,10 @@ form label{
 .form-control.error{
     border-color: red;
 }
+
 .form-control.success{
     border-color: rgb(0, 162, 11);
 }
-
 
 .nameError, .lastNameError, .phoneError, .emailError, .dateError, .partyError {
     margin-top: 10px;

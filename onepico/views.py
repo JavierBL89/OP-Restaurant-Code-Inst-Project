@@ -3,6 +3,8 @@ from django.views import generic, View
 from .models import Booking
 from .forms import BookingForm
 from django.http import HttpResponseRedirect
+from datetime import datetime
+
 
 
 # Create your views here.
@@ -27,8 +29,11 @@ class HomePage(View):
         phone = request.POST.get('phone')
         email = request.POST.get('email')
         date = request.POST.get('date')
-        people = request.POST.get('party_size')
+        date = datetime.strptime(date, '%Y-%m-%d')
         start_time = request.POST.get('start_time')
+        start_time = datetime.strptime(start_time, '%H:%M')
+        
+        people = request.POST.get('party_size')
         comment = request.POST.get('booking_comments')
 
         Booking.objects.create(name=name, surname=surname, people=people, prefix=prefix, phone=phone, date=date, start_time=start_time, email=email, excerpt=comment)
