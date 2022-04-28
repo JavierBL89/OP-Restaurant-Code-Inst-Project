@@ -68,9 +68,8 @@
     
                                 <div class="phone-number-box d-flex">
                                     <select type="number" id="prefix" name="prefix" class="form-select form-control" required>
-                                        <option name="prefix" selected default value="">+353</option>
+                                        <option value="">+353</option>
                                         <option>+34</option>
-                                        <option>+353</option>
                                       </select>                                      
 
                                       <input type="number" id="phone" class="form-control phone d-block" value="" name="phone" placeholder="83125896" required> 
@@ -84,18 +83,22 @@
                         <div class="col-lg-6">
                             <input id="date" class="form-control" name="date" type="date" required/>
                             <div class="invalid dateError"></div>
+                            
 
-    
-                            <select type="number" id="start_time" name="start_time" class="form-select form-control">
-                                <option selected value="0">Time slot</option>
-                                <option type="number"value="1">12:30</option>
-                                <option type="number" value="3">12:45</option>
-                                <option type="number" value="4">13:00</option>
-                                <option type="number" value="5">13:15</option>
-                                <option type="number" value="6">13:30</option>
-                                <option type="number" value="7">13:45</option>
-                                <option type="number" value="8">14:00</option>
-                                <option type="number" value="9">14:15</option>
+                            <!-- <input type="time" class="timepicker text-center" jt-timepicker="" time="model.time" time-string="model.timeString" default-time="model.options.defaultTime" time-format="model.options.timeFormat" start-time="model.options.startTime" min-time="model.options.minTime" max-time="model.options.maxTime" interval="model.options.interval" dynamic="model.options.dynamic" scrollbar="model.options.scrollbar" dropdown="model.options.dropdown"> -->
+                            <input type="text" min="12:00" max="09:00" id="start_time" name="start_time" class="form-control text-center"scrollbar="model.options.scrollbar" dropdown="model.options.dropdown" >
+
+                            <!-- <input type="text" class="form-control timepicker"> -->
+                            <!-- <select type="text" id="start_time" name="start_time" class="form-select form-control">
+                                <option selected class="puta" value="0">Time slot</option>
+                                <option type="number" value="1" >12:30</option>
+                                <option type="number" value="3" >12:45</option>
+                                <option type="number" value="4" >13:00</option>
+                                <option type="number" value="5" >13:15</option>
+                                <option type="number" value="6" >13:30</option>
+                                <option type="number" value="7" >13:45</option>
+                                <option type="number" value="8" >14:00</option>
+                                <option type="number" value="9" >14:15</option>
                                 <option type="number" value="10">14:30</option>
                                 <option type="number" value="11">18:00</option>
                                 <option type="number" value="12">18:15</option>
@@ -110,8 +113,8 @@
                                 <option type="number" value="21">20:30</option>
                                 <option type="number" value="22">20:45</option>
                                 <option type="number" value="23">21:00</option>
-                            </select>            
-                            <div class="invalid">
+                            </select>             -->
+                            <div class="invalid timeError">
                             </div>
 
                             <input type="number" class="form-control" id="party_size" value="" name="party_size" required placeholder="Party size">
@@ -413,5 +416,17 @@
 <div class="separator wow fadeInDown" data-wow-duration="0.5s"></div>
 
 
-
+<script type = "text/javascript">  
+    $('.timepicker').timepicker({
+    timeFormat: 'h:mm p',
+    interval: 60,
+    minTime: '10',
+    maxTime: '6:00pm',
+    defaultTime: '11',
+    startTime: '10:00',
+    dynamic: false,
+    dropdown: true,
+    scrollbar: true
+});
+ </script>  
 {% endblock %}

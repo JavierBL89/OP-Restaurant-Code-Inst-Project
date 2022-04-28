@@ -5,11 +5,11 @@ from enum import Enum
 # Create your models here.
 
 STATUS = ((0, "draft"), (1, "booked"))
-# PREFIX = [
-#     ('+353'),
-#     ('+34'),
-#     ('+35'),
-# ]
+PREFIX = [
+    ('+353'),
+    ('+34'),
+    ('+35'),
+]
 
 
 class Room(Enum):

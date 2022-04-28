@@ -37,8 +37,10 @@ function validateInputs(event){
   const phoneValue = phone.value.trim()
   const emailValue = email.value.trim()
   const dateValue = date.value.trim()
-  const start_timeValue = document.querySelector("#start_time option").value.trim();
+  const start_timeValue = document.querySelector("#start_time").value.toString();
   const party_sizeValue =party_size.value.trim()
+
+  let time = document.querySelector("#start_time");
 
     if(nameValue === ""){
       setErrorForBlank(fname, "Field cannot be blank");
@@ -69,11 +71,12 @@ function validateInputs(event){
     }else{
       dateValidation(dateValue)
     }
-
-    if(start_timeValue === "Time slot"){
-      console.log("puta");
+    // console.log(start_timeValue );
+    if(start_timeValue === ""){
       start_time.className = "form-control error"
-    }else{
+      document.querySelector(".timeError").innerText = "Please select a valid time slot"
+    }
+    else{
       setSuccessFor(start_time)
     }
 
@@ -118,9 +121,6 @@ function dateValidation(dateValue){
   }else{
     setErrorForDate(date, "Year must be ahead")
   }
-
-  date = date.strptime(date_string, "YYYY-MM-DD HH:MM[:ss[.uuuuuu]][TZ]")
-
 }
 
 /**
@@ -144,20 +144,31 @@ function emailValidation(emailValue){
 function checkLength(input){
 
   const userData =  input.getAttribute("id");
-  const userDataValue = input.value.trim();
+  const nameValue = fname.value.trim()
+  const lastNameValue = surname.value.trim()
+  // const prefixValue = prefix.value.trim()
+  const phoneValue = phone.value.trim()
+  const emailValue = email.value.trim()
+  const dateValue = date.value.trim()
+  const start_timeValue = document.querySelector("#start_time option").value.trim();
+  const party_sizeValue =party_size.value.trim()
 
-  if(userData == "name" && userDataValue.length <= 2){
+  if(userData == "name" && nameValue.length <= 2){
     fname.className = "form-control error"
     document.querySelector(".nameError").innerText = "Must contain min 3 characters"
   }
-  else if(userData == "l_name" && userDataValue.length <= 2){
+  else if(userData == "l_name" && lastNameValue.length <= 2){
     surname.className = "form-control error"
     document.querySelector(".lastNameError").innerText = "Must contain min 3 characters"
   }
-  else if(userData == "phone" && userDataValue.length <=7 || userDataValue.length >=11){
+  else if(userData == "phone" && phoneValue.length <=7 || phoneValue.length >=11){
     phone.className = "form-control error"
     document.querySelector(".phoneError").innerText = "Must have from 8 to 9 numbers"
   }
+  // else if(userData == "start_time"){
+  //   start_time.className = "form-control error"
+  //   document.querySelector(".timeError").innerText = "Please select a valid time slot"
+  // }
   else{
     setSuccessFor(input)
   }

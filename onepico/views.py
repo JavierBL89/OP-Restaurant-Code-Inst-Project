@@ -31,7 +31,9 @@ class HomePage(View):
         date = request.POST.get('date')
         date = datetime.strptime(date, '%Y-%m-%d')
         start_time = request.POST.get('start_time')
-        start_time = datetime.strptime(start_time, '%H:%M')
+        # start_time = datetime.strftime(start_time, '%H:%M')
+        format_data = "%H:%M"
+        start_time = datetime.strptime(start_time, format_data)
         
         people = request.POST.get('party_size')
         comment = request.POST.get('booking_comments')

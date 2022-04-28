@@ -13,7 +13,7 @@ form label{
     border-color: rgb(0, 162, 11);
 }
 
-.nameError, .lastNameError, .phoneError, .emailError, .dateError, .partyError {
+.nameError, .lastNameError, .phoneError, .emailError, .dateError, .partyError, .timeError {
     margin-top: 10px;
     margin-bottom: 10px;
     font-style: oblique;
