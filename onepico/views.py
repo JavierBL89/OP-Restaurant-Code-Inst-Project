@@ -4,6 +4,7 @@ from .models import Booking
 from .forms import BookingForm
 from django.http import HttpResponseRedirect
 from datetime import datetime
+from .reservation import get_table_available
 
 
 
@@ -37,9 +38,10 @@ class HomePage(View):
         
         people = request.POST.get('party_size')
         comment = request.POST.get('booking_comments')
-
-        Booking.objects.create(name=name, surname=surname, people=people, prefix=prefix, phone=phone, date=date, start_time=start_time, email=email, excerpt=comment)
-
+        
+        if get_table_available(people, date, start_time) == True:
+            Booking.objects.create(name=name, surname=surname, people=people, prefix=prefix, phone=phone, date=date, start_time=start_time, email=email, excerpt=comment)
+        
         return render(request, 'index.html')
 
 

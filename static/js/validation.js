@@ -109,12 +109,7 @@ function dateValidation(dateValue){
 
   if(year >= currentYear){
     if(month >= currentMonth){
-      if(day >= currentDay){
-        console.log("PERFECT");
-        setSuccessFor(date)
-      }else{
-        setErrorForDate(date, "Day must be ahead")
-      }
+      setSuccessFor(date)
     }else{
       setErrorForDate(date, "Month must be ahead")
     }
@@ -150,7 +145,7 @@ function checkLength(input){
   const phoneValue = phone.value.trim()
   const emailValue = email.value.trim()
   const dateValue = date.value.trim()
-  const start_timeValue = document.querySelector("#start_time option").value.trim();
+  const start_timeValue = document.querySelector("#start_time").value.trim();
   const party_sizeValue =party_size.value.trim()
 
   if(userData == "name" && nameValue.length <= 2){
