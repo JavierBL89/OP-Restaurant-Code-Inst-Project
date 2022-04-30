@@ -12,15 +12,21 @@ PREFIX = [
 ]
 
 
-class Room(Enum):
-    for_two = 2
-    for_three = 1
-    for_four = 4
+class Restaurant(Enum):
+    table_for_2 = 4
+    table_for_4 = 4
+    table_for_6 = 4
+    opening_time= '12:00'
+    closing_time = '21:30'
+
+    def __str__(self):
+        return f"Table for 2, {self.table_for_2}, table for 4, {self.table_for_4}, table for 6, {self.table_for_6}"
+    
 
 
 class Booking(models.Model):
-    # booking_id = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=30, blank=True)
+    name = models.CharField(max_length=50, blank=True)
+    slug = models.SlugField(max_length=50, unique=False, null=True)
     surname = models.CharField(max_length=30, blank=True)
     people = models.BigIntegerField()
     prefix = models.BigIntegerField()
@@ -32,6 +38,12 @@ class Booking(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.BigIntegerField(choices=STATUS, default=0)
 
-    
     def __str__(self):
         return f'{self.name} {self.surname} {self.people} {self.date} {self.start_time}'
+
+
+class Table(models.Model):
+    table_id = models.ForeignKey(Booking, on_delete=models.CASCADE, related_name="book_table")
+        
+    def __str__(self):
+        return f"Table_id {self.table_id}"
