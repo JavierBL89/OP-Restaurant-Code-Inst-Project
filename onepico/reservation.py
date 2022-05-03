@@ -5,7 +5,7 @@ from .models import Restaurant, Booking, Table
 
 def get_table_available(people, date, start_time):
     
-    for_2 = 0
+    
     for_4= Restaurant.table_for_4
     for_6= Restaurant.table_for_6
     people = people
@@ -15,8 +15,10 @@ def get_table_available(people, date, start_time):
     # check_time = Booking.objects.filter(start_time=booking_time)
     
     # tables_booked= []
-    if people == "2" and for_2 > 0:
+    if people == "2" and for_4 > 0:
         print("BOOKED")
+        Restaurant.table_for_4 -= 1
+        print(Restaurant.table_for_4)
         return True
     
     else:

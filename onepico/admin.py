@@ -1,14 +1,14 @@
 from django.contrib import admin
-from .models import Booking
+from .models import Booking, Lunch, Dinner
 from django_summernote.admin import SummernoteModelAdmin
 
 
 # Register your models here.
-@admin.register(Booking)
+@admin.register(Booking, Lunch, Dinner)
 class  PostAdmin(SummernoteModelAdmin):
     
-    list_display = ('name', 'surname', 'status', 'created_on')
-    list_filter = ('status', 'created_on')
+    list_display = ('name', 'surname', 'created_on')
+    list_filter = ('date', 'created_on', 'name', 'surname')
     search_fields = ['name', 'surname']
     prepopulated_fields = {'slug': ('name',)}
     summernote_fields = ('content')
