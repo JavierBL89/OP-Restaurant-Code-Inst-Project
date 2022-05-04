@@ -9,7 +9,7 @@ let email = document.getElementById("email");
 let date = document.getElementById("date");
 let start_time = document.getElementById("start_time");
 let party_size = document.getElementById("party_size");
-
+const opening_days = [2,3,4,5,6]
 
 /**
 * INITIALIZE FORM VALIDATION
@@ -98,6 +98,7 @@ function validateInputs(event){
  */
 function dateValidation(dateValue){
   console.log(dateValue)
+  const dayOfWeek =  new Date(dateValue).getDay()
   const month = parseInt(dateValue.slice(5,7));
   const day = parseInt(dateValue.slice(8,10));
   const year = parseInt(dateValue.slice(0,4));
@@ -106,10 +107,14 @@ function dateValidation(dateValue){
   const currentYear = currentDate.getFullYear();
   const currentMonth = currentDate.getMonth() + 1;
   const currentDay = currentDate.getDate();
-
+ 
   if(year >= currentYear){
     if(month >= currentMonth){
-      setSuccessFor(date)
+      if(opening_days.includes(dayOfWeek)){
+        setSuccessFor(date)
+      }else{
+        setErrorForDate(date, "Opening days from Tuesday to Saturday included")
+      }
     }else{
       setErrorForDate(date, "Month must be ahead")
     }
