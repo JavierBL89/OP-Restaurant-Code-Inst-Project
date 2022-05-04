@@ -2,12 +2,18 @@ from django.db import models
 
 # Create your models here.
 
-STATUS = ((0, "draft"), (1, "booked"))
-PREFIX = [
-    ('+353'),
-    ('+34'),
-    ('+35'),
-]
+STATUS =  (
+    (0, "pending"),
+    (1, "confirmed"),
+    (2, "rejected"),
+    (3, "expired")
+)
+
+PREFIX = (
+    ('+353','+353'),
+    ('+34', '+34'),
+    ('+35', '+35'),
+    )
 
 class Restaurant():
 
@@ -88,16 +94,4 @@ class Dinner(models.Model):
         return f'{self.name} {self.surname} {self.people} {self.date} {self.start_time}'
 
 
-class Table(models.Model):
-    date = models.DateField('%Y-%m-%d')
-    start_time = models.TimeField('%H:%M')
-    leave_time = models.TimeField('%H:%M')
-    table_number = models.PositiveIntegerField()
-    px = models.BigIntegerField()
-    status = models.BigIntegerField(choices=STATUS, default=0) 
-    table_id = models.ForeignKey(Booking, on_delete=models.CASCADE, related_name="book_table")
-    # number_of_tables = models.PositiveIntegerField()
-
-    def __str__(self):
-        return f"Table_id {self.table_id}, table status, {self.status}, table number,{self.table_number}, px, {self.px}, start time, {self.start_time}, leave table, {self.leave_time}"
 
