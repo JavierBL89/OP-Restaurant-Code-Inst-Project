@@ -31,16 +31,26 @@ def get_table_available(people, requested_date, requested_time, booking_id):
             if people == "2":
                 print("BOOKED")
                 return True
+        
+            else:
+                print("PUTA")
 
+                return False
+        else: 
+            raise Exception("Service hours, Lunch from 12:00pm to 14:30, Dinner, from 18:00pm to 21:30pm")
 
-# def check_lunch_time(request):
+    else: 
+        raise Exception("Day of the week do not coincidence with opening days")
     
-#     for value in request.values():
-#        people_requested = value['people']
-#        if people_requested == 1 or people_requested == 2:
 
-#            small_available = Lunch.objects.filter(people=)
-#            print("somos 2")
+def check_lunch_time(request):
+    
+    for value in request.values():
+       people_requested = value['people']
+       if people_requested == 1 or people_requested == 2:
+
+        #    small_available = Lunch.objects.filter(people=)
+           print("somos 2")
 
 
 

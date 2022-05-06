@@ -55,7 +55,7 @@ class TableLunch(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f'{self.customer_name} {self.table_id} {self.date} {self.start_time} {self.created_on}'
+        return f'{self.customer_name} {self.table_id} {self.date} {self.start_time} {self.created_on} {self.table_number} {self.table_max_people}'
 
 
 class TableDinner(models.Model):
@@ -72,5 +72,5 @@ class TableDinner(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f'{self.customer_name} {self.table_id} {self.date} {self.start_time} {self.created_on}'
+        return f'{self.customer_name} {self.table_id} {self.date} {self.start_time} {self.created_on} {self.table_number} {self.table_max_people}'
 
