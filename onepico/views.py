@@ -29,18 +29,17 @@ class HomePage(View):
         phone = request.POST.get('phone')
         email = request.POST.get('email')
         date = request.POST.get('date')
-        date = datetime.strptime(date, '%Y-%m-%d')
+        requested_date = datetime.strptime(date, '%Y-%m-%d')
         start_time = request.POST.get('start_time')
-        # start_time = datetime.strftime(start_time, '%H:%M')
         format_data = "%H:%M"
-        start_time = datetime.strptime(start_time, format_data)
+        requested_time = datetime.strptime(start_time, format_data)
         people = request.POST.get('party_size')
         comment = request.POST.get('booking_comments')
 
-        new_booking = Booking(name=name, surname=surname, people=people, prefix=prefix, phone=phone, date=date, start_time=start_time, email=email, excerpt=comment)
+        new_booking = Booking(name=name, surname=surname, people=people, prefix=prefix, phone=phone, date=requested_date, start_time=requested_time, email=email, excerpt=comment)
         new_booking.save()
         booking_id = new_booking.id
-        if get_table_available(people, date, start_time, booking_id) == True:
+        if get_table_available(people, requested_date, requested_time, booking_id) == True:
             print("BOOK DONE")
         
         return render(request, 'index.html')
