@@ -20,7 +20,8 @@ class Restaurant():
     opening_days = ["Tuesday","Wednesday","Thursday","Friday","Saturday"]
     opening_time= '12:00'
     closing_time = '21:30'
-
+    
+    small_table = [{'table': 1, 'max_px': 2}, {'table': 2, 'max_px': 2}, {'table': 3, 'max_px': 2},{'table': 4, 'max_px': 4}]
 
 class Booking(models.Model):
     name = models.CharField(max_length=50, blank=True)

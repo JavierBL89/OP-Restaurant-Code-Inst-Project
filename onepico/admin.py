@@ -17,7 +17,7 @@ class  PostAdmin(SummernoteModelAdmin):
 @admin.register(TableLunch, TableDinner)
 class  PostTableLunchAdmin(SummernoteModelAdmin):
     
-    list_display = ('customer_name', 'booked_for', 'table_max_people', 'start_time','date', 'id')
+    list_display = ('customer_name', 'booked_for', 'table_max_people', 'start_time','date', 'id', 'table_number')
     list_filter = ('date', 'created_on', 'customer_name', 'table_max_people')
     search_fields = ['customer_name', 'table_max_people']
     summernote_fields = ('content')
