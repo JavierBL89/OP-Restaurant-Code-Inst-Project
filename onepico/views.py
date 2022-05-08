@@ -39,7 +39,7 @@ class HomePage(View):
         new_booking = Booking(name=name, surname=surname, people=people, prefix=prefix, phone=phone, date=requested_date, start_time=requested_time, email=email, excerpt=comment)
         new_booking.save()
         booking_id = new_booking.id
-        if get_table_available(people, requested_date, requested_time, booking_id) == True:
+        if get_table_available(people, requested_date, requested_time, booking_id) == False:
             print("BOOK DONE")
         
         return render(request, 'index.html')
