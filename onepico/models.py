@@ -22,7 +22,8 @@ class Restaurant():
     closing_time = '21:30'
     
     small_table = [{'table': 1, 'max_px': 2}, {'table': 2, 'max_px': 2}, {'table': 3, 'max_px': 2},{'table': 4, 'max_px': 4}]
-
+    medium_table = [{'table': 5, 'max_px': 4}, {'table': 6, 'max_px': 4}]
+ 
 class Booking(models.Model):
     name = models.CharField(max_length=50, blank=True)
     slug = models.SlugField(max_length=50, unique=False, null=True)
