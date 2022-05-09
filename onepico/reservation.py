@@ -61,69 +61,65 @@ def check_lunch_time(people_requested, booking_id, customer_name, date, people, 
 
 def check_small_tables_available(people_requested, booking_id, customer_name, date, people, start_time): 
     small_tables_booked_list = []
-    # set_tables_booked = tables_booked
     while True:
         random_table_object = random.choice(Restaurant.small_table)
-        table_number= random_table_object.get('table')
+        table_number = random_table_object.get('table')
         table_max_people= random_table_object.get('max_px')
         
         tables_booked_requested_date = TableLunch.objects.filter(date=date).all()
+        # loop through tables booked for requested day and get table number and start time
         for table in tables_booked_requested_date.values():
             table_number_booked = table.get('table_number')
-            # table_booked_start_time = table.get("start_time")
-            print(table_number_booked, "eeeeeeeeee")
-            print("Print one table number for every search and push it into tables booked", table_number_booked) 
-            if table_number_booked not in small_tables_booked_list:
-                small_tables_booked_list.append(table_number_booked) 
-                # print("print set tables in db", set_tables_booked)
-                print("List tables in db", small_tables_booked_list)
-
-        # print(set(tables_booked)) 
-            # tables_booked = [table]  
-        print("print tables in list", small_tables_booked_list)
-
+            booked_tables_start_time_str = table.get('start_time').strftime("%H:%M")
+            format_data = "%H:%M"
+            booked_tables_start_time_str = booked_tables_start_time_str 
+            service_finishing_time = "14:30"
+            print("Print one table number for every loop and push it into tables booked", table_number_booked, "table start time", table.get('start_time') ) 
+            if booked_tables_start_time_str <= service_finishing_time:
+                if table_number_booked <= 4 and table_number_booked not in small_tables_booked_list:
+                    small_tables_booked_list.append(table_number_booked) 
+                    print("List small tables booked", small_tables_booked_list)
+              
         if table_number in small_tables_booked_list and len(small_tables_booked_list) < 4:
             print("Table number" ,table_number,  "already booked")
             continue 
-
         elif len(small_tables_booked_list) >= 4:
             print("tables length", len(small_tables_booked_list))
             print("tables booked", small_tables_booked_list)
-            print("FULLY BOOKED")
-            return False
-
+            print("SMALL TABLES FULLY BOOKED")
+            if check_medium_tables_available(people_requested, booking_id, customer_name, date, people, start_time):
+                return False
         elif table_number not in small_tables_booked_list:
-        #    tables_booked.append(table_number) 
            new_table = TableLunch.objects.create(table_id=booking_id,table_number=table_number,booked_for=people, table_max_people=table_max_people,table_status='confirmed',customer_name=customer_name,date=date,start_time=start_time )
            small_tables_booked_list.append(table_number)
-           #   print(new_table)
            print("Table number" ,table_number, " now booked")
            print("tables length", len(small_tables_booked_list))
            print("print tables in list", small_tables_booked_list)
-
            print("tables booked", small_tables_booked_list)
            return True
-        #    break
 
 
 def check_medium_tables_available(people_requested, booking_id, customer_name, date, people, start_time):
     medium_tables_booked_list = []
-    # set_tables_booked = tables_booked
     while True:
         random_table_object = random.choice(Restaurant.medium_table)
         table_number= random_table_object.get('table')
         table_max_people= random_table_object.get('max_px')
-        print("putaaa")
 
         tables_booked_requested_date = TableLunch.objects.filter(date=date).all()
+        # loop through tables booked for requested day and get table number and start time
         for table in tables_booked_requested_date.values():
             table = table.get('table_number')
             print("Print one table number for every search and push it into tables booked", table) 
-            if table >= 5 and table not in medium_tables_booked_list:
-                medium_tables_booked_list.append(table)
-                print("List tables in db", medium_tables_booked_list)
-
-        print("print tables in list", medium_tables_booked_list)
+            booked_tables_start_time_str = table.get('start_time').strftime("%H:%M")
+            format_data = "%H:%M"
+            booked_tables_start_time_str = booked_tables_start_time_str 
+            service_finishing_time = "14:30"
+            print("Print one table number for every loop and push it into tables booked", table_number_booked, "table start time", table.get('start_time') ) 
+            if booked_tables_start_time_str <= service_finishing_time:
+                if table_number_booked >= 5 or table_number_booked <= 6 and table_number_booked not in small_tables_booked_list:
+                    medium_tables_booked_list.append(table_number_booked) 
+                    print("List medium tables booked", medium_tables_booked_list)
 
         if table_number in medium_tables_booked_list and len(medium_tables_booked_list) < 2:
             print("Table number" ,table_number,  "already booked")
@@ -144,27 +140,29 @@ def check_medium_tables_available(people_requested, booking_id, customer_name, d
 
            print("tables booked", medium_tables_booked_list)
            return True
-        #    break
 
 
 def check_large_tables_available(people_requested, booking_id, customer_name, date, people, start_time):
     large_tables_booked_list = []
-    # set_tables_booked = tables_booked
+
     while True:
         random_table_object = random.choice(Restaurant.large_table)
         table_number= random_table_object.get('table')
         table_max_people= random_table_object.get('max_px')
-        print("putaaa")
 
         tables_booked_requested_date = TableLunch.objects.filter(date=date).all()
         for table in tables_booked_requested_date.values():
             table = table.get('table_number')
-            print("Print one table number for every search and push it into tables booked", table) 
-            if table >= 7 and table not in large_tables_booked_list:
-                large_tables_booked_list.append(table)
-                print("List tables in db", large_tables_booked_list)
-
-        print("print tables in list tables booked", large_tables_booked_list)
+            booked_tables_start_time_str = table.get('start_time').strftime("%H:%M")
+            format_data = "%H:%M"
+            booked_tables_start_time_str = booked_tables_start_time_str 
+            service_finishing_time = "14:30"
+            print("Print one table number for every loop and push it into tables booked", table_number_booked, "table start time", table.get('start_time') ) 
+            if booked_tables_start_time_str <= service_finishing_time:
+                if table_number_booked >= 7 or table_number_booked <= 8 and table_number_booked not in large_tables_booked_list:
+                    small_tables_booked_list.append(table_number_booked) 
+                    print("List large tables booked", large_tables_booked_list)
+              
 
         if table_number in large_tables_booked_list and len(large_tables_booked_list) < 2:
             print("Table number" ,table_number,  "already booked")
