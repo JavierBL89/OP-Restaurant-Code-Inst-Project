@@ -23,6 +23,7 @@ class Restaurant():
     
     small_table = [{'table': 1, 'max_px': 2}, {'table': 2, 'max_px': 2}, {'table': 3, 'max_px': 2},{'table': 4, 'max_px': 4}]
     medium_table = [{'table': 5, 'max_px': 4}, {'table': 6, 'max_px': 4}]
+    large_table = [{'table': 7, 'max_px': 7}, {'table': 8, 'max_px': 7}]
  
 class Booking(models.Model):
     name = models.CharField(max_length=50, blank=True)
