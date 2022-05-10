@@ -9,10 +9,37 @@ def check_double_booking(people, requested_date, requested_time, phone):
 
     if check_double_booking_date(people, requested_date, requested_time, phone) == False:
         return False
+    elif check_double_booking_week(people, requested_date, requested_time, phone) == False:
+        return False
     else:
+         
         return True
 
     
+
+def check_double_booking_week(people, requested_date, requested_time, phone):
+
+    week_number_requested_date_str = requested_date.strftime('%U')
+    customer_records = Booking.objects.filter(phone=phone).all()
+    print("lenght customer records", len(customer_records))
+    if len(customer_records) >= 1:
+        for customer_record in customer_records.values():
+            name = customer_record['name']
+            surname = customer_record['surname']
+            phone = customer_record['phone']
+            customer_record_date_str = customer_record['date'].strftime('%Y-%m-%d')
+            customer_record_start_time_str = customer_record['start_time'].strftime('%H:%M') 
+
+            week_number_record_str = customer_record['date'].strftime('%U')
+
+        if  week_number_record_str == week_number_requested_date_str:           
+            print("**** There seems to be another booking with same details for the very week ****")
+            print("**** Booking details:")    
+            print("****" + " " + name + " " + surname + ", date" + " " +  customer_record_date_str + " " + "at" + 
+            " " + customer_record_start_time_str + ", contact number" + str(phone) + " " + "****")
+            return False
+        else:
+            return True
 
 
 def check_double_booking_date(people, requested_date, requested_time, phone):
