@@ -3,6 +3,43 @@ import time
 from .models import Restaurant, Booking, TableLunch, TableDinner
 import random
 
+def check_double_booking(people, requested_date, requested_time, phone):
+    
+    # request = Booking.objects.filter(id=booking_id)
+
+    if check_double_booking_date(people, requested_date, requested_time, phone) == False:
+        return False
+    else:
+        return True
+
+    
+
+
+def check_double_booking_date(people, requested_date, requested_time, phone):
+
+    customer_records = Booking.objects.filter(phone=phone).all()
+    print("lenght customer records", len(customer_records))
+    if len(customer_records) >= 1:
+        customer_records_requested_date = Booking.objects.filter(phone=phone,date=requested_date)
+        print(customer_records_requested_date)
+        for value in customer_records_requested_date.values():
+            name = value['name']
+            surname = value['surname']
+            phone = value['phone']
+            customer_record_date_str = value['date'].strftime('%Y-%m-%d')
+            customer_record_start_time_str = value['start_time'].strftime('%H:%M')
+            requested_date_str = requested_date.strftime( '%Y-%m-%d') 
+            week_number_customer_record_str = value['date'].strftime('%U')
+            week_number_requested_date_str = requested_date.strftime('%U')
+            if customer_record_date_str == requested_date_str:
+                print("**** There seems to be another booking with same details for the same date ****")
+                print("**** Booking details:")    
+                print("****" + " " + name + " " + surname + ", date" + " " +  customer_record_date_str + " " + "at" + 
+                " " + customer_record_start_time_str + ", contact number" + " " + str(phone) + " " + "****") 
+                return False
+            else:
+                return True
+                
 
 def get_table_available(people, requested_date, requested_time, booking_id):
     """
@@ -23,7 +60,7 @@ def get_table_available(people, requested_date, requested_time, booking_id):
     people = people
     requested_date_str = requested_date_str
     requested_time_str = requested_time_str
-    
+
     if date_name_day in Restaurant.opening_days:
         request = Booking.objects.filter(id=booking_id)
         # loop through the requested booking objectand get values
@@ -34,7 +71,7 @@ def get_table_available(people, requested_date, requested_time, booking_id):
            date = value['date']
            people= value['people']
            start_time = value['start_time']
-
+   
         if requested_time_str > "12:00" and requested_time_str < "14:30":
             if check_lunch_time(people_requested, booking_id, customer_name, date, people, start_time):
                 print("Room fully booked at lunch time for the date requested, try at another date")
