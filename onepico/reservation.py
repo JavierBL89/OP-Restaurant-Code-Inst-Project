@@ -288,7 +288,44 @@ def check_medium_tables_available_dinner(people_requested, booking_id, customer_
            active = False
 
 
+def check_large_tables_available_lunch(people_requested, booking_id, customer_name, date, people, start_time):
+    large_tables_booked_list = []
+    active = True
+    while active:
+        random_table_object = random.choice(Restaurant.large_table)
+        table_number= random_table_object.get('table')
+        table_max_people= random_table_object.get('max_px')
 
+        tables_booked_requested_date = TableLunch.objects.filter(date=date).all()
+        for table in tables_booked_requested_date.values():
+            table_number_booked = table.get('table_number')
+            booked_tables_start_time_str = table.get('start_time').strftime("%H:%M")
+            format_data = "%H:%M"
+            booked_tables_start_time_str = booked_tables_start_time_str 
+            service_starting_time = "18:00"
+            print("Print one table number(dinner time) for every loop and push it into tables booked", table_number_booked, "table start time", table.get('start_time') ) 
+            if table_number_booked >= 7 and table_number_booked <= 8 :
+                if booked_tables_start_time_str >= service_starting_time and table_number_booked not in large_tables_booked_list:
+                    large_tables_booked_list.append(table_number_booked) 
+                    print("Large tables booked list(dinner time)", large_tables_booked_list)
+              
+        if table_number in large_tables_booked_list and len(large_tables_booked_list) < 2:
+            print("Table number" ,table_number,  "already booked")
+            continue 
+
+        elif len(large_tables_booked_list) >= 2:
+            print("tables length", len(large_tables_booked_list))
+            print("List large tables booked", large_tables_booked_list)
+            print("LARGE TABLES FULLY BOOKED AT DINNER TIME")
+            active = False
+
+        elif table_number not in large_tables_booked_list:
+           new_table = TableLunch.objects.create(table_id=booking_id,table_number=table_number,booked_for=people, table_max_people=table_max_people,table_status='confirmed',customer_name=customer_name,date=date,start_time=start_time )
+           large_tables_booked_list.append(table_number)
+           print("Table number" ,table_number, " now booked")
+           print("large tables list length", len(large_tables_booked_list))
+           print("Large tables booked(dinner time)", large_tables_booked_list)
+           active = False
 
 
 
