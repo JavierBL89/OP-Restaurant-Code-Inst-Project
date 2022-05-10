@@ -16,7 +16,9 @@ PREFIX = (
     )
 
 class Restaurant():
-             
+    """
+    Class to define restaurant
+    """
     opening_days = ["Tuesday","Wednesday","Thursday","Friday","Saturday"]
     opening_time= '12:00'
     closing_time = '21:30'
@@ -26,6 +28,9 @@ class Restaurant():
     large_table = [{'table': 7, 'max_px': 7}, {'table': 8, 'max_px': 7}]
  
 class Booking(models.Model):
+    """
+    Model to define booking data collection
+    """
     name = models.CharField(max_length=50, blank=True)
     slug = models.SlugField(max_length=50, unique=False, null=True)
     surname = models.CharField(max_length=30, blank=True)
@@ -45,6 +50,9 @@ class Booking(models.Model):
 
 
 class TableLunch(models.Model):
+    """
+    Model to define table booked data at lunch time collection
+    """
 
     table_id = models.ForeignKey(Booking, on_delete=models.CASCADE,
                              related_name="book_table_lunch")
@@ -62,7 +70,9 @@ class TableLunch(models.Model):
 
 
 class TableDinner(models.Model):
-
+    """
+    Model to define table booked data at dinner time collection
+    """
     table_id = models.ForeignKey(Booking, on_delete=models.CASCADE,
                              related_name="book_table_dinner")
     table_number = models.IntegerField(default=0)

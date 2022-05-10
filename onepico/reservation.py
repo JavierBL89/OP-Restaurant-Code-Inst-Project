@@ -5,6 +5,11 @@ import random
 
 
 def get_table_available(people, requested_date, requested_time, booking_id):
+    """
+    Function to check restaurant availability
+    to make sure requested date matches opening days
+    and check requested booking time
+    """
     minutes_slot = 120
     delta = timedelta(seconds=60*minutes_slot)
     slotime = requested_time + delta
@@ -52,7 +57,11 @@ def get_table_available(people, requested_date, requested_time, booking_id):
     
 
 def check_lunch_time(people_requested, booking_id, customer_name, date, people, start_time):
-    
+    """
+    Function to check party size and call 
+    functions  according to it, to look for
+    best suitable tables at lunch time
+    """
     # get Booking instance to pass it into the new_table object as table_id value
     booking_id = Booking.objects.get(id=booking_id)
      
@@ -65,7 +74,11 @@ def check_lunch_time(people_requested, booking_id, customer_name, date, people, 
                                        
 
 def check_dinner_time(people_requested, booking_id, customer_name, date, people, start_time):
-  
+    """
+    Function to check party size and call 
+    functions according to it, to look for
+    best suitable tables at dinner time
+    """
     # get Booking instance to pass it into the new_table object as table_id value
     booking_id = Booking.objects.get(id=booking_id)
 
@@ -78,7 +91,11 @@ def check_dinner_time(people_requested, booking_id, customer_name, date, people,
 
 
 def check_small_tables_available_lunch(people_requested, booking_id, customer_name, date, people, start_time): 
-
+    """
+    Function to check small tables 
+    available at lunch time.
+    If no small tables, will look for medium tables available
+    """
     active = True
     small_tables_booked_list = []
     while active:
@@ -119,7 +136,11 @@ def check_small_tables_available_lunch(people_requested, booking_id, customer_na
 
 
 def check_medium_tables_available_lunch(people_requested, booking_id, customer_name, date, people, start_time):
-
+    """
+    Function to check medium tables 
+    available at lunch time.
+    If no medium tables, will look for large tables available
+    """
     medium_tables_booked_list = []
     active = True
     while active:
@@ -163,6 +184,11 @@ def check_medium_tables_available_lunch(people_requested, booking_id, customer_n
 
 
 def check_large_tables_available_lunch(people_requested, booking_id, customer_name, date, people, start_time):
+    """
+    Function to check large tables 
+    available at lunch time.
+    If no large tables, will show a message of no tables available
+    """
     large_tables_booked_list = []
     active = True
     while active:
@@ -203,7 +229,11 @@ def check_large_tables_available_lunch(people_requested, booking_id, customer_na
 
 
 def check_small_tables_available_dinner(people_requested, booking_id, customer_name, date, people, start_time):
-
+    """
+    Function to check small tables 
+    available at dinner time.
+    If no small tables, will look for medium tables available
+    """
     active = True
     small_tables_booked_list = []
     while active:
@@ -245,7 +275,11 @@ def check_small_tables_available_dinner(people_requested, booking_id, customer_n
            active = False
 
 def check_medium_tables_available_dinner(people_requested, booking_id, customer_name, date, people, start_time):
-
+    """
+    Function to check medium tables 
+    available at lunch time.
+    If no medium tables, will look for large tables available
+    """
     medium_tables_booked_list = []
     active = True
     while active:
@@ -289,6 +323,11 @@ def check_medium_tables_available_dinner(people_requested, booking_id, customer_
 
 
 def check_large_tables_available_lunch(people_requested, booking_id, customer_name, date, people, start_time):
+    """
+    Function to check large tables 
+    available at dinner time.
+    If no large tables, will show a message of not table available
+    """
     large_tables_booked_list = []
     active = True
     while active:
