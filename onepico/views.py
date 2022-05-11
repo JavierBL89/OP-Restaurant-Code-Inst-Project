@@ -4,7 +4,7 @@ from .models import Booking
 from .forms import BookingForm
 from django.http import HttpResponseRedirect
 from datetime import datetime
-from .reservation import check_double_booking, get_table_available
+from .reservation import  get_table_available,check_double_booking_date,check_double_booking_week
 
 
 
@@ -37,15 +37,19 @@ class HomePage(View):
         comment = request.POST.get('booking_comments')
 
         
-        if check_double_booking(people, requested_date, requested_time, phone) == False:
+        if check_double_booking_date(people, requested_date, requested_time, phone) == False:
             print("BOOKING CANCELED")
+        elif check_double_booking_week(people, requested_date, requested_time, phone) == False:
+            print("BOOKING CANCELED PUTA")
         else:
             new_booking = Booking(name=name, surname=surname, people=people, prefix=prefix, phone=phone, date=requested_date, start_time=requested_time, email=email, excerpt=comment)
             new_booking.save()
             booking_id = new_booking.id
-            if get_table_available(people, requested_date, requested_time, booking_id) == False:
-
+            if get_table_available(people, requested_date, requested_time, booking_id) == False:                
                 print("BOOKED DONE")
+            else:
+                print("FULLY BOOKED")
+
         
         return render(request, 'index.html')
 
