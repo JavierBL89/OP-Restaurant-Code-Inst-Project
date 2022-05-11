@@ -35,7 +35,7 @@ div li{
 }
 
 div .bg-image {
-    background-image: url("https://res.cloudinary.com/dthlibbj7/image/upload/o_78/v1649152444/room_dvaada.jpg");
+    background-image: url("https://res.cloudinary.com/dthlibbj7/image/upload/v1652280638/oriopoxo_xv3vg5.jpg");
     background-size: cover;
     background-repeat: no-repeat;
  }
@@ -259,33 +259,8 @@ nav .separator{
     color: #727272;
 }
 
-/****** ANIATIONS */
+/****** ANIMATIONS */
 
-.bg-image .bg-film{
-    width: 100%;
-    height: inherit;
-    position: absolute;
-    right:100%;
-    background-color: rgb(53, 53, 53);
-    opacity: 0.7;
-    animation-name: slide;
-    animation-duration: 3s;
-    animation-delay: 1s;
-    animation-fill-mode: forwards;
-}
-
-@keyframes slide {
-    from{
-        right: 100%;
-        width: 100%
-        }
-    to{
-        right: 0;
-        width:0;
-        display: none;
-    }
-    
-} 
 
 nav .nav-item a:hover{
 animation-name: border;
