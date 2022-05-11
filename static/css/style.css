@@ -174,7 +174,7 @@ button[type="submit"]:focus{
 }
 
 .awards p{
-    margin-bottom: 100px;
+    margin-bottom: 70px;
     color: #4c4b4b;
     }
 
@@ -334,14 +334,14 @@ nav .logo p {
     font-family: 'Beau Rivage', cursive;
     font-size: 1.5rem;
     color: #838383;
-    animation-name: flash;
+    animation-name: text-flash;
     animation-duration: 3s;
     animation-delay: 3s;
     -webkit-animation-fill-mode: forwards;
 }
 
 
-@keyframes flash {
+@keyframes text-flash {
 
     from{
         color: #838383;
@@ -383,8 +383,9 @@ nav .logo p {
     font-family: 'Roboto Slab', serif;
     font-size: 1.4rem;
     font-weight: 300;
-    margin-top: 110px;
-    margin-bottom: 130px;
+    margin: 80px auto 130px;
+    /* margin-top: 110px;
+    margin-bottom: 130px; */
 
 }
 
@@ -433,20 +434,28 @@ div .bg-image {
 
 div .bookings {
     width: 90%;
-    height: 510px;
-    margin-top: 40px;
-    padding: 7% 6%;
+    height: 420px;
+    padding: 4% 5%;
+    margin-bottom: 500px;
+}
+
+.bookings h1{
+    margin: 60px auto 80px;
 }
 
 .reservations-button {
     border: solid 1px black;
-    width: inherit;
+    width: 90%;
     margin: 20px auto;
     padding-top: 7px;
 }
 
+button[type="submit"]{
+    width: 80%;
+}
+
 .reservations-button h5{
-    font-size: 0.850rem;
+    font-size: 0.750rem;
     letter-spacing: 2px;
 
 }
@@ -471,7 +480,7 @@ div .bookings {
 /*----- AWARDS SECTION  ----- */
 
 .about {
-    margin-top: 550px;
+    margin-top: 40px;
 }
 
 .michelin-img-box img{
@@ -492,11 +501,15 @@ div .bookings {
     margin-left: 20px;
 }
 
+
+.awards p {
+    margin-bottom: 50px;
+}
 /********************** WORKTEAM SECTION */
 
 #workteam {
     margin-top: 50px;
-    margin-bottom: 50px;
+    margin-bottom: 100px;
     padding-left: 10%;
     padding-right: 10%;
 }
@@ -522,15 +535,10 @@ div .bookings {
 }
 
 /***********  GALLERY */
-#gallery{
-    margin-top: 150px;
-    margin-bottom: 50px;
-}
-
 
 .media-container{
-    margin-bottom: 150px;
-    margin-top: 100px;
+    margin-bottom: 40px;
+    /* margin-top: 100px; */
 }
 
 .carousel{
@@ -555,15 +563,13 @@ margin: 0 auto;
   /************** MENUS */
 
   #menus{
-    margin-top: 150px;
     margin-bottom: 50px;
     padding-right: 18%;
     padding-left: 18%;
 }
 
 .menus-container {
-    margin-bottom: 200px;
-    margin-top: 140px;
+    margin-bottom: 100px;
 }
 
 .menus-container .row div{
@@ -644,8 +650,8 @@ div .icons{
 .headding h1{
     font-family: 'Roboto Slab', serif;
     font-weight: 300;
-    margin-bottom: 250px;
-    margin-top: 120px;
+    margin-bottom: 180px;
+    margin-top: 70px;
 }
 
 
@@ -691,12 +697,16 @@ div .icons{
         height: 500px;
      }
     
-    div .bookings {
+     div .bookings {
         width: 70%;
         height: 420px;
-        margin-top: 50px;
         padding: 4% 5%;
+        margin-bottom: 450px;
     }
+
+    .bookings h1{      
+        margin: 80px auto 80px;
+        }    
 
     .reservations-button {
         border: solid 1px black;
@@ -729,7 +739,7 @@ div .icons{
     }
     
     .container-awards, .container-workteam{
-        padding: 10% 15%;
+        padding: 5% 15%;
 
 }
 
@@ -757,7 +767,7 @@ div .icons{
 
 #workteam {
     /* margin-top: 50px; */
-    margin-bottom: 50px;
+    margin-bottom: 90px;
     padding-left: 15px;
     padding-right: 15px;
 }
@@ -781,7 +791,7 @@ div .icons{
 }
 
 .container-workteam .row{
-    margin-top: 120px;
+    margin-top: 80px;
 }
 
 .team-img-box{
@@ -791,13 +801,12 @@ div .icons{
 
 /***********  GALLERY */
 #gallery{
-    /* margin-top: 150px; */
+    margin-top: 120px;
     margin-bottom: 50px;
 }
 
 .media-container{
-    margin-bottom: 200px;
-    padding-top: 10%;
+    margin-bottom: 160px;
     /* margin-top: 190px; */
 }
 
@@ -823,14 +832,14 @@ margin: 0 auto;
   /************** MENUS */
 
 #menus{
-    /* margin-top: 150px; */
+    margin-top: 120px;
     margin-bottom: 50px;
     padding-right: 18%;
     padding-left: 18%;
 }
 
 .menus-container {
-    margin-bottom: 240px;
+    margin-bottom: 200px;
     padding: auto 15%;
     /* margin-top: 190px; */
 }
@@ -922,7 +931,7 @@ footer .container-fluid{
     }
 
     .bookings h1{
-        margin-bottom: 80px;
+        margin: 40px auto 80px;
     }
 
     .reservations-button h5{
@@ -959,12 +968,12 @@ footer .container-fluid{
         padding-left: 18%;
     }
     
-    .container-awards, .container-workteam{
-        padding: 10% 15%;
+.container-awards, .container-workteam{
+        padding: 5% 15%;
 }
 
 .container-awards h1{
-    margin-top: 100px;
+    margin-top: 250px;
 }
 
 .michelin-img-box{
@@ -984,8 +993,8 @@ footer .container-fluid{
 }
 
 .media-container{
-    margin-bottom: 300px;
-    margin-top: 190px;
+    margin-bottom: 250px;
+    margin-top: 100px;
 
 }
 
@@ -1020,7 +1029,7 @@ margin: 0 auto;
 /********************** WORKTEAM SECTION */
 
 #workteam {
-    margin-bottom: 50px;
+    margin-bottom: 150px;
     padding-left: 15px;
     padding-right: 15px;
 }
@@ -1036,7 +1045,7 @@ margin: 0 auto;
 }
 
 .container-workteam .row{
-    margin-top: 190px;
+    margin-top: 120px;
 }
 
 .container-workteam p{
@@ -1046,7 +1055,7 @@ margin: 0 auto;
 }
 
 .container-workteam .headding h1{
-    margin-bottom: 210px;
+    margin-bottom: 180px;
 
 }
 /*********** MENUS */
@@ -1058,8 +1067,8 @@ margin: 0 auto;
 }
 
 .menus-container {
-    margin-bottom: 300px;
-    margin-top: 190px;
+    margin-bottom: 250px;
+    margin-top: 100px;
 }
 
      /********************* FOOTER *****************/
