@@ -245,6 +245,7 @@ button[type="submit"]:focus{
 
  }
 
+
 /*************** HEADER */
 
 .navbar {
@@ -281,6 +282,49 @@ nav .separator{
     font-size: 2.3rem;
     color: #727272;
 }
+
+
+/****** FOOTER */
+
+footer a{
+text-decoration: none;
+position: relative;
+padding: 0.2em 0;
+text-align: center;
+color: inherit;
+}
+
+footer a:hover{
+    color:#a8a8a8
+}
+
+footer .footer-link:hover {
+    color: hsl(0, 0%, 35%);
+  }
+
+/* Fade in */
+.footer-link::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 65px;
+  width: 100%;
+  height: 0.075em;
+  background-color: hsl(0, 0%, 35%);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.footer-link:hover::before {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.copy-right{
+    margin-top: 100px;
+    font-size: 14px;
+}
+
 
 /****** ANIMATIONS */
 
@@ -619,15 +663,14 @@ div .icons{
     display: inline-flex;
     margin-top: 40px;
     justify-content: space-around;
-    padding-left: 60px;
-    padding-right: 60px;
+    padding-left: 90px;
+    padding-right: 90px;
 }
 
 .copy-right{
-    margin-top: 30px;
+    margin-top: 100px;
     font-size: 14px;
 }
-
 }
 
 @media only screen and (min-width:640px) and (max-width:950px){
@@ -693,8 +736,6 @@ div .icons{
              }
     /******************** RESERVATIONS SECTION ************/
 
-
-    
      div .bookings {
         width: 70%;
         padding: 4% 5%;
@@ -735,7 +776,7 @@ div .icons{
         /* margin-top: 50px; */
     }
     
-    .container-awards, .container-workteam{
+    .container-about, .container-workteam{
         padding: 5% 15%;
 
 }
@@ -838,19 +879,16 @@ margin: 0 auto;
 }
 
 /****** FOOTER*/
+
+
 div .icons{
     display: inline-flex;
     margin-top: 60px;
     justify-content: space-around;
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: 200px;
+    padding-right: 200px;
 }
 
-
-.copy-right{
-    margin-top: 50px;
-    font-size: 15px;
-}
 
 footer .container-fluid{
     margin-top: 60px;
@@ -958,13 +996,13 @@ footer .container-fluid{
 
     /*************************** AWARDS SECTION */
 
-    .container-awards .about {
+    .container-about .about {
         /* margin-top: 50px; */
         padding-right: 18%;
         padding-left: 18%;
     }
     
-.container-awards, .container-workteam{
+.container-about, .container-workteam{
         padding: 5% 15%;
 }
 
@@ -1068,6 +1106,8 @@ margin: 0 auto;
 }
 
      /********************* FOOTER *****************/
+
+  
     footer .container-fluid{
         margin-top: 100px;
         padding: 0 12%;
@@ -1081,6 +1121,9 @@ margin: 0 auto;
         margin-top: 20px;
     }
 
+    .contact-wraper{
+        margin-top: 80px;
+    }
     .contact-container i{
         position: relative;
         top: 7px;
@@ -1102,11 +1145,13 @@ margin: 0 auto;
         margin-top: 20px;
     }
 
-    .copy-right{
-        margin-top: 70px;
-        font-size: 14px;
-    }
-
+    #map {
+        margin: 20px 75px;
+        height: 200px;
+        /* The height is 400 pixels */
+        width: 70%;
+        /* The width is the width of the web page */
+      }
 }
 
 

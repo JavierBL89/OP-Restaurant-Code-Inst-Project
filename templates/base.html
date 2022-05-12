@@ -88,42 +88,42 @@
   <footer>
     <div class="container-fluid wow fadeInDown" data-wow-duration="1s">
         <div class="row text-center">
-          <div class="col-lg-4 d-none d-lg-block text-start contact-container">
-            <div class="phone d-inline-flex"><i class="fa-solid fa-phone phone-icon fa-sm"></i> <p>+356248856</p></div>
-            <div class="email d-inline-flex"><i class="fa-solid fa-envelope email-icon"></i> <p>oryopochodublin@venue.com</p></div>
-            <div class="house d-inline-flex"><i class="fa-solid fa-house-chimney house-icon"></i> 
-            <div class="address">
-                <p>13. Marrowbone Lane</p>
-                <p>Dublin 8</p>
+            <div class="col-sm-3 d-lg-none"></div>
+            <div class="col-lg-4 col-sm-3">
+              <a href="#about"><li class="footer-link">Style</li></a>
+              <a href="#gallery"><li class="footer-link">Gallery</li></a>
             </div>
-             
-            </div>
-        </div>
-
-            <div class="col-lg-4 col-md-12 text-center">
-              <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 no-gutters">
-                  <li class="footer-link">Style</li>
-                  <li class="footer-link">Gallery</li>
-                </div>
-                <div class="col-lg-12 col-md-12 col-sm-12 no-gutters">
-                  <li class="footer-link">Menus</li>
-                <li class="footer-link">Bookings</li>
-                </div>
-              </div>
-                
-                
-            </div>
+            <div class="col-lg-4 col-sm-3 ">
+              <a href="#menus"><li class="footer-link" >Menus</li></a>
+              <a href="#reservations"><li class="footer-link">Bookings</li></a>
+            </div>       
+            <div class="col-sm-3 d-lg-none"></div>
 
             <div class="d-lg-block col-lg-4 col-md-12 text-md-center  text-sm-center icons">
-              <div class="facebook-icon"><i class="fa-brands fa-facebook-square"></i></div>
-              <div class="insta-icon"><i class="fa-brands fa-instagram-square"></i></div>
-              <div class="twiter-icon"><i class="fa-brands fa-twitter-square"></i></div>
+              <div class="insta-icon"><a href="https://www.instagram.com/"><i class="fa-brands fa-instagram-square"></i></a></div>
+              <div class="twiter-icon"><a href="https://twitter.com/"><i class="fa-brands fa-twitter-square"></i></a></div>
           </div>
     </div>
-
+       <div class="row contact-wraper">
+         <div class="col-lg-6">
+          <div id="map"></div>
+         </div>
+         <div class="col-lg-1"></div>
+         <div class="col-lg-4 d-none d-lg-block text-start contact-container">
+          <div class="phone d-inline-flex"><i class="fa-solid fa-phone phone-icon fa-sm"></i> <p>+356248856</p></div>
+          <div class="email d-inline-flex"><i class="fa-solid fa-envelope email-icon"></i> <p>oryopochodublin@venue.com</p></div>
+          <div class="house d-inline-flex"><i class="fa-solid fa-house-chimney house-icon"></i> 
+          <div class="address">
+              <p>13. Marrowbone Lane</p>
+              <p>Dublin 8</p>
+          </div>
+           
+          </div>
+      </div>
+        
+       </div>
         <div class="row text-center copy-right">
-            <p>Copy Right</p>
+            <p>Copy Right <span id="year"></span></p>
         </div>
     </div>
 
@@ -134,7 +134,15 @@
 <script src="{% static 'js/wow.min.js' %}"></script>
 <script src="{% static 'js/main.js' %}"></script>
 <script src="{% static 'js/validation.js' %}"></script>
+<script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
+      defer
+    ></script>
 
+    <script>
+      const currentYear = new Date().getFullYear();
+      $("#year").text(currentYear)
+  </script>
 </body>
 
 </html>
