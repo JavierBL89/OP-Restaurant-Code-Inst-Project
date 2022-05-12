@@ -42,6 +42,29 @@ div .bg-image {
 
 /********** CALL TO ACTION SECTION*/
 
+.bookings .headding h1 {
+    margin-bottom: 10px;
+}
+
+.bookings .headding p {
+    letter-spacing: 1px;
+}
+
+.avalability-box{
+    margin-bottom: 50px;
+}
+
+.availability-button-container a{
+    font-size: 0.900rem;
+    text-decoration: none;
+    color: rgb(209, 119, 119);
+
+}
+
+.availability-card{
+    margin-top: 25px;
+    border: none;
+}
 .reservations-button {
     border: solid 1px rgb(255, 247, 247);
     width: inherit;
@@ -900,7 +923,7 @@ footer .container-fluid{
     
     div .bookings {
         width: 70%;
-        height: 420px;
+        /* height: 420px; */
         margin-top: 40px;
         padding: 4% 5%;
     }
@@ -947,9 +970,6 @@ footer .container-fluid{
         padding: 5% 15%;
 }
 
-.container-awards h1{
-    margin-top: 250px;
-}
 
 .michelin-img-box{
     padding-top: 6%;
