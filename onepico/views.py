@@ -5,6 +5,7 @@ from .forms import BookingForm
 from django.http import HttpResponseRedirect
 from datetime import datetime
 from .reservation import  get_table_available,check_double_booking_date,check_double_booking_week
+from django.contrib import messages
 
 
 
@@ -39,17 +40,27 @@ class HomePage(View):
         
         if check_double_booking_date(people, requested_date, requested_time, phone) == False:
             print("BOOKING CANCELED")
-        elif check_double_booking_week(people, requested_date, requested_time, phone) == False:
+            messages.info(request, 'You have another reservatio for the very day!')
             print("BOOKING CANCELED PUTA")
+        elif check_double_booking_week(people, requested_date, requested_time, phone) == False:
+            messages.info(request, 'Afortunatly we are fully booked for the time requested!') 
+
+            print("BOOKING CANCELED PUTA")
+
         else:
             new_booking = Booking(name=name, surname=surname, people=people, prefix=prefix, phone=phone, date=requested_date, start_time=requested_time, email=email, excerpt=comment)
             new_booking.save()
             booking_id = new_booking.id
-            if get_table_available(people, requested_date, requested_time, booking_id) == False:                
-                print("BOOKED DONE")
+            if get_table_available(people, requested_date, requested_time, booking_id) == False:
+                messages.info(request, 'You have another reservation for the very week!')
+
+                customer = Bookings.objects.filter()
+                print("BOOKING SUCCESSFUL")
             else:
                 print("FULLY BOOKED")
+                messages.info(request, 'You have another reservatio for the very week!')               
 
+                messages.info(request, 'Plase try at a different date, sorry for the inconvenient!')
         
         return render(request, 'index.html')
 

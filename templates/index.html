@@ -11,6 +11,15 @@
 </div>
 
 <section id="reservations">
+  <div class="container-fluid feedback-box text-center">
+    {% if messages %}
+    {% for message in messages %}
+        <h5>{{ message }}</h5>
+    {% endfor %}
+    {% endif %}
+
+  </div>
+    
     <div class="container bookings">
         <div class="headding text-center wow fadeInDown" data-wow-duration="1s">
             <h1>RESERVATIONS</h1>
