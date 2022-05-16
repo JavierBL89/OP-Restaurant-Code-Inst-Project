@@ -22,9 +22,12 @@ form.addEventListener('submit', event => {
   event.preventDefault();
   event.stopPropagation()
   validateInputs(event)
+    
 }
+
 },false)
 }
+
 
 /**
 * GET INPUTS VALUE AND CHECK BLANK FIELDS

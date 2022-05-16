@@ -11,160 +11,163 @@
 </div>
 
 <section id="reservations">
-  <div class="container-fluid feedback-box text-center">
-    {% if messages %}
-    {% for message in messages %}
-        <h5>{{ message }}</h5>
-    {% endfor %}
-    {% endif %}
 
-  </div>
-    
-    <div class="container bookings">
-        <div class="headding text-center wow fadeInDown" data-wow-duration="1s">
-            <h1>RESERVATIONS</h1>
-            <p>Reservations for parties of 8 or over, please contact us. <br>
-            Availability in Christmas time might change, contact us for more information</p>
-        </div>
-        <div class="row avalability-box">
-        <div class="availability-button-container text-center">
-            <a type="button" class="" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                See Availability <span class="arrow-down"><i class="fa-solid fa-xs fa-angle-down"></i></span>
-              </a>
-            <div class="collapse" id="collapseExample">
-                <div class="card card-body availability-card text-start">
-                        <div class="row sm-text-center ">
-                                  <div class="col-lg-4 col-md-6 col-sm-4">
-                                      <h3>Lunch</h3>
-                                      <p> Thursday to Saturday
-                                        <br> 12.00pm to 2.00pm</p>
-                                        <div class="">
-                                          <h3>Closed</h3>
-                                          <p>Sundays & Mondays</p>
-                                      </div>                      
-                                  </div>
-                                  <div class="col-lg-4 col-md-6 col-sm-4">
-                                      <h3>Dinner</h3>
-                                      <p> Tuesday & Wednesday <br>
-                                          5.00pm to 9.00pm <br>
-                                          
-                                          Thursday to Saturday <br>
-                                          5.30pm to 9.00pm</p>
-                                </div>
-                                  <div class="col-lg-4 col-md-6 col-sm-4 contact-icons">
-                                      <div class="phone-b d-inline-flex"><i class="fa-solid fa-phone phone-icon fa-sm"></i> <p>+356248856</p>
-                                      </div>
-                                      <div class="email-b d-inline-flex"><i class="fa-solid fa-envelope email-icon"></i> <p>book@oryopocho.com</p></div></p>
-                                          <div class="house d-inline-flex"><i class="fa-solid fa-house-chimney house-icon"></i> 
-                                              <div class="address-b">
-                                                  <p>13. Marrowbone Lane<br>
-                                                  Dublin 8</p>
-                                              </div>
-                                          </div>
-                                    </div>
-          
-                        </div>
-                </div>
-              </div>
-
-        </div>
-
-        </div>
-   
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="booking-form-box">
-            
-                        <form class="g-3 needs-validation" id="booking_form" name="RegForm" method="POST" action="{% url 'home' %}" onclick="handleSubmit(event)" novalidate>
-                            {% csrf_token %}
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <!-- <label for="validationCustom01" class="form-label">First name</label> -->
-                                    <input type="text" id="name" class="form-control" name="name" placeholder="Name" required>                          
-                                    <div class="invalid nameError">
-                                    </div>
-                                    
-            
-                                      <input type="text"  class="form-control" id="l_name" value="" name="l_name" placeholder="Last name" required>
-                                      <div class="invalid lastNameError"></div>
-            
-                                        <div class="phone-number-box d-flex">
-                                            <select type="number" id="prefix" name="prefix" class="form-select form-control" required>
-                                                <option value="">+353</option>
-                                                <option>+34</option>
-                                              </select>                                      
-        
-                                              <input type="number" id="phone" class="form-control phone d-block" value="" name="phone" placeholder="83125896" required> 
-                                        </div>
-                                        <div class="invalid phoneError"></div>
-                                        <input type="email" id="email" name="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email" required>
-                                        <div class="invalid emailError"></div>
-        
-                                    </div>
-            
-                                <div class="col-lg-6">
-                                    <input id="date" class="form-control" name="date" type="date" required/>
-                                    <div class="invalid dateError"></div>
-                                    
-        
-                                    <!-- <input type="time" class="timepicker text-center" jt-timepicker="" time="model.time" time-string="model.timeString" default-time="model.options.defaultTime" time-format="model.options.timeFormat" start-time="model.options.startTime" min-time="model.options.minTime" max-time="model.options.maxTime" interval="model.options.interval" dynamic="model.options.dynamic" scrollbar="model.options.scrollbar" dropdown="model.options.dropdown"> -->
-                                    <input type="text" min="12:00" max="09:00" id="start_time" name="start_time" class="form-control text-center"scrollbar="model.options.scrollbar" dropdown="model.options.dropdown" >
-        
-                                    <!-- <input type="text" class="form-control timepicker"> -->
-                                    <!-- <select type="text" id="start_time" name="start_time" class="form-select form-control">
-                                        <option selected class="puta" value="0">Time slot</option>
-                                        <option type="number" value="1" >12:30</option>
-                                        <option type="number" value="3" >12:45</option>
-                                        <option type="number" value="4" >13:00</option>
-                                        <option type="number" value="5" >13:15</option>
-                                        <option type="number" value="6" >13:30</option>
-                                        <option type="number" value="7" >13:45</option>
-                                        <option type="number" value="8" >14:00</option>
-                                        <option type="number" value="9" >14:15</option>
-                                        <option type="number" value="10">14:30</option>
-                                        <option type="number" value="11">18:00</option>
-                                        <option type="number" value="12">18:15</option>
-                                        <option type="number" value="13">18:30</option>
-                                        <option type="number" value="14">18:45</option>
-                                        <option type="number" value="15">19:00</option>
-                                        <option type="number" value="16">19:15</option>
-                                        <option type="number" value="17">19:30</option>
-                                        <option type="number" value="18">19:45</option>
-                                        <option type="number" value="19">20:00</option>
-                                        <option type="number" value="20">20:15</option>
-                                        <option type="number" value="21">20:30</option>
-                                        <option type="number" value="22">20:45</option>
-                                        <option type="number" value="23">21:00</option>
-                                    </select>             -->
-                                    <div class="invalid timeError">
-                                    </div>
-        
-                                    <input type="number" class="form-control" id="party_size" value="" name="party_size" required placeholder="Party size">
-                                    <div class="invalid partyError"></div>
-        
-            
-                                    <textarea class="form-control" id="comment" rows="2" name="booking_comment" placeholder="Booking comments"></textarea>
-                                    <!-- <div class="invalid">puta madre vabron</div> -->
-        
-                                
-                                </div>
-                        
-                            </div>
-                            
-                            <div class="row">
-           
-                                <div class="booking-button-box text-center">
-                                    <button type="submit" class="btn btn-outline-secondary">BOOK TABLE</button>
-                                </div>
-        
-        
-                            </div>      
-                        </form>
-        
-                    </div>
-                </div>    
-            
+    <div class="reservations-wraper">
+        <div class="container-fluid feedback-box text-center d-none">
+            <div class="succesful">
+                <h6>The reservation is been successeful</h6>
+                <h6>Check the booking confirmation email in your inbox</h6>
+                <h6>We'll see you soon!</h6>
             </div>
+        </div>
+        <div class="container bookings">
+            <div class="headding text-center wow fadeInDown" data-wow-duration="1s">
+                <h1>RESERVATIONS</h1>
+                <p>Reservations for parties of 8 or over, please contact us. <br>
+                Availability in Christmas time might change, contact us for more information</p>
+            </div>
+            <div class="row avalability-box">
+            <div class="availability-button-container text-center">
+                <a type="button" class="" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                    See Availability <span class="arrow-down"><i class="fa-solid fa-xs fa-angle-down"></i></span>
+                  </a>
+                <div class="collapse" id="collapseExample">
+                    <div class="card card-body availability-card text-start">
+                            <div class="row sm-text-center ">
+                                      <div class="col-lg-4 col-md-6 col-sm-4">
+                                          <h3>Lunch</h3>
+                                          <p> Thursday to Saturday
+                                            <br> 12.00pm to 2.00pm</p>
+                                            <div class="">
+                                              <h3>Closed</h3>
+                                              <p>Sundays & Mondays</p>
+                                          </div>                      
+                                      </div>
+                                      <div class="col-lg-4 col-md-6 col-sm-4">
+                                          <h3>Dinner</h3>
+                                          <p> Tuesday & Wednesday <br>
+                                              5.00pm to 9.00pm <br>
+                                              
+                                              Thursday to Saturday <br>
+                                              5.30pm to 9.00pm</p>
+                                    </div>
+                                      <div class="col-lg-4 col-md-6 col-sm-4 contact-icons">
+                                          <div class="phone-b d-inline-flex"><i class="fa-solid fa-phone phone-icon fa-sm"></i> <p>+356248856</p>
+                                          </div>
+                                          <div class="email-b d-inline-flex"><i class="fa-solid fa-envelope email-icon"></i> <p>book@oryopocho.com</p></div></p>
+                                              <div class="house d-inline-flex"><i class="fa-solid fa-house-chimney house-icon"></i> 
+                                                  <div class="address-b">
+                                                      <p>13. Marrowbone Lane<br>
+                                                      Dublin 8</p>
+                                                  </div>
+                                              </div>
+                                        </div>
+              
+                            </div>
+                    </div>
+                  </div>
+    
+            </div>
+    
+            </div>
+       
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="booking-form-box">
+                
+                            <form class="g-3 needs-validation" id="booking_form" name="RegForm" method="POST" action="{% url 'home' %}" onclick="handleSubmit(event)" novalidate>
+                                {% csrf_token %}
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <!-- <label for="validationCustom01" class="form-label">First name</label> -->
+                                        <input type="text" id="name" class="form-control" name="name" placeholder="Name" required>                          
+                                        <div class="invalid nameError">
+                                        </div>
+                                        
+                
+                                          <input type="text"  class="form-control" id="l_name" value="" name="l_name" placeholder="Last name" required>
+                                          <div class="invalid lastNameError"></div>
+                
+                                            <div class="phone-number-box d-flex">
+                                                <select type="number" id="prefix" name="prefix" class="form-select form-control" required>
+                                                    <option value="">+353</option>
+                                                    <option>+34</option>
+                                                  </select>                                      
+            
+                                                  <input type="number" id="phone" class="form-control phone d-block" value="" name="phone" placeholder="83125896" required> 
+                                            </div>
+                                            <div class="invalid phoneError"></div>
+                                            <input type="email" id="email" name="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email" required>
+                                            <div class="invalid emailError"></div>
+            
+                                        </div>
+                
+                                    <div class="col-lg-6">
+                                        <input id="date" class="form-control" name="date" type="date" required/>
+                                        <div class="invalid dateError"></div>
+                                        
+            
+                                        <!-- <input type="time" class="timepicker text-center" jt-timepicker="" time="model.time" time-string="model.timeString" default-time="model.options.defaultTime" time-format="model.options.timeFormat" start-time="model.options.startTime" min-time="model.options.minTime" max-time="model.options.maxTime" interval="model.options.interval" dynamic="model.options.dynamic" scrollbar="model.options.scrollbar" dropdown="model.options.dropdown"> -->
+                                        <input type="text" min="12:00" max="09:00" id="start_time" name="start_time" class="form-control text-center"scrollbar="model.options.scrollbar" dropdown="model.options.dropdown" >
+            
+                                        <!-- <input type="text" class="form-control timepicker"> -->
+                                        <!-- <select type="text" id="start_time" name="start_time" class="form-select form-control">
+                                            <option selected class="puta" value="0">Time slot</option>
+                                            <option type="number" value="1" >12:30</option>
+                                            <option type="number" value="3" >12:45</option>
+                                            <option type="number" value="4" >13:00</option>
+                                            <option type="number" value="5" >13:15</option>
+                                            <option type="number" value="6" >13:30</option>
+                                            <option type="number" value="7" >13:45</option>
+                                            <option type="number" value="8" >14:00</option>
+                                            <option type="number" value="9" >14:15</option>
+                                            <option type="number" value="10">14:30</option>
+                                            <option type="number" value="11">18:00</option>
+                                            <option type="number" value="12">18:15</option>
+                                            <option type="number" value="13">18:30</option>
+                                            <option type="number" value="14">18:45</option>
+                                            <option type="number" value="15">19:00</option>
+                                            <option type="number" value="16">19:15</option>
+                                            <option type="number" value="17">19:30</option>
+                                            <option type="number" value="18">19:45</option>
+                                            <option type="number" value="19">20:00</option>
+                                            <option type="number" value="20">20:15</option>
+                                            <option type="number" value="21">20:30</option>
+                                            <option type="number" value="22">20:45</option>
+                                            <option type="number" value="23">21:00</option>
+                                        </select>             -->
+                                        <div class="invalid timeError">
+                                        </div>
+            
+                                        <input type="number" class="form-control" id="party_size" value="" name="party_size" required placeholder="Party size">
+                                        <div class="invalid partyError"></div>
+            
+                
+                                        <textarea class="form-control" id="comment" rows="2" name="booking_comment" placeholder="Booking comments"></textarea>
+                                        <!-- <div class="invalid">puta madre vabron</div> -->
+            
+                                    
+                                    </div>
+                            
+                                </div>
+                                
+                                <div class="row">
+               
+                                    <div class="booking-button-box text-center">
+                                        <button type="submit" class="btn btn-outline-secondary">BOOK TABLE</button>
+                                    </div>
+            
+            
+                                </div>      
+                            </form>
+            
+                        </div>
+                    </div>    
+                
+                </div>
+
+        </div>
+        
     </div>
    
 </section>
