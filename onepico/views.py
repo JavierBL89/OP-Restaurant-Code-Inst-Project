@@ -72,6 +72,10 @@ class HomePage(View):
         return render(request, 'index.html')
 
 
+class BookingCancelation(View):
 
+    def get(self, request):
+
+        return render(request, 'cancelations.html')
 
         

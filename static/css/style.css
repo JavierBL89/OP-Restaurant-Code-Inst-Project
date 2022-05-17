@@ -1154,7 +1154,56 @@ margin: 0 auto;
         /* The width is the width of the web page */
       }
 
+/***************************** CANCELATIONS PAGE*/
 
+#cancelation-form{
+    background-color: rgb(255, 255, 255);
+    /* height: 400px; */
+    width: 50%;
+    margin: 30px auto;
+    color: black;  
+   padding: 50px 50px;
+}
+
+#cancelation-form h6{
+    font-size: 0.900rem;
+    color: rgb(209, 119, 119);
+    padding-right: 5%;
+    padding-left: 5%;
+    text-align: center;
+}
+
+.cancelation-form label{
+    display: grid;
+    font-size: 0.750rem;
+}
+
+.cancelation-form .row{
+   margin-top: 20px;
+}
+.cancelation-form input{
+   width: 90%;
+   height: 35px;
+   font-size: 0.750rem;
+   padding-left: 10px;
+   background-color: inherit;
+}
+
+.cancelation-form input:focus{
+    background-color: inherit;
+}
+ .cancelation-form input input:-webkit-autofill,
+ .cancelation-form input:-webkit-autofill:hover, 
+ .cancelation-form input:-webkit-autofill:focus, 
+ .cancelation-form input:-webkit-autofill:active{
+    -webkit-background-color: rgb(255, 255, 255);
+    -webkit-text-fill-color: rgb(56, 56, 56);
+     transition: background-color 5000s ease-in-out 0s;
+}
+
+.cancelation-form form{
+    width: 100%;
+}
 }
 
 
