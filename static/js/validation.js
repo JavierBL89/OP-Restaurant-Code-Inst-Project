@@ -15,7 +15,6 @@ const opening_days = [2,3,4,5,6]
 * INITIALIZE FORM VALIDATION
 **/
 function handleSubmit(event){
-
 form.addEventListener('submit', event => {
     if (!form.checkValidity()) {
 
@@ -100,7 +99,6 @@ function validateInputs(event){
  * VALIDATE DATE TO BOOK ON A DATE AHEAD
  */
 function dateValidation(dateValue){
-  console.log(dateValue)
   const dayOfWeek =  new Date(dateValue).getDay()
   const month = parseInt(dateValue.slice(5,7));
   const day = parseInt(dateValue.slice(8,10));
@@ -164,7 +162,7 @@ function checkLength(input){
     surname.className = "form-control error"
     document.querySelector(".lastNameError").innerText = "Must contain min 3 characters"
   }
-  else if(userData == "phone" && phoneValue.length <=7 || phoneValue.length >=11){
+  else if(userData == "phone" && phoneValue.length <=7 || phoneValue.length >=9){
     phone.className = "form-control error"
     document.querySelector(".phoneError").innerText = "Must have from 8 to 9 numbers"
   }

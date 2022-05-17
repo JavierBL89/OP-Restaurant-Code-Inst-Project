@@ -78,4 +78,12 @@ class BookingCancelation(View):
 
         return render(request, 'cancelations.html')
 
-        
+
+    def post(self, request, *args, **kawrgs):
+
+        # phone = request.POST.get('phone')
+        # email = request.POST.get('email')
+        # date = request.POST.get('date')
+        # requested_date = datetime.strptime(date, '%Y-%m-%d')
+
+        return render(request, 'cancelations.html')
