@@ -935,7 +935,8 @@ footer .container-fluid{
 
     nav .nav-link {
         margin-top: 30px;
-        margin-left: 40px;
+        margin-left: 10px;
+        padding-left: 10px;
         color: rgb(120 120 120);
         }
     
@@ -1152,6 +1153,8 @@ margin: 0 auto;
         width: 70%;
         /* The width is the width of the web page */
       }
+
+
 }
 
 

@@ -66,10 +66,13 @@
               <li class="nav-item">
                 <a class="nav-link wow animate__fadeIn" data-wow-delay="1.5s"id="gallery_link" href="#gallery">GALLERY</a>
               </li>
-              <li class="nav-itemr">
+              <li class="nav-item">
                 <a class="nav-link wow animate__fadeIn" data-wow-delay="2s"href="#menus">MENUS</a>
               </li>
               
+              <li class="nav-item">
+                <a class="nav-link wow animate__fadeIn" data-wow-delay="2.5s" href="{% url 'cancelation' %}">CANCELATIONS</a>  
+              </li>
             </ul>
            </div>
            
@@ -96,6 +99,7 @@
             <div class="col-lg-4 col-sm-3 ">
               <a href="#menus"><li class="footer-link" >Menus</li></a>
               <a href="#reservations"><li class="footer-link">Bookings</li></a>
+              <a href="{% url 'cancelation' %}"><li class="footer-link">Cancelations</li></a>
             </div>       
             <div class="col-sm-3 d-lg-none"></div>
 

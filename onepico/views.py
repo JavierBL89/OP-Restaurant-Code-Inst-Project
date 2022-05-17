@@ -40,7 +40,6 @@ class HomePage(View):
         
         if check_double_booking_date(people, requested_date, requested_time, phone) == False:
             print("BOOKING CANCELED")
-            messages.info(request, 'You have another reservatio for the very day!')
             print("BOOKING CANCELED PUTA")
             double_booking_day = True
             customer = Booking.objects.filter(phone=phone).all()
@@ -51,8 +50,6 @@ class HomePage(View):
             return render(request, 'booking_confirmation.html', double_booking_day)
             
         elif check_double_booking_week(people, requested_date, requested_time, phone) == False:
-            messages.info(request, 'Afortunatly we are fully booked for the time requested!') 
-
             print("BOOKING CANCELED PUTA")
 
         else:
@@ -60,10 +57,9 @@ class HomePage(View):
             new_booking.save()
             booking_id = new_booking.id
             if get_table_available(people, requested_date, requested_time, booking_id) == False:
-                # messages.info(request, 'You have another reservation for the very week!')
 
                 customer = Booking.objects.filter()
-                
+    
                 print("BOOKING SUCCESSFUL")
                 booking_successful = True
                 booking_successful = {
@@ -72,17 +68,10 @@ class HomePage(View):
                 return render(request, 'booking_confirmation.html', booking_successful)
             else:
                 print("FULLY BOOKED")
-                # messages.info(request, 'You have another reservatio for the very week!')               
-
-                messages.info(request, 'Plase try at a different date, sorry for the inconvenient!')
         
         return render(request, 'index.html')
 
 
-# class BookingConfirmation(View):
 
-#     def get(self, request):
-
-#         return render(request, 'booking_confirmation.html')
 
         
