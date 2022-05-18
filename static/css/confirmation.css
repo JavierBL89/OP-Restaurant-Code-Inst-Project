@@ -95,8 +95,6 @@ nav .logo p {
     text-align: center;
 }
 
-
-
 .failed {
    width: 80%;
    margin: 0 auto;
@@ -172,6 +170,7 @@ footer{
           position: relative;
           bottom: 0;
        } */
+
     }
 @media only screen and (min-width:640px) and (max-width:950px){
 
