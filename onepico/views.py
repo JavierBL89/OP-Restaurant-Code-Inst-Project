@@ -81,9 +81,21 @@ class BookingCancelation(View):
 
     def post(self, request, *args, **kawrgs):
 
-        # phone = request.POST.get('phone')
-        # email = request.POST.get('email')
-        # date = request.POST.get('date')
+        phone = request.POST.get('phone')
+        email = request.POST.get('email')
+        date = request.POST.get('date')
         # requested_date = datetime.strptime(date, '%Y-%m-%d')
 
-        return render(request, 'cancelations.html')
+        customer_record = Booking.objects.filter(phone=phone, email=email, date=date)
+        print(customer_record)
+        if customer_record:
+            customer_record = {
+                'customer_record': customer_record
+              }
+            return render(request, 'cancelations.html', customer_record)             
+        else:
+              no_record = True
+              no_record = {
+                  "no_record": no_record
+              }
+              return render(request, 'cancelations.html', no_record)
