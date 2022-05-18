@@ -57,6 +57,9 @@ nav .logo p {
 }
 
 /******** FEEDBACK SECTION ****/
+#cancelation-form-container{
+    border-radius: 10px;
+} 
 
 #feedback{
     background-color: rgb(255, 255, 255);

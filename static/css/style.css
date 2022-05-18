@@ -151,7 +151,7 @@ input[type="date"]{
     font-size: 0.800rem;
   }
 
-button[type="submit"]{
+.booking-form-box button[type="submit"]{
     width: 50%;
     margin-top: 40px;
     padding-top: 5px;
@@ -1156,59 +1156,5 @@ margin: 0 auto;
         /* The width is the width of the web page */
       }
 
-/***************************** CANCELATIONS PAGE*/
 
-#cancelation-form-container{
-    background-color: rgb(255, 255, 255);
-    width: 50%;
-    margin: 30px auto;
-    color: black;  
-   padding: 50px 50px;
-}
-
-#cancelation-form-container h6{
-    font-size: 0.900rem;
-    color: rgb(209, 119, 119);
-    margin-bottom: 30px;
-    padding-right: 5%;
-    padding-left: 5%;
-    text-align: center;
-}
-
-.cancelation-form label{
-    display: grid;
-    font-size: 0.750rem;
-}
-
-.cancelation-form .row .form-control[name="phone"]{
-    width: 90%;
-    margin-left: 0;
-}
-
-.cancelation-form input{
-   width: 90%;
-   height: 35px;
-   font-size: 0.750rem;
-   padding-left: 10px;
-}
-
-
-.cancelation-form form{
-    width: 100%;
-}
-
-.cancelation-button-box button{
-    width: 60%;
-    margin-top: 40px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    font-size: 0.850rem;
-    color: rgb(219, 219, 219);
-    background-color: rgb(0, 0, 0);
-    letter-spacing: 1px;
-}
-
-.cancelation-button-box button:focus{
-    box-shadow: none;
-}
 }
