@@ -72,7 +72,7 @@ class HomePage(View):
         return render(request, 'index.html')
 
 
-class BookingCancelation(View):
+class BookingSearch(View):
 
     def get(self, request):
 
@@ -87,7 +87,6 @@ class BookingCancelation(View):
         # requested_date = datetime.strptime(date, '%Y-%m-%d')
 
         customer_record = Booking.objects.filter(phone=phone, email=email, date=date)
-        print(customer_record)
         if customer_record:
             customer_record = {
                 'customer_record': customer_record
@@ -99,3 +98,21 @@ class BookingCancelation(View):
                   "no_record": no_record
               }
               return render(request, 'cancelations.html', no_record)
+
+    
+
+class BookingCancelation(View):
+
+    def post(self, request, *args, **kwargs):
+        phone = request.POST.get('phone')
+        email = request.POST.get('email')
+        date = request.POST.get('date')
+        print(date, phone)
+        
+        customer_record = Booking.objects.filter(phone=phone, email=email, date=date).all()
+        print("DELETE")
+        return render(request, 'cancelations.html')
+
+
+
+
