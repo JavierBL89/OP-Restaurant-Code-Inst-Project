@@ -80,11 +80,12 @@
         {% if customer_record %}
         <h6>Should it is not your reservation, please make another request 
           and make sure of entering the correct details or contact us.</h6>
-          <form method="POST" id="delete_booking" action="{% url 'cancel_booking' %}" >
-          {% csrf_token %}
+          
           <table class="table table-sm text-start">
             <th>Booking details</th>
         {% for record in customer_record %}
+        <form method="POST" id="delete_booking" action="{% url 'cancel_booking' record.id %}" >
+          {% csrf_token %}
               <tbody>
               <tr>
                 <td id="hhh" name="hhh">{{ record.date }} </td>

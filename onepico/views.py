@@ -1,5 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views import generic, View
+from django.views.generic.edit import DeleteView
+from django.urls import reverse_lazy
+
 from .models import Booking
 from .forms import BookingForm
 from django.http import HttpResponseRedirect
@@ -75,7 +78,6 @@ class HomePage(View):
 class BookingSearch(View):
 
     def get(self, request):
-
         return render(request, 'cancelations.html')
 
 
@@ -101,17 +103,21 @@ class BookingSearch(View):
 
     
 
-class BookingCancelation(View):
 
-    def post(self, request, *args, **kwargs):
-        phone = request.POST.get('phone')
-        email = request.POST.get('email')
-        date = request.POST.get('date')
-        print(date, phone)
-        
-        customer_record = Booking.objects.filter(phone=phone, email=email, date=date).all()
-        print("DELETE")
-        return render(request, 'cancelations.html')
+class BookingCancelation(DeleteView):
+
+        model = Booking
+        success_url = reverse_lazy('home')
+        print("puta")
+        template_name = "cancelations.html"
+
+
+
+
+
+
+
+
 
 
 
