@@ -78,43 +78,9 @@
 <div class="">
   <div class="row text-center">
     <div class="container-fluid bg-image">
-      <div class="" id="feedback">     
-        {% if double_booking_day or double_booking_week %}
-        {% if double_booking_day %}
-        <h6>Ups! There seems to be another booking registered under the same email address for the same date!</h6>
-        {% elif double_booking_week %}
-        {% endif %}
-        <div class="customer_details failed">
-          <table class="table table-sm text-start">
-            <th>Booking details</th>
-        {% for record in customer %}
-              <tbody>
-              <tr>
-                <td>{{ record.date }} </td>
-                <td>At {{ record.start_time }} </td>
-              </tr>
-              <tr>
-                <td>{{ record.name }} {{ record.surname }} </td>
-                <td >{{ record.phone }}</td>
-              </tr>
-            </tbody>
-        {% endfor %}
-        </table>
-        <div class="jumbotron">
-          <p><strong>Would you like to cancel the existin reservation and proceed with the new request?</strong></p>
-        <p>If so please contact us <i class="fa-solid fa-phone phone-icon fa-xs"></i>+356248856</p>
-        </div>
-        
-        <!-- <div class="phone-b d-inline-flex"><i class="fa-solid fa-phone phone-icon fa-sm"></i> <p>+356248856</p>
-        </div> -->
-        </div>              
-        {% elif booking_successful %}
-        <div class="success">
-            <h6>The reservation has been successful</h6>
-            <h6>Check the booking confirmation email in your inbox</h6>
-            <h6>We'll see you soon!</h6>
-        </div>
-        {% endif %}
+      <div class="" id="feedback">   
+          <h5>Your reservation has been canceled!</h5>  
+          <h6>Hope to see you back soon!</h6>
       </div>
 
     </div>

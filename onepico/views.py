@@ -107,10 +107,14 @@ class BookingSearch(View):
 class BookingCancelation(DeleteView):
 
         model = Booking
-        success_url = reverse_lazy('home')
+        success_url = reverse_lazy('cancelation_confirmation')
         print("puta")
         template_name = "cancelations.html"
 
+class CancelationConfirmation(View):
+
+    def get(self, request):
+        return render(request, 'cancelation_confirmation.html')
 
 
 
