@@ -111,11 +111,16 @@ function dateValidation(dateValue){
  
   if(year >= currentYear){
     if(month >= currentMonth){
-      if(opening_days.includes(dayOfWeek)){
-        setSuccessFor(date)
+      if(day >= currentDay){
+        if(opening_days.includes(dayOfWeek)){
+          setSuccessFor(date)
+        }else{
+          setErrorForDate(date, "Opening days from Tuesday to Saturday included")
+          console.log("3")
+        }
       }else{
-        setErrorForDate(date, "Opening days from Tuesday to Saturday included")
-      }
+        setErrorForDate(date, "Day must be from today onwards")
+      }  
     }else{
       setErrorForDate(date, "Month must be ahead")
     }

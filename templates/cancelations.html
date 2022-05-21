@@ -70,8 +70,6 @@
       </nav>
     </header>
 
-
-  
 <div class="content-wraper container-fluid">
 <div class="">
   <div class="row text-center">
@@ -123,18 +121,18 @@
             {% csrf_token %}
           <div class="row">
             <div class="col-lg-6"><label for="email">Email registered on the reservation.</label></div>
-            <div class="col-lg-6"><input type="email" class="form-control cancelation-input" name="email" id="email" ></div>
+            <div class="col-lg-6"><input type="email" class="form-control cancelation-input" name="email" id="reservation_email" ></div>
             <div class="invalid cancelationEmailError"></div>
           </div>
           
           <div class="row">
             <div class="col-lg-6"><label for="phone">Contact number registered<br> on the reservation.</label></div>
-            <div class="col-lg-6"><input type="text" class="form-control cancelation-input" name="phone" id="phone" ></div>
+            <div class="col-lg-6"><input type="text" class="form-control cancelation-input" name="phone" id="reservation_phone" ></div>
             <div class="invalid cancelationPhoneError"></div>
           </div>
           <div class="row">
             <div class="col-lg-6"><label for="date">Date of the reservation.</label></div>
-            <div class="col-lg-6"><input type="date" class="form-control cancelation-input" name="date" id="date" ></div>
+            <div class="col-lg-6"><input type="date" class="form-control cancelation-input" name="date" id="reservation_date" ></div>
             <div class="invalid cancelationDateError"></div>
           </div>
           <div class="row">

@@ -31,9 +31,9 @@ class Booking(models.Model):
     """
     Model to define booking data collection
     """
-    name = models.CharField(max_length=50, blank=True)
+    name = models.CharField(max_length=50, blank=False)
     slug = models.SlugField(max_length=50, unique=False, null=True)
-    surname = models.CharField(max_length=30, blank=True)
+    surname = models.CharField(max_length=30, blank=False)
     people = models.BigIntegerField()
     prefix = models.BigIntegerField()
     phone = models.BigIntegerField(null=False, blank=False)

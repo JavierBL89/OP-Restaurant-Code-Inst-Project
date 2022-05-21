@@ -7,7 +7,7 @@ from .models import Booking
 from .forms import BookingForm
 from django.http import HttpResponseRedirect
 from datetime import datetime
-from .reservation import  get_table_available,check_double_booking_date,check_double_booking_week
+from .reservation import  get_table_available, check_double_booking_date, check_double_booking_week
 from django.contrib import messages
 
 
@@ -24,6 +24,9 @@ class HomePage(View):
         }
 
         return render(request, 'index.html', context)
+
+
+class FormView(View):
 
 
     def post(self, request, *args, **kwargs):
@@ -50,7 +53,7 @@ class HomePage(View):
                 'double_booking_day': double_booking_day,
                 'customer': customer
             }
-            return render(request, 'booking_confirmation.html', double_booking_day)
+            return render(request, 'reservation_confirmation.html', double_booking_day)
             
         elif check_double_booking_week(people, requested_date, requested_time, phone) == False:
             print("BOOKING CANCELED PUTA")
@@ -68,7 +71,7 @@ class HomePage(View):
                 booking_successful = {
                 'booking_successful': booking_successful
             }
-                return render(request, 'booking_confirmation.html', booking_successful)
+                return render(request, 'reservation_confirmation.html', booking_successful)
             else:
                 print("FULLY BOOKED")
         
@@ -103,13 +106,12 @@ class BookingSearch(View):
 
     
 
-
 class BookingCancelation(DeleteView):
 
         model = Booking
         success_url = reverse_lazy('cancelation_confirmation')
-        print("puta")
         template_name = "cancelations.html"
+
 
 class CancelationConfirmation(View):
 

@@ -1,9 +1,9 @@
 
 
 const form = document.getElementById("cancelation_form")
-const email = document.getElementById("email")
-const phone = document.getElementById("phone")
-const date = document.getElementById("date");
+const email = document.getElementById("reservation_email")
+const phone = document.getElementById("reservation_phone")
+const date = document.getElementById("reservation_date");
 
 
 /**
@@ -26,22 +26,20 @@ function handleSubmitCancelation(event){
 function validateInputs(event){
     console.log("putaa");
 
-    const emailValue = document.getElementById("email").value.trim()
-    const phoneValue = document.getElementById("phone").value.trim()
+    const emailValue = document.getElementById("reservation_email").value.trim()
+    const phoneValue = document.getElementById("reservation_phone").value.trim()
     const dateValue = date.value.trim()
 
     if(emailValue === ""){
         setErrorForBlank(email, "Field cannot be blank");
       }else{
-        validateEmail(emailValue)
+        emailValidation(emailValue)
       }
-
       if(phoneValue === ""){
         setErrorForBlank(phone, "Field cannot be blank");
       }else{
         checkLength(phoneValue)
       }
-
       if(dateValue === ""){
         date.className = "cancelation-input error"
       }else{
@@ -62,7 +60,6 @@ function emailValidation(emailValue){
       document.querySelector(".cancelationEmailError").innerText = "Enter a valid email"
     }
   }
-
 
 
   function checkLength(input){
