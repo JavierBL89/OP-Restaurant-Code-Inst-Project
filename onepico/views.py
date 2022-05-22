@@ -28,6 +28,9 @@ class HomePage(View):
 
 class FormView(View):
 
+    def get(self, request):
+        return render(request, 'reservation_confirmation.html')
+
 
     def post(self, request, *args, **kwargs):
         name = request.POST.get('name')
@@ -117,6 +120,12 @@ class CancelationConfirmation(View):
 
     def get(self, request):
         return render(request, 'cancelation_confirmation.html')
+
+
+class ReservationConfirmation(View):
+
+    def get(self, request):
+        return render(request, 'reservation_confirmation.html')
 
 
 

@@ -33,8 +33,8 @@ class Booking(models.Model):
     """
     name = models.CharField(max_length=50, blank=False)
     slug = models.SlugField(max_length=50, unique=False, null=True)
-    surname = models.CharField(max_length=30, blank=False)
-    people = models.BigIntegerField()
+    surname = models.CharField(max_length=30, blank=True, null=True)
+    people = models.BigIntegerField(null=True)
     prefix = models.BigIntegerField()
     phone = models.BigIntegerField(null=False, blank=False)
     date = models.DateField('%Y-%m-%d')

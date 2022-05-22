@@ -12,7 +12,9 @@ from .forms import *
 class TestBookingForm(TestCase):
 
     def test_phone_is_required(self):
-        # form = BookingForm(data={'name': 'Veronica', 'surname': 'Leon', 'people': 2, 'prefix': '+353', 'phone':123456789, 'date': 5/5/20022, 'start_time': 12:30, 'email': 'notri80@gmail.com', 'excerpt': ''})
+        """ 
+        Test phone field is required
+        """
         form = BookingForm({'phone': ''})
         self.assertFalse(form.is_valid())
         self.assertIn('phone', form.errors.keys())
@@ -20,11 +22,18 @@ class TestBookingForm(TestCase):
 
 
     def test_excerpt_field_is_not_required(self):
+        """ 
+        Test excertp field is not required
+        GIVES FAILURE, I DON'T KNOW WHY 
+        """
         form = BookingForm({'excerpt': ''})
         self.assertTrue(form.is_valid())
 
 
-    def test_filds_are_explicit_in_forms_metaclass(self):
+    def test_fields_are_explicit_in_forms_metaclass(self):
+        """ 
+        Test fields are explicit in forms metaclass 
+        """
         form = BookingForm()
 
         self.assertEqual(form.Meta.fields, ['name', 'surname', 'people', 'prefix', 'phone', 'date', 'start_time', 'email', 'excerpt'])

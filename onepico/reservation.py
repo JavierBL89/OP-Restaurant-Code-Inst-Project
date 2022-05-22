@@ -3,20 +3,6 @@ import time
 from .models import Restaurant, Booking, TableLunch, TableDinner
 import random
 
-# def check_double_booking(people, requested_date, requested_time, phone):
-    
-#     # request = Booking.objects.filter(id=booking_id)
-
-#     if check_double_booking_date(people, requested_date, requested_time, phone) == False:
-#         return False
-#     elif check_double_booking_week(people, requested_date, requested_time, phone) == False:
-#         return False
-#     else:
-         
-#         return True
-
-    
-
 def check_double_booking_week(people, requested_date, requested_time, phone):
 
     week_number_requested_date_str = requested_date.strftime('%U')
