@@ -42,6 +42,7 @@ class FormView(View):
         requested_date = datetime.strptime(date, '%Y-%m-%d')
         start_time = request.POST.get('start_time')
         format_data = "%H:%M"
+        print(start_time, "eee")
         requested_time = datetime.strptime(start_time, format_data)
         people = request.POST.get('party_size')
         comment = request.POST.get('booking_comments')
@@ -85,7 +86,6 @@ class BookingSearch(View):
 
     def get(self, request):
         return render(request, 'cancelations.html')
-
 
     def post(self, request, *args, **kawrgs):
 

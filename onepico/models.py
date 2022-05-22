@@ -9,11 +9,6 @@ STATUS =  (
     ('expired', 'expired')
 )
 
-PREFIX = (
-    ('+353','+353'),
-    ('+34', '+34'),
-    ('+35', '+35'),
-    )
 
 class Restaurant():
     """
@@ -22,7 +17,6 @@ class Restaurant():
     opening_days = ["Tuesday","Wednesday","Thursday","Friday","Saturday"]
     opening_time= '12:00'
     closing_time = '21:30'
-    
     small_table = [{'table': 1, 'max_px': 2}, {'table': 2, 'max_px': 2}, {'table': 3, 'max_px': 2},{'table': 4, 'max_px': 4}]
     medium_table = [{'table': 5, 'max_px': 4}, {'table': 6, 'max_px': 4}]
     large_table = [{'table': 7, 'max_px': 7}, {'table': 8, 'max_px': 7}]
@@ -44,7 +38,6 @@ class Booking(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.CharField(choices=STATUS, default='pending', max_length=50)
     
-
     def __str__(self):
         return f'{self.name} {self.surname} {self.people} {self.date} {self.start_time} {self.id}'
 
