@@ -82,7 +82,7 @@ I'm a bit dessaster for planing proyects, i should start doing things properly a
 ## Flow Chart
 
 
-# Features
+## Features
 
 - Make reservations
 
@@ -112,5 +112,48 @@ I'm a bit dessaster for planing proyects, i should start doing things properly a
 ![](static/images/validation-form.png)
 
 - Send contact email to management
+
 - Maps
 
+  - As per the user to easily see venue's location without exiting the site
+
+![](static/images/maps.png)
+
+## Future features
+
+  - **Reservations**
+  Currently the reservations app can only take one table at a time, the posibility of joining tables and store them in database would make the app a real world and efficient application.
+
+  - **Reviews**
+  Could have a review section linked to tripadvisor or to open table from where potential customers could check people's opinions out easily from the website.
+
+  - **Menus Examples**
+  Menus examples could be displayed in a seperated pdf window from which interested users could print them out.
+
+  - **User account**
+  In case the company had some other venues, users could have a private account from which check and manage reservations from one single website and receive deals or news from them.
+
+
+## Technology used
+
+  - Languages used according to **Github** reports.
+
+  ![](static/images/languages.png)
+
+  - Libraries
+
+    - Front-end:
+
+    1.[JQuery](<https://jquery.com/>)
+    2.[Animate.css](<https://animate.style/>)
+    3.[Cloudinary](<https://cloudinary.com/>)
+    - Back-end:
+    1.[Summernote](<https://summernote.org/>)
+    Still don't know what it is for...i have it installed for this proyect..i don't know why!
+
+  - Frameworks
+
+    1.[Boostrap](<https://getbootstrap.com/>)
+    2.[Django](<https://www.djangoproject.com/>)
+
+  

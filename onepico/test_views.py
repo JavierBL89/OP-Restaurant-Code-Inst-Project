@@ -35,7 +35,7 @@ class TestViews(TestCase):
         Test reservation confirmation page status.
         and the test fails, i don't know why
         """
-        response = self.client.get('/reservation-confirmation')
+        response = self.client.get('/reservation_confirmation')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'reservation_confirmation.html') 
 
@@ -46,17 +46,17 @@ class TestViews(TestCase):
         Creates a new reservation object
         GIVES FAILURE, I DON'T KNOW WHY!
         """
-        response = self.client.post('/reservation-confirmation', {'name': 'Javier', 'surname': 'Bastande Leon', 'party_size': 2, 'prefix': '+353', 'phone':'123456789', 'date': '2022-11-11', 'start_time': '12:30', 'email': 'notri80@gmail.com', 'excerpt': ''})
-        self.assertRedirects(response, 'reservation_confirmation.html')
+        response = self.client.post('/', {'name': 'Javier', 'surname': 'Bastande Leon', 'party_size': 2, 'prefix': '+353', 'phone':'123456789', 'date': '2022-11-11', 'start_time': '12:30', 'email': 'notri80@gmail.com', 'excerpt': ''})
+        self.assertTemplateUsed(response, 'reservation_confirmation.html')
     
     def test_reservation_search_redirect_success_page(self):
         """ 
-        Test redirect user to cancelations page
+        Test redirect user to submiting cancelations page
         after booking search request
         GIVES FAILURE, I DON'T KNOW WHY!
         """
         response = self.client.post('/cancelations', {'phone':'123456789', 'date': '2022-11-11',  'email': 'notri80@gmail.com'})
-        self.assertRedirects(response, 'cancelations.html')
+        self.assertTemplateUsed(response, 'cancelations.html')
 
     def test_cancel_existing_reservation(self):
         booking = Booking.objects.create(name='Veronica', surname='Leon', people='2', prefix='+353', phone='123456789', date='2022-11-11', start_time='12:30', email='notri80@gmail.com', excerpt='')
