@@ -4,436 +4,406 @@
 <div class="">
   <div class="row">
     <div class="container-fluid bg-image">
-        <div class="bg-film text-center">
-        </div>
+      <div class="bg-film text-center">
+      </div>
     </div>
   </div>
 </div>
 
+<!-------------------------- RESERVATION SECTION ---------------------------->
 <section id="reservations">
+  <div class="reservations-wraper">
+    <div class="container bookings">
+      <div class="headding text-center wow fadeInDown" data-wow-duration="1s">
+        <h1>RESERVATIONS</h1>
+        <p>Reservations for parties of 8 or over, please contact us. <br>
+          Availability in Christmas time might change, contact us for more information</p>
+      </div>
 
-    <div class="reservations-wraper">
-        <div class="container-fluid feedback-box text-center d-none">
-            <div class="succesful">
-                <h6>The reservation is been successeful</h6>
-                <h6>Check the booking confirmation email in your inbox</h6>
-                <h6>We'll see you soon!</h6>
-            </div>
-        </div>
-        <div class="container bookings">
-            <div class="headding text-center wow fadeInDown" data-wow-duration="1s">
-                <h1>RESERVATIONS</h1>
-                <p>Reservations for parties of 8 or over, please contact us. <br>
-                Availability in Christmas time might change, contact us for more information</p>
-            </div>
-            <div class="row avalability-box">
-            <div class="availability-button-container text-center">
-                <a type="button" class="" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                    See Availability <span class="arrow-down"><i class="fa-solid fa-xs fa-angle-down"></i></span>
-                  </a>
-                <div class="collapse" id="collapseExample">
-                    <div class="card card-body availability-card text-start">
-                            <div class="row sm-text-center ">
-                                      <div class="col-lg-4 col-md-6 col-sm-4">
-                                          <h3>Lunch</h3>
-                                          <p> Thursday to Saturday
-                                            <br> 12.00pm to 2.00pm</p>
-                                            <div class="">
-                                              <h3>Closed</h3>
-                                              <p>Sundays & Mondays</p>
-                                          </div>                      
-                                      </div>
-                                      <div class="col-lg-4 col-md-6 col-sm-4">
-                                          <h3>Dinner</h3>
-                                          <p> Tuesday & Wednesday <br>
-                                              5.00pm to 9.00pm <br>
-                                              
-                                              Thursday to Saturday <br>
-                                              5.30pm to 9.00pm</p>
-                                    </div>
-                                      <div class="col-lg-4 col-md-6 col-sm-4 contact-icons">
-                                          <div class="phone-b d-inline-flex"><i class="fa-solid fa-phone phone-icon fa-sm"></i> <p>+356248856</p>
-                                          </div>
-                                          <div class="email-b d-inline-flex"><i class="fa-solid fa-envelope email-icon"></i> <p>book@oryopocho.com</p></div></p>
-                                              <div class="house d-inline-flex"><i class="fa-solid fa-house-chimney house-icon"></i> 
-                                                  <div class="address-b">
-                                                      <p>13. Marrowbone Lane<br>
-                                                      Dublin 8</p>
-                                                  </div>
-                                              </div>
-                                        </div>
-              
-                            </div>
+      <!-------------------------- AVAILABILITY CONTAINER ---------------------------->
+      <div class="row avalability-box">
+        <div class="availability-button-container text-center">
+          <a type="button" class="" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+            See Availability <span class="arrow-down"><i class="fa-solid fa-xs fa-angle-down"></i></span>
+          </a>
+          <div class="collapse" id="collapseExample">
+            <div class="card card-body availability-card text-start">
+              <div class="row sm-text-center ">
+                <div class="col-lg-4 col-md-6 col-sm-4">
+                  <h3>Lunch</h3>
+                  <p> Thursday to Saturday
+                    <br> 12.00pm to 2.00pm
+                  </p>
+                  <div class="">
+                    <h3>Closed</h3>
+                    <p>Sundays & Mondays</p>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-4">
+                  <h3>Dinner</h3>
+                  <p> Tuesday & Wednesday <br>
+                    5.00pm to 9.00pm <br>
+
+                    Thursday to Saturday <br>
+                    5.30pm to 9.00pm</p>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-4 contact-icons">
+                  <div class="phone-b d-inline-flex"><i class="fa-solid fa-phone phone-icon fa-sm"></i>
+                    <p>+356248856</p>
+                  </div>
+                  <div class="email-b d-inline-flex"><i class="fa-solid fa-envelope email-icon"></i>
+                    <p>book@oryopocho.com</p>
+                  </div>
+                  </p>
+                  <div class="house d-inline-flex"><i class="fa-solid fa-house-chimney house-icon"></i>
+                    <div class="address-b">
+                      <p>13. Marrowbone Lane<br>
+                        Dublin 8</p>
                     </div>
                   </div>
-    
+                </div>
+              </div>
             </div>
-    
-            </div>
-       
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="booking-form-box">
-                
-                            <form class="g-3 needs-validation" id="booking_form" name="RegForm" method="POST" action="{% url 'booking_request' %}" onclick="handleSubmit(event)" novalidate>
-                                {% csrf_token %}
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <!-- <label for="validationCustom01" class="form-label">First name</label> -->
-                                        <input type="text" id="name" class="form-control" name="name" placeholder="Name" required>                          
-                                        <div class="invalid nameError">
-                                        </div>
-                                        
-                
-                                          <input type="text"  class="form-control" id="l_name" value="" name="l_name" placeholder="Last name" required>
-                                          <div class="invalid lastNameError"></div>
-                
-                                            <div class="phone-number-box d-flex">
-                                                <select type="number" id="prefix" name="prefix" class="form-select form-control" required>
-                                                    <option value="">+353</option>
-                                                    <option>+34</option>
-                                                  </select>                                      
-            
-                                                  <input type="number" id="phone" class="form-control phone d-block" value="" name="phone" placeholder="83125896" required> 
-                                            </div>
-                                            <div class="invalid phoneError"></div>
-                                            <input type="email" id="email" name="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email" required>
-                                            <div class="invalid emailError"></div>
-            
-                                        </div>
-                
-                                    <div class="col-lg-6">
-                                        <input id="date" class="form-control" name="date" type="date" required/>
-                                        <div class="invalid dateError"></div>
-                                        
-                                        <select type="text" id="start_time" name="start_time" class="form-select form-control">
-                                            <option type="text" enabled class="puta">Time slot</option>
-                                            <option type="text">12:30</option>
-                                            <option type="text">12:45</option>
-                                            <option type="text">13:00</option>
-                                            <option type="text">13:15</option>
-                                            <option type="text">13:30</option>
-                                            <option type="text">13:45</option>
-                                            <option type="text">14:00</option>
-                                            <option type="text">14:15</option>
-                                            <option type="text">14:30</option>
-                                            <option type="text">18:00</option>
-                                            <option type="text">18:15</option>
-                                            <option type="text">18:30</option>
-                                            <option type="text">18:45</option>
-                                            <option type="text">19:00</option>
-                                            <option type="text">19:15</option>
-                                            <option type="text">19:30</option>
-                                            <option type="text">19:45</option>
-                                            <option type="text">20:00</option>
-                                            <option type="text">20:15</option>
-                                            <option type="text">20:30</option>
-                                            <option type="text">20:45</option>
-                                            <option type="text">21:00</option>
-                                        </select>            
-                                        <div class="invalid timeError">
-                                        </div>
-            
-                                        <input type="number" class="form-control" id="party_size" value="" name="party_size" required placeholder="Party size">
-                                        <div class="invalid partyError"></div>
-            
-                
-                                        <textarea class="form-control" id="comment" rows="2" name="booking_comment" placeholder="Booking comments"></textarea>
-                                        <!-- <div class="invalid">puta madre vabron</div> -->
-            
-                                    
-                                    </div>
-                            
-                                </div>
-                                
-                                <div class="row">
-               
-                                    <div class="booking-button-box text-center">
-                                        <button type="submit" class="btn btn-outline-secondary">BOOK TABLE</button>
-                                    </div>
-            
-            
-                                </div>      
-                            </form>
-            
-                        </div>
-                    </div>    
-                
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="booking-form-box">
+
+            <!-------------------------- RESERVATION FORM ---------------------------->
+            <form class="g-3 needs-validation" id="booking_form" name="RegForm" method="POST" action="{% url 'booking_request' %}" onclick="handleSubmit(event)" novalidate>
+              {% csrf_token %}
+              <div class="row">
+                <div class="col-lg-6">
+                  <input type="text" id="name" class="form-control" name="name" placeholder="Name" required>
+                  <div class="invalid nameError">
+                  </div>
+
+                  <input type="text" class="form-control" id="l_name" value="" name="l_name" placeholder="Last name" required>
+                  <div class="invalid lastNameError"></div>
+
+                  <div class="phone-number-box d-flex">
+                    <select type="number" id="prefix" name="prefix" class="form-select form-control" required>
+                      <option value="">+353</option>
+                      <option>+34</option>
+                    </select>
+
+                    <input type="number" id="phone" class="form-control phone d-block" value="" name="phone" placeholder="83125896" required>
+                  </div>
+                  <div class="invalid phoneError"></div>
+
+                  <input type="email" id="email" name="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email" required>
+                  <div class="invalid emailError"></div>
                 </div>
 
-        </div>
-        
-    </div>
-   
-</section>
+                <div class="col-lg-6">
+                  <input id="date" class="form-control" name="date" type="date" required />
+                  <div class="invalid dateError"></div>
 
+                  <select type="text" id="start_time" name="start_time" class="form-select form-control">
+                    <option type="text" enabled class="puta">Time slot</option>
+                    <option type="text">12:30</option>
+                    <option type="text">12:45</option>
+                    <option type="text">13:00</option>
+                    <option type="text">13:15</option>
+                    <option type="text">13:30</option>
+                    <option type="text">13:45</option>
+                    <option type="text">14:00</option>
+                    <option type="text">14:15</option>
+                    <option type="text">14:30</option>
+                    <option type="text">18:00</option>
+                    <option type="text">18:15</option>
+                    <option type="text">18:30</option>
+                    <option type="text">18:45</option>
+                    <option type="text">19:00</option>
+                    <option type="text">19:15</option>
+                    <option type="text">19:30</option>
+                    <option type="text">19:45</option>
+                    <option type="text">20:00</option>
+                    <option type="text">20:15</option>
+                    <option type="text">20:30</option>
+                    <option type="text">20:45</option>
+                    <option type="text">21:00</option>
+                  </select>
+                  <div class="invalid timeError">
+                  </div>
+
+                  <input type="number" class="form-control" id="party_size" value="" name="party_size" required placeholder="Party size">
+                  <div class="invalid partyError"></div>
+
+                  <textarea class="form-control" id="comment" rows="2" name="booking_comment" placeholder="Booking comments"></textarea>
+                </div>
+              </div>
+              <div class="row">
+                <div class="booking-button-box text-center">
+                  <button type="submit" class="btn btn-outline-secondary">BOOK TABLE</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 <div class="separator wow fadeInDown" data-wow-duration="0.5s"></div>
 
+<!-------------------------- ABOUT SECTION ---------------------------->
 <section id="about">
-    <div class="container container-about">
-        <div class="headding text-center wow fadeInDown" data-wow-duration="1s">
-            <h1>STYLE</h1>
+  <div class="container container-about">
+    <div class="headding text-center wow fadeInDown" data-wow-duration="1s">
+      <h1>STYLE</h1>
+    </div>
+    <div class="row wow fadeInDown" data-wow-duration="1s">
+      <div class="row text-center about">
+        <p>Modern Irish French restaurant. Very good food inspired by seasonal
+          produce cooked in a modern classical way with great flavour been paramount.
+          Service is relaxed and informal in a luxurious setting.
+        </p>
+      </div>
+      <div class="row text-center wow fadeInDown" data-wow-duration="3s">
+        <div class="michelin-img-box">
+          <img src="https://res.cloudinary.com/dthlibbj7/image/upload/v1649187204/michelin_cm7pax.jpg" alt="michelin-guide">
         </div>
-        <div class="row wow fadeInDown" data-wow-duration="1s">
-            <div class="row text-center about">
-                <p>Modern Irish French restaurant. Very good food inspired by seasonal 
-                    produce cooked in a modern classical way with great flavour been paramount. 
-                    Service is relaxed and informal in a luxurious setting.
-                </p>
-            </div>
-            <div class="row text-center wow fadeInDown" data-wow-duration="3s">
-                <div class="michelin-img-box">
-                    <img src="https://res.cloudinary.com/dthlibbj7/image/upload/v1649187204/michelin_cm7pax.jpg" alt="michelin-guide">
-                </div>
-                <div class="headding text-center">
-                    <h5>RESTAURANT RECOGNITIONS</h5>
-                </div>
-                <div class="dots">
-                    <i class="fa-solid fa-ellipsis"></i>
-                </div>
-                <div class="col-sm-12 col-lg-6 text-sm-center text-md-start text-lg-start awards">
-                    <p><span class="fas fa-award"></span>Michelin Guide Great Britain & Ireland</p>
-                    <p><span class="fas fa-award"></span>Irish Hospitality Awards <br>- Restaurant of The Year</p>
-                    <p><span class="fas fa-award"></span>Elite Traveller <br>- Best Restaurants in Dublin</p>
-                    <p><span class="fas fa-award"></span>Georgina Campbell Guide <br>- Chef of The Year</p>
-                </div>
-                <div class="col-sm-12 col-lg-6 text-sm-center text-md-start text-lg-start awards">
-                    <p><span class="fas fa-award"></span> Irish Restaurant Awards <br>- Best Chef Dublin</p>
-                    <p><span class="fas fa-award"></span>Hotel & Catering <br>- Gold Medal Award</p>
-                    <p><span class="fas fa-award"></span> Restaurant Association <br>- Chef of The Year</p>
-                    <p><span class="fas fa-award"></span> Georgina Campbell Guide <br>- Sommelier of The Year</p>
-                </div>
-               
+        <div class="headding text-center">
+          <h5>RESTAURANT RECOGNITIONS</h5>
         </div>
-       
+        <div class="dots">
+          <i class="fa-solid fa-ellipsis"></i>
+        </div>
+        <div class="col-sm-12 col-lg-6 text-sm-center text-md-start text-lg-start awards">
+          <p><span class="fas fa-award"></span>Michelin Guide Great Britain & Ireland</p>
+          <p><span class="fas fa-award"></span>Irish Hospitality Awards <br>- Restaurant of The Year</p>
+          <p><span class="fas fa-award"></span>Elite Traveller <br>- Best Restaurants in Dublin</p>
+          <p><span class="fas fa-award"></span>Georgina Campbell Guide <br>- Chef of The Year</p>
+        </div>
+        <div class="col-sm-12 col-lg-6 text-sm-center text-md-start text-lg-start awards">
+          <p><span class="fas fa-award"></span> Irish Restaurant Awards <br>- Best Chef Dublin</p>
+          <p><span class="fas fa-award"></span>Hotel & Catering <br>- Gold Medal Award</p>
+          <p><span class="fas fa-award"></span> Restaurant Association <br>- Chef of The Year</p>
+          <p><span class="fas fa-award"></span> Georgina Campbell Guide <br>- Sommelier of The Year</p>
+        </div>
+      </div>
     </div>
 </section>
-
 <div class="separator wow fadeInDown" data-wow-duration="0.5s"></div>
 
+<!-------------------------- WORK TEAM SECTION ---------------------------->
 <section id="workteam">
-
-    <div class="container container-workteam ">
-        <div class="headding text-center wow fadeInDown" data-wow-duration="1s">
-            <h1>TEAM</h1>
-        </div>
-        
-        <div class="row wow fadeInDown" data-wow-duration="1.3s">
-            <div class="col-sm-12 col-lg-6 chef-img-box">
-               <img class="slideanim"src="https://res.cloudinary.com/dthlibbj7/image/upload/v1649188361/cheff_b6fmaq.webp" alt="head-chef">
-            </div>
-            <div class="col-sm-12 col-lg-6 chef-text text-center text-lg-start slideanim">
-                <p>
-                    Chef Quiaran Hill discovered an interest in food while spending time in the kitchen with his french grandmother.
-                     As a chef, he loves creating elevated versions of french dishes that remind him of those experiences cooking with her.                                      
-                </p>
-            </div>
-        
-        </div>
-        <div class="row flex-xl-row-reverse wow fadeInDown" data-wow-duration="2s">
-            
-            <div class="col-sm-12 col-lg-6 team-img-box text-center">
-                <img src="https://res.cloudinary.com/dthlibbj7/image/upload/v1649188361/workteam_byh0jp.jpg" 
-                alt="floor-team">
-            </div>
-
-            <div class="col-sm-12 col-lg-6 team-text text-center text-lg-end">
-                <p>
-                    Our team is the secret to our success. Each of our employees is amazing in their own right, 
-                    but together they are what makes Oryopocho such a fun and rewarding place to work.                  
-                </p>
-            </div>
-                
-        </div>
+  <div class="container container-workteam ">
+    <div class="headding text-center wow fadeInDown" data-wow-duration="1s">
+      <h1>TEAM</h1>
     </div>
-
+    <div class="row wow fadeInDown" data-wow-duration="1.3s">
+      <div class="col-sm-12 col-lg-6 chef-img-box">
+        <img class="slideanim" src="https://res.cloudinary.com/dthlibbj7/image/upload/v1649188361/cheff_b6fmaq.webp" alt="head-chef">
+      </div>
+      <div class="col-sm-12 col-lg-6 chef-text text-center text-lg-start slideanim">
+        <p>
+          Chef Quiaran Hill discovered an interest in food while spending time in the kitchen with his french grandmother.
+          As a chef, he loves creating elevated versions of french dishes that remind him of those experiences cooking with her.
+        </p>
+      </div>
+    </div>
+    <div class="row flex-xl-row-reverse wow fadeInDown" data-wow-duration="2s">
+      <div class="col-sm-12 col-lg-6 team-img-box text-center">
+        <img src="https://res.cloudinary.com/dthlibbj7/image/upload/v1649188361/workteam_byh0jp.jpg" alt="floor-team">
+      </div>
+      <div class="col-sm-12 col-lg-6 team-text text-center text-lg-end">
+        <p>
+          Our team is the secret to our success. Each of our employees is amazing in their own right,
+          but together they are what makes Oryopocho such a fun and rewarding place to work.
+        </p>
+      </div>
+    </div>
+  </div>
 </section>
-
 <div class="separator wow fadeInDown" data-wow-duration="0.5s"></div>
 
+<!-------------------------- RESERVATION FORM ---------------------------->
 <section id="gallery">
-    
-    <div class="container-fluid media-container">
-        <div class="headding text-center wow fadeInDown" data-wow-duration="1s">
-            <h1>GALLERY</h1>
-        </div>
-        <div class="row wow fadeInDown" data-wow-duration="1.5s">
-            <div class="col">
-                <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                      <div class="carousel-item active">
-                        <img src="https://res.cloudinary.com/dthlibbj7/image/upload/v1649867483/food-4_d420qe.jpg" class="d-block" alt="...">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="https://res.cloudinary.com/dthlibbj7/image/upload/v1649867488/food-5_dwhz6r.jpg" class="d-block" alt="...">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="https://res.cloudinary.com/dthlibbj7/image/upload/v1649867504/food-6_n8y1ri.webp" class="d-block" alt="...">
-                      </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-                      <span class="carousel-control-prev-icon controls" aria-hidden="true"></span>
-                      <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-                      <span class="carousel-control-next-icon controls" aria-hidden="true"></span>
-                      <span class="visually-hidden">Next</span>
-                    </button>
-
-                  </div>
-            </div>
-            
-        </div>
-        
+  <div class="container-fluid media-container">
+    <div class="headding text-center wow fadeInDown" data-wow-duration="1s">
+      <h1>GALLERY</h1>
     </div>
-    
+    <div class="row wow fadeInDown" data-wow-duration="1.5s">
+      <div class="col">
+        <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="https://res.cloudinary.com/dthlibbj7/image/upload/v1649867483/food-4_d420qe.jpg" class="d-block" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="https://res.cloudinary.com/dthlibbj7/image/upload/v1649867488/food-5_dwhz6r.jpg" class="d-block" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="https://res.cloudinary.com/dthlibbj7/image/upload/v1649867504/food-6_n8y1ri.webp" class="d-block" alt="...">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon controls" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+            <span class="carousel-control-next-icon controls" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
 </section>
 
 <div class="separator wow fadeInDown" data-wow-duration="0.5s"></div>
 
 <section id="menus">
-    
-    <div class="container-fluid menus-container">
-        <div class="headding text-center wow fadeInDown" data-wow-duration="1s">
-            <h1>MENUS</h1>
-        </div>
-        <div class="row text-center wow fadeInDown" data-wow-duration="1.5s">
-            <div class="col-sm-12 col-md-4 col-lg-4">
-                <a class="" data-bs-toggle="collapse" href="#lunch" role="button" aria-expanded="false" aria-controls="collapseExample">
-                    LUNCH
-                  </a>
-            </div>
-            <div class="col-sm-12 col-md-4 col-lg-4 menus-separator wow fadeInDown" data-wow-duration="1s">
-                <i class="fa-solid fa-code-commit"></i>
-            </div>
-            <div class="col-sm-12 col-md-4 col-lg-4">
-                <a class="" data-bs-toggle="collapse" href="#dinner" role="button" aria-expanded="false" aria-controls="collapseExample">
-                    DINNER
-                </a>
-            </div>
-            
-            <div class="collapse" id="lunch">
-              <div class="card card-body card-luch text-start">
-                  <br>
-                  <p>2 Courses + Canapé & bread €55<br>
-                    3 Courses + Canapé & bread €65
-                </p>
-                  <p>
-                      
-                    Canapé<br>
-                    ***<br>
-                    Our sourdough baguette & brown bread, salted farmhouse butter<br>
-                    ***<br><br>
-                    Pea Velouté, Goat Cheese, Ricotta & Manuka Honey Raviolo<br>
-                    Douro, Quinta do Crasto €11.50<br><br>
-                    Crab, Compressed Cucumber, Apple, Ginger, Lemongrass<br>
-                    Graves White, Château Villa Bel Air, Bordeaux €14.75<br><br>
-                    Beef Tartare, Pearl Onions, Mustard, Black Garlic & Miso Butter<br>
-                    Graves Red, Château Villa Bel Air, Bordeaux €16.00<br><br>
-                    Seared Scallops, Caramelised Cauliflower, Capers & Raisins, Alsace Bacon +€8<br>
-                    Chablis, Vigne de la Boissonneuse, Julien Brocard €22.25
-                </p>
-                <br>
-                <p><strong>Mains</strong><br>***</p>
-                <p>
-                    Torched | Poached Cod, Pickled Trompette, Crisp Confit Chicken, Yuzu
-                    Monterrei, Godello & Treixadura €10.75<br><br>
-                    Butter Roasted ‘Andarl Farm’ Pork Fillet, Sage, Butternut Squash, Pork Jus
-                    Rioja, Especial, Tempranillo, Bodegas Beronia €15.00<br><br>
-                    Hand Rolled Gnocchi, Violet Artichoke, Wild Garlic, Purple Kale, Artichoke Crisps
-                    Chianti Classico, Fonterutoli, Marchesi Mazzei €15.50<br><br>
-                    Wexford Lamb Rump, Spinach Puree, Aubergine Caviar, Fresh Peas, Mint, Lamb Jus
-                    Crozes Hermitage, Silène, J.L Chave Selection €23.75<br><br>
-                </p>
-                <br>
-                <p><strong>Desserts</strong><br>***</p>
-                <p>
-                    “Mount Gay Rum” Baba, Vanilla Mousse, Compote, Pineapple Sorbet
-                    Sauternes 1
-                    st Cru Classé, Château Lafaurie Peyraguey €20.00<br><br>
-                    ʺTiramisuʺ Jivara Chocolate, Coffee Namelaka, Mascarpone Parfait, Bergamot Ice Cream
-                    Vinsanto del Chianti , Malmantico €15.00<br><br>
-                    Passion Fruit Soufflé, Velvet Cloud Sheep’s Yogurt Sorbet, 15 minutes preparation
-                    Coteaux du Layon, Chenin Blanc, Chateau de la Roulerie €14.00<br><br>
-                    Selection of French & Irish farmhouse cheese from the trolley<br>
-                    <em>Late Bottled Vintage Port €12.00 | 20 years old Tawny Port €18.00 | 2000 Vintage Port €32.00
-                    €10 extra instead of dessert (Also available as an extra additional course €20)</em>
-                </p>
-                <br>
-                <p><strong>Sides</strong><br>***</p>
-                <p>
-                    Pomme Mousseline €6.50<br>
-                    Purple Sprouting Broccoli, Smoked Almonds, Bacon Espuma €7.50
-                </p><br>
-                <p>
-                    Tables of 5 or more a 12.5% gratuity will be added to the bill<br>
-                    *100% of all tips and gratuities are distributed to all our staff
-                </p>
 
-                <a class="" data-bs-toggle="collapse" href="#lunch" role="button" aria-expanded="false" aria-controls="collapseExample">
-                    Close
-                  </a>
-              </div>
-            </div>
-            <div class="collapse" id="dinner">
-                <div class="card card-body card-dinner text-start">
-                    <br>
-                   <h6>DINNER MENU €85</h6>
-                      <p><br>
-                          
-                        Canapé<br>
-                        ***<br>
-                        Our sourdough baguette & brown bread, salted farmhouse butter<br>
-                        ***<br><br>
-                        Pea Velouté, Goat Cheese, Ricotta & Manuka Honey Raviolo<br>
-                        Crab, Compressed Cucumber, Apple, Ginger, Lemongrass<br>
-                        Beef Tartare, Pearl Onions, Mustard, Black Garlic & Miso Butter<br>
-                        Foie Gras & Cocoa Torchon, Grape, Chocolate Sauce, Cognac, Pain d’ épices<br>
-                        Scallops, Caramelised Cauliflower, Capers & Raisins, Alsace Bacon +€5<br>                      
-                    </p>
-                    <br>
-                    <p><strong>Mains</strong><br>***</p>
-                    <p>
-                        Torched | Poached Cod, Pickled Trompette, Crisp Confit Chicken, Yuzu<br>
-                        Butter Roasted ‘Andarl Farm’ Pork Fillet, Sage, Butternut Squash, Pork Jus<br>
-                        Hand Rolled Gnocchi, Violet Artichokes, Purple Kale, Wild Garlic, Artichoke Crisps<br>
-                        Roast Halibut, Loire Valley Asparagus, Feves, Courgette, Wasabi Beurre Blanc<br>
-                        Wexford Lamb Rump, Spinach Puree, Aubergine Caviar, Fresh Peas, Mint, Lamb Jus<br>
-                    </p>
-                    <br>
-                    <p><strong>Desserts</strong><br>***</p>
-                    <p>
-                        “Mount Gay Rum” Baba, Vanilla Mousse, Pineapple Compote, Pineapple Sorbet
-                         Sauternes 1
-                         st Cru Classé, Château Lafaurie Peyraguey €20.00<br>
-                         ʺTiramisuʺ Jivara Chocolate, Coffee Namelaka, Mascarpone Parfait, Bergamot Ice Cream
-                         Vinsanto del Chianti, Malmantico €15.00<br>
-                         Passion Fruit Soufflé, Velvet Cloud Sheep’s Yogurt Sorbet, 15 minutes preparation
-                         Coteaux du Layon, Chenin Blanc, Chateau de la Roulerie €14.00<br>
-                        Selection of French & Irish farmhouse cheese from the trolley<br>
-                        <em>Late Bottled Vintage Port €12.00 | 20 years old Tawny Port €18.00 | 2000 Vintage Port €32.00
-                        €10 extra instead of dessert (Also available as an extra additional course €20)</em>
-                    </p>
-                    <br>
-                    <p><strong>Sides</strong><br>***</p>
-                    <p>
-                        Pomme Mousseline €6.50<br>
-                        Purple Sprouting Broccoli, Smoked Almonds, Bacon Espuma €7.50
-                    </p><br>
-                    <p>
-                        Tables of 5 or more a 12.5% gratuity will be added to the bill<br>
-                        *100% of all tips and gratuities are distributed to all our staff
-                    </p>
-                </div>
-                <a class="" data-bs-toggle="collapse" href="#lunch" role="button" aria-expanded="false" aria-controls="collapseExample">
-                    Close
-                  </a>
-              </div>
-            
-        </div>
-        
+  <div class="container-fluid menus-container">
+    <div class="headding text-center wow fadeInDown" data-wow-duration="1s">
+      <h1>MENUS</h1>
     </div>
-    
+    <div class="row text-center wow fadeInDown" data-wow-duration="1.5s">
+      <div class="col-sm-12 col-md-4 col-lg-4">
+        <a class="" data-bs-toggle="collapse" href="#lunch" role="button" aria-expanded="false" aria-controls="collapseExample">
+          LUNCH
+        </a>
+      </div>
+      <div class="col-sm-12 col-md-4 col-lg-4 menus-separator wow fadeInDown" data-wow-duration="1s">
+        <i class="fa-solid fa-code-commit"></i>
+      </div>
+      <div class="col-sm-12 col-md-4 col-lg-4">
+        <a class="" data-bs-toggle="collapse" href="#dinner" role="button" aria-expanded="false" aria-controls="collapseExample">
+          DINNER
+        </a>
+      </div>
+
+      <div class="collapse" id="lunch">
+        <div class="card card-body card-luch text-start">
+          <br>
+          <p>2 Courses + Canapé & bread €55<br>
+            3 Courses + Canapé & bread €65
+          </p>
+          <p>
+
+            Canapé<br>
+            ***<br>
+            Our sourdough baguette & brown bread, salted farmhouse butter<br>
+            ***<br><br>
+            Pea Velouté, Goat Cheese, Ricotta & Manuka Honey Raviolo<br>
+            Douro, Quinta do Crasto €11.50<br><br>
+            Crab, Compressed Cucumber, Apple, Ginger, Lemongrass<br>
+            Graves White, Château Villa Bel Air, Bordeaux €14.75<br><br>
+            Beef Tartare, Pearl Onions, Mustard, Black Garlic & Miso Butter<br>
+            Graves Red, Château Villa Bel Air, Bordeaux €16.00<br><br>
+            Seared Scallops, Caramelised Cauliflower, Capers & Raisins, Alsace Bacon +€8<br>
+            Chablis, Vigne de la Boissonneuse, Julien Brocard €22.25
+          </p>
+          <br>
+          <p><strong>Mains</strong><br>***</p>
+          <p>
+            Torched | Poached Cod, Pickled Trompette, Crisp Confit Chicken, Yuzu
+            Monterrei, Godello & Treixadura €10.75<br><br>
+            Butter Roasted ‘Andarl Farm’ Pork Fillet, Sage, Butternut Squash, Pork Jus
+            Rioja, Especial, Tempranillo, Bodegas Beronia €15.00<br><br>
+            Hand Rolled Gnocchi, Violet Artichoke, Wild Garlic, Purple Kale, Artichoke Crisps
+            Chianti Classico, Fonterutoli, Marchesi Mazzei €15.50<br><br>
+            Wexford Lamb Rump, Spinach Puree, Aubergine Caviar, Fresh Peas, Mint, Lamb Jus
+            Crozes Hermitage, Silène, J.L Chave Selection €23.75<br><br>
+          </p>
+          <br>
+          <p><strong>Desserts</strong><br>***</p>
+          <p>
+            “Mount Gay Rum” Baba, Vanilla Mousse, Compote, Pineapple Sorbet
+            Sauternes 1
+            st Cru Classé, Château Lafaurie Peyraguey €20.00<br><br>
+            ʺTiramisuʺ Jivara Chocolate, Coffee Namelaka, Mascarpone Parfait, Bergamot Ice Cream
+            Vinsanto del Chianti , Malmantico €15.00<br><br>
+            Passion Fruit Soufflé, Velvet Cloud Sheep’s Yogurt Sorbet, 15 minutes preparation
+            Coteaux du Layon, Chenin Blanc, Chateau de la Roulerie €14.00<br><br>
+            Selection of French & Irish farmhouse cheese from the trolley<br>
+            <em>Late Bottled Vintage Port €12.00 | 20 years old Tawny Port €18.00 | 2000 Vintage Port €32.00
+              €10 extra instead of dessert (Also available as an extra additional course €20)</em>
+          </p>
+          <br>
+          <p><strong>Sides</strong><br>***</p>
+          <p>
+            Pomme Mousseline €6.50<br>
+            Purple Sprouting Broccoli, Smoked Almonds, Bacon Espuma €7.50
+          </p><br>
+          <p>
+            Tables of 5 or more a 12.5% gratuity will be added to the bill<br>
+            *100% of all tips and gratuities are distributed to all our staff
+          </p>
+
+          <a class="" data-bs-toggle="collapse" href="#lunch" role="button" aria-expanded="false" aria-controls="collapseExample">
+            Close
+          </a>
+        </div>
+      </div>
+      <div class="collapse" id="dinner">
+        <div class="card card-body card-dinner text-start">
+          <br>
+          <h6>DINNER MENU €85</h6>
+          <p><br>
+
+            Canapé<br>
+            ***<br>
+            Our sourdough baguette & brown bread, salted farmhouse butter<br>
+            ***<br><br>
+            Pea Velouté, Goat Cheese, Ricotta & Manuka Honey Raviolo<br>
+            Crab, Compressed Cucumber, Apple, Ginger, Lemongrass<br>
+            Beef Tartare, Pearl Onions, Mustard, Black Garlic & Miso Butter<br>
+            Foie Gras & Cocoa Torchon, Grape, Chocolate Sauce, Cognac, Pain d’ épices<br>
+            Scallops, Caramelised Cauliflower, Capers & Raisins, Alsace Bacon +€5<br>
+          </p>
+          <br>
+          <p><strong>Mains</strong><br>***</p>
+          <p>
+            Torched | Poached Cod, Pickled Trompette, Crisp Confit Chicken, Yuzu<br>
+            Butter Roasted ‘Andarl Farm’ Pork Fillet, Sage, Butternut Squash, Pork Jus<br>
+            Hand Rolled Gnocchi, Violet Artichokes, Purple Kale, Wild Garlic, Artichoke Crisps<br>
+            Roast Halibut, Loire Valley Asparagus, Feves, Courgette, Wasabi Beurre Blanc<br>
+            Wexford Lamb Rump, Spinach Puree, Aubergine Caviar, Fresh Peas, Mint, Lamb Jus<br>
+          </p>
+          <br>
+          <p><strong>Desserts</strong><br>***</p>
+          <p>
+            “Mount Gay Rum” Baba, Vanilla Mousse, Pineapple Compote, Pineapple Sorbet
+            Sauternes 1
+            st Cru Classé, Château Lafaurie Peyraguey €20.00<br>
+            ʺTiramisuʺ Jivara Chocolate, Coffee Namelaka, Mascarpone Parfait, Bergamot Ice Cream
+            Vinsanto del Chianti, Malmantico €15.00<br>
+            Passion Fruit Soufflé, Velvet Cloud Sheep’s Yogurt Sorbet, 15 minutes preparation
+            Coteaux du Layon, Chenin Blanc, Chateau de la Roulerie €14.00<br>
+            Selection of French & Irish farmhouse cheese from the trolley<br>
+            <em>Late Bottled Vintage Port €12.00 | 20 years old Tawny Port €18.00 | 2000 Vintage Port €32.00
+              €10 extra instead of dessert (Also available as an extra additional course €20)</em>
+          </p>
+          <br>
+          <p><strong>Sides</strong><br>***</p>
+          <p>
+            Pomme Mousseline €6.50<br>
+            Purple Sprouting Broccoli, Smoked Almonds, Bacon Espuma €7.50
+          </p><br>
+          <p>
+            Tables of 5 or more a 12.5% gratuity will be added to the bill<br>
+            *100% of all tips and gratuities are distributed to all our staff
+          </p>
+        </div>
+        <a class="" data-bs-toggle="collapse" href="#lunch" role="button" aria-expanded="false" aria-controls="collapseExample">
+          Close
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+
 </section>
 <div class="separator wow fadeInDown" data-wow-duration="0.5s"></div>
 
