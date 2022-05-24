@@ -7,8 +7,6 @@ jQuery(function(){
       $(".headding h1").addClass("hover");
       });
     
-
-
   });
 
 

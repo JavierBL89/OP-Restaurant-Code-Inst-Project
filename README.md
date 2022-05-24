@@ -223,3 +223,54 @@ Once you have followed the appropriate step above, your Heroku app will be linke
 - **HOW TO DEPLOY**
   
 By running the command git push heroku main and your app will be deployed to Heroku.
+
+# Credits
+ 
+## Content
+
+- The content of this website such as "Style section" or "Menus" i took it from the website of the restaurant i work in, the design of this websit might also be slighly similar to it.
+
+- Code
+
+During the development i had to look into youtube tutorials about how to build a restaurant booking application, but very few stuff about Restaurant booking management are found.
+However i found a lot of stuff about how to build a Hotel booking management which was helpful on how to create models, forms,and how to work on the logic.
+  
+- Restaurant management Django:
+  
+  - [Restaurant reservation Models](<https://youtu.be/TuXFAl8aMvc>)
+  - [Restaurant reservation Forms](<https://youtu.be/xcsbQHdtI2k>)
+
+- Hotel management Dango:
+
+  - [Django Hotel management Models](<https://youtu.be/yenjz1Wv9Yo>)
+  - [Django Hotel management Forms](<https://youtu.be/m7uVhLxT1AA>)
+  - [Django Hotel management Logic](<https://youtu.be/-9dhCQ7FdD0>)
+
+
+- **Media** 
+
+- Hero picture it's been take from google images, and it is also a real picture of this restaurant a work for.
+
+- All the remaining pictures were taken from google images.
+
+- [Cloudinary](<https://cloudinary.com/>) libraryis used to edit and store all media images in this proyect.
+
+- **Extra**
+
+For development purposes i continually had to look into stuff in google.
+
+[Stackoverflow](<https://stackoverflow.com/>) and [Geeksforgeeks](<https://www.geeksforgeeks.org/>) were the channnels where i mostly found the stuff i needed to overcome issues or develop code.
+
+- Technologies documentation:
+  
+  1.[Django](<https://docs.djangoproject.com/>)
+  3.[JQuery](<https://jquery.com/>)
+  3.[Bootstrap](<https://getbootstrap.com/docs>)
+
+# Aknowlegments
+
+I want to thank the [Code Institute](https://codeinstitute.net/ie/) tutor assistance team, which helped me out with some of the day to day code issues. 
+
+I did not make use of my mentor assistance this time round. 
+
+
