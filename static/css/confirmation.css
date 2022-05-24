@@ -1,406 +1,384 @@
 /******************************* COMMON PROPERTIES*/
-body{
+body {
     background-color: #cac7c7;
-
-}
-
-div .bg-image {
+  }
+  
+  div .bg-image {
     background-image: url("https://res.cloudinary.com/dthlibbj7/image/upload/v1652280638/oriopoxo_xv3vg5.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    /* opacity: 0.9; */
-    /* filter: brightness(50%); */
-
- }
-
-
-/*************** HEADER */
-.navbar {
+  }
+  
+  /*************** HEADER */
+  .navbar {
     background-color: #cac7c7;
     font-family: 'Roboto Slab', serif;
     font-size: 400;
     position: relative;
     z-index: 2;
-}
-
-nav .nav-item a {
-background-color: inherit;
-padding-left: 6px;
-padding-right: 6px;
-border-top: solid 1px #cac7c7;
-border-right: solid 1px #cac7c7;
-border-left: solid 1px #cac7c7;
-}
-
-nav .separator{
+  }
+  
+  nav .nav-item a {
+    background-color: inherit;
+    padding-left: 6px;
+    padding-right: 6px;
+    border-top: solid 1px #cac7c7;
+    border-right: solid 1px #cac7c7;
+    border-left: solid 1px #cac7c7;
+  }
+  
+  nav .separator {
     margin-top: 10px;
-}
-
-.separator{
+  }
+  
+  .separator {
     background-color: #727272;
     height: 1px;
     width: 25%;
-    margin: 45px auto 0 ;
-}
-
-nav .logo p {
+    margin: 45px auto 0;
+  }
+  
+  nav .logo p {
     font-family: 'Beau Rivage', cursive;
     font-size: 1.5rem;
     color: rgb(255, 255, 255);
-
-}
-.logo h2{   
+  }
+  
+  .logo h2 {
     font-family: 'Roboto Slab', serif;
     font-weight: 800;
     font-size: 2.3rem;
     color: #727272;
-}
-
-/******** FEEDBACK SECTION ****/
-#cancelation-form-container{
+  }
+  
+  /************* FEEDBACK SECTION ****/
+  #cancelation-form-container {
     border-radius: 10px;
-} 
-
-#feedback{
+  }
+  
+  #feedback {
     background-color: rgb(255, 255, 255);
     margin: 30px auto;
-    color: black;  
-   padding: 50px 50px;
-   border-radius: 10px;
-
-}
-
-#feedback h6{
+    color: black;
+    padding: 50px 50px;
+    border-radius: 10px;
+  }
+  
+  #feedback h6 {
     padding-right: 5%;
     padding-left: 5%;
     text-align: center;
     color: #fa7a7a;
     line-height: 25px;
-}
-
-.jumbotron {
+  }
+  
+  .jumbotron {
     background-color: #eeeeee;
     padding: 3%;
     width: 80%;
     margin: 0 auto;
-}
-
-.fa-phone{
+  }
+  
+  .fa-phone {
     margin-left: 20px;
     margin-right: 5px;
-}
-
-#feedback p, strong{
+  }
+  
+  #feedback p, strong {
     padding-left: 5%;
     padding-right: 5%;
     font-size: 0.800rem;
     text-align: center;
-}
-
-.failed {
-   width: 80%;
-   margin: 0 auto;
-}
-
-table{
-    border-collapse: initial;
-}
-
-table td {
-   border-collapse: initial;
-   border-style: none;
-}
-
-/*** FOOTER */
-
-.copy-right{
-    margin-top: 100px;
-}
-
-
-
-
-@media only screen and (min-width: 320px) and (max-width: 600px){
-
-    /********* HEADER*/
-
-    .navbar .container-fluid {
-        display: flex;
-        flex-direction: column-reverse;
-        padding-left: 5%;
-        padding-right: 5%;
-    }
-    
-    nav .nav-item {
-        color: rgb(120 120 120);
-        /* padding-left: 2px;
-        padding-right: 2px; */
-        }
-
-        nav .nav-link {
-            margin-left: 5px;
-            margin-right: 30px;
-            font-size: 0.650rem;
-            color: rgb(120 120 120);
-            }
-    
-        nav .nav-item .nav-link{
-            padding-left: 6px;
-            padding-right: 6px;
-        }
-
-    .logo p {
-        font-family: 'Beau Rivage', cursive;
-        font-size: 1.2rem;
-        color: #838383;
-        margin-top: 20px;
-        margin-left: 5px;
-        }
-    
-        div .bg-image {
-            width: 100%;
-            height: 250px;
-        }
-    
-    /****** FEEDBACK SECTION **/
-    #feedback{
-        width: 95%;
-        margin: 30px auto;
-        color: black;  
-       padding: 10px 10px;
-    }
-    
-    #feedback h5{
-        font-size: 0.900rem;
-        line-height: 25px;
-    }
-    #feedback h6{
-        font-size: 0.800rem;
-        padding-right: 5%;
-        padding-left: 5%;
-        margin-top: 5px;
-        line-height: 25px;
-    }
-    
-    .jumbotron {
-        padding: 3%;
-        width: 90%;
-        margin: 0 auto;
-    }
-    
-    .fa-phone{
-        /* margin-left: 20px; */
-        margin-right: 5px;
-    }
-
-    #feedback p, strong{
-        padding-left: 5%;
-        padding-right: 5%;
-        font-size: 0.750rem;
-    }
-    table .contact-details-row{
-        margin-bottom: 80px;
-    }
-    
-    .failed {
-       width: 100%;
-       margin: 0 auto;
-    }
-    
-    table{
-        padding-left: 2%;
-        padding-right: 2%;
-    }
-    
-    table th{
-    font-size: 0.850rem;
-    
-    }
-    table td {
-    
-       font-size: 0.750rem;
-    }
-}
-@media only screen and (min-width: 640px) and (max-width: 950px){
-    /******* HEADER*/
-
-    nav .nav-link {
-        margin-left: 5px;
-        margin-right: 33px;
-        font-size: 0.900rem;
-        color: rgb(120 120 120);
-        }
-
-    nav .nav-item .nav-link{
-        /* background-color: inherit; */
-        padding-left: 6px;
-        padding-right: 6px;
-    }
-
-        .navbar .container-fluid {
-            display: flex;
-            flex-direction: column-reverse;
-        }
-        
-        nav .nav-item {
-            color: rgb(120 120 120);
-            padding-left: 2px;
-            padding-right: 2px;
-            font-size: 0.750rem;
-            }
-    
-        .logo p {
-            font-family: 'Beau Rivage', cursive;
-            font-size: 1.4rem;
-            color: #838383;
-            margin-top: 15px;
-            margin-left: 5px;
-            }
-
-            div .bg-image {
-                width: 100%;
-                height: 500px;
-             }
-/************ FEEDBACK SECTION */
-    #feedback{
-        width: 80%;
-        margin: 30px auto;
-        color: black;  
-       padding: 40px 40px;
-    }
-    
-    #feedback h6{
-        font-size: 0.950rem;
-        line-height: 25px;
-    }
-
-    #feedback h6{
-        font-size: 0.850rem;
-        line-height: 25px;
-    }
-    
-    .jumbotron {
-        background-color: #eeeeee;
-        padding: 3%;
-        width: 100%;
-        margin: 0 auto;
-    }
-
-    #feedback p, strong{
-        padding-left: 3%;
-        padding-right: 3%;
-    }
-
-    table .contact-details-row{
-        margin-bottom: 80px;
-    }
-     
-    table{
-        padding-left: 7%;
-    }
-    
-    table th{
-    font-size: 0.850rem;
-    
-    }
-    table td {
-       font-size: 0.850rem;
-    }
-}
-
-@media only screen and (min-width: 1000px){
-
-
-/***************************************  HEADER SECTION **********************/
-
-    .navbar {
-        /* background-color: #cac7c7;
-        font-family: 'Roboto Slab', serif;
-        font-size: 400; */
-        padding-left: 7%;
-        padding-right: 7%;
-    }
-
-    nav .nav-link {
-        margin-top: 30px;
-        margin-left: 40px;
-        color: rgb(120 120 120);
-        }
-        
-    .logo h2 {
-        font-size: 4.2rem;
-    }
-
-    .logo p{
-        font-size: 1.8rem;
-        margin-top: 45px;
-        margin-left: 15px;
-    }
-
-    div .bg-image {
-        width: 100%;
-        height: 500px;
-     }
-     
-/********** FEEDBACK SECTION */
-
-#feedback{
-    background-color: rgb(255, 255, 255);
-    /* height: 400px; */
-    width: 70%;
-    margin: 30px auto;
-    color: black;  
-   padding: 50px 50px;
-}
-
-#feedback h6{
-    font-size: 0.900rem;
-    padding-right: 5%;
-    padding-left: 5%;
-    text-align: center;
-}
-
-.jumbotron {
-    padding: 3%;
+  }
+  
+  .failed {
     width: 80%;
-}
-
-.fa-phone{
-    margin-left: 20px;
-    margin-right: 5px;
-}
-
-#feedback p, strong{
-    padding-left: 5%;
-    padding-right: 5%;
-    font-size: 0.800rem;
-    text-align: center;
-}
-
-table .contact-details-row{
-    margin-bottom: 80px;
-}
-
-.failed {
-   width: 80%;
-   margin: 0 auto;
-}
-
-table{
+    margin: 0 auto;
+  }
+  
+  table {
     border-collapse: initial;
-    padding-left: 10%;
-}
-
-table th{
-font-size: 0.850rem;
-
-}
-table td {
-   border-collapse: initial;
-   border-style: none;
-   font-size: 0.850rem;
-}
-     
-}
-
-
+  }
+  
+  table td {
+    border-collapse: initial;
+    border-style: none;
+  }
+  
+  /********** FOOTER */
+  .copy-right {
+    margin-top: 100px;
+  }
+  
+  @media only screen and (min-width: 320px) and (max-width: 600px) {
+  
+    /********* HEADER*/
+    .navbar .container-fluid {
+      display: flex;
+      flex-direction: column-reverse;
+      padding-left: 5%;
+      padding-right: 5%;
+    }
+  
+    nav .nav-item {
+      color: rgb(120 120 120);
+    }
+  
+    nav .nav-link {
+      margin-left: 5px;
+      margin-right: 30px;
+      font-size: 0.650rem;
+      color: rgb(120 120 120);
+    }
+  
+    nav .nav-item .nav-link {
+      padding-left: 6px;
+      padding-right: 6px;
+    }
+  
+    .logo p {
+      font-family: 'Beau Rivage', cursive;
+      font-size: 1.2rem;
+      color: #838383;
+      margin-top: 20px;
+      margin-left: 5px;
+    }
+  
+    div .bg-image {
+      width: 100%;
+      height: 250px;
+    }
+  
+    /****** FEEDBACK SECTION **/
+    #feedback {
+      width: 95%;
+      margin: 30px auto;
+      color: black;
+      padding: 10px 10px;
+    }
+  
+    #feedback h5 {
+      font-size: 0.900rem;
+      line-height: 25px;
+    }
+  
+    #feedback h6 {
+      font-size: 0.800rem;
+      padding-right: 5%;
+      padding-left: 5%;
+      margin-top: 5px;
+      line-height: 25px;
+    }
+  
+    .jumbotron {
+      padding: 3%;
+      width: 90%;
+      margin: 0 auto;
+    }
+  
+    .fa-phone {
+      margin-right: 5px;
+    }
+  
+    #feedback p, strong {
+      padding-left: 5%;
+      padding-right: 5%;
+      font-size: 0.750rem;
+    }
+  
+    table .contact-details-row {
+      margin-bottom: 80px;
+    }
+  
+    .failed {
+      width: 100%;
+      margin: 0 auto;
+    }
+  
+    table {
+      padding-left: 2%;
+      padding-right: 2%;
+    }
+  
+    table th {
+      font-size: 0.850rem;
+    }
+  
+    table td {
+      font-size: 0.750rem;
+    }
+  }
+  
+  @media only screen and (min-width: 640px) and (max-width: 950px) {
+  
+    /************************* HEADER*/
+    nav .nav-link {
+      margin-left: 5px;
+      margin-right: 33px;
+      font-size: 0.900rem;
+      color: rgb(120 120 120);
+    }
+  
+    nav .nav-item .nav-link {
+      padding-left: 6px;
+      padding-right: 6px;
+    }
+  
+    .navbar .container-fluid {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+  
+    nav .nav-item {
+      color: rgb(120 120 120);
+      padding-left: 2px;
+      padding-right: 2px;
+      font-size: 0.750rem;
+    }
+  
+    .logo p {
+      font-family: 'Beau Rivage', cursive;
+      font-size: 1.4rem;
+      color: #838383;
+      margin-top: 15px;
+      margin-left: 5px;
+    }
+  
+    div .bg-image {
+      width: 100%;
+      height: 500px;
+    }
+  
+    /************************* FEEDBACK SECTION */
+    #feedback {
+      width: 80%;
+      margin: 30px auto;
+      color: black;
+      padding: 40px 40px;
+    }
+  
+    #feedback h6 {
+      font-size: 0.950rem;
+      line-height: 25px;
+    }
+  
+    #feedback h6 {
+      font-size: 0.850rem;
+      line-height: 25px;
+    }
+  
+    .jumbotron {
+      background-color: #eeeeee;
+      padding: 3%;
+      width: 100%;
+      margin: 0 auto;
+    }
+  
+    #feedback p, strong {
+      padding-left: 3%;
+      padding-right: 3%;
+    }
+  
+    table .contact-details-row {
+      margin-bottom: 80px;
+    }
+  
+    table {
+      padding-left: 7%;
+    }
+  
+    table th {
+      font-size: 0.850rem;
+    }
+  
+    table td {
+      font-size: 0.850rem;
+    }
+  }
+  
+  @media only screen and (min-width: 1000px) {
+  
+    /***************************************  HEADER SECTION **/
+    .navbar {
+      padding-left: 7%;
+      padding-right: 7%;
+    }
+  
+    nav .nav-link {
+      margin-top: 30px;
+      margin-left: 40px;
+      color: rgb(120 120 120);
+    }
+  
+    .logo h2 {
+      font-size: 4.2rem;
+    }
+  
+    .logo p {
+      font-size: 1.8rem;
+      margin-top: 45px;
+      margin-left: 15px;
+    }
+  
+    div .bg-image {
+      width: 100%;
+      height: 500px;
+    }
+  
+    /********** FEEDBACK SECTION */
+    #feedback {
+      background-color: rgb(255, 255, 255);
+      width: 70%;
+      margin: 30px auto;
+      color: black;
+      padding: 50px 50px;
+    }
+  
+    #feedback h6 {
+      font-size: 0.900rem;
+      padding-right: 5%;
+      padding-left: 5%;
+      text-align: center;
+    }
+  
+    .jumbotron {
+      padding: 3%;
+      width: 80%;
+    }
+  
+    .fa-phone {
+      margin-left: 20px;
+      margin-right: 5px;
+    }
+  
+    #feedback p, strong {
+      padding-left: 5%;
+      padding-right: 5%;
+      font-size: 0.800rem;
+      text-align: center;
+    }
+  
+    table .contact-details-row {
+      margin-bottom: 80px;
+    }
+  
+    .failed {
+      width: 80%;
+      margin: 0 auto;
+    }
+  
+    table {
+      border-collapse: initial;
+      padding-left: 10%;
+    }
+  
+    table th {
+      font-size: 0.850rem;
+    }
+  
+    table td {
+      border-collapse: initial;
+      border-style: none;
+      font-size: 0.850rem;
+    }
+  }
