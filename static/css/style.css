@@ -26,7 +26,7 @@ form label {
   
   body {
     font-family: 'Roboto Slab', serif;
-    color: hsl(0, 0%, 35%);
+    color: rgb(89, 89, 89);
   }
   
   div li {
@@ -49,6 +49,7 @@ form label {
   }
   
   nav .nav-item a {
+    color: rgb(89, 89, 89);
     background-color: inherit;
     padding-left: 6px;
     padding-right: 6px;
@@ -71,7 +72,6 @@ form label {
   .logo h2 {
     font-family: 'Roboto Slab', serif;
     font-weight: 800;
-    font-size: 2.3rem;
     color: #727272;
   }
   
@@ -334,7 +334,6 @@ form label {
   
   .headding h1:hover {
     border-top: solid 1px rgb(255, 255, 255);
-    ;
     border-right: solid 1px rgb(255, 255, 255);
     border-left: solid 1px rgb(255, 251, 251);
     animation-name: headdings-border;
@@ -361,7 +360,6 @@ form label {
   
   nav .logo p {
     font-family: 'Beau Rivage', cursive;
-    font-size: 1.5rem;
     color: #838383;
     animation-name: text-flash;
     animation-duration: 3s;
@@ -413,32 +411,39 @@ form label {
   
     /******************************** HEADER*/
     .navbar .container-fluid {
+      margin-top: 10px;
       display: flex;
       flex-direction: column-reverse;
       padding-left: 5%;
       padding-right: 5%;
     }
   
-    nav .nav-item {
-      color: rgb(120 120 120);
-    }
-  
     nav .nav-link {
+      text-align: center;
       margin-left: 5px;
-      font-size: 0.650rem;
+      font-size: 0.975rem; 
       color: rgb(120 120 120);
     }
   
+   nav .container-fluid .separator{
+      margin-top: 20px;
+    }
+
     nav .nav-item .nav-link {
-      padding-left: 6px;
-      padding-right: 6px;
+      padding-left: 30px;
+      padding-right: 30px;
+      padding-bottom: 0;
     }
   
+    nav h2{
+      font-size: 3.3rem;
+    }
+
     .logo p {
       font-family: 'Beau Rivage', cursive;
-      font-size: 1.2rem;
+      font-size: 1.8rem;
       color: #838383;
-      margin-top: 20px;
+      margin-top: 30px;
       margin-left: 5px;
     }
   
@@ -506,7 +511,6 @@ form label {
   
     .awards {
       margin-top: 30px;
-      margin-left: 20px;
     }
   
     .awards p {
@@ -663,8 +667,7 @@ form label {
     nav .nav-link {
       margin-left: 5px;
       margin-right: 33px;
-      font-size: 0.900rem;
-      color: rgb(120 120 120);
+      font-size: 1rem;
     }
   
     nav .nav-item .nav-link {
@@ -673,25 +676,33 @@ form label {
     }
   
     .navbar .container-fluid {
+      margin-top: 15px;
       display: flex;
       flex-direction: column-reverse;
     }
   
     nav .nav-item {
-      color: rgb(120 120 120);
       padding-left: 2px;
       padding-right: 2px;
-      font-size: 0.750rem;
     }
   
+    nav h2{
+      font-size: 3.8rem;
+    }
+    
     .logo p {
       font-family: 'Beau Rivage', cursive;
-      font-size: 1.4rem;
+      font-size: 2rem;
       color: #838383;
-      margin-top: 15px;
+      margin-top: 35px;
       margin-left: 5px;
     }
-  
+
+   nav .separator{
+     margin-top: 30px;
+     margin-bottom: 10px;
+   }
+
     div .bg-image {
       width: 100%;
       height: 500px;
@@ -875,7 +886,6 @@ form label {
       margin-top: 30px;
       margin-left: 10px;
       padding-left: 10px;
-      color: rgb(120 120 120);
     }
   
     .logo h2 {
