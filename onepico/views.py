@@ -88,12 +88,11 @@ class BookingSearch(View):
         return render(request, 'cancelations.html')
 
     def post(self, request, *args, **kawrgs):
-
-        phone = request.POST.get('phone')
-        email = request.POST.get('email')
-        date = request.POST.get('date')
-        # requested_date = datetime.strptime(date, '%Y-%m-%d')
-
+        phone = request.POST.get('reservation_phone')
+        email = request.POST.get('reservation_email')
+        date = request.POST.get('reservation_date')
+        # date_format = '%Y-%m-%d'
+        # date = datetime.strptime(date, date_format)
         customer_record = Booking.objects.filter(phone=phone, email=email, date=date)
         if customer_record:
             customer_record = {

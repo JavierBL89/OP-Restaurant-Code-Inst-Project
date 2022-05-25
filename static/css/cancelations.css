@@ -103,7 +103,7 @@ body {
     margin-bottom: 0;
   }
   
-  .cancelationEmailError, .cancelationPhoneError {
+  .cancelationEmailError, .cancelationPhoneError, .cancelationDateError {
     margin-top: 10px;
     margin-bottom: 10px;
     font-style: oblique;

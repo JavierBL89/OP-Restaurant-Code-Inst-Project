@@ -42,17 +42,17 @@ function validateInputs(event){
   const start_timeValue = document.querySelector("#start_time").value.toString();
   const party_sizeValue =party_size.value.trim()
 
-  let time = document.querySelector("#start_time");
-
     if(nameValue === ""){
       setErrorForBlank(fname, "Field cannot be blank");
     }else{
+      checkAlphanumerics(fname)
       checkLength(fname)
     }
 
     if(lastNameValue === ""){
       setErrorForBlank(surname, "Field cannot be blank");
     }else{
+      checkAlphanumerics(surname)
       checkLength(surname)
     }
 
@@ -73,7 +73,7 @@ function validateInputs(event){
     }else{
       dateValidation(dateValue)
     }
-    // console.log(start_timeValue );
+
     if(start_timeValue === ""){
       start_time.className = "form-control error"
       document.querySelector(".timeError").innerText = "Please select a valid time slot"
@@ -93,6 +93,25 @@ function validateInputs(event){
     }
 }
 
+/**
+ * 
+ * VALIDATE NAME AND SURNAME USERS FORTMAT
+ */
+function checkAlphanumerics(nameDetails){
+  var letters = /^[A-Za-z]+$/;
+  nameDetails = nameDetails.value
+  nameDetails.getAttribute("class");
+  if(nameDetails.match(letters)){
+    console.log(nameDetails.element);
+  }else{
+    nameDetails.className = "form-control error"
+    if(nameDetails == fname){
+        document.querySelector(".nameError").innerText = "Only alphabet characters allowed";
+    }else if(nameDetails == surname){
+    document.querySelector(".lastNameError").innerText = "Only alphabet characters allowed";
+   }
+}
+}
 
 /**
  * 
@@ -142,13 +161,11 @@ function emailValidation(emailValue){
   }
 }
 
-
 /**
  * 
  * VALIDATE INPUTS LENGTH 
  */
 function checkLength(input){
-
   const userData =  input.getAttribute("id");
   const nameValue = fname.value.trim()
   const lastNameValue = surname.value.trim()
@@ -171,10 +188,6 @@ function checkLength(input){
     phone.className = "form-control error"
     document.querySelector(".phoneError").innerText = "Must have from 8 to 9 numbers"
   }
-  // else if(userData == "start_time"){
-  //   start_time.className = "form-control error"
-  //   document.querySelector(".timeError").innerText = "Please select a valid time slot"
-  // }
   else{
     setSuccessFor(input)
   }
@@ -193,7 +206,6 @@ function setErrorForDate(bookingDate, message){
  */
 function checkPartySize(party_sizeValue){
   const minos = "-";
-
   if(party_sizeValue >= 13){
     party_size.className = "form-control error"
     document.querySelector(".partyError").innerText = "For parties over 12px contact us";
@@ -222,5 +234,3 @@ function setErrorForBlank(input, message){
 function setSuccessFor(input){
   input.className = "form-control success"
 }
-
-

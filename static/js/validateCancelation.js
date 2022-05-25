@@ -1,5 +1,4 @@
 
-
 const form = document.getElementById("cancelation_form")
 const email = document.getElementById("reservation_email")
 const phone = document.getElementById("reservation_phone")
@@ -10,7 +9,6 @@ const date = document.getElementById("reservation_date");
 * INITIALIZE FORM VALIDATION
 **/
 function handleSubmitCancelation(event){
-
     form.addEventListener('submit', event => {
         if (!form.checkValidity()) {
       event.preventDefault();
@@ -24,8 +22,6 @@ function handleSubmitCancelation(event){
 
 
 function validateInputs(event){
-    console.log("putaa");
-
     const emailValue = document.getElementById("reservation_email").value.trim()
     const phoneValue = document.getElementById("reservation_phone").value.trim()
     const dateValue = date.value.trim()
@@ -77,22 +73,48 @@ function emailValidation(emailValue){
 
 }
 
-
 /**
  * 
  * VALIDATE DATE TO BOOK ON A DATE AHEAD
  */
-function dateValidation(dateValue){
-    const currentDate =  new Date().now()
-    console.log(currentDate);
-   
-    if(dateValue > currentDate){
-      console.log(date);
-      console.log(currentDate);
+ function dateValidation(dateValue){
+  const dayOfWeek =  new Date(dateValue).getDay()
+  const month = parseInt(dateValue.slice(5,7));
+  const day = parseInt(dateValue.slice(8,10));
+  const year = parseInt(dateValue.slice(0,4));
+
+  const currentDate = new Date();
+  const currentYear = currentDate.getFullYear();
+  const currentMonth = currentDate.getMonth() + 1;
+  const currentDay = currentDate.getDate();
+ 
+  if(year >= currentYear){
+    if(month >= currentMonth){
+      if(day >= currentDay){
+        if(opening_days.includes(dayOfWeek)){
+          setSuccessFor(date)
+        }else{
+          setErrorForDate(date, "Opening days from Tuesday to Saturday included")
+          console.log("3")
+        }
+      }else{
+        setErrorForDate(date, "Day must be from today onwards")
+      }  
     }else{
-        console.log("puta");
+      setErrorForDate(date, "Month must be ahead")
     }
+  }else{
+    setErrorForDate(date, "Year must be ahead")
   }
+}
+
+/**
+ * ERROR MESSAGES FOR INCORRECT DATE
+ */
+ function setErrorForDate(bookingDate, message){
+  bookingDate.className = "form-control error"
+  document.querySelector(".cancelationDateError").innerText = message;
+}
 
 /**
  * ERROR WARNING AN MESSAGE FOR BLANK INPUTS
@@ -102,7 +124,6 @@ function dateValidation(dateValue){
     input.setAttribute("placeholder", message)
   }
 
-  
   /**
  * TURNS BORDER INPUT INTO GREEN IF DATA PASSES VALIDATION
  */
