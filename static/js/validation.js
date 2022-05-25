@@ -99,20 +99,21 @@ function validateInputs(event){
 function checkAlphanumerics(input){
   var letters = /^[A-Za-z]+$/;
   let input_id = input.getAttribute("id")
-  let inputValue = input.value
     if(input_id == "name"){
+      let inputValue = fname.value
       if(inputValue.match(letters)){
-        setSuccessFor(input)
+        setSuccessFor(fname)
       }else{
-        input.className = "form-control error"
+        fname.className = "form-control error"
         document.querySelector(".nameError").innerText = "Only alphabet characters allowed";
       }
     }
     if(input_id == "l_name"){
+      let inputValue = surname.value
       if(inputValue.match(letters)){
-        setSuccessFor(input)
+        setSuccessFor(surname)
       }else{
-        input.className = "form-control error"
+        surname.className = "form-control error"
         document.querySelector(".lastNameError").innerText = "Only alphabet characters allowed";
       }
     }

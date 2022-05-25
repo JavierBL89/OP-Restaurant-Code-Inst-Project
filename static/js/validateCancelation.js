@@ -24,9 +24,9 @@ function handleSubmitCancelation(event){
 function validateInputs(event){
     const emailValue = document.getElementById("reservation_email").value.trim()
     const phoneValue = document.getElementById("reservation_phone").value.trim()
-    const dateValue = date.value.trim()
+    const dateValue = document.getElementById("reservation_date").value
 
-    if(emailValue === ""){
+    if(emailValue === " "){
         setErrorForBlank(email, "Field cannot be blank");
       }else{
         emailValidation(emailValue)
@@ -37,7 +37,7 @@ function validateInputs(event){
         checkLength(phoneValue)
       }
       if(dateValue === ""){
-        date.className = "cancelation-input error"
+        date.className = "form-control cancelation-input error"
       }else{
         dateValidation(dateValue)
       }
@@ -53,24 +53,18 @@ function emailValidation(emailValue){
     if(emailValue.match(validRegex)){
       setSuccessFor(email)
     }else{
+      email.className = "form-control error cancelation-input"
       document.querySelector(".cancelationEmailError").innerText = "Enter a valid email"
     }
   }
 
-
-  function checkLength(input){
-
-    const userData =  input.getAttribute("id");
-    const phoneValue = phone.value.trim()
-    const emailValue = email.value.trim()
-    
-     if(userData == "phone" && phoneValue.length <=7 || phoneValue.length >=9){
-      phone.className = "form-control error"
-      document.querySelector("cancelation-form .phoneError").innerText = "Must have from 8 to 9 numbers"
+  function checkLength(phoneValue){
+     if(phoneValue.length <=7 || phoneValue.length >=9){
+      phone.className = "form-control error cancelation-input"
+      document.querySelector(".cancelation-form .cancelationPhoneError").innerText = "Must have from 8 to 9 numbers"
     }else{
-        setSuccessFor(input)
+        setSuccessFor(phone)
       }
-
 }
 
 /**
@@ -95,7 +89,6 @@ function emailValidation(emailValue){
           setSuccessFor(date)
         }else{
           setErrorForDate(date, "Opening days from Tuesday to Saturday included")
-          console.log("3")
         }
       }else{
         setErrorForDate(date, "Day must be from today onwards")
@@ -111,8 +104,8 @@ function emailValidation(emailValue){
 /**
  * ERROR MESSAGES FOR INCORRECT DATE
  */
- function setErrorForDate(bookingDate, message){
-  bookingDate.className = "form-control error"
+ function setErrorForDate(date, message){
+  date.className = "form-control error cancelation-input"
   document.querySelector(".cancelationDateError").innerText = message;
 }
 
@@ -120,7 +113,7 @@ function emailValidation(emailValue){
  * ERROR WARNING AN MESSAGE FOR BLANK INPUTS
  */
  function setErrorForBlank(input, message){
-    input.className = "cancelation-input error"
+    input.className = "form-control error cancelation-input"
     input.setAttribute("placeholder", message)
   }
 

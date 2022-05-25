@@ -115,11 +115,11 @@ body {
     letter-spacing: 1px;
   }
   
-  .form-control.error, .cancelation-input.error {
+  .form-control.error.cancelation-input {
     border-color: red;
   }
   
-  .form-control.success, .cancelation-input.success {
+  .form-control.success.cancelation-input {
     border-color: rgb(0, 162, 11);
   }
   
