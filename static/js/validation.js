@@ -45,7 +45,6 @@ function validateInputs(event){
     if(nameValue === ""){
       setErrorForBlank(fname, "Field cannot be blank");
     }else{
-      checkAlphanumerics(fname)
       checkLength(fname)
     }
 
@@ -97,20 +96,26 @@ function validateInputs(event){
  * 
  * VALIDATE NAME AND SURNAME USERS FORTMAT
  */
-function checkAlphanumerics(nameDetails){
+function checkAlphanumerics(input){
   var letters = /^[A-Za-z]+$/;
-  nameDetails = nameDetails.value
-  nameDetails.getAttribute("class");
-  if(nameDetails.match(letters)){
-    console.log(nameDetails.element);
-  }else{
-    nameDetails.className = "form-control error"
-    if(nameDetails == fname){
+  let input_id = input.getAttribute("id")
+  let inputValue = input.value
+    if(input_id == "name"){
+      if(inputValue.match(letters)){
+        setSuccessFor(input)
+      }else{
+        input.className = "form-control error"
         document.querySelector(".nameError").innerText = "Only alphabet characters allowed";
-    }else if(nameDetails == surname){
-    document.querySelector(".lastNameError").innerText = "Only alphabet characters allowed";
-   }
-}
+      }
+    }
+    if(input_id == "l_name"){
+      if(inputValue.match(letters)){
+        setSuccessFor(input)
+      }else{
+        input.className = "form-control error"
+        document.querySelector(".lastNameError").innerText = "Only alphabet characters allowed";
+      }
+    }
 }
 
 /**
@@ -166,7 +171,7 @@ function emailValidation(emailValue){
  * VALIDATE INPUTS LENGTH 
  */
 function checkLength(input){
-  const userData =  input.getAttribute("id");
+  const input_id =  input.getAttribute("id");
   const nameValue = fname.value.trim()
   const lastNameValue = surname.value.trim()
   // const prefixValue = prefix.value.trim()
@@ -176,20 +181,22 @@ function checkLength(input){
   const start_timeValue = document.querySelector("#start_time").value.trim();
   const party_sizeValue =party_size.value.trim()
 
-  if(userData == "name" && nameValue.length <= 2){
+  if(input_id == "name" && nameValue.length <= 2){
     fname.className = "form-control error"
     document.querySelector(".nameError").innerText = "Must contain min 3 characters"
+  }else{
+    checkAlphanumerics(fname)
   }
-  else if(userData == "l_name" && lastNameValue.length <= 2){
+  if(input_id == "l_name" && lastNameValue.length <= 2){
     surname.className = "form-control error"
     document.querySelector(".lastNameError").innerText = "Must contain min 3 characters"
   }
-  else if(userData == "phone" && phoneValue.length <=7 || phoneValue.length >=9){
+  else{
+    checkAlphanumerics(surname)
+  }
+  if(input_id == "phone" && phoneValue.length <=7 || phoneValue.length >=9){
     phone.className = "form-control error"
     document.querySelector(".phoneError").innerText = "Must have from 8 to 9 numbers"
-  }
-  else{
-    setSuccessFor(input)
   }
 }
 
