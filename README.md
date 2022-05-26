@@ -2,7 +2,7 @@
 
 This is a Restaurant site which provides valued information about the restaurant itself, and allows user make bookings easily whit a very intuitive navigation and a straightforward booking request form.
 
-- Go to live [Orio Pocho](<https://en.wikipedia.org/wiki/Battleship_(game)>)
+- Go to live [Orio Pocho](<https://one-pico-restaurant.herokuapp.com/)>)
 
 # Table of contents
 
@@ -124,6 +124,10 @@ I'm a bit dessaster for planing proyects, i should start doing things properly a
 
 ## Flow Chart
 
+Sorry i can't provide this information. 
+I was a bit disater and didn't work on the flow chart in advance, either on the database squemas..sorry.
+I wanted to do draft them before submitting the project but i have not more time.
+I'll do better for the next project!
 
 # Features
 

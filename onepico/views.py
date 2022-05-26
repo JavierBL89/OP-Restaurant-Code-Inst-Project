@@ -7,9 +7,8 @@ from .models import Booking
 from .forms import BookingForm
 from django.http import HttpResponseRedirect
 from datetime import datetime
-from .reservation import  get_table_available, check_double_booking_date, check_double_booking_week
+from .reservation import  get_table_available, check_double_booking_date
 from django.contrib import messages
-
 
 
 # Create your views here.
@@ -50,16 +49,13 @@ class FormView(View):
         if check_double_booking_date(people, requested_date, requested_time, phone) == False:
             print("BOOKING CANCELED!! DOUBLE BOOKING DAY")
             double_booking_day = True
-            customer = Booking.objects.filter(phone=phone).all()
+            customer = Booking.objects.filter(phone=phone,date=requested_date).all()
             double_booking_day = {
                 'double_booking_day': double_booking_day,
                 'customer': customer
             }
             return render(request, 'reservation_confirmation.html', double_booking_day)
             
-        elif check_double_booking_week(people, requested_date, requested_time, phone) == False:
-            print("BOOKING CANCELED!! DOUBLE BOOKING WEEK")
-
         else:
             new_booking = Booking(name=name, surname=surname, people=people, prefix=prefix, phone=phone, date=requested_date, start_time=requested_time, email=email, excerpt=comment)
             new_booking.save()

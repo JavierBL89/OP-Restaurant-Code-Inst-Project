@@ -9,7 +9,7 @@ from onepico.models import Booking
 
 class BookingAproved(unittest.TestCase):
 
-    def test_check_double_booking_week(self):
+    def test_check_double_booking_day(self):
 
         booking = Booking.objects.create(name='Veronica',
                                          surname='Leon',

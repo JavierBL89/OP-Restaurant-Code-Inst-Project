@@ -69,13 +69,10 @@
 
           <!--------------------------RESERVATION FOUND FEEDBACK ---------------------------->
           <div class="" id="feedback">
-            {% if double_booking_day or double_booking_week %}
             {% if double_booking_day %}
             <h6>Ups! There seems to be another booking registered under the same email address for the same date!</h6>
-            {% elif double_booking_week %}
-            {% endif %}
             <div class="customer_details failed">
-
+              
               <!-------------------------- RESERVATION FOUND TABLE DATA ---------------------------->
               <table class="table table-sm text-start">
                 <tr>
