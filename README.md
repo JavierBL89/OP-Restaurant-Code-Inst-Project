@@ -330,6 +330,9 @@ I have come accross multiple bugs and didn't write them down...i'm a bit of a di
 
   ![](<static/images/cancelations-page-bug-3.png>) 
 
+4.Maps feature
+This feature does not work in Heroku app, i had to add authoritation but i only realized right before submitting the project and i have no more time to fix it...
+
 # Deployment
 
 The project was deployed to Heroku using the below procedure:-
