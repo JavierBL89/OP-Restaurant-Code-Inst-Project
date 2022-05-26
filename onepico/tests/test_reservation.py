@@ -1,8 +1,8 @@
 from django.test import TestCase
 import unittest
 from datetime import datetime
-from .reservation import check_double_booking_week
-from .models import Booking
+from onepico.reservation import check_double_booking_week
+from onepico.models import Booking
 
 # Create your tests here.
 

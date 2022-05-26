@@ -194,6 +194,30 @@ To keep track of the reservtaions logic, and provide feedback to the console i u
 
 ### Lighthouse
 
+These test have been made at last minute before deathline project submition.
+I would have loved to improve all the areas.
+
+ - Home page:
+   - Desktop
+   ![](<static/images/desktop-home-page.png>)
+   - Mobile
+   ![](<static/images/mobile-home-page.png>)
+
+- Reservation confirmation page:
+   - Desktop
+   ![](<static/images/desktop-reservation-confirmation.png>)
+   - Mobile
+   ![](<static/images/mobile-reservation-confirmation-page.png>)
+
+- Cancelations page:
+   - Destop
+   ![](<static/images/desktop-cancelation-page.png>)
+   - Mobile
+   ![](<static/images/mobile-cancelation-page.png>)
+
+
+  - **Home page**
+
 ### Validators
 
 - HTML
@@ -226,8 +250,20 @@ Due to small extra longer lines of code, i had to leave some errors from the fil
 ![](<static/images/pep8.png>)
 ![](<static/images/pep8-error.png>)
 
-  - **Home page**
+## Automated Testing
 
+ - In order to run all the testing files 
+ `python manage.py test onepico.tests`
+
+ - In order to run specific test file
+ `python manage.py test onepico.tests.<test_filename>`
+
+ATTENTION!
+
+There is one of the test functions failing from the "test_forms.py" file.
+I don't really understand what's going on there, the booking comment field is not required whe submitin the form, andfrom my undertanding the test function should go through as "excerpt" field is left blank and the form submitions should be valid...
+
+![](static/images/test-fail.png)
 
 
 # Technology used

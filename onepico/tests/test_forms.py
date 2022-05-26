@@ -1,5 +1,5 @@
 from django.test import TestCase
-from .forms import *
+from onepico.forms import *
 
 
 class TestBookingForm(TestCase):
