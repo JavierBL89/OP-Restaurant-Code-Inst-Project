@@ -1,5 +1,6 @@
+//jshint esversion:6
 
-const form = document.getElementById('booking_form')
+const form = document.getElementById('booking_form');
 
 let fname = document.getElementById("name");
 let surname = document.getElementById("l_name");
@@ -9,7 +10,7 @@ let email = document.getElementById("email");
 let date = document.getElementById("date");
 let start_time = document.getElementById("start_time");
 let party_size = document.getElementById("party_size");
-const opening_days = [2,3,4,5,6]
+const opening_days = [2,3,4,5,6];
 
 /**
 * INITIALIZE FORM VALIDATION
@@ -19,12 +20,12 @@ form.addEventListener('submit', event => {
     if (!form.checkValidity()) {
 
   event.preventDefault();
-  event.stopPropagation()
-  validateInputs(event)
+  event.stopPropagation();
+  validateInputs(event);
     
 }
 
-},false)
+},false);
 }
 
 
@@ -33,62 +34,62 @@ form.addEventListener('submit', event => {
 **/
 function validateInputs(event){
   // get the values from inputs
-  const nameValue = fname.value.trim()
-  const lastNameValue = surname.value.trim()
-  const prefixValue = prefix.value.trim()
-  const phoneValue = phone.value.trim()
-  const emailValue = email.value.trim()
-  const dateValue = date.value.trim()
+  const nameValue = fname.value.trim();
+  const lastNameValue = surname.value.trim();
+  const prefixValue = prefix.value.trim();
+  const phoneValue = phone.value.trim();
+  const emailValue = email.value.trim();
+  const dateValue = date.value.trim();
   const start_timeValue = document.querySelector("#start_time").value.toString();
-  const party_sizeValue =party_size.value.trim()
+  const party_sizeValue =party_size.value.trim();
 
     if(nameValue === ""){
       setErrorForBlank(fname, "Field cannot be blank");
     }else{
-      checkLength(fname)
+      checkLength(fname);
     }
 
     if(lastNameValue === ""){
       setErrorForBlank(surname, "Field cannot be blank");
     }else{
-      checkAlphanumerics(surname)
-      checkLength(surname)
+      checkAlphanumerics(surname);
+      checkLength(surname);
     }
 
     if(phoneValue === ""){
       setErrorForBlank(phone, "Field cannot be blank");
     }else{
-      checkLength(phone)
+      checkLength(phone);
     }
 
     if(emailValue === ""){
       setErrorForBlank(email, "Field cannot be blank");
     }else{
-      emailValidation(emailValue)
+      emailValidation(emailValue);
     }
 
     if(dateValue === ""){
-      date.className = "form-control error"
+      date.className = "form-control error";
     }else{
-      dateValidation(dateValue)
+      dateValidation(dateValue);
     }
 
     if(start_timeValue === ""){
-      start_time.className = "form-control error"
-      document.querySelector(".timeError").innerText = "Please select a valid time slot"
+      start_time.className = "form-control error";
+      document.querySelector(".timeError").innerText = "Please select a valid time slot";
     }
     else{
-      setSuccessFor(start_time)
+      setSuccessFor(start_time);
     }
 
     if(party_sizeValue === ""){
       setErrorForBlank(party_size, "Select party size");
     }else{
-      checkPartySize(party_sizeValue)
+      checkPartySize(party_sizeValue);
     }
 
     if(prefixValue != ""){
-        setSuccessFor(prefix)
+        setSuccessFor(prefix);
     }
 }
 
@@ -98,22 +99,22 @@ function validateInputs(event){
  */
 function checkAlphanumerics(input){
   var letters = /^[A-Za-z]+$/;
-  let input_id = input.getAttribute("id")
+  let input_id = input.getAttribute("id");
     if(input_id == "name"){
-      let inputValue = fname.value
+      let inputValue = fname.value;
       if(inputValue.match(letters)){
-        setSuccessFor(fname)
+        setSuccessFor(fname);
       }else{
-        fname.className = "form-control error"
+        fname.className = "form-control error";
         document.querySelector(".nameError").innerText = "Only alphabet characters allowed";
       }
     }
     if(input_id == "l_name"){
-      let inputValue = surname.value
+      let inputValue = surname.value;
       if(inputValue.match(letters)){
-        setSuccessFor(surname)
+        setSuccessFor(surname);
       }else{
-        surname.className = "form-control error"
+        surname.className = "form-control error";
         document.querySelector(".lastNameError").innerText = "Only alphabet characters allowed";
       }
     }
@@ -124,7 +125,7 @@ function checkAlphanumerics(input){
  * VALIDATE DATE TO BOOK ON A DATE AHEAD
  */
 function dateValidation(dateValue){
-  const dayOfWeek =  new Date(dateValue).getDay()
+  const dayOfWeek =  new Date(dateValue).getDay();
   const month = parseInt(dateValue.slice(5,7));
   const day = parseInt(dateValue.slice(8,10));
   const year = parseInt(dateValue.slice(0,4));
@@ -138,19 +139,19 @@ function dateValidation(dateValue){
     if(month >= currentMonth){
       if(day >= currentDay){
         if(opening_days.includes(dayOfWeek)){
-          setSuccessFor(date)
+          setSuccessFor(date);
         }else{
-          setErrorForDate(date, "Opening days from Tuesday to Saturday included")
-          console.log("3")
+          setErrorForDate(date, "Opening days from Tuesday to Saturday included");
+          console.log("3");
         }
       }else{
-        setErrorForDate(date, "Day must be from today onwards")
+        setErrorForDate(date, "Day must be from today onwards");
       }  
     }else{
-      setErrorForDate(date, "Month must be ahead")
+      setErrorForDate(date, "Month must be ahead");
     }
   }else{
-    setErrorForDate(date, "Year must be ahead")
+    setErrorForDate(date, "Year must be ahead");
   }
 }
 
@@ -161,9 +162,9 @@ function dateValidation(dateValue){
 function emailValidation(emailValue){
   const validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
   if(emailValue.match(validRegex)){
-    setSuccessFor(email)
+    setSuccessFor(email);
   }else{
-    document.querySelector(".emailError").innerText = "Enter a valid email"
+    document.querySelector(".emailError").innerText = "Enter a valid email";
   }
 }
 
@@ -173,31 +174,27 @@ function emailValidation(emailValue){
  */
 function checkLength(input){
   const input_id =  input.getAttribute("id");
-  const nameValue = fname.value.trim()
-  const lastNameValue = surname.value.trim()
-  // const prefixValue = prefix.value.trim()
-  const phoneValue = phone.value.trim()
-  const emailValue = email.value.trim()
-  const dateValue = date.value.trim()
-  const start_timeValue = document.querySelector("#start_time").value.trim();
-  const party_sizeValue =party_size.value.trim()
+  const nameValue = fname.value.trim();
+  const lastNameValue = surname.value.trim();
+  // const prefixValue = prefix.value.trim();
+  const phoneValue = phone.value.trim();
 
   if(input_id == "name" && nameValue.length <= 2){
-    fname.className = "form-control error"
-    document.querySelector(".nameError").innerText = "Must contain min 3 characters"
+    fname.className = "form-control error";
+    document.querySelector(".nameError").innerText = "Must contain min 3 characters";
   }else{
-    checkAlphanumerics(fname)
+    checkAlphanumerics(fname);
   }
   if(input_id == "l_name" && lastNameValue.length <= 2){
-    surname.className = "form-control error"
-    document.querySelector(".lastNameError").innerText = "Must contain min 3 characters"
+    surname.className = "form-control error";
+    document.querySelector(".lastNameError").innerText = "Must contain min 3 characters";
   }
   else{
-    checkAlphanumerics(surname)
+    checkAlphanumerics(surname);
   }
   if(input_id == "phone" && phoneValue.length <=7 || phoneValue.length >=9){
-    phone.className = "form-control error"
-    document.querySelector(".phoneError").innerText = "Must have from 8 to 9 numbers"
+    phone.className = "form-control error";
+    document.querySelector(".phoneError").innerText = "Must have from 8 to 9 numbers";
   }
 }
 
@@ -205,7 +202,7 @@ function checkLength(input){
  * ERROR MESSAGES FOR INCORRECT DATE
  */
 function setErrorForDate(bookingDate, message){
-  bookingDate.className = "form-control error"
+  bookingDate.className = "form-control error";
   document.querySelector(".dateError").innerText = message;
 }
 
@@ -215,15 +212,15 @@ function setErrorForDate(bookingDate, message){
 function checkPartySize(party_sizeValue){
   const minos = "-";
   if(party_sizeValue >= 13){
-    party_size.className = "form-control error"
+    party_size.className = "form-control error";
     document.querySelector(".partyError").innerText = "For parties over 12px contact us";
   }
   else if(party_sizeValue.match(minos) || party_sizeValue === "0"){
-    party_size.className = "form-control error"
+    party_size.className = "form-control error";
     document.querySelector(".partyError").innerText = "Please select a valid party size";
   }
   else{
-    setSuccessFor(party_size)
+    setSuccessFor(party_size);
   }
   
 }
@@ -232,13 +229,13 @@ function checkPartySize(party_sizeValue){
  * ERROR WARNING AN MESSAGE FOR BLANK INPUTS
  */
 function setErrorForBlank(input, message){
-  input.className = "form-control error"
-  input.setAttribute("placeholder", message)
+  input.className = "form-control error";
+  input.setAttribute("placeholder", message);
 }
 
 /**
  * TURNS BORDER INPUT INTO GREEN IF DATA PASSES VALIDATION
  */
 function setSuccessFor(input){
-  input.className = "form-control success"
+  input.className = "form-control success";
 }

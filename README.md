@@ -43,7 +43,7 @@ This is a Restaurant site which provides valued information about the restaurant
 ### [Bugs](#bugs)
 
 - Fixed bugs
-- Unknown bugs
+- Unfixed bugs
 
 ### [Deployment](#deployment)
 
@@ -81,6 +81,42 @@ People interested in celebrating a special ocasion, wanting to make a reservatio
   - Filter and search all custom models from the admin page so that I can utilize the admin page to        review, edit and delete data quickly.
   - Easily navigate the admin panel so that I can view, search, add and delete records.
 
+## Design goals
+
+- Minimalistic design
+- Well structured information
+- Easi readability
+- Intuitive navigation
+- Straightfroward forms
+- Resposive for all screen sizes
+  - Desktop
+  ![](<static/images/desktop.png>)
+
+  - Tablet
+  ![](<static/images/tablet.png>)
+
+  - Mobile
+  ![](<static/images/mobile.png>)
+
+## Design choises
+
+### Fonts 
+
+Fonts were taken from [Google fonts](<https://fonts.google.com/>)
+
+- For paragraphs, headings, and links 'Roboto Slab', serif
+- For logo paragraph, 'Beau Rivage', cursive
+
+### Color scheme
+
+- Logo color: #727272;
+- Body background color: #fff;
+- Navigation bar background: #cac7c7;
+- Navigation bar and : rgb(89, 89, 89);
+- Headings color: #000000;
+- Link color: rgb(89, 89, 89);
+
+
 ## Wireframes
 
 I have not wireframed this project. I didn't want to spend any time in doing so tbh..
@@ -89,7 +125,8 @@ I'm a bit dessaster for planing proyects, i should start doing things properly a
 ## Flow Chart
 
 
-## Features
+# Features
+
 
 - Make reservations
 
@@ -140,8 +177,60 @@ I'm a bit dessaster for planing proyects, i should start doing things properly a
   - **User account**
   In case the company had some other venues, users could have a private account from which check and manage reservations from one single website and receive deals or news from them.
 
+# Testing 
 
-## Technology used
+## Manual testing
+
+- Front end testing:
+
+During the development proccess, i used Dev tools for css styling, and also for validating forms with JavaScript, using "console.log()" method to check  whether if functions are triggered, or to check if the data passed into functions was the one i needed.
+
+- Back end testing:
+
+To check if functions are triggered or whether if the data or data type passed was the right one, i used the "print()" method.
+To keep track of the reservtaions logic, and provide feedback to the console i used the print() in which i concastitate strings with real data, so that at all times a developer can see whats going on.
+
+![](<static/images/console-feedback.png>)
+
+### Lighthouse
+
+### Validators
+
+- HTML
+
+  All HTML files were validated on [HTML W3 Validator](<https://validator.w3.org/>), all show a bunchfull of errors apparently caused by the {% static load %} tag.
+
+  ![](<static/images/html-errors-1.png>)
+  ![](<static/images/html-errors-2.png>)
+
+- CSS
+ 
+ All CSS fiiles went through [CSS W3 Validator](<https://jigsaw.w3.org/>) and a few errors showned were corrected.
+
+- JS
+
+ JSHint was used to validate js files, only lost of semicolons missing and some variables unused
+
+- PEP8
+
+When validating i had to modify lots of long lines of code, however then when running the app,
+the app crushes and display errors as on the picture bellow.
+![](<static/images/error.png>)
+
+So i put back some of the long lines ofcode.
+![](<static/images/long-lines.png>)
+
+
+Due to small extra longer lines of code, i had to leave some errors from the file "reservation.py"
+
+![](<static/images/pep8.png>)
+![](<static/images/pep8-error.png>)
+
+  - **Home page**
+
+
+
+# Technology used
 
   - Languages used according to **Github** reports.
 
@@ -168,7 +257,7 @@ I'm a bit dessaster for planing proyects, i should start doing things properly a
     2.[Django](<https://www.djangoproject.com/>)
     3.All packages installed canbe fond in requirements.txt file
 
-## Bugs
+# Bugs
 
 - Fixed bugs
 
@@ -176,12 +265,32 @@ I have come accross multiple bugs and didn't write them down...i'm a bit of a di
 
 - Unfixed bugs
 
-Currently from the cancelations page, the link back to home page does no work..
+1.Currently from the cancelations page, the link back to home page does no work...
 
 ![](<static/images/home-link.png>)
 
+2.Reservation form validation has a bug when filling up the "name" field and leaving the "Last Name" field blankand trying to submit the form. The data error message bellow the "Last name" field is also displayed...
 
-## Deployment
+![](<static/images/reservations-bug.jpg>)
+
+3.Cancel reservations form has also a couple of bugs.
+
+  - Firstly when trying to submit the from black, the JavaScript validation code seems to not be triggered.
+  and leads the user to a django ValidationError page
+
+  ![](<static/images/cancelation-page-bug-1.png>) 
+
+  - Secondly, when making fail the "email" field, the JavaScript validation code is triggered, but when leaving the "email" field empty and making fail the phone field, the JavaScript validation code is again no triggered..leading the user to the ValidationError
+
+  ![](<static/images/cancelation-page-bug-2.png>)
+
+  ![](<static/images/cancelation-page-bug-1.png>)
+
+  - However, if we fill up the "date" field, input anything on the "phone" field, and leaving the "email" field blank, the user is lead to the response page after submitting the form..
+
+  ![](<static/images/cancelations-page-bug-3.png>) 
+
+# Deployment
 
 The project was deployed to Heroku using the below procedure:-
 
@@ -226,6 +335,7 @@ By running the command git push heroku main and your app will be deployed to Her
 
 # Credits
  
+
 ## Content
 
 - The content of this website such as "Style section" or "Menus" i took it from the website of the restaurant i work in, the design of this websit might also be slighly similar to it.

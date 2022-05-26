@@ -1,5 +1,4 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
@@ -24,8 +23,7 @@
 <!----  JQUERY CDNJS ------->
 <link
     rel="stylesheet" 
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-  />
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   <link rel="stylesheet" href="{% static 'css/animate.css' %}">
 
 <!-- CDN JQUERY-->
@@ -38,7 +36,6 @@
 </head>
 <body>
   <div class="main-wraper">
-
     <!--------------------- HEADER --------------------->
     <header class="header">
       <nav class="navbar navbar-expand-lg">
@@ -51,31 +48,31 @@
         </a>
         <div class="separator d-sm-block d-lg-none wow animate__fadeIn" data-wow-delay="1.5s"></div>
            <div class="row ">
+            <div class="col-lg-6 d-lg-flex d-sm-flex">
             <ul class="navbar-nav ms-auto flex-row">
-              <div class="col-lg-6 d-lg-flex d-sm-flex">
                 <li class="nav-item">
                   <a class="nav-link wow animate__fadeIn" data-wow-delay="0.5s" aria-current="page" href="#">STYLE</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link wow animate__fadeIn" data-wow-delay="0.5s"id="gallery_link" href="#gallery">GALLERY</a>
+                  <a class="nav-link wow animate__fadeIn" data-wow-delay="0.5s" id="gallery_link" href="#gallery">GALLERY</a>
                 </li>
-              </div>
-              <div class="col-lg-6 d-lg-flex d-sm-flex">
+            </ul>
+          </div>
+          <div class="col-lg-6 d-lg-flex d-sm-flex">
+            <ul class="navbar-nav ms-auto flex-row">
                 <li class="nav-item">
-                  <a class="nav-link wow animate__fadeIn" data-wow-delay="1s"href="#menus">MENUS</a>
+                  <a class="nav-link wow animate__fadeIn" data-wow-delay="1s" href="#menus">MENUS</a>
                 </li>             
                 <li class="nav-item">
                   <a class="nav-link wow animate__fadeIn" data-wow-delay="1s" href="{% url 'booking_search' %}">CANCELATIONS</a>  
-                </li>
-              </div>
-              
+                </li>              
             </ul>
+          </div>
            </div>
            
         </div>
       </nav>
     </header>
-
   </div>
   <div class="content-wraper container-fluid">
     {% block content %}
@@ -89,13 +86,17 @@
         <div class="row text-center">
             <div class="col-sm-3 d-lg-none"></div>
             <div class="col-lg-4 col-sm-3">
-              <a href="#about"><li class="footer-link">Style</li></a>
-              <a href="#gallery"><li class="footer-link">Gallery</li></a>
+              <ul>
+              <li class="footer-link"><a href="#about">Style</a></li>
+              <li class="footer-link"><a href="#gallery">Gallery</a></li>
+            </ul>
             </div>
             <div class="col-lg-4 col-sm-3 ">
-              <a href="#menus"><li class="footer-link" >Menus</li></a>
-              <a href="#reservations"><li class="footer-link">Bookings</li></a>
-              <a href="{% url 'booking_search' %}"><li class="footer-link">Cancelations</li></a>
+              <ul>
+                <li class="footer-link"><a href="#menus">Menus</a></li>
+                 <li class="footer-link"><a href="#reservations">Bookings</a></li>
+                 <li class="footer-link"><a href="{% url 'booking_search' %}">Cancelations</a></li>
+              </ul> 
             </div>       
             <div class="col-sm-3 d-lg-none"></div>
 
@@ -137,7 +138,7 @@
 <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
       defer
-    ></script>
+></script>
 
     <script>
       const currentYear = new Date().getFullYear();

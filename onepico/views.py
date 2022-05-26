@@ -42,15 +42,13 @@ class FormView(View):
         requested_date = datetime.strptime(date, '%Y-%m-%d')
         start_time = request.POST.get('start_time')
         format_data = "%H:%M"
-        print(start_time, "eee")
         requested_time = datetime.strptime(start_time, format_data)
         people = request.POST.get('party_size')
         comment = request.POST.get('booking_comments')
 
         
         if check_double_booking_date(people, requested_date, requested_time, phone) == False:
-            print("BOOKING CANCELED")
-            print("BOOKING CANCELED PUTA")
+            print("BOOKING CANCELED!! DOUBLE BOOKING DAY")
             double_booking_day = True
             customer = Booking.objects.filter(phone=phone).all()
             double_booking_day = {
@@ -60,16 +58,14 @@ class FormView(View):
             return render(request, 'reservation_confirmation.html', double_booking_day)
             
         elif check_double_booking_week(people, requested_date, requested_time, phone) == False:
-            print("BOOKING CANCELED PUTA")
+            print("BOOKING CANCELED!! DOUBLE BOOKING WEEK")
 
         else:
             new_booking = Booking(name=name, surname=surname, people=people, prefix=prefix, phone=phone, date=requested_date, start_time=requested_time, email=email, excerpt=comment)
             new_booking.save()
             booking_id = new_booking.id
             if get_table_available(people, requested_date, requested_time, booking_id) == False:
-
                 customer = Booking.objects.filter()
-    
                 print("BOOKING SUCCESSFUL")
                 booking_successful = True
                 booking_successful = {
@@ -91,8 +87,6 @@ class BookingSearch(View):
         phone = request.POST.get('reservation_phone')
         email = request.POST.get('reservation_email')
         date = request.POST.get('reservation_date')
-        # date_format = '%Y-%m-%d'
-        # date = datetime.strptime(date, date_format)
         customer_record = Booking.objects.filter(phone=phone, email=email, date=date)
         if customer_record:
             customer_record = {

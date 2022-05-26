@@ -23,7 +23,7 @@
       <!-------------------------- AVAILABILITY CONTAINER ---------------------------->
       <div class="row avalability-box">
         <div class="availability-button-container text-center">
-          <a type="button" class="" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+          <a data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
             See Availability <span class="arrow-down"><i class="fa-solid fa-xs fa-angle-down"></i></span>
           </a>
           <div class="collapse" id="collapseExample">
@@ -54,7 +54,6 @@
                   <div class="email-b d-inline-flex"><i class="fa-solid fa-envelope email-icon"></i>
                     <p>book@oryopocho.com</p>
                   </div>
-                  </p>
                   <div class="house d-inline-flex"><i class="fa-solid fa-house-chimney house-icon"></i>
                     <div class="address-b">
                       <p>13. Marrowbone Lane<br>
@@ -84,17 +83,17 @@
                   <div class="invalid lastNameError"></div>
 
                   <div class="phone-number-box d-flex">
-                    <select type="number" id="prefix" name="prefix" class="form-select form-control" required>
-                      <option type="text">+353</option>
-                      <option type="text">+34</option>
-                      <option type="text">+35</option>
+                    <select id="prefix" name="prefix" class="form-select form-control">
+                      <option >+353</option>
+                      <option >+34</option>
+                      <option >+35</option>
                     </select>
 
                     <input type="number" id="phone" class="form-control phone d-block" value="" name="phone" placeholder="83125896" required>
                   </div>
                   <div class="invalid phoneError"></div>
 
-                  <input type="email" id="email" name="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email" required>
+                  <input type="email" id="email" name="email" class="form-control" aria-describedby="email" placeholder="Enter email" required>
                   <div class="invalid emailError"></div>
                 </div>
 
@@ -102,30 +101,30 @@
                   <input id="date" class="form-control" name="date" type="date" required />
                   <div class="invalid dateError"></div>
 
-                  <select type="text" id="start_time" name="start_time" class="form-select form-control">
-                    <option type="text" enabled class="puta">Time slot</option>
-                    <option type="text">12:30</option>
-                    <option type="text">12:45</option>
-                    <option type="text">13:00</option>
-                    <option type="text">13:15</option>
-                    <option type="text">13:30</option>
-                    <option type="text">13:45</option>
-                    <option type="text">14:00</option>
-                    <option type="text">14:15</option>
-                    <option type="text">14:30</option>
-                    <option type="text">18:00</option>
-                    <option type="text">18:15</option>
-                    <option type="text">18:30</option>
-                    <option type="text">18:45</option>
-                    <option type="text">19:00</option>
-                    <option type="text">19:15</option>
-                    <option type="text">19:30</option>
-                    <option type="text">19:45</option>
-                    <option type="text">20:00</option>
-                    <option type="text">20:15</option>
-                    <option type="text">20:30</option>
-                    <option type="text">20:45</option>
-                    <option type="text">21:00</option>
+                  <select id="start_time" name="start_time" class="form-select form-control">
+                    <option class="puta">Time slot</option>
+                    <option>12:30</option>
+                    <option>12:45</option>
+                    <option>13:00</option>
+                    <option>13:15</option>
+                    <option>13:30</option>
+                    <option>13:45</option>
+                    <option>14:00</option>
+                    <option>14:15</option>
+                    <option>14:30</option>
+                    <option>18:00</option>
+                    <option>18:15</option>
+                    <option>18:30</option>
+                    <option>18:45</option>
+                    <option>19:00</option>
+                    <option>19:15</option>
+                    <option>19:30</option>
+                    <option>19:45</option>
+                    <option>20:00</option>
+                    <option>20:15</option>
+                    <option>20:30</option>
+                    <option>20:45</option>
+                    <option>21:00</option>
                   </select>
                   <div class="invalid timeError">
                   </div>
@@ -187,6 +186,7 @@
         </div>
       </div>
     </div>
+  </div>
 </section>
 <div class="separator wow fadeInDown" data-wow-duration="0.5s"></div>
 

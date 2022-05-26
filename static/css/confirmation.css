@@ -13,7 +13,6 @@ body {
   .navbar {
     background-color: #cac7c7;
     font-family: 'Roboto Slab', serif;
-    font-size: 400;
     position: relative;
     z-index: 2;
   }
@@ -318,6 +317,7 @@ body {
     nav .nav-link {
       margin-top: 30px;
       margin-left: 40px;
+      font-size: 0.950rem;
     }
   
     .logo h2 {

@@ -43,7 +43,6 @@ form label {
   .navbar {
     background-color: #cac7c7;
     font-family: 'Roboto Slab', serif;
-    font-size: 400;
     position: relative;
     z-index: 2;
   }
@@ -722,7 +721,7 @@ form label {
     .reservations-button {
       border: solid 1px black;
       width: inherit;
-      margin: 40p auto;
+      margin: 40px auto;
       padding-top: 7px;
     }
   
@@ -833,7 +832,7 @@ form label {
   
     .menus-container {
       margin-bottom: 200px;
-      padding: auto 15%;
+      padding: 0 15%;
     }
   
     /********************** FOOTER*/
@@ -886,6 +885,7 @@ form label {
       margin-top: 30px;
       margin-left: 10px;
       padding-left: 10px;
+      font-size: 0.950rem;
     }
   
     .logo h2 {

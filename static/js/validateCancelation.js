@@ -1,8 +1,10 @@
+//jshint esversion:6
 
-const form = document.getElementById("cancelation_form")
-const email = document.getElementById("reservation_email")
-const phone = document.getElementById("reservation_phone")
+const form = document.getElementById("cancelation_form");
+const email = document.getElementById("reservation_email");
+const phone = document.getElementById("reservation_phone");
 const date = document.getElementById("reservation_date");
+const opening_days = [2,3,4,5,6];
 
 
 /**
@@ -12,34 +14,34 @@ function handleSubmitCancelation(event){
     form.addEventListener('submit', event => {
         if (!form.checkValidity()) {
       event.preventDefault();
-      event.stopPropagation()
-      validateInputs(event)
+      event.stopPropagation();
+      validateInputs(event);
 
     }
 
-    },false)
+    },false);
     }
 
 
 function validateInputs(event){
-    const emailValue = document.getElementById("reservation_email").value.trim()
-    const phoneValue = document.getElementById("reservation_phone").value.trim()
-    const dateValue = document.getElementById("reservation_date").value
+    const emailValue = document.getElementById("reservation_email").value.trim();
+    const phoneValue = document.getElementById("reservation_phone").value.trim();
+    const dateValue = document.getElementById("reservation_date").value;
 
     if(emailValue === " "){
         setErrorForBlank(email, "Field cannot be blank");
       }else{
-        emailValidation(emailValue)
+        emailValidation(emailValue);
       }
       if(phoneValue === ""){
         setErrorForBlank(phone, "Field cannot be blank");
       }else{
-        checkLength(phoneValue)
+        checkLength(phoneValue);
       }
       if(dateValue === ""){
-        date.className = "form-control cancelation-input error"
+        date.className = "form-control cancelation-input error";
       }else{
-        dateValidation(dateValue)
+        dateValidation(dateValue);
       }
 }
 
@@ -51,19 +53,19 @@ function validateInputs(event){
 function emailValidation(emailValue){
     const validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
     if(emailValue.match(validRegex)){
-      setSuccessFor(email)
+      setSuccessFor(email);
     }else{
-      email.className = "form-control error cancelation-input"
-      document.querySelector(".cancelationEmailError").innerText = "Enter a valid email"
+      email.className = "form-control error cancelation-input";
+      document.querySelector(".cancelationEmailError").innerText = "Enter a valid email";
     }
   }
 
   function checkLength(phoneValue){
      if(phoneValue.length <=7 || phoneValue.length >=9){
-      phone.className = "form-control error cancelation-input"
-      document.querySelector(".cancelation-form .cancelationPhoneError").innerText = "Must have from 8 to 9 numbers"
+      phone.className = "form-control error cancelation-input";
+      document.querySelector(".cancelation-form .cancelationPhoneError").innerText = "Must have from 8 to 9 numbers";
     }else{
-        setSuccessFor(phone)
+        setSuccessFor(phone);
       }
 }
 
@@ -72,7 +74,7 @@ function emailValidation(emailValue){
  * VALIDATE DATE TO BOOK ON A DATE AHEAD
  */
  function dateValidation(dateValue){
-  const dayOfWeek =  new Date(dateValue).getDay()
+  const dayOfWeek =  new Date(dateValue).getDay();
   const month = parseInt(dateValue.slice(5,7));
   const day = parseInt(dateValue.slice(8,10));
   const year = parseInt(dateValue.slice(0,4));
@@ -86,18 +88,18 @@ function emailValidation(emailValue){
     if(month >= currentMonth){
       if(day >= currentDay){
         if(opening_days.includes(dayOfWeek)){
-          setSuccessFor(date)
+          setSuccessFor(date);
         }else{
-          setErrorForDate(date, "Opening days from Tuesday to Saturday included")
+          setErrorForDate(date, "Opening days from Tuesday to Saturday included");
         }
       }else{
-        setErrorForDate(date, "Day must be from today onwards")
+        setErrorForDate(date, "Day must be from today onwards");
       }  
     }else{
-      setErrorForDate(date, "Month must be ahead")
+      setErrorForDate(date, "Month must be ahead");
     }
   }else{
-    setErrorForDate(date, "Year must be ahead")
+    setErrorForDate(date, "Year must be ahead");
   }
 }
 
@@ -105,7 +107,7 @@ function emailValidation(emailValue){
  * ERROR MESSAGES FOR INCORRECT DATE
  */
  function setErrorForDate(date, message){
-  date.className = "form-control error cancelation-input"
+  date.className = "form-control error cancelation-input";
   document.querySelector(".cancelationDateError").innerText = message;
 }
 
@@ -113,13 +115,13 @@ function emailValidation(emailValue){
  * ERROR WARNING AN MESSAGE FOR BLANK INPUTS
  */
  function setErrorForBlank(input, message){
-    input.className = "form-control error cancelation-input"
-    input.setAttribute("placeholder", message)
+    input.className = "form-control error cancelation-input";
+    input.setAttribute("placeholder", message);
   }
 
   /**
  * TURNS BORDER INPUT INTO GREEN IF DATA PASSES VALIDATION
  */
 function setSuccessFor(input){
-    input.className = "cancelation-input success"
+    input.className = "cancelation-input success";
   }
