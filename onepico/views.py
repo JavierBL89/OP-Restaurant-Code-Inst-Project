@@ -18,8 +18,10 @@ class HomePage(View):
     def get(self, request):
 
         form = BookingForm()
+        home = True
         context = {
-            'form': form
+            'form': form,
+            'home': home
         }
 
         return render(request, 'index.html', context)
@@ -74,16 +76,27 @@ class FormView(View):
         return render(request, 'index.html')
 
 
+class ResultsBookingSearch(View):
+    def get(self, request):
+            booking_search = True
+            context = {
+                'booking_search': booking_search
+            }
+            return render(request, 'cancel_request.html', context)
+
 class BookingSearch(View):
 
     def get(self, request):
-        return render(request, 'cancelations.html')
+        cancelation = True
+        context = {
+            'cancelation': cancelation
+        }
+        return render(request, 'cancelations.html', context)
 
     def post(self, request, *args, **kawrgs):
-        phone = request.POST.get('reservation_phone')
         email = request.POST.get('reservation_email')
         date = request.POST.get('reservation_date')
-        customer_record = Booking.objects.filter(phone=phone, email=email, date=date)
+        customer_record = Booking.objects.filter(email=email, date=date)
         if customer_record:
             customer_record = {
                 'customer_record': customer_record

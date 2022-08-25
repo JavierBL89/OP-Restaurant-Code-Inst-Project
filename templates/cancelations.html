@@ -1,174 +1,43 @@
+{% extends 'base.html' %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="One Pico Dublin Finne Dinning Restaurant">
-  <meta name="keyword:" content="">
-  <title>One Pico</title>
+{% block extra_css %}
+   <link rel="stylesheet" type="text/css" href="{% static 'css/cancelations.css' %}"/>
+{% endblock %}
 
-  <!-- BOOTSTRAP  -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
-  <!-- STYLESHEET -->
-  <link rel="stylesheet" type="text/css" href="{% static 'css/cancelations.css' %}" />
-
-  <!-- FONTS -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Roboto+Slab:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-
-  <!----  JQUERY CDNJS ------->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-  <link rel="stylesheet" href="{% static 'css/animate.css' %}">
-
-  <!-- CDN JQUERY-->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-  <!-- ICONS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-
-</head>
-
-<body>
-  <div class="main-wraper">
-
-    <!-------------------------- HEADER ---------------------------->
-    <header class="header">
-      <nav class="navbar navbar-expand-lg ">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-            <div class="flex-row d-inline-flex text-center logo">
-              <h2 class="d-inline ">OP</h2>
-              <p class="d-inline">Fine Dinning Experience</p>
-            </div>
-          </a>
-          <div class="separator d-sm-block d-lg-none"></div>
-          <div class="">
-            <ul class="navbar-nav ms-auto flex-row">
-              <li class="nav-item">
-                <a class="nav-link wow animate__fadeIn" data-wow-delay="1s" aria-current="page" href="#">HOME</a>
-              </li>
-            </ul>
+{% block content %}
+            
+  <div class="container-fluid mt-5" id="cancelations-container">
+    <div class="row">
+      <div class="col">
+        <!-------------------------- SEARCH RESERVATION FORM ---------------------------->
+        <h6>Please, check your booking confimation email before filling the fields!</h6>
+        <form class="cancelation-form needs-validation" name="RegForm" id="cancelation_form" method="POST" action="{% url 'booking_search' %}" onclick="handleSubmitCancelation(event)" novalidate>
+          {% csrf_token %}
+          <div class="row">
+            <div class="col-lg-6"><label for="email">Email registered on the reservation.</label></div>
+            <div class="col-lg-6">
+            <input type="email" class="form-control cancelation-input" name="reservation_email" id="reservation_email">
+            <div class="invalid cancelationEmailError"></div>
           </div>
-        </div>
-      </nav>
-    </header>
-
-    <div class="content-wraper container-fluid">
-      <div class="">
-        <div class="row text-center">
-          <div class="container-fluid bg-image">
-
-            <!-------------------------- RESERVATION FOUND DATA TABLE ---------------------------->
-            <div class="text-start" id="cancelation-form-container">
-              {% if customer_record %}
-              <h6>Should it is not your reservation, please make another request
-                and make sure of entering the correct details or contact us.</h6>
-              <table class="table table-sm text-start">
-                <tr>
-                  <th>Booking details</th>
-                </tr>
-                {% for record in customer_record %}
-                <form method="POST" id="delete_booking" action="{% url 'cancel_booking' record.id %}">
-                  {% csrf_token %}
-                  <tbody>
-                    <tr>
-                      <td id="hhh" name="hhh">{{ record.date }} </td>
-                      <td>At {{ record.start_time }} </td>
-                    </tr>
-                    <tr>
-                      <td>{{ record.name }} {{ record.surname }} </td>
-                      <td id="puta" name="puta">{{ record.phone }}</td>
-                      <span id="hhh" value="{{ record.email }}"></span>
-                    </tr>
-                    <tr>
-                      <td>Party size: </td>
-                      <td>{{ record.people }} px</td>
-                    </tr>
-                  </tbody>
-                  {% endfor %}
-              </table>
-              <div class="cancelation-button-box text-center">
-                <button class="btn btn-outline-secondary" type="button" role="button" data-bs-toggle="collapse" href="#puta" aria-expanded="false" aria-controls="collapseExample">Cancel reservation</button>
-                <div class="collapse" id="puta">
-                  <div class="card card-body text-start d--lg-flex">
-                    <div class="row">
-                      <div class="col-6">
-                        <p class="d-flex-inline">Are you sure?</p>
-                      </div>
-                      <div class="col-6"><button type="submit" class="btn btn-outline-secondary cancel-booking">Yes, I am</button></div>
-                    </div>
-                    </form>
-                  </div>
-                </div>
-              </div>
-
-              <!-------------------------- NO RESERVATION FOUND FEEDBACK ---------------------------->
-              {% elif no_record %}
-              <h6>No reservations found. Please make sure you enter the correct details or contact us</h6>
-
-              <!-------------------------- SEARCH RESERVATION FORM ---------------------------->
-              {% else %}
-              <h6>Please, check your booking confimation email before filling the fields!</h6>
-              <form class="cancelation-form needs-validation" name="RegForm" id="cancelation_form" method="POST" action="{% url 'booking_search' %}" onclick="handleSubmitCancelation(event)" novalidate>
-                {% csrf_token %}
-                <div class="row">
-                  <div class="col-lg-6"><label for="email">Email registered on the reservation.</label></div>
-                  <div class="col-lg-6">
-                  <input type="email" class="form-control cancelation-input" name="reservation_email" id="reservation_email">
-                  <div class="invalid cancelationEmailError"></div>
-                </div>
-                  
-                </div>
-                <div class="row">
-                  <div class="col-lg-6"><label for="phone">Contact number registered<br> on the reservation.</label></div>
-                  <div class="col-lg-6">
-                    <input type="text" class="form-control cancelation-input" name="reservation_phone" id="reservation_phone">
-                    <div class="invalid cancelationPhoneError"></div>
-                  </div>
-                  
-                </div>
-                <div class="row">
-                  <div class="col-lg-6"><label for="date">Date of the reservation.</label></div>
-                  <div class="col-lg-6">
-                    <input type="date" class="form-control cancelation-input" name="reservation_date" id="reservation_date">
-                    <div class="invalid cancelationDateError"></div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="form-button-box text-center">
-                    <button type="submit" class="btn btn-outline-secondary">Submit</button>
-                  </div>
-                </div>
-              </form>
-              {% endif %}
+            
+          </div>
+          
+          <div class="row">
+            <div class="col-lg-6"><label for="date">Date of the reservation.</label></div>
+            <div class="col-lg-6">
+              <input type="date" class="form-control cancelation-input" name="reservation_date" id="reservation_date">
+              <div class="invalid cancelationDateError"></div>
             </div>
           </div>
-        </div>
+          <div class="row">
+            <div class="form-button-box text-center">
+              <button type="submit" class="btn btn-outline-secondary">Submit</button>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
   </div>
-
-  <!-------------------------- FOOTER ---------------------------->
-  <footer>
-    <div class="text-center cancelations-footer copy-right">
-      <p>Copy Right <span id="year"></span></p>
-    </div>
-  </footer>
-
-  <!-------------------------- SCRIPT TAGS ---------------------------->
-  <script src="{% static 'jquery/jquery.js' %}"></script>
-
-  <script src="{% static 'js/validateCancelation.js' %}"></script>
-  <script>
-    const currentYear = new Date().getFullYear();
-    $("#year").text(currentYear)
-  </script>
-</body>
-
-</html>
+  {% endblock %}

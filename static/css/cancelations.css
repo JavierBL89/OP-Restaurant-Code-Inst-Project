@@ -10,11 +10,11 @@ body {
   }
   
   /****** FORM SECTION*/
-  #cancelation-form-container {
+  #cancelations-container {
     border-radius: 10px;
   }
   
-  #cancelation-form-container {
+  #cancelations-container {
     background-color: rgb(255, 255, 255);
     width: 50%;
     margin: 30px auto;
@@ -28,7 +28,7 @@ body {
     transition: background-color 5000s ease-in-out 0s;
   }
   
-  #cancelation-form-container h6 {
+  #cancelations-container h6 {
     font-size: 0.900rem;
     color: rgb(209, 119, 119);
     margin-bottom: 30px;
@@ -237,12 +237,12 @@ body {
     }
   
     /********************* FORM SECTION*/
-    #cancelation-form-container {
+    #cancelations-container {
       width: 90%;
       padding: 25px 20px;
     }
   
-    #cancelation-form-container h6 {
+    #cancelations-container h6 {
       font-size: 0.850rem;
       padding-right: 5px;
       padding-left: 5px;
@@ -279,11 +279,11 @@ body {
     }
   
     /********************** FORM SECTION*/
-    #cancelation-form-container {
+    #cancelations-container {
       width: 70%;
     }
   
-    #cancelation-form-container h6 {
+    #cancelations-container h6 {
       padding-right: 0;
       padding-left: 0;
     }
@@ -292,31 +292,11 @@ body {
   /******************************************************************** DESKTOP SCREEN */
   @media only screen and (min-width: 1000px) {
   
-    /****************************  HEADER SECTION *******/
-    .navbar {
-      padding-left: 7%;
-      padding-right: 7%;
-    }
-  
-    nav .nav-link {
-      margin-top: 30px;
-      margin-left: 40px;
-      color: rgb(120 120 120);
-      font-size: 0.950rem;
-    }
-  
-    .logo h2 {
-      font-size: 4.2rem;
-    }
-  
-    .logo p {
-      font-size: 1.8rem;
-      margin-top: 45px;
-      margin-left: 15px;
-    }
-  
-    div .bg-image {
-      width: 100%;
-      height: 500px;
+     /********************** FORM SECTION*/
+     #cancelations-container {
+      position: relative;
+      z-index: 9;
+      width: 60%;
+      background-color: #ffffff;
     }
   }

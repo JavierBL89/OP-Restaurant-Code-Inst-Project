@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+
+<!-------------------------- SEARCH RESERVATION RESULTS ---------------------------->
+<div class="container-fluid" id="search-results-container">
+    <div class="row">
+      <div class="col text-start">
+        {% if customer_record %}
+        <h6>Should it is not your reservation, please make another request
+          and make sure of entering the correct details or contact us.</h6>
+        <table class="table table-sm text-start">
+          <tr>
+            <th>Booking details</th>
+          </tr>
+          {% for record in customer_record %}
+          <form method="POST" id="delete_booking" action="{% url 'cancel_booking' record.id %}">
+            {% csrf_token %}
+            <tbody>
+              <tr>
+                <td id="hhh" name="hhh">{{ record.date }} </td>
+                <td>At {{ record.start_time }} </td>
+              </tr>
+              <tr>
+                <td>{{ record.name }} {{ record.surname }} </td>
+                <td id="puta" name="puta">{{ record.phone }}</td>
+                <span id="hhh" value="{{ record.email }}"></span>
+              </tr>
+              <tr>
+                <td>Party size: </td>
+                <td>{{ record.people }} px</td>
+              </tr>
+            </tbody>
+            {% endfor %}
+        </table>
+        <div class="cancelation-button-box text-center">
+          <button class="btn btn-outline-secondary" type="button" role="button" data-bs-toggle="collapse" href="#puta" aria-expanded="false" aria-controls="collapseExample">Cancel reservation</button>
+          <div class="collapse" id="puta">
+            <div class="card card-body text-start d--lg-flex">
+              <div class="row">
+                <div class="col-6">
+                  <p class="d-flex-inline">Are you sure?</p>
+                </div>
+                <div class="col-6"><button type="submit" class="btn btn-outline-secondary cancel-booking">Yes, I am</button></div>
+              </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-------------------------- NO RESERVATION FOUND FEEDBACK ---------------------------->
+        {% elif no_record %}
+        <h6>No reservations found. Please make sure you enter the correct details or contact us</h6>
+        <a id="back-home" class="mt-4 nav-link wow animate__fadeIn" href="{% url 'home' %}" data-wow-delay="1s" aria-current="page">BACK TO HOME</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endblock %}
