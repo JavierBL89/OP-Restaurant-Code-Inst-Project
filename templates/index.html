@@ -45,7 +45,7 @@
                     <p>+356248856</p>
                   </div>
                   <div class="email-b d-inline-flex"><i class="fa-solid fa-envelope email-icon"></i>
-                    <p>book@oryopocho.com</p>
+                    <p id="send-email">book@oryopocho.com</p>
                   </div>
                   <div class="house d-inline-flex"><i class="fa-solid fa-house-chimney house-icon"></i>
                     <div class="address-b">
@@ -394,7 +394,35 @@
   </div>
 </section>
 <div class="separator wow fadeInDown" data-wow-duration="0.5s"></div>
-
-
+<div class="overlay" style="background-color: rgba(0, 0, 0, 0.8);">
+  <div class="popup ">
+    <div class="row">
+      <div class="col-12">
+        <div class="row">
+          <div class="col-12 text-end">
+            <i class="fa-solid fa-xmark" id="close"></i>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 text-center">
+          <h6>Contact One Pico management</h6>
+          <div class="row">
+            <div class="col-12">
+              <p>Please fill up all the fiels</p>
+            </div>
+            <form action="" method="POST" id="contact-form">
+              <div class="col-12 d-flex flex-column">
+                 <input type="text">
+                 <input type="text">
+                 <input type="areatext">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 {% endblock %}

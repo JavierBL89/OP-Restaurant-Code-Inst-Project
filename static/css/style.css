@@ -1,5 +1,34 @@
 /******************************* COMMON PROPERTIES*/
 
+
+/******* CONTACT FORM POPUP */
+.overlay{
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 99;
+}
+
+.popup {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  top: 25%;
+  left: 25%;
+  text-align: center;
+  background: white;
+  border-radius: 10px;
+}
+
+#close{
+  padding-top: 10px;
+  margin-top: 5px;
+  margin-right:40px;
+  font-size: 1.5rem;
+}
 form label {
     display: none;
   }
@@ -8,6 +37,7 @@ form label {
     position: absolute;
     z-index: 0;
   }
+
   .form-control.error, .cancelation-input.error {
     border-color: red;
   }
@@ -478,6 +508,7 @@ form label {
       width: 90%;
       padding: 4% 5%;
       margin-bottom: 120px;
+      margin-top: 240px;
     }
   
     .bookings h1 {
@@ -749,7 +780,8 @@ form label {
     div .bookings {
       width: 70%;
       padding: 4% 5%;
-      margin-bottom: 120px;
+      margin-top: 520px;
+      margin-bottom: 0;
     }
   
     .bookings h1 {
