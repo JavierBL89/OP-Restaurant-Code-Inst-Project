@@ -68,7 +68,7 @@
                   <a class="nav-link wow animate__fadeIn" data-wow-delay="1s" href="#menus">MENUS</a>
                 </li>             
                 <li class="nav-item">
-                  <li class="nav-link wow animate__fadeIn" data-wow-delay="1s"><a href="{% url 'cancelations' %}">Cancelations</a></li>
+                  <a class="nav-link wow animate__fadeIn" data-wow-delay="1s" aria-current="page"href="{% url 'cancelations' %}">CANCELATIONS</a>
                 </li>              
             </ul>
             {% elif cancelation %}
@@ -95,45 +95,59 @@
   <footer id="footer">
     <div class="container-fluid wow fadeInDown" id="footer-container" data-wow-duration="1s">
         <div class="row text-center">
-            <div class="col-sm-3 d-lg-none"></div>
-            <div class="col-lg-4 col-sm-3">
-              <ul>
+            <div class="col-6">
+              <ul class="ps-0">
               <li class="footer-link"><a href="#about">Style</a></li>
               <li class="footer-link"><a href="#gallery">Gallery</a></li>
             </ul>
             </div>
-            <div class="col-lg-4 col-sm-3 ">
-              <ul>
+            <div class="col-6">
+              <ul class="ps-0">
                 <li class="footer-link"><a href="#menus">Menus</a></li>
                  <li class="footer-link"><a href="#reservations">Bookings</a></li>
                  <li class="footer-link"><a href="{% url 'cancelations' %}">Cancelations</a></li>
               </ul> 
             </div>       
-            <div class="col-sm-3 d-lg-none"></div>
-
-            <div class="d-lg-block col-lg-4 col-md-12 text-md-center  text-sm-center icons">
+            <div class="col-12 d-flex text-center social-icons-box">
               <div class="insta-icon"><a href="https://www.instagram.com/"><i class="fa-brands fa-instagram-square"></i></a></div>
               <div class="twiter-icon"><a href="https://twitter.com/"><i class="fa-brands fa-twitter-square"></i></a></div>
           </div>
     </div>
-       <div class="row contact-wraper">
-         <div class="col-lg-6">
-          <div id="map"></div>
-         </div>
-         <div class="col-lg-1"></div>
-         <div class="col-lg-4 d-none d-lg-block text-start contact-container">
-          <div class="phone d-inline-flex"><i class="fa-solid fa-phone phone-icon fa-sm"></i> <p>+356248856</p></div>
-          <div class="email d-inline-flex"><i class="fa-solid fa-envelope email-icon"></i> <p>oryopochodublin@venue.com</p></div>
-          <div class="house d-inline-flex"><i class="fa-solid fa-house-chimney house-icon"></i> 
-          <div class="address">
-              <p>13. Marrowbone Lane</p>
-              <p>Dublin 8</p>
-          </div>
-           
-          </div>
+    <div class="row">
+      <div class="col dots-box d-flex">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
       </div>
-        
+    </div>
+       <div class="row d-none d-lg-block contact-wraper">
+         <div class="col-12 d-flex">
+          <div id="map"></div>
+          <div class="contact-container mt-4">
+            <div class="phone d-inline-flex"><i class="fa-solid fa-phone phone-icon fa-sm"></i> <p>+356248856</p></div>
+            <div class="email d-inline-flex"><i class="fa-solid fa-envelope email-icon"></i> <p>oryopochodublin@venue.com</p></div>
+            <div class="house d-inline-flex">
+              <p><i class="fa-solid fa-house-chimney house-icon"></i>
+                13. Marrowbone Lane</p>
+              <p>Dublin 8</p>
+            </div>
+        </div>
+         </div>
        </div>
+       <div class="row mt-5 d-block d-lg-none text-center d-flex contact-wraper-mobile">
+        <div class="col-6">
+          <div class="phone"><i class="fa-solid fa-phone phone-icon fa-sm"></i> <p>+356248856</p></div>
+        </div>
+        <div class="col-6">        
+         <div class="house"><i class="fa-solid fa-house-chimney house-icon"></i> </div>
+         <div class="address">
+             <p>13. Marrowbone Lane. Dublin 8</p>
+         </div>
+         </div>
+         <div class="email "><i class="fa-solid fa-envelope email-icon"></i> <p>oryopochodublin@venue.com</p></div>
+       </div>
+      </div>
         <div class="row text-center copy-right">
             <p>Copy Right <span id="year"></span></p>
         </div>

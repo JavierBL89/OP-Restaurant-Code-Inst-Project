@@ -1,8 +1,5 @@
 /******************************* COMMON PROPERTIES*/
 
-body p, .footer-link{
-  font-size: 0.900rem;
-}
 form label {
     display: none;
   }
@@ -129,16 +126,16 @@ form label {
     padding-top: 7px;
   }
   
-  .contact-icons p {
+  .contact-social-icons-box p {
     margin-left: 10px;
     margin-bottom: 10px;
   }
   
-  .contact-icons i {
+  .contact-social-icons-box i {
     margin-top: 5px;
   }
   
-  .contact-icons .phone-b i {
+  .contact-social-icons-box .phone-b i {
     margin-top: 15px;
   }
   
@@ -317,6 +314,19 @@ form label {
     font-size: 14px;
   }
   
+  .dots-box{
+    margin-top: 100px;
+    justify-content: center;
+  }
+
+  .dot{
+
+    background-color: #727272;
+    height: 7px;
+    width: 7px;
+    border-radius: 50%;
+    margin: auto 15px;
+  }
   /************** ANIMATIONS */
   nav .nav-item a:hover {
     animation-name: border;
@@ -395,6 +405,10 @@ form label {
   /******************************************************************** MOBILE SCREEN */
   @media only screen and (min-width: 320px) and (max-width: 600px) {
   
+    body p{
+      font-size: 0.800rem;
+    
+    }
     /******************** HEADDINGS*/
     .headding h5 {
       margin-top: 100px;
@@ -494,12 +508,12 @@ form label {
       font-size: 0.750rem;
     }
   
-    .contact-icons p {
+    .contact-social-icons-box p {
       margin-left: -5px;
       margin-bottom: 10px;
     }
   
-    .contact-icons .phone-b i {
+    .contact-social-icons-box .phone-b i {
       margin-top: 12px;
     }
   
@@ -596,10 +610,7 @@ form label {
     }
   
     /********************* FOOTER SECTION ******/
-    footer {
-      margin-top: 50px;
-    }
-  
+   
     .copy-right {
       margin-top: 50px;
       font-size: 15px;
@@ -613,18 +624,12 @@ form label {
       margin: 15px;
     }
   
-    .fa-phone {
-      margin-top: 16px;
-      margin-right: 15px;
+    .phone{
+      margin-top: 4px;
     }
   
     .fa-envelope {
       margin-top: 6px;
-      margin-right: 15px;
-    }
-  
-    .fa-house-chimney {
-      margin-top: 5px;
       margin-right: 15px;
     }
   
@@ -635,15 +640,40 @@ form label {
     .footer-link {
       margin: 10px;
     }
-  
-    div .icons {
+
+    div .social-icons-box {
       display: inline-flex;
-      margin-top: 40px;
+      margin-top: 20px;
       justify-content: space-around;
       padding-left: 90px;
       padding-right: 90px;
     }
   
+    #footer-container{
+      position: relative;
+      z-index: 0;
+      margin-top: 100px;
+      padding: 0 12%;
+      font-size: 0.700rem;
+    }
+
+    #footer-container a {
+      margin: 5px;
+      font-size: 0.700rem;
+    }
+
+    #footer-container li {
+      font-size: 0.700rem;
+      margin: 20px 0;    }
+
+    .fa-phone, .fa-envelope{
+      margin-top: 23px;
+    } 
+  
+    .fa-house-chimney{
+      margin-top: 20px;
+    }
+
     .copy-right {
       margin-top: 100px;
       font-size: 14px;
@@ -844,20 +874,46 @@ form label {
     }
   
     /********************** FOOTER*/
-    div .icons {
-      display: inline-flex;
-      margin-top: 60px;
+    .social-icons-box {
+      margin-top: 20px;
       justify-content: space-around;
-      padding-left: 200px;
-      padding-right: 200px;
+      padding-left: 100px;
+      padding-right: 100px;
     }
   
-    footer .container-fluid {
-      margin-top: 60px;
+    #footer-container{
+      position: relative;
+      z-index: 0;
+      margin-top: 100px;
+      padding: 0 12%;
     }
+
   
-    .footer-link {
-      margin: 15px;
+    #footer-container a {
+      margin: 5px;
+      font-size: 0.850rem;
+    }
+
+    #footer-container li {
+      margin: 25px;
+      font-size: 0.850rem;
+    }
+
+    #footer-container {
+      font-size: 0.800rem;
+    }
+
+    #footer-container li {
+      font-size: 0.700rem;
+      margin: 20px 0;    
+    }
+
+    .fa-phone, .fa-envelope{
+      margin-top: 23px;
+    } 
+  
+.fa-house-chimney{
+      margin-top: 12px;
     }
   }
   
@@ -936,19 +992,21 @@ form label {
       font-size: 0.800rem;
     }
   
-    .contact-icons p {
+    .contact-social-icons-box p {
       margin-left: 10px;
       margin-bottom: 10px;
     }
   
-    .contact-icons i {
+    .contact-social-icons-box i {
       margin-top: 5px;
     }
   
-    .contact-icons .phone-b i {
+    .contact-social-icons-box .phone-b i {
       margin-top: 15px;
     }
   
+      
+
     /*************************** AWARDS SECTION */
     .container-about .about {
       padding-right: 18%;
@@ -1049,6 +1107,9 @@ form label {
       padding: 0 12%;
     }
 
+    #footer-container p, #footer-container a{
+      font-size: 0.900rem;
+    }
     .footer-link {
       margin-top: 20px;
     }
@@ -1059,23 +1120,26 @@ form label {
   
     .contact-container i {
       position: relative;
-      top: 7px;
       margin-right: 15px;
     }
-  
+    
+    .fa-envelope{
+      margin-top: 6px;
+    }
     .phone i {
       position: relative;
       top: 15px;
     }
   
-    div .icons {
+    .social-icons-box {
+      margin-top: 60px;
       justify-content: space-around;
-      padding-left: 60px;
-      padding-right: 60px;
+      padding-left: 200px;
+      padding-right: 200px;
     }
   
-    .icons div {
-      margin-top: 20px;
+    .social-icons-box {
+      margin-top: 40px;
     }
   
     #map {

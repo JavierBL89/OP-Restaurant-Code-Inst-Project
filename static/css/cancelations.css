@@ -278,10 +278,14 @@ body {
       height: 500px;
     }
   
-    /********************** FORM SECTION*/
-    #cancelations-container {
-      width: 70%;
+    /********************** CANCELATION FORM CONTAINER*/
+     #cancelations-container {
+      position: relative;
+      z-index: 9;
+      width: 60%;
+      background-color: #ffffff;
     }
+  
   
     #cancelations-container h6 {
       padding-right: 0;
@@ -292,7 +296,7 @@ body {
   /******************************************************************** DESKTOP SCREEN */
   @media only screen and (min-width: 1000px) {
   
-     /********************** FORM SECTION*/
+     /********************** CANCELATION FORM CONTAINER*/
      #cancelations-container {
       position: relative;
       z-index: 9;
