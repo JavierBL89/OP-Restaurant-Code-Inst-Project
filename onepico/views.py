@@ -4,7 +4,7 @@ from django.views.generic.edit import DeleteView
 from django.urls import reverse_lazy
 
 from .models import Booking
-from .forms import BookingForm
+from .forms import BookingForm, ContactForm
 from django.http import HttpResponseRedirect
 from datetime import datetime
 from .reservation import  get_table_available, check_double_booking_date
@@ -16,11 +16,12 @@ from django.contrib import messages
 class HomePage(View):
 
     def get(self, request):
-
         form = BookingForm()
+        contact_form = ContactForm()
         home = True
         context = {
             'form': form,
+            'contact_form': contact_form,
             'home': home
         }
 
@@ -83,6 +84,7 @@ class ResultsBookingSearch(View):
                 'booking_search': booking_search
             }
             return render(request, 'cancel_request.html', context)
+
 
 class BookingSearch(View):
 

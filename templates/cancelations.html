@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load crispy_forms_tags %}
+
 
 
 {% block extra_css %}
@@ -16,7 +18,9 @@
         <form class="cancelation-form needs-validation" name="RegForm" id="cancelation_form" method="POST" action="{% url 'booking_search' %}" onclick="handleSubmitCancelation(event)" novalidate>
           {% csrf_token %}
           <div class="row">
-            <div class="col-lg-6"><label for="email">Email registered on the reservation.</label></div>
+            <div class="col-lg-6">
+              <label for="email">Email registered on the reservation.</label>
+            </div>
             <div class="col-lg-6">
             <input type="email" class="form-control cancelation-input" name="reservation_email" id="reservation_email">
             <div class="invalid cancelationEmailError"></div>
