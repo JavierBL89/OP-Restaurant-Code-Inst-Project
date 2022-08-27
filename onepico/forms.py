@@ -19,25 +19,51 @@ class BookingForm(forms.ModelForm):
 
         super().__init__(*args, **kwargs)
         placeholders = {
-            'Name': 'name',
-            'Last name': 'last_name',
-            'Party size': 'party_size',
-            'Prefix': 'prefix',
-            'Phone number': 'phone',
-            'Date': 'date',
-            'Time slot': 'start_time',
-            'Email': 'email',
-            'Booking comment': 'excerpt',
+            'name': 'Name',
+            'last_name': 'Last name',
+            'party_size': 'Perty size',
+            'prefix': '',
+            'phone': 'Phone number',
+            'date': 'Date',
+            'start_time': 'Time slot',
+            'email': 'Email',
+            'excerpt': 'Booking comment',
         }
 
-        for filed in self.fields:
+        for field in self.fields:
             if self.fields[field].required:
                 placeholder = f'{placeholders[field]} *'
+            else:
+                placeholder = placeholders[field]
+            self.fields[field].widget.attrs['placeholder'] = placeholder
+            self.fields[field].label = False
 
-        # for field in self.fields:
-        #     if self.fields[field].required:
-        #         placeholder = f'{placeholders[field]} *'
-        #     else:
-        #         placeholder = placeholders[field]
-        #     # self.fields[field].widget.attrs['placeholder'] = placeholder
-        #     self.fields[field].label = False
+
+class CancelBooking(forms.ModelForm):
+    """
+    Bookings cancelation form
+    """
+
+    email = forms.EmailField(max_length=240)
+    booking_date = forms.DateField()
+
+    fields = ('email, bookinng_date')
+
+    def __init__(self, *args, **kwargs):
+
+
+        super(),__init__(*args, **kwargs)
+        placeholders = {
+            'email': 'email address',
+            'date': 'Date'
+        }
+
+        for field in self.fields:
+            if self.fields[field].required:
+                placeholder = f'{placeholders[field]} *'
+            else:
+                self.fields[field].widget.attrs['placeholder'] = placeholder
+                self.fields[field].label = False
+
+
+       

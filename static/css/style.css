@@ -194,14 +194,14 @@ form label {
   }
   
   .form-control[name="prefix"] {
-    width: 40%;
+    width: 110%;
     background-color: #fbfbfb;
     font-size: 0.800rem;
     opacity: 0.7;
   }
   
   .form-control[name="phone"] {
-    width: 50%;
+    width: 80%;
     margin-left: 15px;
   }
   

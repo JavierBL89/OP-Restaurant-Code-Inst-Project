@@ -56,8 +56,8 @@ class Booking(models.Model):
     slug = models.SlugField(max_length=50, unique=False, null=True)
     last_name = models.CharField(max_length=30, blank=True, null=True)
     party_size = models.BigIntegerField(null=True)
-    prefix = models.BigIntegerField()
-    phone = models.CharField(max_length=15, null=False, blank=False, choices=PREFIX_CHOICES)
+    prefix = models.BigIntegerField(default=+353, choices=PREFIX_CHOICES)
+    phone = models.CharField(max_length=15, null=False, blank=False)
     date = models.DateField('%Y-%m-%d')
     start_time = models.TimeField('%H:%M', choices=TIME_SLOTS)
     email = models.EmailField(max_length=100)
@@ -113,3 +113,6 @@ class TableDinner(models.Model):
         return f'{self.customer_name} {self.table_id} {self.date}'
         f'{self.start_time} {self.created_on}'
         f'{self.table_number} {self.table_max_people}'
+
+
+

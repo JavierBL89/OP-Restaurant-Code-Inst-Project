@@ -68,15 +68,23 @@
             <form class="g-3 needs-validation" id="booking_form" name="RegForm" method="POST" action="{% url 'booking_request' %}" onclick="handleSubmit(event)" novalidate>
               {% csrf_token %}
               <div class="row">
-                <div class="col">
+                <div class="col-12 col-lg-6">
                   {{ form.name | as_crispy_field }}
                   {{ form.last_name | as_crispy_field }}
                   <div class="phone-number-box d-flex">
                     {{ form.prefix | as_crispy_field }}
                     {{ form.phone | as_crispy_field }}
                   </div>
-
+                  {{ form.email | as_crispy_field }}
                 </div>
+
+                  <div class="col-12 col-lg-6">
+                    {{ form.date | as_crispy_field }}
+                    {{ form.start_time | as_crispy_field }}
+                    {{ form.party_size | as_crispy_field }}
+                    {{ form.excerpt | as_crispy_field }}
+
+                  </div>
                 <!-- <div class="col-lg-6">
                   <input type="text" id="name" class="form-control" name="name" placeholder="Name" required>
                   <div class="invalid nameError">
