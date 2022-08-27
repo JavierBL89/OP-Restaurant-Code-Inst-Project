@@ -8,6 +8,32 @@ STATUS = (
     ('expired', 'expired')
 )
 
+PREFIX_CHOICES = [
+    ('ES', '+34'),
+    ('IR', '+353.'),
+    ('EN', '+44'),
+]
+
+TIME_SLOTS = [('0', 'Lunch'),
+              ('1', '12:00'), ('2', '12:15'),
+              ('3', '12:30'), ('4', '12:45'),
+              ('5', '13:00'), ('6', '13:15'),
+              ('7', '13:30'), ('8', '13:45'),
+              ('9', '14:00'), ('10', '14:15'),
+              ('11', '14:30'),
+              ('00', 'Dinner'),
+              ('18', '18:00'),
+              ('13', '18:00'), ('14', '18:15'),
+              ('15', '18:30'), ('16', '18:45'),
+              ('17', '19:00'), ('19', '+19:15'),
+              ('19', '19:30'), ('20', '19:45'),
+              ('21', '19:30'), ('22', '19:45'),
+              ('23', '20:00'), ('24', '20:15'),
+              ('23', '20:30'), ('24', '20:45'),
+              ('23', '21:00'), ('24', '21:15'),
+              ('23', '21:30'),
+]
+
 
 class Restaurant():
     """
@@ -26,21 +52,21 @@ class Booking(models.Model):
     """
     Model to define booking data collection
     """
-    name = models.CharField(max_length=50, blank=False)
+    name = models.CharField(max_length=50)
     slug = models.SlugField(max_length=50, unique=False, null=True)
-    surname = models.CharField(max_length=30, blank=True, null=True)
-    people = models.BigIntegerField(null=True)
+    last_name = models.CharField(max_length=30, blank=True, null=True)
+    party_size = models.BigIntegerField(null=True)
     prefix = models.BigIntegerField()
-    phone = models.BigIntegerField(null=False, blank=False)
+    phone = models.CharField(max_length=15, null=False, blank=False, choices=PREFIX_CHOICES)
     date = models.DateField('%Y-%m-%d')
-    start_time = models.TimeField('%H:%M')
+    start_time = models.TimeField('%H:%M', choices=TIME_SLOTS)
     email = models.EmailField(max_length=100)
     excerpt = models.CharField(null=True, blank=True, max_length=500)
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.CharField(choices=STATUS, default='pending', max_length=50)
 
     def __str__(self):
-        return f'{self.name} {self.surname} {self.people}'
+        return f'{self.name} {self.last_name} {self.party_size}'
         f'{self.date} {self.start_time} {self.id}' 
 
 

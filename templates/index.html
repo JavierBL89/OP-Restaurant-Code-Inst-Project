@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
 
 {% block content %}
 
@@ -67,7 +68,16 @@
             <form class="g-3 needs-validation" id="booking_form" name="RegForm" method="POST" action="{% url 'booking_request' %}" onclick="handleSubmit(event)" novalidate>
               {% csrf_token %}
               <div class="row">
-                <div class="col-lg-6">
+                <div class="col">
+                  {{ form.name | as_crispy_field }}
+                  {{ form.last_name | as_crispy_field }}
+                  <div class="phone-number-box d-flex">
+                    {{ form.prefix | as_crispy_field }}
+                    {{ form.phone | as_crispy_field }}
+                  </div>
+
+                </div>
+                <!-- <div class="col-lg-6">
                   <input type="text" id="name" class="form-control" name="name" placeholder="Name" required>
                   <div class="invalid nameError">
                   </div>
@@ -126,7 +136,7 @@
                   <div class="invalid partyError"></div>
 
                   <textarea class="form-control" id="comment" rows="2" name="booking_comment" placeholder="Booking comments"></textarea>
-                </div>
+                </div> -->
               </div>
               <div class="row">
                 <div class="booking-button-box text-center">

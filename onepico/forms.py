@@ -8,44 +8,36 @@ class BookingForm(forms.ModelForm):
 
     class Meta:
         model = Booking
-        fields = ['name', 'surname', 'people', 'prefix',
+        fields = ['name', 'last_name', 'party_size', 'prefix',
                   'phone', 'date', 'start_time', 'email', 'excerpt']
-        widgets = {
-            'name': TextInput(attrs={
-                'class': "form-control",
-                'label': "none",
-                'placeholder': 'Name'
-                }),
-            'surname': TextInput(attrs={
-                'class': "form-control",
-                'placeholder': 'Last name'
-                }),
-            'people': NumberInput(attrs={
-                'class': "form-control",
-                'placeholder': 'Party size'
-                }),
-            'prefix': NumberInput(attrs={
-                'class': "form-control",
-                'placeholder': 'Prefix'
-                }),
-            'phone': NumberInput(attrs={
-                'class': "form-control",
-                'placeholder': 'Contact number'
-                }),
-            'date': DateInput(attrs={
-                'class': "form-control",
-                'placeholder': 'mm/dd/yyyy'
-                }),
-            'start_time': TimeInput(attrs={
-                'class': "form-control",
-                'placeholder': 'Date'
-                }),
-            'email': EmailInput(attrs={
-                'class': "form-control",
-                'placeholder': 'Email'
-                }),
-            'excerpt': Textarea(attrs={
-                'class': "form-control",
-                'placeholder': 'Booking comment'
-                }),
+        
+    def __init__(self, *args, **kwargs):
+        """
+        Add placeholders and remove 
+        auto-generated labels
+        """
+
+        super().__init__(*args, **kwargs)
+        placeholders = {
+            'Name': 'name',
+            'Last name': 'last_name',
+            'Party size': 'party_size',
+            'Prefix': 'prefix',
+            'Phone number': 'phone',
+            'Date': 'date',
+            'Time slot': 'start_time',
+            'Email': 'email',
+            'Booking comment': 'excerpt',
         }
+
+        for filed in self.fields:
+            if self.fields[field].required:
+                placeholder = f'{placeholders[field]} *'
+
+        # for field in self.fields:
+        #     if self.fields[field].required:
+        #         placeholder = f'{placeholders[field]} *'
+        #     else:
+        #         placeholder = placeholders[field]
+        #     # self.fields[field].widget.attrs['placeholder'] = placeholder
+        #     self.fields[field].label = False
