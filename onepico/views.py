@@ -36,18 +36,18 @@ class FormView(View):
 
 
     def post(self, request, *args, **kwargs):
-        name = request.POST.get('name')
-        surname = request.POST.get('l_name')
-        prefix = request.POST.get('prefix')
-        phone = request.POST.get('phone')
-        email = request.POST.get('email')
-        date = request.POST.get('date')
+        name = request.POST['name']
+        surname = request.POST['l_name']
+        prefix = request.POST['prefix']
+        phone = request.POST['phone']
+        email = request.POST['email']
+        date = request.POST['date']
         requested_date = datetime.strptime(date, '%Y-%m-%d')
-        start_time = request.POST.get('start_time')
+        start_time = request.POST['start_time']
         format_data = "%H:%M"
         requested_time = datetime.strptime(start_time, format_data)
-        people = request.POST.get('party_size')
-        comment = request.POST.get('booking_comments')
+        people = request.POST['party_size']
+        comment = request.POST['booking_comments']
 
         
         if check_double_booking_date(people, requested_date, requested_time, phone) == False:
