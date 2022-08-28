@@ -70,7 +70,7 @@
                   <a class="nav-link wow animate__fadeIn" data-wow-delay="1s" href="#menus">MENUS</a>
                 </li>             
                 <li class="nav-item">
-                  <a class="nav-link wow animate__fadeIn" data-wow-delay="1s" aria-current="page"href="{% url 'cancelations' %}">CANCELATIONS</a>
+                  <a class="nav-link wow animate__fadeIn" data-wow-delay="1s" aria-current="page" {% if user.is_authenticated %} href="{% url 'profile' %}"{% else %} href="{% url 'manage_bookings' %}"{% endif %}>CANCELATIONS</a>
                 </li>              
             </ul>
             {% elif cancelation %}

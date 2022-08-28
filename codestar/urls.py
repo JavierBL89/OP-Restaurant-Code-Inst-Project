@@ -21,4 +21,5 @@ urlpatterns = [
     path('', include('onepico.urls'), name='onepico_urls'),
     path('summernote/', include('django_summernote.urls')),
     path('contact/', include('contact.urls')),
+    path('profile/', include('profiles.urls')),
 ]

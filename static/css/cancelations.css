@@ -10,11 +10,11 @@ body {
   }
   
   /****** FORM SECTION*/
-  #cancelations-container {
+  #profile-container {
     border-radius: 10px;
   }
   
-  #cancelations-container {
+  #profile-container {
     background-color: rgb(255, 255, 255);
     width: 50%;
     margin: 30px auto;
@@ -28,13 +28,12 @@ body {
     transition: background-color 5000s ease-in-out 0s;
   }
   
-  #cancelations-container h6 {
+  #profile-container h6 {
     font-size: 0.900rem;
     color: rgb(209, 119, 119);
-    margin-bottom: 30px;
-    padding-right: 5%;
-    padding-left: 5%;
-    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    text-align: start;
   }
   
   
@@ -190,6 +189,10 @@ body {
     font-size: 0.800rem;
   }
   
+  .title{
+    font-weight: bold;
+  }
+
   /******************************************************************** MOBILE SCREEN */
   @media only screen and (min-width: 320px) and (max-width: 600px) {
   
@@ -237,15 +240,43 @@ body {
     }
   
     /********************* FORM SECTION*/
-    #cancelations-container {
+    #profile-container {
+      position: relative;
+      z-index: 9;
       width: 90%;
+      background-color: #ffffff;
       padding: 25px 20px;
+
     }
   
-    #cancelations-container h6 {
-      font-size: 0.850rem;
-      padding-right: 5px;
-      padding-left: 5px;
+    #profile-container p{
+      font-size: 0.675rem;
+      margin: 3px auto;
+    }
+
+    #profile-container a{
+      font-size: 0.600rem;
+      margin-top: 5px;
+      text-decoration: none;
+    }
+
+    #profile-container h4{
+      font-size: 1rem;
+      margin: 3px auto;
+    }
+
+    #profile-container h6{
+      font-size: 0.800rem;
+    }
+
+    #profile-container .info{
+      font-size: 0.550rem;
+      color:#727272;
+      margin-top: 0;
+    }
+
+    .hr-title{
+      width: 40%;
     }
   }
   
@@ -279,17 +310,36 @@ body {
     }
   
     /********************** CANCELATION FORM CONTAINER*/
-     #cancelations-container {
+     #profile-container {
       position: relative;
       z-index: 9;
-      width: 60%;
+      width: 70%;
       background-color: #ffffff;
     }
   
-  
-    #cancelations-container h6 {
-      padding-right: 0;
-      padding-left: 0;
+    #profile-container p{
+      font-size: 0.700rem;
+      margin: 3px auto;
+    }
+
+    #profile-container a{
+      font-size: 0.600rem;
+      margin-top: 5px;
+      text-decoration: none;
+    }
+    #profile-container h4{
+      font-size: 1.2rem;
+      margin: 3px auto;
+    }
+
+    #profile-container .info{
+      font-size: 0.500rem;
+      color:#727272;
+      margin-top: 0;
+    }
+
+    .hr-title{
+      width: 60%;
     }
   }
   
@@ -297,10 +347,31 @@ body {
   @media only screen and (min-width: 1000px) {
   
      /********************** CANCELATION FORM CONTAINER*/
-     #cancelations-container {
+     #profile-container {
       position: relative;
       z-index: 9;
       width: 60%;
       background-color: #ffffff;
+    }
+
+    #profile-container p{
+      font-size: 0.750rem;
+      margin: 3px auto;
+    }
+
+    #profile-container a{
+      font-size: 0.650rem;
+      margin-top: 5px;
+      text-decoration: none;
+    }
+
+    #profile-container .info{
+      font-size: 0.550rem;
+      color:#727272;
+      margin-top: 0;
+    }
+
+    .hr-title{
+      width: 60%;
     }
   }
