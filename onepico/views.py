@@ -4,7 +4,8 @@ from django.views.generic.edit import DeleteView
 from django.urls import reverse_lazy
 
 from .models import Booking
-from .forms import BookingForm, ContactForm
+from .forms import BookingForm
+from contact.forms import ContactForm
 from django.http import HttpResponseRedirect
 from datetime import datetime
 from .reservation import  get_table_available, check_double_booking_date

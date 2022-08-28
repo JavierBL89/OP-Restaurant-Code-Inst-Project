@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'cloudinary',
     'django_summernote',
     'onepico',
+    'contact',
 
     # others
     'crispy_forms',

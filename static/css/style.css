@@ -1,38 +1,5 @@
 /******************************* COMMON PROPERTIES*/
 
-
-/******* CONTACT FORM POPUP */
-.overlay{
-  display: block;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  z-index: 99;
-}
-
-.popup {
-  position: absolute;
-  width: 50%;
-  height: 50%;
-  top: 25%;
-  left: 25%;
-  text-align: center;
-  background: white;
-  border-radius: 10px;
-}
-
-#close{
-  padding-top: 10px;
-  margin-top: 5px;
-  margin-right:40px;
-  font-size: 1.5rem;
-}
-form label {
-    display: none;
-  }
-  
   .bg-image{
     position: absolute;
     z-index: 0;
@@ -232,7 +199,7 @@ form label {
     font-size: 0.800rem;
   }
   
-  .booking-form-box button[type="submit"] {
+  .booking-form-box button[type="submit"], #contact-form button[type="submit"] {
     margin-top: 40px;
     padding-top: 5px;
     padding-bottom: 5px;
@@ -294,7 +261,7 @@ form label {
     background-color: rgb(228, 225, 225);
   }
   
-  /************ MENUS SECTION*/
+  /**************** MENUS SECTION*/
   .menus-container .row div a {
     color: #4c4b4b;
     text-decoration: none;
@@ -304,7 +271,11 @@ form label {
     color: hsl(0, 0%, 71%);
   }
   
-  /****** FOOTER */
+form label {
+    display: none;
+  }
+
+  /*************** FOOTER **/
   footer a {
     text-decoration: none;
     position: relative;
@@ -432,6 +403,7 @@ form label {
     border-left: solid 1px rgb(255, 251, 251);
   }
   
+
   /******************************************************************** MOBILE SCREEN */
   @media only screen and (min-width: 320px) and (max-width: 600px) {
   
@@ -709,6 +681,60 @@ form label {
       margin-top: 100px;
       font-size: 14px;
     }
+
+        /************* CONTACT FORM */
+        .overlay{
+          display: block;
+          position: fixed;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          z-index: 99;
+        }
+        
+        .popup {
+          position: absolute;
+          width: 90%;
+          padding-bottom: 4%;
+          top: 20%;
+          left: 5%;
+          text-align: center;
+          background: white;
+          border-radius: 10px;
+        }
+        
+        #close{
+          padding-top: 10px;
+          margin-top: 5px;
+          margin-right:40px;
+          font-size: 1rem;
+        }
+        
+        .contact-form-input{
+          margin: 0 auto 5px;
+          width: 80%;
+          font-size: 0.750rem;
+    
+        }
+    
+        .popup h6{
+          font-size: 0.850rem;
+          font-weight: bold;
+        }
+    
+        .popup p{
+          font-size: 0.750rem;
+        }
+        
+        .contact-form-input::placeholder{
+          font-size: 0.750rem;
+        }
+
+        #contact-form button[type="submit"] {
+          width: 50%;
+          font-size: 0.750rem;
+        }
   }
   
   /******************************************************************** TABLET SCREEN */
@@ -947,6 +973,54 @@ form label {
 .fa-house-chimney{
       margin-top: 12px;
     }
+
+     /************* CONTACT FORM */
+     .overlay{
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      z-index: 99;
+    }
+    
+     .popup {
+      position: absolute;
+      width: 60%;
+      padding-bottom: 2%;
+      top: 11%;
+      left: 21%;
+      text-align: center;
+      background: white;
+      border-radius: 10px;
+    }
+    
+    .popup h6{
+      font-size: 0.950rem;
+      font-weight: bold;
+    }
+
+    .popup p{
+      font-size: 0.850rem;
+    }
+
+    #close{
+      padding-top: 10px;
+      margin-top: 5px;
+      margin-right:40px;
+      font-size: 1.2rem;
+    }
+     .contact-form-input{
+      margin: 0 auto 5px;
+      width: 60%;
+      font-size: 0.800rem;
+
+    }
+    .contact-form-input::placeholder{
+      font-size: 0.800rem;
+
+    }
   }
   
   /******************************************************************** DESKTOP SCREEN */
@@ -1178,5 +1252,54 @@ form label {
       margin: 20px 75px;
       height: 200px;
       width: 70%;
+    }
+
+    /************* CONTACT FORM */
+    .overlay{
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      z-index: 99;
+    }
+    
+    .popup {
+      position: absolute;
+      width: 50%;
+      padding-bottom: 2%;
+      top: 11%;
+      left: 25%;
+      text-align: center;
+      background: white;
+      border-radius: 10px;
+    }
+    
+    #close{
+      padding-top: 10px;
+      margin-top: 5px;
+      margin-right:40px;
+      font-size: 1.5rem;
+    }
+    
+    .contact-form-input{
+      margin: 0 auto 5px;
+      width: 60%;
+      font-size: 0.800rem;
+
+    }
+
+    .popup h6{
+      font-size: 1rem;
+      font-weight: bold;
+    }
+
+    .popup p{
+      font-size: 0.800rem;
+    }
+    
+    .contact-form-input::placeholder{
+      font-size: 0.800rem;
     }
   }

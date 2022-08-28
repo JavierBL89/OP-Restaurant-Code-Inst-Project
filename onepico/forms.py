@@ -40,20 +40,18 @@ class BookingForm(forms.ModelForm):
 
 
 class CancelBooking(forms.ModelForm):
-    """
-    Bookings cancelation form
-    """
+    """ Bookings cancelation form """
 
     email = forms.EmailField(max_length=240)
     booking_date = forms.DateField()
     fields = ('email', 'booking_date')
 
     def __init__(self, *args, **kwargs):
-
+        """ Set placeholders and get rid of labels """
         super().__init__(*args, **kwargs)
         placeholders = {
             'email': 'Email address',
-            'date': 'Date'
+            'date': 'Date',
         }
 
         for field in self.fields:
@@ -63,30 +61,6 @@ class CancelBooking(forms.ModelForm):
                 self.fields[field].widget.attrs['placeholder'] = placeholder
                 self.fields[field].label = False
 
-
-class ContactForm(forms.ModelForm):
-    """ Define contact form """
-
-    name = forms.CharField(max_length=50)
-    email = forms.EmailField(max_length=100)
-    comment = forms.Textarea()
-
-    fields = ('name', 'email', 'comment')
-
-    def __init__(self, *args, **kwargs):
-        """ Set autofocus and placeholders"""
-
-        super().__init__(*args, **kwargs)
-        placeholders = {
-            'name': 'Your name',
-            'email': 'YOur email address',
-            'comment': 'How can we help you?'
-        }
-
-        self.fields['name'].widget.attrs['autofocus'] = True
-        for field in self.fields:
-            placeholders = placeholder
-            # self.fields[field].required.widget.atts['placeholder'] = f'{placeholder[filed]} *'
 
 
 

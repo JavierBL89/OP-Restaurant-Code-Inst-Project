@@ -5,7 +5,7 @@ from django_summernote.admin import SummernoteModelAdmin
 
 # Register your models here.
 @admin.register(Booking)
-class  PostAdmin(SummernoteModelAdmin):
+class PostAdmin(SummernoteModelAdmin):
     
     list_display = ('name', 'last_name', 'created_on','id')
     list_filter = ('date', 'created_on', 'name', 'last_name')
