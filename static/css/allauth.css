@@ -28,7 +28,7 @@ top: 5px;
     color:rgb(177, 199, 255);
 }
 
-.signup-link{
+.signup-link, .signin-link{
     color: rgb(255, 177, 108);
 }
 
@@ -47,7 +47,7 @@ top: 5px;
         background-color: rgb(50, 50, 50);
         color: rgb(255, 255, 255);
         margin: 50px auto;
-        padding: 5% 10%;
+        padding: 6% 10%;
         border-radius: 5px;
         border: solid 1px rgb(159, 159, 159);
         width: 90%;
@@ -55,7 +55,7 @@ top: 5px;
     }
 
     #allauth-container h1{
-        font-size: 1.2rem;
+        font-size: 1.1rem;
 }
 
 #allauth-container p{
@@ -63,6 +63,7 @@ top: 5px;
 }
 
 #allauth-container .form-control{
+    margin-bottom: 5px;
 height: 35px;
 }
 
@@ -92,14 +93,25 @@ height: 35px;
          width: 50%;
     }
 
-#allauth-container .heading h1{
-    margin-bottom: 0px;
-}
-
 #allauth-container .heading hr {
     margin-top: 0px;
 }
 
+/*************** SIGNUP PAGE*/
+#signup_form button[type="submit"]{
+    border: none;
+         margin-top: 10px;
+         padding-bottom: 20px;
+         padding-top: 7px;
+         height: 35px;
+         border-radius: 10px;
+         color: rgb(0, 0, 0);
+         font-weight: bold;
+         font-size: 0.700rem;
+         background-color: rgb(186, 186, 186);
+         letter-spacing: 1px;
+         width: 100%;
+}
 }
 
   /******************************************************************** TABLET SCREEN */
@@ -113,7 +125,7 @@ height: 35px;
         padding: 5% 10%;
         border-radius: 10px;
         border: solid 1px rgb(3, 3, 3);
-        width: 60%;
+        width: 65%;
         height:60%;
     }
 
@@ -128,6 +140,8 @@ height: 35px;
 
 #allauth-container .form-control{
 height: 35px;
+margin-bottom: 5px;
+
 }
 
 #allauth-container .form-control::placeholder{
@@ -150,10 +164,10 @@ height: 35px;
          border-radius: 10px;
          color: rgb(0, 0, 0);
          font-weight: bold;
-         font-size: 0.800rem;
+         font-size: 0.750rem;
          background-color: rgb(186, 186, 186);
          letter-spacing: 1px;
-         width: 40%;
+         width: 45%;
     }
 
 #allauth-container .heading h1{
@@ -192,7 +206,8 @@ height: 35px;
 }
 
 #allauth-container .form-control{
-height: 40px;
+    margin-bottom: 5px;    
+    height: 40px;
 }
 
 #allauth-container .form-control::placeholder{
@@ -229,5 +244,20 @@ height: 40px;
     margin-top: 0px;
 }
 
-    
+
+/*************** SIGNUP PAGE*/
+#signup_form button[type="submit"]{
+    border: none;
+         margin-top: 10px;
+         padding-bottom: 20px;
+         padding-top: 5px;
+         height: 40px;
+         border-radius: 10px;
+         color: rgb(0, 0, 0);
+         font-weight: bold;
+         font-size: 0.900rem;
+         background-color: rgb(186, 186, 186);
+         letter-spacing: 1px;
+         width: 55%;
+}
 }
