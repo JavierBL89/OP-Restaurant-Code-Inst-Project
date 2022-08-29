@@ -104,6 +104,14 @@
               <h6>Check the booking confirmation email in your inbox</h6>
               <h6>We'll see you soon!</h6>
             </div>
+            <!-------------------------- FULLY BOOKED  FEEDBACK ---------------------------->
+            {% elif fully_booked %}
+            <div class="success">
+              <h6>The restaurant is booked out for the date and time requested</h6>
+              <h6>The reservation could not be possible</h6>
+              <h6>Please try again to a different date</h6>
+              <a id="book-again" href="{% url 'home' %}">Try different date</a>
+            </div>
             {% endif %}
           </div>
         </div>

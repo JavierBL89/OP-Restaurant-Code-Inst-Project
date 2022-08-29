@@ -68,7 +68,7 @@ class FormView(View):
             new_booking = Booking(name=name, last_name=surname, party_size=people, prefix=prefix, phone=phone, date=requested_date, start_time=requested_time, email=email, excerpt=comment)
             new_booking.save()
             booking_id = new_booking.id
-            if get_table_available(people, requested_date, requested_time, booking_id) == False:
+            if get_table_available(people, requested_date, requested_time, booking_id) == True:
                 customer = Booking.objects.filter()
                 print("BOOKING SUCCESSFUL")
                 booking_successful = True
@@ -78,6 +78,12 @@ class FormView(View):
                 return render(request, 'reservation_confirmation.html', booking_successful)
             else:
                 print("FULLY BOOKED")
+                fully_booked = True
+                fully_booked = {
+                'fully_booked': fully_booked
+            }
+                return render(request, 'reservation_confirmation.html', fully_booked)
+
         
         return render(request, 'index.html')
 
