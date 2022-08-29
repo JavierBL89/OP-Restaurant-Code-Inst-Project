@@ -8,6 +8,7 @@ class BookingForm(forms.ModelForm):
 
     class Meta:
         model = Booking
+        date = forms.DateInput()
         fields = ['name', 'last_name', 'party_size', 'prefix',
                   'phone', 'date', 'start_time', 'email', 'excerpt']
         

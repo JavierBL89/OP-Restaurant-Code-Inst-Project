@@ -79,8 +79,7 @@
                 </div>
 
                   <div class="col-12 col-lg-6">
-                    {{ form.date | as_crispy_field }}
-                    {{ form.start_time | as_crispy_field }}
+                    <input id="date" class="form-control" name="date" type="date" required />                    {{ form.start_time | as_crispy_field }}
                     {{ form.party_size | as_crispy_field }}
                     {{ form.excerpt | as_crispy_field }}
 

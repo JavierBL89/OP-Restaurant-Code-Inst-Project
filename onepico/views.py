@@ -37,17 +37,21 @@ class FormView(View):
 
     def post(self, request, *args, **kwargs):
         name = request.POST['name']
-        surname = request.POST['l_name']
+        surname = request.POST['last_name']
         prefix = request.POST['prefix']
         phone = request.POST['phone']
         email = request.POST['email']
         date = request.POST['date']
         requested_date = datetime.strptime(date, '%Y-%m-%d')
         start_time = request.POST['start_time']
+        print(start_time)
+
         format_data = "%H:%M"
         requested_time = datetime.strptime(start_time, format_data)
         people = request.POST['party_size']
-        comment = request.POST['booking_comments']
+        comment = None
+        if 'booking_comments' in request.POST:
+            comment = request.POST['booking_comments']
 
         
         if check_double_booking_date(people, requested_date, requested_time, phone) == False:
@@ -61,7 +65,7 @@ class FormView(View):
             return render(request, 'reservation_confirmation.html', double_booking_day)
             
         else:
-            new_booking = Booking(name=name, surname=surname, people=people, prefix=prefix, phone=phone, date=requested_date, start_time=requested_time, email=email, excerpt=comment)
+            new_booking = Booking(name=name, last_name=surname, party_size=people, prefix=prefix, phone=phone, date=requested_date, start_time=requested_time, email=email, excerpt=comment)
             new_booking.save()
             booking_id = new_booking.id
             if get_table_available(people, requested_date, requested_time, booking_id) == False:

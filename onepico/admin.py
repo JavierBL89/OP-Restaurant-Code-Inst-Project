@@ -7,9 +7,9 @@ from django_summernote.admin import SummernoteModelAdmin
 @admin.register(Booking)
 class PostAdmin(SummernoteModelAdmin):
     
-    list_display = ('name', 'last_name', 'created_on','id')
-    list_filter = ('date', 'created_on', 'name', 'last_name')
-    search_fields = ['name', 'last_name']
+    list_display = ('user_profile', 'name', 'last_name', 'created_on','id')
+    list_filter = ('user_profile', 'date', 'created_on', 'name', 'last_name')
+    search_fields = ['name', 'last_name', 'user_profile']
     prepopulated_fields = {'slug': ('name',)}
     summernote_fields = ('content')
 
