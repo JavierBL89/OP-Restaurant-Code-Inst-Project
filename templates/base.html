@@ -48,7 +48,7 @@
       <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
-            <div class="flex-row d-inline-flex text-center logo wow animate__bounceIn" data-wow-delay="2s">
+            <div class="flex-row d-inline-flex text-center logo {% if home %}wow animate__bounceIn{% else %}{% endif %}" data-wow-delay="2s">
               <h2 class="d-inline ">OP</h2>
               <p class="d-inline">Fine Dinning Experience</p>
           </div>
@@ -58,10 +58,10 @@
             {% if home %}
             <ul class="navbar-nav ms-auto flex-row">
               <div class="col-lg-6 d-lg-flex d-sm-flex">
-                <li class="nav-item">
+                <li class="nav-item" id="dark-navbar-link">
                   <a class="nav-link wow animate__fadeIn" data-wow-delay="0.5s" aria-current="page" href="#">STYLE</a>
                 </li>
-                <li class="nav-item">
+                <li class="w-100 nav-item">
                   <a class="nav-link wow animate__fadeIn" data-wow-delay="0.5s" id="gallery_link" href="#gallery">GALLERY</a>
                 </li>
           </div>
@@ -70,10 +70,10 @@
                   <a class="nav-link wow animate__fadeIn" data-wow-delay="1s" href="#menus">MENUS</a>
                 </li>             
                 <li class="nav-item">
-                  <a class="nav-link wow animate__fadeIn" data-wow-delay="1s" aria-current="page" {% if user.is_authenticated %} href="{% url 'profile' %}"{% else %} href="{% url 'manage_bookings' %}"{% endif %}>CANCELATIONS</a>
+                  <a class="text-center nav-link wow animate__fadeIn" data-wow-delay="1s" aria-current="page" {% if user.is_authenticated %} href="{% url 'profile' %}"{% else %} href="{% url 'account_login' %}"{% endif %}>MANAGE MY BOOKINGS</a>
                 </li>              
             </ul>
-            {% elif cancelation %}
+            {% else %}
             <ul class="navbar-nav ms-auto flex-row">
               <li class="nav-item">
                 <a class="nav-link wow animate__fadeIn" data-wow-delay="1s" aria-current="page"  href="{% url 'home' %}">HOME</a>
