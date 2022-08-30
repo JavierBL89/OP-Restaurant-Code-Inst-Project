@@ -1,0 +1,12 @@
+<div class="container-fluid message-container {% if messages %} d-block {% else %} d-none {% endif %}">
+    <div class="row">
+        <div class="col-12 text-end">
+            <i class="fa-solid fa-xmark" id="close-message" data-dismiss="true"></i>
+          </div>
+        {% for message in messages %}
+        <div class="col-12" id="message-box">
+         <p>{{ message }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>

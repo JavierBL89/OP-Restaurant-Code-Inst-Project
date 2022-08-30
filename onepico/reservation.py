@@ -65,16 +65,16 @@ def get_table_available(people, requested_date, requested_time, booking_id):
             date = value['date']
             start_time = value['start_time']
 
-        if requested_time_str > "12:00" and requested_time_str < "14:30":
+        if requested_time_str >= "12:00" and requested_time_str <= "14:30":
             if check_lunch_time(people_requested, booking_id,
                                 customer_name,
                                 date, people, start_time):
                 print("Room fully booked at lunch time for the date requested")
                 print(", try at another date.")
-                return True
-            else:
                 return False
-        elif requested_time_str > "18:00" and requested_time_str < "21:30":
+            else:
+                return True
+        elif requested_time_str >= "18:00" and requested_time_str <= "21:30":
             if check_dinner_time(people_requested, booking_id,
                                  customer_name,
                                  date, people, start_time):

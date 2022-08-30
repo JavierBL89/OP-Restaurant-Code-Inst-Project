@@ -57,7 +57,7 @@
            <div class="row ">
             {% if home %}
             <ul class="navbar-nav ms-auto flex-row">
-              <div class="col-lg-6 d-lg-flex d-sm-flex">
+              <div class="col-lg-6 d-lg-flex d-sm-flex text-center">
                 <li class="nav-item" id="dark-navbar-link">
                   <a class="nav-link wow animate__fadeIn" data-wow-delay="0.5s" aria-current="page" href="#">STYLE</a>
                 </li>
@@ -65,19 +65,21 @@
                   <a class="nav-link wow animate__fadeIn" data-wow-delay="0.5s" id="gallery_link" href="#gallery">GALLERY</a>
                 </li>
           </div>
-          <div class="col-lg-6 d-lg-flex d-sm-flex">
+          <div class="col-lg-6 d-lg-flex d-sm-flex text-center">
                 <li class="nav-item">
                   <a class="nav-link wow animate__fadeIn" data-wow-delay="1s" href="#menus">MENUS</a>
                 </li>             
                 <li class="nav-item">
-                  <a class="text-center nav-link wow animate__fadeIn" data-wow-delay="1s" aria-current="page" {% if user.is_authenticated %} href="{% url 'profile' %}"{% else %} href="{% url 'account_login' %}"{% endif %}>MANAGE MY BOOKINGS</a>
+                  <a class="nav-link wow animate__fadeIn" data-wow-delay="1s" aria-current="page" {% if user.is_authenticated %} href="{% url 'profile' %}"{% else %} href="{% url 'account_login' %}"{% endif %}>MANAGE MY BOOKINGS</a>
                 </li>              
             </ul>
             {% else %}
             <ul class="navbar-nav ms-auto flex-row">
+              {% if user.is_authenticated %}
               <li class="nav-item">
                 <a class="nav-link wow animate__fadeIn" data-wow-delay="1s" aria-current="page"  href="{% url 'account_logout' %}">LOGOUT</a>
               </li>
+              {% endif %}
               <li class="nav-item">
                 <a class="nav-link wow animate__fadeIn" data-wow-delay="1s" aria-current="page"  href="{% url 'home' %}">HOME</a>
               </li>
@@ -91,6 +93,7 @@
     </header>
     <div class="hero-container">
         <div class="bg-image"></div>
+        <!-- {% include 'includes/messages.html' %} -->
     </div>
     {% block content %}
 
@@ -175,11 +178,19 @@
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
       defer
 ></script>
-
+<!------ COUNT CURRENT YEAR ------>
     <script>
       const currentYear = new Date().getFullYear();
       $("#year").text(currentYear)
   </script>
+
+<!------ CLOSE MESSAGES BOX ------>
+<script>
+  const closeMessage = $('#close-message');
+  closeMessage.on('click', function(){
+    $('.message-container').fadeOut()
+  })
+</script>
 </body>
 
 {% endblock %}

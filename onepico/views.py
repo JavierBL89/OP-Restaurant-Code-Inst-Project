@@ -1,10 +1,12 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.views import generic, View
 from django.views.generic.edit import DeleteView
 from django.urls import reverse_lazy
+from django.contrib.auth.models import User
 
 from .models import Booking
 from .forms import BookingForm
+from profiles.models import UserProfile
 from contact.forms import ContactForm
 from django.http import HttpResponseRedirect
 from datetime import datetime
@@ -65,11 +67,24 @@ class FormView(View):
             return render(request, 'reservation_confirmation.html', double_booking_day)
             
         else:
+            # try:
             new_booking = Booking(name=name, last_name=surname, party_size=people, prefix=prefix, phone=phone, date=requested_date, start_time=requested_time, email=email, excerpt=comment)
             new_booking.save()
             booking_id = new_booking.id
             if get_table_available(people, requested_date, requested_time, booking_id) == True:
-                customer = Booking.objects.filter()
+
+                if request.user.is_authenticated:
+                    user_profile = get_object_or_404(UserProfile, user=request.user)
+                    print('puta')
+                    # Save info into user's account
+                    user = get_object_or_404(User, pk=request.user.id)
+                    user.first_name = name
+                    user.last_name = surname
+                    user.save()
+                    # Attach booking to user's profile
+                    new_booking.user_profile = user_profile
+                    new_booking.save()
+                    
                 print("BOOKING SUCCESSFUL")
                 booking_successful = True
                 booking_successful = {
@@ -77,12 +92,16 @@ class FormView(View):
             }
                 return render(request, 'reservation_confirmation.html', booking_successful)
             else:
+                new_booking.delete()
                 print("FULLY BOOKED")
                 fully_booked = True
                 fully_booked = {
                 'fully_booked': fully_booked
             }
                 return render(request, 'reservation_confirmation.html', fully_booked)
+            # except Exception as e:
+            #     print(f'Cannot make the request: Error{e}')
+            #     return redirect(reverse('home'))
 
         
         return render(request, 'index.html')
