@@ -6,12 +6,6 @@ div .bg-image {
     height: 150%;
   }
 
-  .overlay{
-    width: 100%;
-    height: 100%;
-  }
-
-
 #allauth-container .form-control:focus{
     background-color: rgb(255, 255, 255);
 }
@@ -28,7 +22,10 @@ top: 5px;
     color:rgb(177, 199, 255);
 }
 
-.signup-link, .signin-link{
+.signup-link, .signin-link, .mail-link, .change-email-addreess-link{
+    color: rgb(255, 177, 108);
+}
+.signup-link:hover, .signin-link:hover{
     color: rgb(255, 177, 108);
 }
 
@@ -55,11 +52,11 @@ top: 5px;
     }
 
     #allauth-container h1{
-        font-size: 1.1rem;
+        font-size: 1.2rem;
 }
 
 #allauth-container p{
-    font-size: 0.700rem;
+    font-size: 0.850rem;
 }
 
 #allauth-container .form-control{
@@ -68,7 +65,7 @@ height: 35px;
 }
 
 #allauth-container .form-control::placeholder{
-    font-size: 0.650rem;
+    font-size: 0.750rem;
     }
 
     .form-check-input {
@@ -83,14 +80,14 @@ height: 35px;
          margin-top: 10px;
          padding-bottom: 5px;
          padding-top: 5px;
-         height: 32px;
+         height: 40px;
          border-radius: 10px;
          color: rgb(0, 0, 0);
          font-weight: bold;
-         font-size: 0.700rem;
+         font-size: 0.850rem;
          background-color: rgb(186, 186, 186);
          letter-spacing: 1px;
-         width: 50%;
+         width: 100%;
     }
 
 #allauth-container .heading hr {
@@ -107,7 +104,7 @@ height: 35px;
          border-radius: 10px;
          color: rgb(0, 0, 0);
          font-weight: bold;
-         font-size: 0.700rem;
+         font-size: 0.850rem;
          background-color: rgb(186, 186, 186);
          letter-spacing: 1px;
          width: 100%;
@@ -135,17 +132,17 @@ height: 35px;
 }
 
 #allauth-container p{
-    font-size: 0.800rem;
+    font-size: 0.850rem;
 }
 
 #allauth-container .form-control{
-height: 35px;
+height: 40px;
 margin-bottom: 5px;
 
 }
 
 #allauth-container .form-control::placeholder{
-    font-size: 0.700rem;
+    font-size: 0.800rem;
     }
 
     .form-check-input {
@@ -160,11 +157,11 @@ margin-bottom: 5px;
          margin-top: 10px;
          padding-bottom: 5px;
          padding-top: 5px;
-         height: 32px;
+         height: 40px;
          border-radius: 10px;
          color: rgb(0, 0, 0);
          font-weight: bold;
-         font-size: 0.750rem;
+         font-size: 0.850rem;
          background-color: rgb(186, 186, 186);
          letter-spacing: 1px;
          width: 45%;
