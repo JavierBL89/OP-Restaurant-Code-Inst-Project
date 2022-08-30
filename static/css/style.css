@@ -291,6 +291,7 @@ form label {
     padding: 0.2em 0;
     text-align: center;
     color: inherit;
+    font-size: 0.900rem;
   }
   
   footer a:hover {
@@ -486,6 +487,9 @@ form label {
 
     }
   
+    /********************* ABOUT SECTION */
+
+
     /********************** RESERVATIONS SECTION */
     div .bookings {
       width: 90%;
