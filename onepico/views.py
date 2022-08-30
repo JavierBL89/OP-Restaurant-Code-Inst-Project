@@ -46,8 +46,6 @@ class FormView(View):
         date = request.POST['date']
         requested_date = datetime.strptime(date, '%Y-%m-%d')
         start_time = request.POST['start_time']
-        print(start_time)
-
         format_data = "%H:%M"
         requested_time = datetime.strptime(start_time, format_data)
         people = request.POST['party_size']

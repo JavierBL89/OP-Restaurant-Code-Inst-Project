@@ -31,7 +31,7 @@
               </div>
           </div>
             <a href="http://">Update info details</a>
-            <a class="text-danger" href="http://">Delete profile</a> <br> 
+            <a class="text-danger" href="{% url 'delete_profile' user.pk %}">Delete profile</a> <br> 
             <p class="info">(Next comming reservations won't be canceled)</p>
       </div>
       <div class="row">
