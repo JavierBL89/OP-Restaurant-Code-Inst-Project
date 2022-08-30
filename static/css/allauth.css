@@ -185,13 +185,12 @@ margin-bottom: 5px;
     #allauth-container{
         background-color: rgb(50, 50, 50);
         color: #fff;
-        margin: 50px auto;
+        margin: 50px auto 220px;
         padding: 5% 10%;
         border-radius: 10px;
         border: solid 1px rgb(3, 3, 3);
         width: 50%;
         height:60%;
-        margin-bottom: 300px;
     }
 
     #allauth-container h1{
@@ -240,7 +239,6 @@ margin-bottom: 5px;
 #allauth-container .heading hr {
     margin-top: 0px;
 }
-
 
 /*************** SIGNUP PAGE*/
 #signup_form button[type="submit"]{

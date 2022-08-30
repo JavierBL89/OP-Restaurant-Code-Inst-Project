@@ -41,6 +41,11 @@
     background-repeat: no-repeat;
   }
   
+  .send-email{
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
   /*************** HEADER */
   .navbar {
     background-color: #cac7c7;
@@ -59,6 +64,10 @@
     border-left: solid 1px #cac7c7;
   }
   
+  nav .nav-item a:hover {
+    color: rgb(255, 255, 255);
+  }
+
   nav .separator {
     margin-top: 10px;
   }
@@ -316,7 +325,7 @@ form label {
   }
   
   .dots-box{
-    margin-top: 100px;
+    margin-top: 70px;
     justify-content: center;
   }
 
@@ -408,7 +417,7 @@ form label {
   @media only screen and (min-width: 320px) and (max-width: 600px) {
   
     body p{
-      font-size: 0.850rem;
+      font-size: 0.900rem;
     
     }
     /******************** HEADDINGS*/
@@ -510,7 +519,7 @@ form label {
     }
   
     .bookings div p {
-      font-size: 0.775rem;
+      font-size: 0.850rem;
     }
   
     .contact-social-icons-box p {
@@ -562,7 +571,7 @@ form label {
     }
   
     .container-workteam p {
-      font-size: 0.775rem;
+      font-size: 0.900rem;
       margin-top: 50px;
       padding-left: 7%;
       padding-right: 7%;
@@ -664,24 +673,29 @@ form label {
       z-index: 0;
       margin-top: 100px;
       padding: 0 12%;
-      font-size: 0.700rem;
+      font-size: 0.900rem;
     }
 
     #footer-container a {
       margin: 5px;
-      font-size: 0.700rem;
+      font-size: 0.900rem;
     }
 
     #footer-container li {
-      font-size: 0.700rem;
+      font-size: 0.900rem;
       margin: 20px 0;    }
 
-    .fa-phone, .fa-envelope{
-      margin-top: 23px;
+    .fa-phone {
+      margin-top: 10px;
+      margin-right: 14px;
+    }
+    
+    .fa-envelope{
+      margin-top: 1px;
     } 
   
     .fa-house-chimney{
-      margin-top: 20px;
+      margin-right: 10px;
     }
 
     .copy-right {
@@ -690,7 +704,7 @@ form label {
     }
 
         /************* CONTACT FORM */
-        .overlay{
+        .modal-contact{
           display: block;
           position: fixed;
           top: 0;
@@ -867,7 +881,7 @@ form label {
     }
   
     .bookings div p {
-      font-size: 0.800rem;
+      font-size: 0.900rem;
     }
   
     /***************************** AWARDS SECTION */
@@ -985,33 +999,31 @@ form label {
   
     #footer-container a {
       margin: 5px;
-      font-size: 0.850rem;
+      font-size: 0.900rem;
     }
 
     #footer-container li {
       margin: 25px;
-      font-size: 0.850rem;
+      font-size: 0.900rem;
     }
 
     #footer-container {
-      font-size: 0.800rem;
+      font-size: 0.900rem;
     }
 
     #footer-container li {
-      font-size: 0.700rem;
+      font-size: 0.900rem;
       margin: 20px 0;    
     }
 
-    .fa-phone, .fa-envelope{
-      margin-top: 23px;
-    } 
+  
   
 .fa-house-chimney{
       margin-top: 12px;
     }
 
      /************* CONTACT FORM */
-     .overlay{
+     .modal-contact{
       display: block;
       position: fixed;
       top: 0;
@@ -1273,7 +1285,7 @@ form label {
     #footer-container{
       position: relative;
       z-index: 0;
-      margin-top: 500px;
+      /* margin-top: 500px; */
       padding: 0 12%;
     }
 
@@ -1294,13 +1306,18 @@ form label {
     }
     
     .fa-envelope{
-      margin-top: 6px;
+      margin-top: 13px;
     }
+
+    .fa-house-chimney{
+      margin-bottom: 10px;
+    }
+
     .phone i {
       position: relative;
       top: 15px;
     }
-  
+
     .social-icons-box {
       margin-top: 60px;
       justify-content: space-around;
@@ -1319,7 +1336,7 @@ form label {
     }
 
     /************* CONTACT FORM */
-    .overlay{
+    .modal-contact{
       display: block;
       position: fixed;
       top: 0;

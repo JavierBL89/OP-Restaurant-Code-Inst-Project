@@ -1,19 +1,19 @@
 
-const sendEmail = $('#send-email');
+const sendEmail = $('.send-email');
 const close = $('#close');
-let puta = $('.overlay');
+const modalContact = $('.modal-contact');
 
 /***** SHOW CONTACT FORM POPUP ****/
 sendEmail.on('click', function(ev){
 
-    puta.fadeIn("slow");
+    modalContact.fadeIn("slow");
     
 });
 
 /***** CLOSE CONTACT FORM POPUP ***/
 close.on('click', function(ev){
-
-    puta.fadeOut("slow");
+    console.log('puta');
+    modalContact.fadeOut("slow");
 
 });
 
