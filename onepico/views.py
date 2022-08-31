@@ -139,14 +139,6 @@ class BookingSearch(View):
               }
               return render(request, 'cancelations.html', no_record)
 
-    
-
-class BookingCancelation(DeleteView):
-
-        model = Booking
-        success_url = reverse_lazy('cancelation_confirmation')
-        template_name = "cancelations.html"
-
 
 class CancelationConfirmation(View):
 
