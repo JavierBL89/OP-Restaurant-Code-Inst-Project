@@ -655,9 +655,6 @@ form label {
       margin-bottom: 0;
     }
   
-    .footer-link {
-      margin: 10px;
-    }
 
     div .social-icons-box {
       display: inline-flex;
@@ -680,7 +677,7 @@ form label {
       font-size: 1rem;
     }
 
-    #footer-container li {
+    #footer-container .footer-link {
       font-size: 0.900rem;
       margin: 20px 0;   
     }

@@ -278,6 +278,40 @@ body {
     .hr-title{
       width: 40%;
     }
+
+/************ CANCELATION CONFIRMATION PAGE */
+#cancel-confirm-container{
+  background-color: rgb(50, 50, 50);
+  color: rgb(255, 255, 255);
+  margin: 50px auto;
+  padding: 6% 3%;
+  border-radius: 5px;
+  border: solid 1px rgb(159, 159, 159);
+  width: 90%;
+  height:100%;
+  text-align: center;
+}
+
+#cancel-confirm-container h6 {
+  font-size: 0.800rem;
+  padding-right: 5%;
+  padding-left: 5%;
+  text-align: center;
+  line-height: 25px;
+}
+
+#cancel-confirm-container p{
+  font-size: 0.800rem;
+}
+
+#cancel-confirm-container a{
+  font-size: 0.700rem;
+  text-decoration: none;
+  color: rgb(255, 177, 108);
+  border-bottom: solid 1px ;
+  border-bottom: solid 1px rgb(173, 173, 173);
+}
+
   }
   
   /******************************************************************** TABLET SCREEN */
@@ -341,6 +375,39 @@ body {
     .hr-title{
       width: 60%;
     }
+
+  /************ CANCELATION CONFIRMATION PAGE */
+  #cancel-confirm-container{
+    background-color: rgb(50, 50, 50);
+    color: rgb(255, 255, 255);
+    margin: 50px auto;
+    padding: 6% 3%;
+    border-radius: 5px;
+    border: solid 1px rgb(159, 159, 159);
+    width: 60%;
+    height:100%;
+    text-align: center;
+  }
+
+  #cancel-confirm-container h6 {
+    font-size: 1rem;
+    padding-right: 5%;
+    padding-left: 5%;
+    text-align: center;
+    line-height: 25px;
+  }
+
+  #cancel-confirm-container p{
+    font-size: 0.800rem;
+  }
+
+  #cancel-confirm-container a{
+    font-size: 0.850rem;
+    text-decoration: none;
+    color: rgb(255, 177, 108);
+    border-bottom: solid 1px ;
+    border-bottom: solid 1px rgb(173, 173, 173);
+  }
   }
   
   /******************************************************************** DESKTOP SCREEN */
@@ -397,4 +464,38 @@ body {
     .hr-title{
       width: 60%;
     }
+
+
+  /************ CANCELATION CONFIRMATION PAGE */
+  #cancel-confirm-container{
+    background-color: rgb(50, 50, 50);
+    color: rgb(255, 255, 255);
+    margin: 50px auto;
+    padding: 6% 3%;
+    border-radius: 5px;
+    border: solid 1px rgb(159, 159, 159);
+    width: 50%;
+    height:100%;
+    text-align: center;
+  }
+
+  #cancel-confirm-container h6 {
+    font-size: 1rem;
+    padding-right: 5%;
+    padding-left: 5%;
+    text-align: center;
+    line-height: 25px;
+  }
+
+  #cancel-confirm-container p{
+    font-size: 0.800rem;
+  }
+
+  #cancel-confirm-container a{
+    font-size: 0.850rem;
+    text-decoration: none;
+    color: rgb(255, 177, 108);
+    border-bottom: solid 1px ;
+    border-bottom: solid 1px rgb(173, 173, 173);
+  }
   }
