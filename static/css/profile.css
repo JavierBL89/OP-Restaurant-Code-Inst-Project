@@ -346,14 +346,37 @@ body {
   /******************************************************************** DESKTOP SCREEN */
   @media only screen and (min-width: 1000px) {
   
-     /********************** CANCELATION FORM CONTAINER*/
+     /********************** PROFILE PAGE*/
      #profile-container {
       position: relative;
       z-index: 9;
       width: 60%;
       background-color: #ffffff;
     }
+    
+     .card-body{
+  padding-left: 0px;
+     }
 
+    #profile-container button[type="submit"]{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: rgb(219, 219, 219);
+    font-weight: bold;
+    font-size: 0.550rem;
+    background-color: rgb(0, 0, 0);
+    letter-spacing: 1px;
+    }
+
+    #profile-container .form-control{
+      height: 30px;
+      margin-bottom: 5px;
+      font-size: 0.700rem;
+    }
+    #profile-container .form-control::placeholder{
+      font-size: 0.700rem;
+
+    }
     #profile-container p{
       font-size: 0.750rem;
       margin: 3px auto;

@@ -38,16 +38,29 @@ def delete_profile(request, user_id):
     return render(request, 'account/account_delete_confirm.html')
 
 
+class UpdateConfirmation(View):
+
+    def get(self, request):
+        return render(request, 'profiles/update_confirmation.html')
+
+
+class CancelationConfirmation(View):
+
+    def get(self, request):
+        return render(request, 'profiles/cancelation_confirmation.html')
+
+
 class UpdateProfile(UpdateView):
 
     model = User
     fields  = ['first_name', 'last_name', 'email']
-    success_url = 'profile'
-    template_name = 'profile.html'
+    success_url = reverse_lazy('update_confirmation')
+    template_name = 'profiles/update_confirmation.html'
 
 
 class BookingCancelation(DeleteView):
 
-        model = Booking
-        success_url = 'cancelation_confirmation'
-        template_name = "cancelation_confirmation.html"
+    model = Booking
+    success_url = reverse_lazy('cancelation_confirmation')
+    template_name = "profiles/cancelation_confirmation.html"
+

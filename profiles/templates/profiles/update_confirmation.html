@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="update-confirm-container">
+    <div class="row">
+        <h6>Your personal info it's been updated</h6>
+        <div class="col">
+            <div class="row">
+                <div class="col-6">
+                    <a class="back-profile" href="{% url 'profile' %}">Back to my profile</a>
+                </div>
+                <div class="col-6">
+                    <a class="back-home" href="{% url 'home' %}">Go to home page</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock%}

@@ -105,47 +105,6 @@ class FormView(View):
         return render(request, 'index.html')
 
 
-class ResultsBookingSearch(View):
-    def get(self, request):
-            booking_search = True
-            context = {
-                'booking_search': booking_search
-            }
-            return render(request, 'cancel_request.html', context)
-
-
-class BookingSearch(View):
-
-    def get(self, request):
-        cancelation = True
-        context = {
-            'cancelation': cancelation
-        }
-        return render(request, 'cancelations.html', context)
-
-    def post(self, request, *args, **kawrgs):
-        email = request.POST.get('reservation_email')
-        date = request.POST.get('reservation_date')
-        customer_record = Booking.objects.filter(email=email, date=date)
-        if customer_record:
-            customer_record = {
-                'customer_record': customer_record
-              }
-            return render(request, 'cancelations.html', customer_record)             
-        else:
-              no_record = True
-              no_record = {
-                  "no_record": no_record
-              }
-              return render(request, 'cancelations.html', no_record)
-
-
-class CancelationConfirmation(View):
-
-    def get(self, request):
-        return render(request, 'cancelation_confirmation.html')
-
-
 class ReservationConfirmation(View):
 
     def get(self, request):

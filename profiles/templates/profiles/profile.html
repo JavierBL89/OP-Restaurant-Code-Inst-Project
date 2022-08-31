@@ -6,7 +6,7 @@
 
 
 {% block extra_css %}
-   <link rel="stylesheet" type="text/css" href="{% static 'css/cancelations.css' %}"/>
+   <link rel="stylesheet" type="text/css" href="{% static 'css/profile.css' %}"/>
 {% endblock %}
 
 {% block content %}
@@ -22,9 +22,9 @@
               <hr class="hr-title mt-0">
               <div class="row">
                   <div class="col-4">
-                      <p >name:</p>
-                      <p >Last name:</p>
-                      <p >Email address:</p>
+                      <p>Name:</p>
+                      <p>Last name:</p>
+                      <p>Email address:</p>
                   </div>
                   <div class="col-6">
                       <p>{{ user.first_name}}</p>
@@ -110,15 +110,19 @@
 
                     <!------------ CANCEL BOOKING COLLAPSE ------------>
                     <div class="cancelation-button-box text-start">
-                      <a class="text-danger" type="button" role="button" data-bs-toggle="collapse" href="#puta" aria-expanded="false" aria-controls="collapseExample">Cancel reservation</a>
-                      <div class="collapse" id="puta">
+                      <a class="text-danger" type="button" role="button" data-bs-toggle="collapse" href="#cancel_{{ booking.pk }}" aria-expanded="false" aria-controls="collapseExample">Cancel reservation</a>
+                      <div class="collapse" id="cancel_{{ booking.pk }}">
                         <div class="card card-body text-start d--lg-flex">
                           <div class="row">
                             <div class="col-6">
                               <p class="d-flex-inline">Are you sure?</p>
                             </div>
                             <div class="col-6">
-                              <a href="{% url 'cancel_booking' booking.pk %}"class="btn btn-outline-secondary cancel-booking">Yes, I am</a>
+                              <form action="{% url 'cancel_booking' booking.id %}" method="POST" id="cancel-booking-form">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-outline-secondary cancel-booking">Yes, I am</button>
+                              </form>
+                              <!-- <a href="{% url 'cancel_booking' booking.id %}"class="btn btn-outline-secondary cancel-booking">Yes, I am</a> -->
                             </div>
                           </div>
                           </form>
