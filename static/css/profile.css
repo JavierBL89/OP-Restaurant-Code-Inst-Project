@@ -1,32 +1,19 @@
 /******************************* COMMON PROPERTIES*/
-body {
-    background-color: #cac7c7;
-  }
-
-
   div .bg-image {
     background-image: url("https://res.cloudinary.com/dthlibbj7/image/upload/v1652280638/oriopoxo_xv3vg5.jpg");
     background-size: cover;
     background-repeat: no-repeat;
   }
   
-  /****** FORM SECTION*/
-  #profile-container {
-    border-radius: 10px;
-  }
-  
-  #profile-container {
-    background-color: rgb(255, 255, 255);
-    width: 50%;
-    margin: 30px auto;
-    color: black;
-    padding: 50px 50px;
-  }
-  
-  .input:-webkit-autofill, input:-webkit-autofill, input:-webkit-autofill:focus {
+ .input:-webkit-autofill, input:-webkit-autofill, input:-webkit-autofill:focus {
     -webkit-background-color: rgb(56, 56, 56);
     -webkit-text-fill-color: rgb(56, 56, 56);
     transition: background-color 5000s ease-in-out 0s;
+  }
+  
+  #profile-container h4 {
+    font-family: 'Roboto', sans-serif;
+    margin-top: 20px;
   }
   
   #profile-container h6 {
@@ -37,135 +24,22 @@ body {
     text-align: start;
   }
   
-  
+  .card{
+     background-color: rgb(50, 50, 50);
+     padding-left: 0px;
+  }
+
   .form-control:focus {
-    background-color: inherit;
-    box-shadow: none;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgb(131, 131, 131);
     color: rgb(55, 55, 55);
     font-size: 0.800rem;
     border-color: rgb(131, 131, 131);
   }
   
-  .cancelation-form label {
-    display: grid;
-    font-size: 0.750rem;
-  }
-  
-  .cancelation-form .row .form-control[name="phone"] {
-    width: 90%;
-    margin-left: 0;
-  }
-  
-  .cancelation-form input {
-    width: 90%;
-    height: 35px;
-    font-size: 0.750rem;
-    padding-left: 10px;
-  }
-  
-  .cancelation-form form {
-    width: 100%;
-  }
-  
-  .card {
-    border: none;
-    padding-bottom: 0;
-  }
-  
-  .cancelation-button-box button[type="button"] {
-    width: 60%;
-    margin-top: 20px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    font-size: 0.850rem;
-    color: rgb(219, 219, 219);
-    background-color: rgb(0, 0, 0);
-    letter-spacing: 1px;
-  }
-  
-  .cancelation-button-box button[type="submit"] {
-    width: 80%;
-    border: none;
-    padding-top: 4px;
-    padding-bottom: 4px;
-    color: rgb(53, 53, 53);
-    font-weight: normal;
-    font-size: 0.800rem;
-    background-color: rgb(138, 187, 153);
-  }
-  
-  .cancelation-button-box button:focus {
-    box-shadow: none;
-  }
-  
-  .cancelation-button-box p {
-    margin-top: 5px;
-    font-size: 0.800rem;
-    margin-bottom: 0;
-  }
-  
-  .cancelationEmailError, .cancelationPhoneError, .cancelationDateError {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    font-style: oblique;
-    font-size: 0.500rem;
-    padding: 0;
-    position: relative;
-    bottom: 5px;
-    left: 15px;
-    letter-spacing: 1px;
-  }
-  
+
   .form-control.error.cancelation-input {
     border-color: red;
-  }
-  
-  .form-control.success.cancelation-input {
-    border-color: rgb(0, 162, 11);
-  }
-  
-  .form-button-box button[type="submit"] {
-    width: 60%;
-    margin-top: 30px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    font-size: 0.850rem;
-    color: rgb(219, 219, 219);
-    background-color: rgb(0, 0, 0);
-    letter-spacing: 1px;
-  }
-  
-  table {
-    border-collapse: initial;
-  }
-  
-  table td {
-    border-collapse: initial;
-    border-style: none;
-    font-size: 0.900rem;
-  }
-  
-  footer .cancelations-footer {
-    padding-top: 80px;
-    background-color: #cac7c7;
-  }
-  
-  /*************** HEADER */
-  .navbar {
-    background-color: #cac7c7;
-    font-family: 'Roboto Slab', serif;
-    position: relative;
-    z-index: 2;
-  }
-  
-  nav .nav-item a {
-    background-color: inherit;
-    padding-left: 6px;
-    padding-right: 6px;
-    border-top: solid 1px #cac7c7;
-    border-right: solid 1px #cac7c7;
-    border-left: solid 1px #cac7c7;
-    color: rgb(120 120 120);
   }
   
   .separator {
@@ -175,17 +49,6 @@ body {
     margin: 45px auto 0;
 }
 
-  nav .logo p {
-    font-family: 'Beau Rivage', cursive;
-    color: rgb(255, 255, 255);
-  }
-  
-  .logo h2 {
-    font-family: 'Roboto Slab', serif;
-    font-weight: 800;
-    color: #727272;
-  }
-  
   .copy-right p {
     font-size: 0.800rem;
   }
@@ -211,43 +74,80 @@ body {
     }
 
     /********************* PROFILE PAGE*/
+    .overlay-container-profile-page{
+      /* background-color: azure; */
+      width: 100%;
+      padding-top: 1%;
+      padding-bottom: 13.5%;
+    }
+
     #profile-container {
+      background-color: rgb(50, 50, 50);
+      color: rgb(255, 255, 255);
+      border: solid 1px rgb(159, 159, 159);
       position: relative;
       z-index: 9;
       width: 90%;
-      background-color: #ffffff;
-      padding: 25px 20px;
-
+      padding: 25px 20px 50PX;
     }
   
     #profile-container p{
-      font-size: 0.675rem;
-      margin: 3px auto;
+      font-size: 0.900rem;
+      margin: 2px auto;
     }
 
     #profile-container a{
-      font-size: 0.600rem;
+      font-size: 0.750rem;
       margin-top: 5px;
       text-decoration: none;
     }
 
     #profile-container h4{
-      font-size: 1rem;
+      font-size: 1.2rem;
       margin: 3px auto;
     }
 
     #profile-container h6{
-      font-size: 0.800rem;
+      font-size: 0.850rem;
     }
 
     #profile-container .info{
-      font-size: 0.550rem;
+      font-size: 0.800rem;
       color:#727272;
       margin-top: 0;
     }
 
+  
+    #profile-container .form-control{
+      margin-bottom: 4px;
+      width: 170%;
+      height:38px;
+      font-size: 0.900rem;
+    }
+
+    #profile-container .form-control::placeholder{
+      font-size: 0.750rem;
+    }
+
+    #profile-container button[type="submit"]{
+      margin-top: 5px;
+      color: rgb(219, 219, 219);
+      height: 38px;
+      font-weight: bold;
+      font-size: 0.800rem;
+      background-color: rgb(0, 0, 0);
+      letter-spacing: 1px;
+      width: 60%;
+    }
+
     .hr-title{
-      width: 40%;
+      width: 50%;
+    }
+
+    .fa-angle-down{
+      padding-left: 10px;
+      position: relative;
+      top: 2px;
     }
 
 /************ CANCELATION CONFIRMATION PAGE */
@@ -300,11 +200,20 @@ body {
     }
 
     /********************** PROFILE PAGE*/
+    .overlay-container-profile-page{
+      width: 100%;
+      padding-top: 1%;
+      padding-bottom: 13.5%;
+    }
+
      #profile-container {
+      background-color: rgb(50, 50, 50);
+      color: rgb(255, 255, 255);
+      border: solid 1px rgb(159, 159, 159);
+      padding: 25px 20px 50px;
       position: relative;
       z-index: 9;
       width: 70%;
-      background-color: #ffffff;
     }
   
     #profile-container p{
@@ -313,23 +222,50 @@ body {
     }
 
     #profile-container a{
-      font-size: 0.600rem;
+      font-size: 0.650rem;
       margin-top: 5px;
       text-decoration: none;
     }
+
     #profile-container h4{
-      font-size: 1.2rem;
-      margin: 3px auto;
+      font-size: 1.4rem;
     }
 
     #profile-container .info{
-      font-size: 0.500rem;
+      font-size: 0.650rem;
       color:#727272;
       margin-top: 0;
     }
 
+    #profile-container .form-control{
+      margin-bottom: 4px;
+      width: 110%;
+      height:35px;
+    }
+
+    #profile-container .form-control::placeholder{
+      font-size: 0.750rem;
+    }
+
+    #profile-container button[type="submit"]{
+      margin-top: 5px;
+      color: rgb(219, 219, 219);
+      height: 35px;
+      font-weight: bold;
+      font-size: 0.700rem;
+      background-color: rgb(0, 0, 0);
+      letter-spacing: 1px;
+      width: 25%;
+    }
+
     .hr-title{
       width: 60%;
+    }
+
+    .fa-angle-down{
+      padding-left: 10px;
+      position: relative;
+      top: 1px;
     }
 
   /************ UPDATE AND CANCELATION CONFIRMATION PAGES */
@@ -381,15 +317,25 @@ body {
     }
 
      /********************** PROFILE PAGE*/
+
+     .overlay-container-profile-page{
+      width: 100%;
+      padding-top: 1%;
+      padding-bottom: 12%;
+    }
+
      #profile-container {
+      background-color: rgb(50, 50, 50);
+      color: rgb(255, 255, 255);
+      border: solid 1px rgb(159, 159, 159);
+      padding: 25px 20px 50px;
       position: relative;
       z-index: 9;
       width: 60%;
-      background-color: #ffffff;
     }
     
      .card-body{
-  padding-left: 0px;
+     padding-left: 0px;
      }
 
     #profile-container button[type="submit"]{
@@ -407,6 +353,7 @@ body {
       margin-bottom: 5px;
       font-size: 0.700rem;
     }
+
     #profile-container .form-control::placeholder{
       font-size: 0.700rem;
 
@@ -430,6 +377,22 @@ body {
 
     .hr-title{
       width: 60%;
+    }
+
+    #profile-container button[type="submit"]{
+      color: rgb(219, 219, 219);
+      height: 31px;
+      font-weight: bold;
+      font-size: 0.700rem;
+      background-color: rgb(0, 0, 0);
+      letter-spacing: 1px;
+      width: 20%;
+    }
+
+    .fa-angle-down{
+      padding-left: 10px;
+      position: relative;
+      top: 2px;
     }
 
   /************ UPADATE AND CANCELATION CONFIRMATION PAGES */

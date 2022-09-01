@@ -6,138 +6,164 @@
 
 
 {% block extra_css %}
-   <link rel="stylesheet" type="text/css" href="{% static 'css/profile.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/profile.css' %}" />
 {% endblock %}
 
 {% block content %}
-            
+
+<div class="overlay-container-profile-page">
+
 <div class="container-fluid mt-5" id="profile-container">
   <div class="row">
     <div class="col">
       <!-------------------------- PROFILE INFO ---------------------------->
       <h4>Hi {{ user.username |title }}</h4>
       <div class="row" id="personal-info-container">
-          <div class="col mb-2">
-              <h6 class="text-muted">Personal info</h6>
-              <hr class="hr-title mt-0">
-              <div class="row">
+        <div class="col mb-2">
+          <!------- PERSONAL INFO COLLAPSE ------>
+          <div class="personal-info-box text-start">
+            <a class="" type="button" role="button" data-bs-toggle="collapse" href="#personalInfo" aria-expanded="false" aria-controls="collapseExample">
+              <h6 class="text-muted">Personal info <i class="fa-solid fa-angle-down"></i></h6>
+            </a>
+            <hr class="hr-title mt-0">
+            <div class="collapse" id="personalInfo">
+              <div class="card card-body text-start d-lg-flex">
+                <div class="row">
                   <div class="col-4">
-                      <p>Name:</p>
-                      <p>Last name:</p>
-                      <p>Email address:</p>
+                    <p>Name:</p>
+                    <p>Last name:</p>
+                    <p>Email address:</p>
                   </div>
                   <div class="col-6">
-                      <p>{{ user.first_name |title}}</p>
-                      <p>{{ user.last_name |title }}</p>
-                      <p>{{ user.email }}</p>
+                    <p>{{ user.first_name |title}}</p>
+                    <p>{{ user.last_name |title }}</p>
+                    <p>{{ user.email }}</p>
                   </div>
-              </div>
-          </div>
-            <!------------ UPDATE INFO COLLAPSE ------------>
-            <div class="update-profile-box text-start">
-              <a class="" type="button" role="button" data-bs-toggle="collapse" href="#updateProfile" aria-expanded="false" aria-controls="collapseExample">Update info details</a>
-              <div class="collapse" id="updateProfile">
-                <div class="card card-body text-start d--lg-flex">
-                  <div class="row">
-                    <form action="{% url 'update_profile' user.pk %}" method="POST" id="update_form">
-                      {% csrf_token %}
-                    <div class="col-6">
-                      {{ profile_form.first_name | as_crispy_field }}
-                      {{ profile_form.last_name | as_crispy_field }}
-                      {{ profile_form.email | as_crispy_field }}
+                </div>
+                <!------------ UPDATE INFO COLLAPSE ------------>
+                <div class="update-profile-box text-start">
+                  <a class="" type="button" role="button" data-bs-toggle="collapse" href="#updateProfile" aria-expanded="false" aria-controls="collapseExample">Update info details</a>
+                  <div class="collapse" id="updateProfile">
+                    <div class="card card-body text-start d-lg-flex">
+                      <div class="row">
+                        <form action="{% url 'update_profile' user.pk %}" method="POST" id="update_form">
+                          {% csrf_token %}
+                          <div class="col-6">
+                            {{ profile_form.first_name | as_crispy_field }}
+                            {{ profile_form.last_name | as_crispy_field }}
+                            {{ profile_form.email | as_crispy_field }}
+                          </div>
+                          <button type="submit" class="btn btn-outline-secondary cancel-booking">Update</a>
+                        </form>
+                      </div>
                     </div>
-                    <button type="submit" class="btn btn-outline-secondary cancel-booking">Update</a>
-                  </form>
-                 
                   </div>
-                  </form>
+                </div>
+                <!------------ DELETE ACCOUNT COLLAPSE ------------>
+          <div class="delete-button-box text-start">
+            <a class="text-danger" type="button" role="button" data-bs-toggle="collapse" href="#puta" aria-expanded="false" aria-controls="collapseExample">Delete account</a>
+            <p class="info">(Next comming reservations won't be canceled)</p>
+            <div class="collapse" id="puta">
+              <div class="card card-body text-start d--lg-flex">
+                <div class="row">
+                  <div class="col-6">
+                    <p class="d-flex-inline">Are you sure?</p>
+                  </div>
+                  <div class="col-6">
+                    <a href="{% url 'delete_profile' user.pk %}" class="btn btn-outline-secondary cancel-booking">Yes, I am</a>
+                  </div>
+                </div>
+                </form>
+              </div>
+            </div>
+            </div>
+              </div>
+            </div>
+          </div>
+
+            <!------------------ NEXT BOOKINGS --------------->
+            <div class="row">
+              <div class="col">
+                <div class="row d-flex text-start mt-3" id="personal-info-container">
+                  <div class="cancelation-button-box text-start">
+                    <a class="" type="button" role="button" data-bs-toggle="collapse" href="#cancel_{{ booking.pk }}" aria-expanded="false" aria-controls="collapseExample">
+                      <h6 class="text-muted">Next bookings <i class="fa-solid fa-angle-down"></i></h6>
+                    </a>
+                    <hr class="hr-title mt-0">
+                    <div class="collapse" id="cancel_{{ booking.pk }}">
+                      <div class="card card-body text-start d--lg-flex">
+                        <small class="info mb-2">For any updates in your booking <br>please contact us!</small>
+                        {% if user_bookings %}
+                        {% for booking in user_bookings %}
+                        <div class="row">
+                          <div class="col-4">
+                            <p>Name</p>
+                            <p>Last Name</p>
+                            <p>Email</p>
+                            <p>Phone</p>
+                            <p>Date</p>
+                            <p>Time</p>
+                            <p>Party Size</p>
+                            <p>Status</p>
+                            <p>Booking comments</p>
+                          </div>
+                          <div class="col-4">
+                            <p>{{ booking.name |title}}</p>
+                            <p>{{ booking.last_name |title}}</p>
+                            <p>{{ booking.email }}</p>
+                            <p>{{ booking.phone }}</p>
+                            <p>{{ booking.date }}</p>
+                            <p>{{ booking.start_time }}</p>
+                            <p>{{ booking.party_size }}px</p>
+                            <p>{{ booking.status }}</p>
+                            {% if booking.excerpt %}
+                            <p>{{ booking.excerpt }}</p>
+                            {% else %}
+                            <p class="text-muted">No commets made</p>
+                            {% endif %}
+                          </div>
+                          <!------------ CANCEL BOOKING COLLAPSE ------------>
+                          <div class="cancelation-button-box text-start">
+                            <a class="text-danger" type="button" role="button" data-bs-toggle="collapse" href="#cancel_{{ booking.pk }}" aria-expanded="false" aria-controls="collapseExample">Cancel reservation</a>
+                            <div class="collapse" id="cancel_{{ booking.pk }}">
+                              <div class="card card-body text-start d--lg-flex">
+                                <div class="row">
+                                  <div class="col-6">
+                                    <p class="d-flex-inline">Are you sure?</p>
+                                  </div>
+                                  <div class="col-6">
+                                    <form action="{% url 'cancel_booking' booking.id %}" method="POST" id="cancel-booking-form">
+                                      {% csrf_token %}
+                                      <button type="submit" class="btn btn-outline-secondary cancel-booking">Yes, I am</button>
+                                    </form>
+                                  </div>
+                                </div>
+                                </form>
+                              </div>
+                            </div>
+                          </div>
+                          <hr class="mt-3">
+                          {% endfor %}
+
+                        </div>
+                        {% else %}
+                        <div class="row">
+                          <div class="col">
+                            <p class="offset-3">No bookings made</p>
+                          </div>
+                        </div>
+                        {% endif %}
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-
-            <!------------ DELETE ACCOUNT COLLAPSE ------------>
-            <div class="delete-button-box text-start">
-              <a class="text-danger" type="button" role="button" data-bs-toggle="collapse" href="#puta" aria-expanded="false" aria-controls="collapseExample">Delete account</a>
-              <p class="info">(Next comming reservations won't be canceled)</p>
-              <div class="collapse" id="puta">
-                <div class="card card-body text-start d--lg-flex">
-                  <div class="row">
-                    <div class="col-6">
-                      <p class="d-flex-inline">Are you sure?</p>
-                    </div>
-                    <div class="col-6">
-                      <a href="{% url 'delete_profile' user.pk %}" class="btn btn-outline-secondary cancel-booking">Yes, I am</a>
-                    </div>
-                  </div>
-                  </form>
-                </div> <br> 
-      </div>
-      <div class="row">
-          <div class="col">
-              <div class="row d-flex text-start mt-3" id="personal-info-container">
-                  <h6 class="text-muted">Next bookings</h6>
-                  <hr class="hr-title mt-0 ms-2">
-                  <small class="info mb-2">For any updates in your booking <br>
-                  please contact us!</small>
-                  {% if user_bookings %}
-                  {% for booking in user_bookings %}
-                  <div class="col-4">
-                        <p>Name</p>
-                        <p>Last Name</p>
-                        <p>Email</p>
-                        <p>Phone</p>
-                        <p>Date</p>
-                        <p>Time</p>
-                        <p>Party Size</p>
-                        <p>Status</p>
-                        <p>Booking comments</p>
-                    </div>
-                   <div class="col-4">
-                        <p>{{ booking.name |title}}</p>
-                        <p>{{ booking.last_name |title}}</p>
-                        <p>{{ booking.email }}</p>
-                        <p>{{ booking.phone }}</p>
-                        <p>{{ booking.date }}</p>
-                        <p>{{ booking.start_time }}</p>
-                        <p>{{ booking.party_size }}px</p>
-                        <p>{{ booking.status }}</p>
-                        {% if booking.excerpt %}
-                        <p>{{ booking.excerpt }}</p>
-                        {% else %}
-                        <p class="text-muted">No commets made</p>
-                        {% endif %}
-                    </div>
-
-                    <!------------ CANCEL BOOKING COLLAPSE ------------>
-                    <div class="cancelation-button-box text-start">
-                      <a class="text-danger" type="button" role="button" data-bs-toggle="collapse" href="#cancel_{{ booking.pk }}" aria-expanded="false" aria-controls="collapseExample">Cancel reservation</a>
-                      <div class="collapse" id="cancel_{{ booking.pk }}">
-                        <div class="card card-body text-start d--lg-flex">
-                          <div class="row">
-                            <div class="col-6">
-                              <p class="d-flex-inline">Are you sure?</p>
-                            </div>
-                            <div class="col-6">
-                              <form action="{% url 'cancel_booking' booking.id %}" method="POST" id="cancel-booking-form">
-                                {% csrf_token %}
-                                <button type="submit" class="btn btn-outline-secondary cancel-booking">Yes, I am</button>
-                              </form>
-                              <!-- <a href="{% url 'cancel_booking' booking.id %}"class="btn btn-outline-secondary cancel-booking">Yes, I am</a> -->
-                            </div>
-                          </div>
-                          </form>
-                        </div>
-                      </div>
-                    </div>
-                <hr class="mt-3">
-                {% endfor %}
-                {% endif %}
-                </div>
-                </div>
-              </div>
           </div>
+        </div>
       </div>
     </div>
+  </div>
   </div>
 </div>
   {% endblock %}

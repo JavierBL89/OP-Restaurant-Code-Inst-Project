@@ -285,6 +285,8 @@ form label {
   }
 
   /*************** FOOTER **/
+
+
   footer a {
     text-decoration: none;
     position: relative;
@@ -321,7 +323,7 @@ form label {
   }
   
   .copy-right {
-    margin-top: 100px;
+    margin-top: 50px;
     font-size: 14px;
   }
   
@@ -639,9 +641,6 @@ form label {
       font-size: 15px;
     }
   
-    footer .container-fluid {
-      margin-top: 60px;
-    }
   
     .phone{
       margin-top: 4px;
@@ -659,7 +658,7 @@ form label {
 
     div .social-icons-box {
       display: inline-flex;
-      margin-top: 20px;
+      margin-top: 100px;
       justify-content: space-around;
       padding-left: 90px;
       padding-right: 90px;
@@ -693,11 +692,11 @@ form label {
     } 
   
     .fa-house-chimney{
+      margin-top: 50px;
       margin-right: 10px;
     }
 
     .copy-right {
-      margin-top: 100px;
       font-size: 14px;
     }
 
@@ -981,7 +980,7 @@ form label {
   
     /********************** FOOTER*/
     .social-icons-box {
-      margin-top: 20px;
+      margin-top: 100px;
       justify-content: space-around;
       padding-left: 100px;
       padding-right: 100px;
@@ -1324,7 +1323,7 @@ form label {
     }
   
     .social-icons-box {
-      margin-top: 40px;
+      margin-top: 100px;
     }
   
     #map {
