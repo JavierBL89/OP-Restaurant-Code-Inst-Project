@@ -285,7 +285,10 @@ form label {
   }
 
   /*************** FOOTER **/
-
+  #footer{
+    background-color: #cac7c7;
+    color: rgb(89, 89, 89);
+  }
 
   footer a {
     text-decoration: none;
@@ -322,6 +325,7 @@ form label {
     transform: scaleX(1);
   }
   
+
   .copy-right {
     margin-top: 50px;
     font-size: 14px;
@@ -340,6 +344,7 @@ form label {
     border-radius: 50%;
     margin: auto 15px;
   }
+  
   /************** ANIMATIONS */
   nav .nav-item a:hover {
     animation-name: border;
@@ -421,8 +426,8 @@ form label {
   
     body p{
       font-size: 0.900rem;
-    
     }
+  
     /******************** HEADDINGS*/
     .headding h5 {
       margin-top: 100px;
@@ -486,11 +491,9 @@ form label {
       width: 100%;
       height: 250px;
       z-index: -1;
-
     }
   
     /********************* ABOUT SECTION */
-
 
     /********************** RESERVATIONS SECTION */
     div .bookings {
@@ -654,11 +657,10 @@ form label {
     .address p:first-child {
       margin-bottom: 0;
     }
-  
 
     div .social-icons-box {
       display: inline-flex;
-      margin-top: 100px;
+      margin-top: 90px;
       justify-content: space-around;
       padding-left: 90px;
       padding-right: 90px;
@@ -667,8 +669,7 @@ form label {
     #footer-container{
       position: relative;
       z-index: 0;
-      margin-top: 100px;
-      padding: 0 12%;
+      padding: 5% 12%;
       font-size: 0.900rem;
     }
 
@@ -692,7 +693,6 @@ form label {
     } 
   
     .fa-house-chimney{
-      margin-top: 50px;
       margin-right: 10px;
     }
 
@@ -722,6 +722,10 @@ form label {
           border-radius: 10px;
         }
         
+        #modal-contact{
+          display: none;
+        } 
+
         #close{
           padding-top: 10px;
           margin-top: 5px;
@@ -733,7 +737,6 @@ form label {
           margin: 0 auto 5px;
           width: 80%;
           font-size: 0.750rem;
-    
         }
     
         .popup h6{
@@ -990,7 +993,7 @@ form label {
       position: relative;
       z-index: 0;
       margin-top: 100px;
-      padding: 0 12%;
+      padding: 5% 12%;
     }
 
   
@@ -1013,8 +1016,6 @@ form label {
       margin: 20px 0;    
     }
 
-  
-  
 .fa-house-chimney{
       margin-top: 12px;
     }
@@ -1050,22 +1051,28 @@ form label {
       font-size: 0.850rem;
     }
 
+    #modal-contact{
+      display: none;
+    } 
+
     #close{
       padding-top: 10px;
       margin-top: 5px;
       margin-right:40px;
       font-size: 1.2rem;
+      cursor: pointer;
     }
+
      .contact-form-input{
       margin: 0 auto 5px;
       width: 60%;
       font-size: 0.800rem;
-
     }
+
     .contact-form-input::placeholder{
       font-size: 0.800rem;
-
     }
+
 /******** MESSAGES CONTAINER*/
     .message-container{
       position: relative;
@@ -1184,8 +1191,6 @@ form label {
       margin-top: 15px;
     }
   
-      
-
     /*************************** AWARDS SECTION */
     .container-about .about {
       padding-right: 18%;
@@ -1282,13 +1287,13 @@ form label {
     #footer-container{
       position: relative;
       z-index: 0;
-      /* margin-top: 500px; */
-      padding: 0 12%;
+      padding: 5% 12%;
     }
 
     #footer-container p, #footer-container a{
       font-size: 0.900rem;
     }
+
     .footer-link {
       margin-top: 20px;
     }
@@ -1365,7 +1370,6 @@ form label {
       margin: 0 auto 5px;
       width: 60%;
       font-size: 0.800rem;
-
     }
 
     .popup h6{
@@ -1408,4 +1412,8 @@ form label {
     color: rgb(255, 177, 108);
   }
 
+  #modal-contact{
+    display: none;
+  } 
+  
   }

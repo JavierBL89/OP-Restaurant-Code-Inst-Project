@@ -11,7 +11,7 @@
 
 {% block content %}
 
-<div class="overlay-container-profile-page">
+<div class="overlay-container">
 
 <div class="container-fluid mt-5" id="profile-container">
   <div class="row">
@@ -29,12 +29,12 @@
             <div class="collapse" id="personalInfo">
               <div class="card card-body text-start d-lg-flex">
                 <div class="row">
-                  <div class="col-4">
+                  <div class="col-5 col-md-4">
                     <p>Name:</p>
                     <p>Last name:</p>
                     <p>Email address:</p>
                   </div>
-                  <div class="col-6">
+                  <div class="col-7 col-md-6">
                     <p>{{ user.first_name |title}}</p>
                     <p>{{ user.last_name |title }}</p>
                     <p>{{ user.email }}</p>
@@ -60,7 +60,7 @@
                   </div>
                 </div>
                 <!------------ DELETE ACCOUNT COLLAPSE ------------>
-          <div class="delete-button-box text-start">
+          <div class="delete-button-box text-start mt-2">
             <a class="text-danger" type="button" role="button" data-bs-toggle="collapse" href="#puta" aria-expanded="false" aria-controls="collapseExample">Delete account</a>
             <p class="info">(Next comming reservations won't be canceled)</p>
             <div class="collapse" id="puta">
