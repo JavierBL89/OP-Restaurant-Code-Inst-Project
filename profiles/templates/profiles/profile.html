@@ -27,8 +27,8 @@
                       <p>Email address:</p>
                   </div>
                   <div class="col-6">
-                      <p>{{ user.first_name}}</p>
-                      <p>{{ user.last_name }}</p>
+                      <p>{{ user.first_name |title}}</p>
+                      <p>{{ user.last_name |title }}</p>
                       <p>{{ user.email }}</p>
                   </div>
               </div>
@@ -93,8 +93,8 @@
                         <p>Booking comments</p>
                     </div>
                    <div class="col-4">
-                        <p>{{ booking.name }}</p>
-                        <p>{{ booking.last_name }}</p>
+                        <p>{{ booking.name |title}}</p>
+                        <p>{{ booking.last_name |title}}</p>
                         <p>{{ booking.email }}</p>
                         <p>{{ booking.phone }}</p>
                         <p>{{ booking.date }}</p>

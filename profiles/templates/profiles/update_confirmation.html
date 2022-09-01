@@ -1,13 +1,19 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css%}
+<link rel="stylesheet" href="{% static 'css/profile.css' %}">
+{% endblock %}
 
 {% block content %}
+<div class="overlay-container">
 
-<div class="update-confirm-container">
+<div class="container-fluid" id="update-confirm-container">
     <div class="row">
-        <h6>Your personal info it's been updated</h6>
-        <div class="col">
-            <div class="row">
-                <div class="col-6">
+        <h6>Your personal info it's been updated!</h6>
+        <div class="col mt-3">
+            <div class="row g-0">
+                <div class="col-6 d-flex justify-content-around">
                     <a class="back-profile" href="{% url 'profile' %}">Back to my profile</a>
                 </div>
                 <div class="col-6">
@@ -17,4 +23,6 @@
         </div>
     </div>
 </div>
+</div>
+
 {% endblock%}
