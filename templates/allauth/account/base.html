@@ -24,3 +24,18 @@
 </div>
 </div>
 {% endblock %}
+
+{% block postloadjs %}
+<script type="text/javascript">
+        const allauthContainer = $("#allauth-container")
+
+    jQuery(function(){
+
+      setTimeout(function(){
+        allauthContainer.fadeIn("slow");
+      }, 0.800);
+
+   });
+
+</script>
+{% endblock %}

@@ -28,3 +28,17 @@
       </div>
       </div>
 {% endblock %}
+
+{% block postloadjs %}
+<script type="text/javascript">
+
+  jQuery(function(){
+    const cancelConfirm = $("#cancel-confirm-container")
+
+    setTimeout(function(){
+      cancelConfirmr.fadeIn("slow")
+    }, 0.800);
+
+ });
+
+</script>{% endblock %}

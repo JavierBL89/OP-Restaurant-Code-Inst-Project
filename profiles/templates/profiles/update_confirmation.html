@@ -26,3 +26,18 @@
 </div>
 
 {% endblock%}
+
+{% block postloadjs %}
+<script type="text/javascript">
+
+    jQuery(function(){
+        const updateConfirm = $("#update-confirm-container")
+
+      setTimeout(function(){
+        updateConfirm.fadeIn("slow")
+      }, 0.800);
+
+   });
+
+</script>
+{% endblock %}

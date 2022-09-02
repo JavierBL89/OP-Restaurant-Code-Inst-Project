@@ -6,6 +6,9 @@ div .bg-image {
     height: 150%;
   }
 
+  #allauth-container{
+    display: none;
+  }
 #allauth-container .form-control:focus{
     background-color: rgb(255, 255, 255);
 }

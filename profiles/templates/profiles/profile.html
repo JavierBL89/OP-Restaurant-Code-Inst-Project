@@ -167,3 +167,18 @@
   </div>
 </div>
   {% endblock %}
+
+  {% block postloadjs %}
+  <script type="text/javascript">
+
+      jQuery(function(){
+        const profileContainer = $("#profile-container");
+
+        setTimeout(function(){
+          profileContainer.fadeIn("slow")
+        }, 0.800);
+
+     });
+
+  </script>
+  {% endblock %}

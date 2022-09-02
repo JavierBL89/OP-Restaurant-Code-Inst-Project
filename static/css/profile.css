@@ -9,6 +9,12 @@ body{
     background-repeat: no-repeat;
   }
   
+  #profile-container,
+  #cancel-confirm-container,
+  #update-confirm-container{
+    display: none;
+  }
+  
  .input:-webkit-autofill, input:-webkit-autofill, input:-webkit-autofill:focus {
     -webkit-background-color: rgb(56, 56, 56);
     -webkit-text-fill-color: rgb(56, 56, 56);
@@ -445,4 +451,5 @@ body{
     position: relative;
     bottom: 4px;
   }
+
   }
