@@ -8,7 +8,7 @@ from django.contrib.auth.models import User
 from onepico.models import Booking
 from .models import UserProfile
 from .forms import UserProfileForm
-
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 

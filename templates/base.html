@@ -79,7 +79,7 @@
             <ul class="navbar-nav ms-auto flex-row">
               {% if user.is_authenticated %}
               <li class="nav-item">
-                <a class="nav-link"  href="{% url 'account_logout' %}">LOGOUT</a>
+                <a class="nav-link"  id="logout" href="{% url 'account_logout' %}">LOGOUT</a>
               </li>
               {% endif %}
               <li class="nav-item">

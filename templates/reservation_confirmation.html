@@ -1,139 +1,80 @@
+{% extends 'base.html' %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="One Pico Dublin Finne Dinning Restaurant">
-  <meta name="keyword:" content="">
-  <title>One Pico</title>
-
-  <!-- BOOTSTRAP  -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
-  <!-- STYLESHEET -->
-  <link rel="stylesheet" type="text/css" href="{% static 'css/confirmation.css' %}" />
-
-  <!-- FONTS -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Roboto+Slab:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-
-  <!----  JQUERY CDNJS ------->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-  <link rel="stylesheet" href="{% static 'css/animate.css' %}">
-
-  <!-- CDN JQUERY-->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/3.5.1/jquery.timepicker.min.css">
-  <script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
-
-  <!-- ICONS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-
-</head>
-
-<body>
-
-  <div class="main-wraper">
-
-    <!-------------------------- HEADER ---------------------------->
-    <header class="header">
-      <nav class="navbar navbar-expand-lg navbar-light  ">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-            <div class="flex-row d-inline-flex text-center logo">
-              <h2 class="d-inline ">OP</h2>
-              <p class="d-inline">Fine Dinning Experience</p>
-            </div>
-          </a>
-          <div class="separator d-sm-block d-lg-none"></div>
-          <div class="">
-            <ul class="navbar-nav ms-auto flex-row">
-              <li class="nav-item">
-                <a class="nav-link wow animate__fadeIn" data-wow-delay="1s" aria-current="page" href="{% url 'home' %}">HOME</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
-  </div>
-  <div class="content-wraper container-fluid">
-    <div class="">
-      <div class="row text-center">
-        <div class="container-fluid bg-image">
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/confirmation.css' %}">
+{% endblock %}
+{% block content %}
+  <div class="overlay-container">
 
           <!--------------------------RESERVATION FOUND FEEDBACK ---------------------------->
-          <div class="" id="feedback">
-            {% if double_booking_day %}
-            <h6>Ups! There seems to be another booking registered under the same email address for the same date!</h6>
-            <div class="customer_details failed">
-              
-              <!-------------------------- RESERVATION FOUND TABLE DATA ---------------------------->
-              <table class="table table-sm text-start">
-                <tr>
-                  <th>Booking details</th>
-                </tr>
-                {% for record in customer %}
-                <tbody>
-                  <tr>
-                    <td>{{ record.date }} </td>
-                    <td>At {{ record.start_time }} </td>
-                  </tr>
-                  <tr>
-                    <td>{{ record.name }} {{ record.surname }} </td>
-                    <td>{{ record.phone }}</td>
-                  </tr>
-                </tbody>
-                {% endfor %}
-              </table>
-              <div class="jumbotron">
-                <p><strong>Would you like to cancel the existin reservation and proceed with the new request?</strong></p>
-                <p>If so please contact us <i class="fa-solid fa-phone phone-icon fa-xs"></i>+356248856</p>
+          <div class="container-fluid" id="reservation-result-container">
+            <div class="row">
+              {% if double_booking_day %}
+              <div class="col-12">
+                <h6>Ups! There seems to be another booking registered under the same email address for the same date!</h6>
               </div>
-            </div>
+              <div class="col-12">
+                  <!-------------------------- RESERVATION FOUND TABLE DATA ---------------------------->
+                <div class="customer_details failed mt-2">
+                  <table class="table table-sm text-start">
+                    <tr>
+                      <th>Booking details</th>
+                    </tr>
+                    {% for record in customer %}
+                    <tbody>
+                      <tr>
+                        <td>{{ record.date }} </td>
+                        <td>At {{ record.start_time }} </td>
+                      </tr>
+                      <tr>
+                        <td>{{ record.name |title}} {{ record.surname | title}} </td>
+                        <td>{{ record.email }}</td>
+                      </tr>
+                    </tbody>
+                    {% endfor %}
+                  </table>
+                  <div class="jumbotron">
+                    <div class="row">
+                      <div class="col-12">
+                        <p class="fw-bold">You can now manage your bookings at</p>
+                        <a class="go-manage-bookings" href="{% url 'profile' %}">MANAGE MY BOOKINGS</a>
+                      </div>
+                      <div class="col-12 mt-3 ">
+                        <p class="fw-bold" >Or contact us.</p> 
+                         <p class="mb-1"><i class="fa-solid fa-phone phone-icon fa-xs"></i>+353 022248856</p>
+                         <p class="send-email"><i class="fa-solid fa-envelope envelope-icon fa-xs"></i>oryopochodublin@venue.com</p>
+                    
+                      </div>
+                    </div>           
+                  </div>
+                </div>
+              </div>
+            
+         
 
             <!-------------------------- RESERVATION SUCCESSFUL FEEDBACK ---------------------------->
             {% elif booking_successful %}
-            <div class="success">
-              <h6>The reservation has been successful</h6>
-              <h6>Check the booking confirmation email in your inbox</h6>
-              <h6>We'll see you soon!</h6>
+            <div class="col-12">
+              <div class="success">
+                <h6>The reservation has been successful</h6>
+                <h6>Check the booking confirmation email in your inbox</h6>
+                <h6>We'll see you soon!</h6>
+              </div>
             </div>
             <!-------------------------- FULLY BOOKED  FEEDBACK ---------------------------->
             {% elif fully_booked %}
-            <div class="success">
-              <h6>The restaurant is booked out for the date and time requested</h6>
-              <h6>The reservation could not be possible</h6>
-              <h6>Please try again to a different date</h6>
-              <a id="book-again" href="{% url 'home' %}">Try different date</a>
+            <div class="col-12">
+              <div class="booked-out">
+                <h6>The restaurant is booked out for the date and time requested</h6>
+                <h6>The reservation could not be possible</h6>
+                <h6>Please try again to a different date</h6>
+                <a id="book-again" href="{% url 'home' %}">Try different date</a>
+              </div>
             </div>
             {% endif %}
           </div>
         </div>
       </div>
-    </div>
-  </div>
 
-  <!-------------------------- FOOTER SECTION ---------------------------->
-  <footer>
-    <div class="row text-center copy-right">
-      <p>Copy Right <span id="year"></span></p>
-    </div>
-    </div>
-
-  </footer>
-
-  <!-------------------------- SCRIPTS ---------------------------->
-  <script src="{% static 'jquery/jquery.js' %}"></script>
-  <script>
-    const currentYear = new Date().getFullYear();
-    $("#year").text(currentYear)
-  </script>
-</body>
-
-</html>
+ {% endblock %}       

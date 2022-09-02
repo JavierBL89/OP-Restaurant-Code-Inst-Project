@@ -1,7 +1,7 @@
 /******************************* COMMON PROPERTIES*/
-body {
-    background-color: #cac7c7;
-  }
+body{
+  background-color: #efefef;
+}
   
   div .bg-image {
     background-image: url("https://res.cloudinary.com/dthlibbj7/image/upload/v1652280638/oriopoxo_xv3vg5.jpg");
@@ -9,52 +9,13 @@ body {
     background-repeat: no-repeat;
   }
   
-  /*************** HEADER */
-  .navbar {
-    background-color: #cac7c7;
-    font-family: 'Roboto Slab', serif;
-    position: relative;
-    z-index: 2;
-  }
   
-  nav .nav-item a {
-    background-color: inherit;
-    padding-left: 6px;
-    padding-right: 6px;
-    border-top: solid 1px #cac7c7;
-    border-right: solid 1px #cac7c7;
-    border-left: solid 1px #cac7c7;
-  }
-  
-  nav .separator {
-    margin-top: 10px;
-  }
-  
-  .separator {
-    background-color: #727272;
-    height: 1px;
-    width: 25%;
-    margin: 45px auto 0;
-  }
-  
-  nav .logo p {
-    font-family: 'Beau Rivage', cursive;
-    font-size: 1.5rem;
-    color: rgb(255, 255, 255);
-  }
-  
-  .logo h2 {
-    font-family: 'Roboto Slab', serif;
-    font-weight: 800;
-    color: #727272;
-  }
-  
-  /************* FEEDBACK SECTION ****/
+  /************* reservation-result-container SECTION ****/
   #cancelation-form-container {
     border-radius: 10px;
   }
   
-  #feedback {
+  #reservation-result-container {
     background-color: rgb(255, 255, 255);
     margin: 30px auto;
     color: black;
@@ -62,7 +23,7 @@ body {
     border-radius: 10px;
   }
   
-  #feedback h6 {
+  #reservation-result-container h6 {
     padding-right: 5%;
     padding-left: 5%;
     text-align: center;
@@ -70,11 +31,14 @@ body {
     line-height: 25px;
   }
   
+  #reservation-result-container a{
+    color: rgb(244, 114, 0);
+  }
+
   .jumbotron {
     background-color: #eeeeee;
     padding: 3%;
     width: 80%;
-    margin: 0 auto;
   }
   
   .fa-phone {
@@ -82,7 +46,7 @@ body {
     margin-right: 5px;
   }
   
-  #feedback p, strong {
+  #reservation-result-container p, strong {
     padding-left: 5%;
     padding-right: 5%;
     font-size: 0.800rem;
@@ -97,96 +61,61 @@ body {
   table {
     border-collapse: initial;
   }
-  
+
+   table th, table td{
+    color: #fff;
+   }
+
   table td {
     border-collapse: initial;
     border-style: none;
   }
   
-  /********** FOOTER */
-  .copy-right {
-    margin-top: 100px;
-  }
+
   
   @media only screen and (min-width: 320px) and (max-width: 600px) {
   
-    /********* HEADER*/
-    .navbar .container-fluid {
-      display: flex;
-      flex-direction: column-reverse;
-      padding-left: 5%;
-      padding-right: 5%;
-      padding-bottom: 0;
-    }
-
-    nav .nav-link {
-      margin-left: 5px;
-      margin-right: 30px;
-      font-size: 0.975rem; 
-      color: rgb(120 120 120);
+  
+    /****** reservation-result-container SECTION **/
+    #reservation-result-container {
+      font-size: 0.900rem;
+      background-color: rgb(50, 50, 50);
+       color: rgb(50, 50, 50);
+        margin: 50px auto;
+        padding: 5% 5%;
+        border-radius: 10px;
+        border: solid 1px rgb(3, 3, 3);
+        width: 95%;
     }
   
-    nav .container-fluid .separator{
-      margin-top: 20px;
-    }
-
-    nav .nav-item .nav-link {
-      padding-left: 6px;
-      padding-right: 6px;
-    }
-  
-    nav h2{
-      font-size: 3.3rem;
-    }
-
-    .logo p {
-      font-family: 'Beau Rivage', cursive;
-      font-size: 1.8rem;
-      color: #838383;
-      margin-top: 20px;
-      margin-left: 5px;
-    }
-  
-    div .bg-image {
-      width: 100%;
-      height: 250px;
-    }
-  
-    /****** FEEDBACK SECTION **/
-    #feedback {
-      width: 95%;
-      margin: 30px auto;
-      color: black;
-      padding: 10px 10px;
-    }
-  
-    #feedback h5 {
+    #reservation-result-container h5 {
       font-size: 0.900rem;
       line-height: 25px;
     }
   
-    #feedback h6 {
-      font-size: 0.800rem;
-      padding-right: 5%;
-      padding-left: 5%;
-      margin-top: 5px;
-      line-height: 25px;
+    #reservation-result-container h6 {
+      font-size: 0.900rem;
+      padding: 4%;
     }
   
     .jumbotron {
+      margin: 45px auto auto;
+      text-align: center;
+      border-radius: 5px;
       padding: 3%;
       width: 90%;
-      margin: 0 auto;
+      background-color: #cac7c7;
+      color: rgb(50, 50, 50);
     }
   
     .fa-phone {
       margin-right: 5px;
     }
   
-    #feedback p, strong {
+    #reservation-result-container p {
       padding-left: 5%;
       padding-right: 5%;
-      font-size: 0.750rem;
+      font-size: 0.900rem;
     }
   
     table .contact-details-row {
@@ -204,87 +133,49 @@ body {
     }
   
     table th {
-      font-size: 0.850rem;
+      font-size: 0.900rem;
     }
   
     table td {
-      font-size: 0.750rem;
+      font-size: 0.9000rem;
     }
   }
   
   @media only screen and (min-width: 640px) and (max-width: 950px) {
   
-    /************************* HEADER*/
-    nav .nav-link {
-      margin-left: 5px;
-      margin-right: 33px;
-      font-size: 1rem;
-    }
-  
-    nav .nav-item .nav-link {
-      padding-left: 6px;
-      padding-right: 6px;
-    }
-  
-    .navbar .container-fluid {
-      margin-top: 15px;
-      display: flex;
-      flex-direction: column-reverse;
-    }
-  
-    nav .nav-item {
-      padding-left: 2px;
-      padding-right: 2px;
-    }
-
-    nav h2{
-      font-size: 3.8rem;
-    }
     
-    .logo p {
-      font-family: 'Beau Rivage', cursive;
-      font-size: 2rem;
-      color: hsl(0, 0%, 51%);
-      margin-top: 35px;
-      margin-left: 5px;
+    /************************* reservation-result-container SECTION */
+    #reservation-result-container {
+      background-color: rgb(50, 50, 50);
+      color: rgb(50, 50, 50);
+        margin: 50px auto;
+        padding: 5% 5%;
+        border-radius: 10px;
+        border: solid 1px rgb(3, 3, 3);
+        width: 80%;
     }
   
-    nav .separator{
-      margin-top: 30px;
-      margin-bottom: 10px;
-    }
-
-    div .bg-image {
-      width: 100%;
-      height: 500px;
-    }
-  
-    /************************* FEEDBACK SECTION */
-    #feedback {
-      width: 80%;
-      margin: 30px auto;
-      color: black;
-      padding: 40px 40px;
-    }
-  
-    #feedback h6 {
+    #reservation-result-container h6 {
       font-size: 0.950rem;
       line-height: 25px;
     }
   
-    #feedback h6 {
+    #reservation-result-container h6 {
       font-size: 0.850rem;
       line-height: 25px;
     }
   
     .jumbotron {
-      background-color: #eeeeee;
+      margin: 45px auto auto;
+      text-align: center;
+      border-radius: 5px;
       padding: 3%;
-      width: 100%;
-      margin: 0 auto;
+      width: 80%;
+      background-color: #cac7c7;
+      color: rgb(50, 50, 50);
     }
   
-    #feedback p, strong {
+    #reservation-result-container p, strong {
       padding-left: 3%;
       padding-right: 3%;
     }
@@ -308,43 +199,23 @@ body {
   
   @media only screen and (min-width: 1000px) {
   
-    /***************************************  HEADER SECTION **/
-    .navbar {
-      padding-left: 7%;
-      padding-right: 7%;
-    }
-  
-    nav .nav-link {
-      margin-top: 30px;
-      margin-left: 40px;
-      font-size: 0.950rem;
-    }
-  
-    .logo h2 {
-      font-size: 4.2rem;
-    }
-  
-    .logo p {
-      font-size: 1.8rem;
-      margin-top: 45px;
-      margin-left: 15px;
-    }
-  
-    div .bg-image {
+    .overlay-container{
       width: 100%;
-      height: 500px;
+      min-height: 100%;
+      padding-top: 1%;
+    } 
+    /********** reservation-result-container SECTION */
+    #reservation-result-container {
+      background-color: rgb(50, 50, 50);
+      color: rgb(50, 50, 50);
+        margin: 50px auto;
+        padding: 5% 5%;
+        border-radius: 10px;
+        border: solid 1px rgb(3, 3, 3);
+        width: 70%;
     }
   
-    /********** FEEDBACK SECTION */
-    #feedback {
-      background-color: rgb(255, 255, 255);
-      width: 70%;
-      margin: 30px auto;
-      color: black;
-      padding: 50px 50px;
-    }
-  
-    #feedback h6 {
+    #reservation-result-container h6 {
       font-size: 0.900rem;
       padding-right: 5%;
       padding-left: 5%;
@@ -352,19 +223,26 @@ body {
     }
   
     .jumbotron {
+      margin: 45px auto auto;
+      text-align: center;
+      border-radius: 5px;
       padding: 3%;
       width: 80%;
+      background-color: #cac7c7;
+      color: rgb(50, 50, 50);
     }
+  
   
     .fa-phone {
       margin-left: 20px;
       margin-right: 5px;
     }
   
-    #feedback p, strong {
+    #reservation-result-container p, strong {
       padding-left: 5%;
       padding-right: 5%;
-      font-size: 0.800rem;
+      color: rgb(50, 50, 50);
+      font-size: 0.900rem;
       text-align: center;
     }
   
@@ -383,12 +261,12 @@ body {
     }
   
     table th {
-      font-size: 0.850rem;
+      font-size: 0.900rem;
     }
   
     table td {
       border-collapse: initial;
       border-style: none;
-      font-size: 0.850rem;
+      font-size: 0.900rem;
     }
   }
