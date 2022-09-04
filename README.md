@@ -119,8 +119,14 @@ Fonts were taken from [Google fonts](<https://fonts.google.com/>)
 
 ## Wireframes
 
-I have not wireframed this project. I didn't want to spend any time in doing so tbh..
-I'm a bit dessaster for planing proyects, i should start doing things properly and being more profesional.
+
+ * Desktop and mobile **home** page wireframe.
+
+ ![Desktop and Modile wireframe](<static/images/oryopoxo-home.png>)
+
+ * Desktop and mobile **profile** page wireframe.
+
+ ![Desktop and Modile wireframe](<static/images/oryopoxo-profile.png>)
 
 ## Flow Chart
 
