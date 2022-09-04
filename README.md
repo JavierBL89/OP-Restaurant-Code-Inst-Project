@@ -130,10 +130,10 @@ Fonts were taken from [Google fonts](<https://fonts.google.com/>)
 
 ## Flow Chart
 
-Sorry i can't provide this information. 
-I was a bit disater and didn't work on the flow chart in advance, either on the database squemas..sorry.
-I wanted to do draft them before submitting the project but i have not more time.
-I'll do better for the next project!
+* Data relationship
+
+![Data relationship](<static/images/data-relationships.png>)
+
 
 # Features
 
