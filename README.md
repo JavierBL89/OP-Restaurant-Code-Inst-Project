@@ -341,6 +341,8 @@ This feature does not work in Heroku app, i had to add authoritation but i only 
 
 # Deployment
 
+### Deploy to Heroku
+
 The project was deployed to Heroku using the below procedure:-
 
 - Log in to Heroku or create an account if required.
@@ -381,6 +383,29 @@ Once you have followed the appropriate step above, your Heroku app will be linke
 - **HOW TO DEPLOY**
   
 By running the command git push heroku main and your app will be deployed to Heroku.
+
+
+### Forking the Repository
+
+- Log in to GitHub and locate the GitHub Repository.
+- At the top of the Repository above the "Settings" Button on the menu, locate the "Fork" Button.
+- You will have a copy of the original repository in your GitHub account.
+- You will now be able to make changes to the new version and keep the original safe.
+
+### Run locally
+
+- Log into GitHub.
+- Locate the repository.
+- Click the 'Code' dropdown above the file list.
+- Copy the URL for the repository.
+- Open Git Bash on your device.
+- Change the current working directory to the location where you want the cloned directory.
+- Type "git clone" in the CLI and then paste the URL you copied earlier. This is what it should look like:
+  $ git clone https://github.com/Steven-Dawson18/american-ale-house
+- Press Enter to create your local clone.
+
+You will need to install the all the packages by typing in CML "pip install -r requirements.txt"
+ In case the env.py does not exist into your root directory, you will find a file in the root directory named "installation.txt" there you'll find the piece of code necessay to set env.py file.
 
 # Credits
  
