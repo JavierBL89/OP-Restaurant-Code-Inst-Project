@@ -2,7 +2,7 @@
 
 This is a Restaurant site which provides valued information about the restaurant itself, and allows user make bookings easily whit a very intuitive navigation and a straightforward booking request form.
 
-- Go to live [Orio Pocho](<https://one-pico-restaurant.herokuapp.com/)>)
+- Go to live [Orio Pocho](<https://one-pico-restaurant.herokuapp.com/>)
 
 # Table of contents
 
@@ -134,6 +134,9 @@ Fonts were taken from [Google fonts](<https://fonts.google.com/>)
 
 ![Data relationship](<static/images/data-relationships.png>)
 
+* Booking logic
+
+[Booking Logic - Pryopoxo](https://lucid.app/publicSegments/view/7807f5bb-871f-4259-92d8-d4930d854f2e/image.jpeg)
 
 # Features
 
@@ -156,7 +159,6 @@ Fonts were taken from [Google fonts](<https://fonts.google.com/>)
   - Users can cancel their reservations.
 
 ![](static/images/submit-search-form.png)
-
 
   
 - Reservation form validation
@@ -213,17 +215,11 @@ I would have loved to improve all the areas.
    - Mobile
    ![](<static/images/mobile-home-page.png>)
 
-- Reservation confirmation page:
+- Profile page:
    - Desktop
-   ![](<static/images/desktop-reservation-confirmation.png>)
+   ![](<static/images/test-profile-page.png.png>)
    - Mobile
-   ![](<static/images/mobile-reservation-confirmation-page.png>)
-
-- Cancelations page:
-   - Destop
-   ![](<static/images/desktop-cancelation-page.png>)
-   - Mobile
-   ![](<static/images/mobile-cancelation-page.png>)
+   ![](<static/images/test-profile-page-mobile.png>)
 
 
   - **Home page**
@@ -251,7 +247,7 @@ When validating i had to modify lots of long lines of code, however then when ru
 the app crushes and display errors as on the picture bellow.
 ![](<static/images/error.png>)
 
-So i put back some of the long lines ofcode.
+So i put some of the long lines back.
 ![](<static/images/long-lines.png>)
 
 
@@ -271,7 +267,7 @@ Due to small extra longer lines of code, i had to leave some errors from the fil
 ATTENTION!
 
 There is one of the test functions failing from the "test_forms.py" file.
-I don't really understand what's going on there, the booking comment field is not required whe submitin the form, andfrom my undertanding the test function should go through as "excerpt" field is left blank and the form submitions should be valid...
+I don't really understand what's going on there, the booking comment field is not required whe submitin the form, and from my undertanding the test function should go through as "excerpt" field is left blank and the form submitions should be valid...
 
 ![](static/images/test-fail.png)
 
@@ -311,32 +307,16 @@ I have come accross multiple bugs and didn't write them down...i'm a bit of a di
 
 - Unfixed bugs
 
-1.Currently from the cancelations page, the link back to home page does no work...
+1. Currently from the cancelations page, the link back to home page does no work...
 
 ![](<static/images/home-link.png>)
 
-2.Reservation form validation has a bug when filling up the "name" field and leaving the "Last Name" field blankand trying to submit the form. The data error message bellow the "Last name" field is also displayed...
+2. Reservation form validation has a bug when filling up the "name" field and leaving the "Last Name" field blank and trying to submit the form. The data error message bellow the "Last name" field is also displayed...
 
 ![](<static/images/reservations-bug.jpg>)
 
-3.Cancel reservations form has also a couple of bugs.
 
-  - Firstly when trying to submit the from black, the JavaScript validation code seems to not be triggered.
-  and leads the user to a django ValidationError page
-
-  ![](<static/images/cancelation-page-bug-1.png>) 
-
-  - Secondly, when making fail the "email" field, the JavaScript validation code is triggered, but when leaving the "email" field empty and making fail the phone field, the JavaScript validation code is again no triggered..leading the user to the ValidationError
-
-  ![](<static/images/cancelation-page-bug-2.png>)
-
-  ![](<static/images/cancelation-page-bug-1.png>)
-
-  - However, if we fill up the "date" field, input anything on the "phone" field, and leaving the "email" field blank, the user is lead to the response page after submitting the form..
-
-  ![](<static/images/cancelations-page-bug-3.png>) 
-
-4.Maps feature
+4. Maps feature
 This feature does not work in Heroku app, i had to add authoritation but i only realized right before submitting the project and i have no more time to fix it...
 
 # Deployment
@@ -400,8 +380,8 @@ By running the command git push heroku main and your app will be deployed to Her
 - Copy the URL for the repository.
 - Open Git Bash on your device.
 - Change the current working directory to the location where you want the cloned directory.
-- Type "git clone" in the CLI and then paste the URL you copied earlier. This is what it should look like:
-  $ git clone https://github.com/Steven-Dawson18/american-ale-house
+- Type `git clone` in the CLI and then paste the URL you copied earlier. This is what it should look like:
+  `$ git clone https://github.com/Steven-Dawson18/american-ale-house`
 - Press Enter to create your local clone.
 
 You will need to install the all the packages by typing in CML "pip install -r requirements.txt"
@@ -447,9 +427,9 @@ For development purposes i continually had to look into stuff in google.
 
 - Technologies documentation:
   
-  1.[Django](<https://docs.djangoproject.com/>)
-  3.[JQuery](<https://jquery.com/>)
-  3.[Bootstrap](<https://getbootstrap.com/docs>)
+  1. [Django](<https://docs.djangoproject.com/>)
+  3. [JQuery](<https://jquery.com/>)
+  3. [Bootstrap](<https://getbootstrap.com/docs>)
 
 # Aknowlegments
 

@@ -169,7 +169,7 @@ def check_small_tables_available_lunch(people_requested, booking_id,
     If no small tables, will look for medium tables available
     """
     active = True
-    small_tables_booked_list = [1,2,3,4]
+    small_tables_booked_list = []
     print(small_tables_booked_list)
     while active:
         random_table_object = random.choice(Restaurant.small_table)
@@ -241,7 +241,7 @@ def check_medium_tables_available_lunch(people_requested,
     available at lunch time.
     If no medium tables, will look for large tables available
     """
-    medium_tables_booked_list = [5,6]
+    medium_tables_booked_list = []
     active = True
     while active:
         random_table_object = random.choice(Restaurant.medium_table)

@@ -2,20 +2,21 @@
 
 const form = document.getElementById('booking_form');
 
-let fname = document.getElementById("name");
-let surname = document.getElementById("l_name");
-let prefix = document.getElementById("prefix");
-let phone = document.getElementById("phone");
-let email = document.getElementById("email");
+let fname = document.getElementById("id_name");
+let surname = document.getElementById("id_last_name");
+let prefix = document.getElementById("id_prefix");
+let phone = document.getElementById("id_phone");
+let email = document.getElementById("id_email");
 let date = document.getElementById("date");
-let start_time = document.getElementById("start_time");
-let party_size = document.getElementById("party_size");
+let start_time = document.getElementById("id_start_time");
+let party_size = document.getElementById("id_party_size");
 const opening_days = [2,3,4,5,6];
 
 /**
 * INITIALIZE FORM VALIDATION
 **/
 function handleSubmit(event){
+
 form.addEventListener('submit', event => {
     if (!form.checkValidity()) {
 
@@ -40,8 +41,10 @@ function validateInputs(event){
   const phoneValue = phone.value.trim();
   const emailValue = email.value.trim();
   const dateValue = date.value.trim();
-  const start_timeValue = document.querySelector("#start_time").value.toString();
+  const start_timeValue = document.querySelector("#id_start_time").value.toString();
   const party_sizeValue =party_size.value.trim();
+
+  $(".form-control error").css("border-color", "black;")
 
     if(nameValue === ""){
       setErrorForBlank(fname, "Field cannot be blank");
@@ -74,14 +77,6 @@ function validateInputs(event){
       dateValidation(dateValue);
     }
 
-    if(start_timeValue === ""){
-      start_time.className = "form-control error";
-      document.querySelector(".timeError").innerText = "Please select a valid time slot";
-    }
-    else{
-      setSuccessFor(start_time);
-    }
-
     if(party_sizeValue === ""){
       setErrorForBlank(party_size, "Select party size");
     }else{
@@ -90,6 +85,16 @@ function validateInputs(event){
 
     if(prefixValue != ""){
         setSuccessFor(prefix);
+    }
+
+    if(start_timeValue > '0'){
+      console.log('puta');
+      setSuccessFor(start_time);
+
+    }else{
+      start_time.className = "form-control error";
+      document.querySelector(".timeError").innerText = "Please, select a valid time";
+      return false
     }
 }
 
@@ -179,23 +184,28 @@ function checkLength(input){
   // const prefixValue = prefix.value.trim();
   const phoneValue = phone.value.trim();
 
-  if(input_id == "name" && nameValue.length <= 2){
+  if(input_id == "id_name" && nameValue.length <= 2){
     fname.className = "form-control error";
     document.querySelector(".nameError").innerText = "Must contain min 3 characters";
   }else{
     checkAlphanumerics(fname);
   }
-  if(input_id == "l_name" && lastNameValue.length <= 2){
+  if(input_id == "id_last_name" && lastNameValue.length <= 2){
     surname.className = "form-control error";
     document.querySelector(".lastNameError").innerText = "Must contain min 3 characters";
   }
   else{
     checkAlphanumerics(surname);
   }
-  if(input_id == "phone" && phoneValue.length <=7 || phoneValue.length >=9){
+
+  if(input_id == "id_phone" && phoneValue.length <=7 || phoneValue.length >10){
     phone.className = "form-control error";
     document.querySelector(".phoneError").innerText = "Must have from 8 to 9 numbers";
+  }else{
+    checkAlphanumerics(phone);
   }
+
+  
 }
 
 /**
