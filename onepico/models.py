@@ -66,7 +66,7 @@ class Booking(models.Model):
     prefix = models.BigIntegerField(default=+353, choices=PREFIX_CHOICES)
     phone = models.CharField(max_length=15, null=False, blank=False)
     date = models.DateField('%Y-%m-%d')
-    start_time = models.TimeField('%H:%M', choices=TIME_SLOTS)
+    start_time = models.TimeField('%H:%M', choices=TIME_SLOTS, default='00:00')
     email = models.EmailField(max_length=100)
     excerpt = models.CharField(null=True, blank=True, max_length=500)
     created_on = models.DateTimeField(auto_now_add=True)

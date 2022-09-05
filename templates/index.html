@@ -74,7 +74,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/
           <div class="booking-form-box">
 
             <!-------------------------- RESERVATION FORM ---------------------------->
-            <form class="g-3 needs-validation" id="booking_form" name="RegForm" method="POST" action="{% url 'booking_request' %}" onclick="handleSubmit(event)" novalidate>
+            <form class="g-3 needs-validation" id="booking_form" name="RegForm" method="POST" action="{% url 'booking_request' %}" novalidate>
               {% csrf_token %}
               <div class="row">
                 <div class="col-12 col-lg-6">
@@ -100,7 +100,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/
                     {{ form.start_time | as_crispy_field }}
                     <div class="timeError"></div>
                     {{ form.party_size | as_crispy_field }}
-                    <div class="emailError"></div>
+                    <div class="partySizeError"></div>
                     {{ form.excerpt | as_crispy_field }}
 
                   </div>
@@ -374,4 +374,10 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/
 <!----------- CONTACT FORM POPUP --------->
 {% include 'includes/contact_popup.html' %}
 
+{% endblock %}
+
+
+{% block postloadjs %}
+{{ block.super }}
+<script type="text/javascript" src="{% static 'js/validation.js' %}"></script>
 {% endblock %}

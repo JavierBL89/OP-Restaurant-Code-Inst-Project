@@ -10,30 +10,31 @@ let email = document.getElementById("id_email");
 let date = document.getElementById("date");
 let start_time = document.getElementById("id_start_time");
 let party_size = document.getElementById("id_party_size");
+let booking_comments = document.getElementById("id_excerpt");
 const opening_days = [2,3,4,5,6];
 
 /**
 * INITIALIZE FORM VALIDATION
 **/
-function handleSubmit(event){
-
 form.addEventListener('submit', event => {
-    if (!form.checkValidity()) {
-
-  event.preventDefault();
-  event.stopPropagation();
-  validateInputs(event);
-    
-}
-
+      validateInputs();
+      let count = $(".success");
+      console.log(count.length);
+      if(count.length >= 8){
+        console.log('VALID');
+        form.submit();
+      }else{
+        event.preventDefault();
+        event.stopPropagation();
+        console.log('NO VALID');     
+      }
 },false);
-}
-
 
 /**
 * GET INPUTS VALUE AND CHECK BLANK FIELDS
 **/
-function validateInputs(event){
+function validateInputs(){
+
   // get the values from inputs
   const nameValue = fname.value.trim();
   const lastNameValue = surname.value.trim();
@@ -53,6 +54,7 @@ function validateInputs(event){
     }
 
     if(lastNameValue === ""){
+      console.log('bitch');
       setErrorForBlank(surname, "Field cannot be blank");
     }else{
       checkAlphanumerics(surname);
@@ -77,24 +79,24 @@ function validateInputs(event){
       dateValidation(dateValue);
     }
 
-    if(party_sizeValue === ""){
-      setErrorForBlank(party_size, "Select party size");
-    }else{
-      checkPartySize(party_sizeValue);
-    }
-
     if(prefixValue != ""){
         setSuccessFor(prefix);
     }
 
     if(start_timeValue > '0'){
-      console.log('puta');
       setSuccessFor(start_time);
-
     }else{
       start_time.className = "form-control error";
       document.querySelector(".timeError").innerText = "Please, select a valid time";
-      return false
+    }
+    
+    if(party_sizeValue === ""){
+      setErrorForBlank(party_size, "Select party size");
+    }else if(party_sizeValue < 1 || party_sizeValue >= 13){
+      party_size.className = "form-control error";
+      document.querySelector(".partySizeError").innerText = "Must enter a number over 0 or under 13";
+    }else{
+      checkAlphanumerics(party_size);
     }
 }
 
@@ -103,9 +105,11 @@ function validateInputs(event){
  * VALIDATE NAME AND SURNAME USERS FORTMAT
  */
 function checkAlphanumerics(input){
-  var letters = /^[A-Za-z]+$/;
+  let letters = /^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/g;
+  let numbers =  /^[0-9]*$/g;
+
   let input_id = input.getAttribute("id");
-    if(input_id == "name"){
+    if(input_id == "id_name"){
       let inputValue = fname.value;
       if(inputValue.match(letters)){
         setSuccessFor(fname);
@@ -114,13 +118,31 @@ function checkAlphanumerics(input){
         document.querySelector(".nameError").innerText = "Only alphabet characters allowed";
       }
     }
-    if(input_id == "l_name"){
+    if(input_id == "id_last_name"){
       let inputValue = surname.value;
       if(inputValue.match(letters)){
         setSuccessFor(surname);
       }else{
         surname.className = "form-control error";
         document.querySelector(".lastNameError").innerText = "Only alphabet characters allowed";
+      }
+    }
+    if(input_id == "id_phone"){
+      let inputValue = phone.value;
+      if(inputValue.match(numbers)){
+        setSuccessFor(phone);
+      }else{
+        phone.className = "form-control error";
+        document.querySelector(".phoneError").innerText = "Only numbers allowed";
+      }
+    }
+    if(input_id == "id_party_size"){
+      let inputValue = party_size.value;
+      if(inputValue.match(numbers)){
+        setSuccessFor(party_size);
+      }else{
+        party_size.className = "form-control error";
+        document.querySelector(".partySizeError").innerText = "Only numbers allowed";
       }
     }
 }
@@ -147,7 +169,6 @@ function dateValidation(dateValue){
           setSuccessFor(date);
         }else{
           setErrorForDate(date, "Opening days from Tuesday to Saturday included");
-          console.log("3");
         }
       }else{
         setErrorForDate(date, "Day must be from today onwards");
@@ -181,7 +202,6 @@ function checkLength(input){
   const input_id =  input.getAttribute("id");
   const nameValue = fname.value.trim();
   const lastNameValue = surname.value.trim();
-  // const prefixValue = prefix.value.trim();
   const phoneValue = phone.value.trim();
 
   if(input_id == "id_name" && nameValue.length <= 2){
@@ -190,6 +210,7 @@ function checkLength(input){
   }else{
     checkAlphanumerics(fname);
   }
+
   if(input_id == "id_last_name" && lastNameValue.length <= 2){
     surname.className = "form-control error";
     document.querySelector(".lastNameError").innerText = "Must contain min 3 characters";
@@ -201,11 +222,10 @@ function checkLength(input){
   if(input_id == "id_phone" && phoneValue.length <=7 || phoneValue.length >10){
     phone.className = "form-control error";
     document.querySelector(".phoneError").innerText = "Must have from 8 to 9 numbers";
+
   }else{
     checkAlphanumerics(phone);
   }
-
-  
 }
 
 /**
@@ -217,35 +237,18 @@ function setErrorForDate(bookingDate, message){
 }
 
 /**
- * ERROR MESSAGES FOR INCORRECT PARTY SIZE
- */
-function checkPartySize(party_sizeValue){
-  const minos = "-";
-  if(party_sizeValue >= 13){
-    party_size.className = "form-control error";
-    document.querySelector(".partyError").innerText = "For parties over 12px contact us";
-  }
-  else if(party_sizeValue.match(minos) || party_sizeValue === "0"){
-    party_size.className = "form-control error";
-    document.querySelector(".partyError").innerText = "Please select a valid party size";
-  }
-  else{
-    setSuccessFor(party_size);
-  }
-  
-}
-
-/**
  * ERROR WARNING AN MESSAGE FOR BLANK INPUTS
  */
 function setErrorForBlank(input, message){
   input.className = "form-control error";
   input.setAttribute("placeholder", message);
+  return false
 }
 
 /**
  * TURNS BORDER INPUT INTO GREEN IF DATA PASSES VALIDATION
  */
 function setSuccessFor(input){
-  input.className = "form-control success";
+  input.className = "form-control success";  
+  return true
 }

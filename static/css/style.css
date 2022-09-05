@@ -15,7 +15,8 @@
   }
   
   .nameError, .lastNameError, .phoneError, .emailError, .dateError,
-  .partyError, .timeError, .cancelationEmailError, .cancelationPhoneError {
+  .partySizeError, .timeError, .cancelationEmailError, .cancelationPhoneError {
+    color:rgb(255, 103, 103);
     margin-top: 10px;
     margin-bottom: 10px;
     font-style: oblique;
