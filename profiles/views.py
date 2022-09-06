@@ -11,7 +11,6 @@ from .forms import UserProfileForm
 from django.contrib.auth.decorators import login_required
 # Create your views here.
 
-
 class Profile(View):
 
     def get(self, request):
@@ -28,6 +27,8 @@ class Profile(View):
                 'user_bookings': user_bookings,
                 'profile_form': profile_form
             }
+        else:
+            return redirect(reverse('home'))
         return render(request, 'profiles/profile.html', context)
 
 
@@ -41,13 +42,21 @@ def delete_profile(request, user_id):
 class UpdateConfirmation(View):
 
     def get(self, request):
-        return render(request, 'profiles/update_confirmation.html')
+
+        if request.user.is_authenticated:
+            return render(request, 'profiles/update_confirmation.html')
+        else:
+            return redirect(reverse('home'))
 
 
 class CancelationConfirmation(View):
 
     def get(self, request):
-        return render(request, 'profiles/cancelation_confirmation.html')
+        
+        if request.user.is_authenticated:
+            return render(request, 'profiles/cancelation_confirmation.html')
+        else:
+            return redirect(reverse('home'))
 
 
 class UpdateProfile(UpdateView):

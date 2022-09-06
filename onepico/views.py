@@ -9,6 +9,7 @@ from .forms import BookingForm
 from profiles.models import UserProfile
 from contact.forms import ContactForm
 from django.http import HttpResponseRedirect
+from django.conf import settings
 from datetime import datetime
 from .reservation import  get_table_available, check_double_booking_date
 from django.contrib import messages
@@ -22,9 +23,11 @@ class HomePage(View):
         form = BookingForm()
         contact_form = ContactForm()
         home = True
+        maps_api_key = settings.MAPS_API_KEY
         context = {
             'form': form,
             'contact_form': contact_form,
+            'maps_api_key': maps_api_key,
             'home': home
         }
 
