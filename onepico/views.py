@@ -85,6 +85,12 @@ class FormView(View):
                     # Attach booking to user's profile
                     new_booking.user_profile = user_profile
                     new_booking.save()
+                # else:
+                #     # attached possible bookings made as incognito to the new user
+                #     existing_user_booking = Booking.objects.filter(email=user.email).all()
+                #     user_bookings_non_attached.user_profile = profile
+                #     user_bookings_non_attached.save()
+
                     
                 print("BOOKING SUCCESSFUL")
                 booking_successful = True

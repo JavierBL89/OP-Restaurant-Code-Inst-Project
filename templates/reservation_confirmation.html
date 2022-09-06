@@ -57,11 +57,21 @@
             {% elif booking_successful %}
             <div class="col-12">
               <div class="success">
-                <h6>The reservation has been successful</h6>
+                <h6>The reservation has been successful!</h6>
                 <h6>Check the booking confirmation email in your inbox</h6>
                 <h6>We'll see you soon!</h6>
               </div>
             </div>
+            <div class="col mt-3">
+              <div class="row g-0 text-center">
+                  <div class="col-12 col ">
+                      <a class="back-home" href="{% url 'home' %}">Go to home page</a>
+                  </div>
+                  <div class="col-6">
+                    <a class="back-profile" href="{% url 'profile' %}">Manage my bookings</a>
+                  </div>
+              </div>
+          </div>
             <!-------------------------- FULLY BOOKED  FEEDBACK ---------------------------->
             {% elif fully_booked %}
             <div class="col-12">

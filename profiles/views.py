@@ -18,8 +18,16 @@ class Profile(View):
         if request.user.is_authenticated:
             user_id = request.user.pk
             user = get_object_or_404(User, pk=user_id)
-
             profile = get_object_or_404(UserProfile, user=user)
+            # attached possible bookings made as incognito to the new user
+            user_bookings_non_attached = Booking.objects.filter(email=user.email).all()
+            print(user_bookings_non_attached)
+
+            for booking in user_bookings_non_attached:
+                booking.user_profile = profile
+                booking.save()
+
+            # get bookings already attached to the user
             user_bookings = Booking.objects.filter(user_profile=profile).all()
             profile_form = UserProfileForm()
             context = {
