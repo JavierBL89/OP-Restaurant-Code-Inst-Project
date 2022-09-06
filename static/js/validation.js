@@ -13,6 +13,7 @@ let party_size = document.getElementById("id_party_size");
 let booking_comments = document.getElementById("id_excerpt");
 const opening_days = [2,3,4,5,6];
 
+
 /**
 * INITIALIZE FORM VALIDATION
 **/

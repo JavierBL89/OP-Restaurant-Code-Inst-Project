@@ -137,6 +137,10 @@
     margin-left: 10px;
     margin-bottom: 10px;
   }
+
+  #location-link-top {
+    color: rgb(89, 89, 89);
+}
   
   .contact-social-icons-box i {
     margin-top: 5px;
@@ -300,9 +304,9 @@ form label {
     font-size: 0.900rem;
   }
   
-  footer a:hover {
-    color: #a8a8a8
-  }
+    #footer-container a:hover, #footer-container .send-email:hover{
+    color: #ffffff; 
+   }
   
   footer .footer-link:hover {
     color: hsl(0, 0%, 35%);
@@ -679,8 +683,13 @@ form label {
       font-size: 1rem;
     }
 
-    #footer-container .footer-link {
+    #footer-container a[id="location-link-footer"] {
+      margin: 5px;
+      font-size: 1rem;
       font-size: 0.900rem;
+    }
+
+    #footer-container .footer-link {
       margin: 20px 0;   
     }
 
@@ -697,6 +706,10 @@ form label {
       margin-right: 10px;
     }
 
+    .location-link-footer{
+      position: relative;
+      bottom: 55px;
+    }
     .copy-right {
       font-size: 14px;
     }
@@ -885,6 +898,20 @@ form label {
       font-size: 0.900rem;
     }
   
+    .avalability-box .phone-icon{
+      margin-top: 11px;
+      margin-right: 10px;
+    }
+
+    .avalability-box .email-icon{
+      position: relative;
+      top: 4px;
+      margin-right: 10px;
+    }
+  
+    .avalability-box .house-icon{
+      margin-right: 6px;
+    }
     /***************************** AWARDS SECTION */
     .about {
       padding-right: 10%;
@@ -1015,10 +1042,6 @@ form label {
     #footer-container li {
       font-size: 0.900rem;
       margin: 20px 0;    
-    }
-
-.fa-house-chimney{
-      margin-top: 12px;
     }
 
      /************* CONTACT FORM */
@@ -1191,7 +1214,22 @@ form label {
     .contact-social-icons-box .phone-b i {
       margin-top: 15px;
     }
+
+    .avalability-box .phone-icon{
+      margin-top: 11px;
+      margin-right: 10px;
+    }
+
+    .avalability-box .email-icon{
+      position: relative;
+      bottom: 12px;
+      margin-right: 10px;
+    }
   
+    .avalability-box .house-icon{
+      margin-right: 6px;
+    }
+    
     /*************************** AWARDS SECTION */
     .container-about .about {
       padding-right: 18%;
@@ -1312,7 +1350,7 @@ form label {
       margin-top: 13px;
     }
 
-    .fa-house-chimney{
+    .avalability-box .fa-house-chimney{
       margin-bottom: 10px;
     }
 

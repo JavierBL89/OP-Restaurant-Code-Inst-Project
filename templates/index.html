@@ -52,15 +52,17 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-4 contact-icons">
                   <div class="phone-b d-inline-flex"><i class="fa-solid fa-phone phone-icon fa-sm"></i>
-                    <p>+356248856</p>
+                    <p>+353 086248856</p>
                   </div>
                   <div class="email-b d-inline-flex"><i class="fa-solid fa-envelope email-icon"></i>
                     <p class="send-email">book@oryopocho.com</p>
                   </div>
                   <div class="house d-inline-flex"><i class="fa-solid fa-house-chimney house-icon"></i>
                     <div class="address-b">
-                      <p>13. Marrowbone Lane<br>
-                        Dublin 8</p>
+                      <a class="text-decoration-underline" id="location-link-top" target="_blank" href="https://www.google.com/maps/place/118+R810,+Usher's+Quay,+Dublin,+Ireland/@53.3432007,-6.2801334,18.82z/data=!4m5!3m4!1s0x48670c25154703e3:0x4a2ae309715287cd!8m2!3d53.3430573!4d-6.2799739?hl=en">
+                        <p>13. Marrowbone Lane <br>
+                           Dublin 8</p>
+                       </a>
                     </div>
                   </div>
                 </div>
@@ -380,4 +382,5 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/
 {% block postloadjs %}
 {{ block.super }}
 <script type="text/javascript" src="{% static 'js/validation.js' %}"></script>
+
 {% endblock %}

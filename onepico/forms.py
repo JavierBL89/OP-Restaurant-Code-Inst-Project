@@ -9,6 +9,7 @@ class BookingForm(forms.ModelForm):
     class Meta:
         model = Booking
         date = forms.DateInput()
+        excerpt = forms.CharField(widget=forms.Textarea())
         fields = ['name', 'last_name', 'party_size', 'prefix',
                   'phone', 'date', 'start_time', 'email', 'excerpt']
         
@@ -22,7 +23,7 @@ class BookingForm(forms.ModelForm):
         placeholders = {
             'name': 'Name',
             'last_name': 'Last name',
-            'party_size': 'Perty size',
+            'party_size': 'Party size',
             'prefix': '',
             'phone': 'Phone number',
             'date': 'Date',
@@ -31,6 +32,8 @@ class BookingForm(forms.ModelForm):
             'excerpt': 'Booking comment',
         }
 
+        self.fields['excerpt'].widget.attrs['cols'] = '40'
+        self.fields['excerpt'].widget.attrs['rows'] = '2'
         for field in self.fields:
             if self.fields[field].required:
                 placeholder = f'{placeholders[field]} *'
