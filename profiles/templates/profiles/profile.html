@@ -84,8 +84,8 @@
             <!------------------ NEXT BOOKINGS --------------->
             <div class="row">
               <div class="col">
-                <div class="row d-flex text-start mt-3" id="personal-info-container">
-                  <div class="cancelation-button-box text-start">
+                <div class="row d-flex text-start ms-0 mt-3" id="next-bookings-container">
+                  <div class="next-booking-box px-0 text-start">
                     <a class="" type="button" role="button" data-bs-toggle="collapse" href="#cancel_{{ booking.pk }}" aria-expanded="false" aria-controls="collapseExample">
                       <h6 class="text-muted">Next bookings <i class="fa-solid fa-angle-down"></i></h6>
                     </a>
@@ -96,7 +96,7 @@
                         {% if user_bookings %}
                         {% for booking in user_bookings %}
                         <div class="row">
-                          <div class="col-4">
+                          <div class="col-5 col-md-4">
                             <p>Name</p>
                             <p>Last Name</p>
                             <p>Email</p>
@@ -107,7 +107,7 @@
                             <p>Status</p>
                             <p>Booking comments</p>
                           </div>
-                          <div class="col-4">
+                          <div class="col-7 col-md-4">
                             <p>{{ booking.name |title}}</p>
                             <p>{{ booking.last_name |title}}</p>
                             <p>{{ booking.email }}</p>
@@ -126,8 +126,8 @@
                           <div class="cancelation-button-box text-start">
                             <a class="text-danger" type="button" role="button" data-bs-toggle="collapse" href="#cancel_{{ booking.pk }}" aria-expanded="false" aria-controls="collapseExample">Cancel reservation</a>
                             <div class="collapse" id="cancel_{{ booking.pk }}">
-                              <div class="card card-body text-start d--lg-flex">
-                                <div class="row">
+                              <div class="card card-body text-start">
+                                <div class="row d-flex d-flex-row">
                                   <div class="col-6">
                                     <p class="d-flex-inline">Are you sure?</p>
                                   </div>
@@ -138,14 +138,13 @@
                                     </form>
                                   </div>
                                 </div>
-                                </form>
                               </div>
                             </div>
                           </div>
                           <hr class="mt-3">
+                        </div>
                           {% endfor %}
 
-                        </div>
                         {% else %}
                         <div class="row">
                           <div class="col">
