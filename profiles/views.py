@@ -1,6 +1,7 @@
 from django.shortcuts import render, reverse, redirect, get_object_or_404
 from django.views import generic, View
 from django.views.generic.edit import DeleteView, UpdateView
+from datetime import date
 
 from django.urls import reverse_lazy
 
@@ -16,6 +17,8 @@ class Profile(View):
     def get(self, request):
         
         if request.user.is_authenticated:
+            next_comming_bookings = []
+            current_date = date.today()
             user_id = request.user.pk
             user = get_object_or_404(User, pk=user_id)
             profile = get_object_or_404(UserProfile, user=user)
@@ -26,13 +29,18 @@ class Profile(View):
             for booking in user_bookings_non_attached:
                 booking.user_profile = profile
                 booking.save()
-
             # get bookings already attached to the user
-            user_bookings = Booking.objects.filter(user_profile=profile).all()
+            user_records = Booking.objects.filter(user_profile=profile).all()
+
+            # get user bookings from the current day onwards
+            for record in user_records:
+                if record.date >= current_date:
+                    next_comming_bookings.append(record)
+
             profile_form = UserProfileForm()
             context = {
                 'user': user,
-                'user_bookings': user_bookings,
+                'next_comming_bookings': next_comming_bookings,
                 'profile_form': profile_form
             }
         else:

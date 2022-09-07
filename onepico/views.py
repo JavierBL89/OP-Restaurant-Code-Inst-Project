@@ -68,7 +68,6 @@ class FormView(View):
             return render(request, 'reservation_confirmation.html', double_booking_day)
             
         else:
-            # try:
             new_booking = Booking(name=name, last_name=surname, party_size=people, prefix=prefix, phone=phone, date=requested_date, start_time=requested_time, email=email, excerpt=comment)
             new_booking.save()
             booking_id = new_booking.id
@@ -85,13 +84,7 @@ class FormView(View):
                     # Attach booking to user's profile
                     new_booking.user_profile = user_profile
                     new_booking.save()
-                # else:
-                #     # attached possible bookings made as incognito to the new user
-                #     existing_user_booking = Booking.objects.filter(email=user.email).all()
-                #     user_bookings_non_attached.user_profile = profile
-                #     user_bookings_non_attached.save()
 
-                    
                 print("BOOKING SUCCESSFUL")
                 booking_successful = True
                 booking_successful = {
@@ -106,10 +99,6 @@ class FormView(View):
                 'fully_booked': fully_booked
             }
                 return render(request, 'reservation_confirmation.html', fully_booked)
-            # except Exception as e:
-            #     print(f'Cannot make the request: Error{e}')
-            #     return redirect(reverse('home'))
-
         
         return render(request, 'index.html')
 
@@ -118,6 +107,8 @@ class ReservationConfirmation(View):
 
     def get(self, request):
         return render(request, 'reservation_confirmation.html')
+
+
 
 
 

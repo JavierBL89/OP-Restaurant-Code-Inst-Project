@@ -93,8 +93,8 @@
                     <div class="collapse" id="cancel_{{ booking.pk }}">
                       <div class="card card-body text-start d--lg-flex">
                         <small class="info mb-2">For any updates in your booking <br>please contact us!</small>
-                        {% if user_bookings %}
-                        {% for booking in user_bookings %}
+                        {% if next_comming_bookings %}
+                        {% for booking in next_comming_bookings %}
                         <div class="row">
                           <div class="col-5 col-md-4">
                             <p>Name</p>
