@@ -27,7 +27,7 @@ class BookingForm(forms.ModelForm):
             'prefix': '',
             'phone': 'Phone number',
             'date': 'Date',
-            'start_time': 'Time slot',
+            'start_time': '',
             'email': 'Email',
             'excerpt': 'Booking comment',
         }
@@ -36,6 +36,8 @@ class BookingForm(forms.ModelForm):
         self.fields['excerpt'].widget.attrs['rows'] = '2'
         for field in self.fields:
             if self.fields[field].required:
+                self.fields['prefix'].widget.attrs['placeholder'] = False
+                self.fields['start_time'].widget.attrs['placeholder'] = False
                 placeholder = f'{placeholders[field]} *'
             else:
                 placeholder = placeholders[field]

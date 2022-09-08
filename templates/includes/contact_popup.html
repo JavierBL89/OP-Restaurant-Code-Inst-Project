@@ -17,18 +17,18 @@
               <div class="col-12">
                 <p>Please fill up all the fields</p>
               </div>
-              <form action="{% url 'contact' %}" method="POST" id="contact-form">
-                {% csrf_token %}
-                <div class="col-12 d-flex flex-column">
-                   {{ contact_form.contact_name  | as_crispy_field }}
-                   {{ contact_form.contact_email  | as_crispy_field }}
-                   {{ contact_form.contact_comment  | as_crispy_field }}
-                </div>
-                <div class="booking-button-box text-center">
-                    <button type="submit" class="btn btn-outline-secondary">Submit</button>
+                <form action="{% url 'contact' %}" method="POST" id="contact-form">
+                  {% csrf_token %}
+                  <div class="col-12 d-flex flex-column">
+                    {{ contact_form.contact_name  | as_crispy_field }}
+                    {{ contact_form.contact_email  | as_crispy_field }}
+                    {{ contact_form.contact_comment  | as_crispy_field }}
+                  <div class="booking-button-box text-center">
+                      <button type="submit" class="btn btn-outline-secondary">Submit</button>
                   </div>
                 </div>
               </form>
+              </div>
             </div>
           </div>
       </div>

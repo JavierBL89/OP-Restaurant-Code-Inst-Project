@@ -194,7 +194,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/
 </section>
 <div class="separator wow fadeInDown" data-wow-duration="0.5s"></div>
 
-<!-------------------------- RESERVATION FORM ---------------------------->
+<!-------------------------- GALLERY ---------------------------->
 <section id="gallery">
   <div class="container-fluid media-container">
     <div class="headding text-center wow fadeInDown" data-wow-duration="1s">
@@ -373,14 +373,106 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/
 </section>
 <div class="separator wow fadeInDown mb-5" data-wow-duration="0.5s"></div>
 
-<!----------- CONTACT FORM POPUP --------->
+<!--------------------- FOOTER --------------------->
+<footer id="footer">
+  <div class="container-fluid wow fadeInDown" id="footer-container" data-wow-duration="1s">
+    <div class="row text-center">
+      <div class="col-6">
+        <ul class="ps-0">
+          <li class="footer-link"><a href="#about">Style</a></li>
+          <li class="footer-link"><a href="#gallery">Gallery</a></li>
+        </ul>
+      </div>
+      <div class="col-6">
+        <ul class="ps-0">
+          <li class="footer-link"><a href="#menus">Menus</a></li>
+          <li class="footer-link"><a href="#reservations">Bookings</a></li>
+          <li class="footer-link"><a {% if user.is_authenticated %} href="{% url 'profile' %}" {% else %} href="{% url 'account_login' %}" {% endif %}>Manage my bookings</a></li>
+        </ul>
+      </div>
+      <div class="col-12 d-flex text-center social-icons-box">
+        <div class="insta-icon"><a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram-square fa-xl"></i></a></div>
+        <div class="twiter-icon"><a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-twitter-square fa-xl"></i></a></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col dots-box d-flex">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+    </div>
+    <div class="row d-none d-lg-block contact-wraper">
+      <div class="col-12 d-flex">
+        <div id="map"></div>
+        <div class="contact-container mt-4">
+          <div class="phone d-inline-flex"><i class="fa-solid fa-phone phone-icon fa-lg"></i>
+            <p>+356248856</p>
+          </div>
+          <div class="email d-inline-flex"><i class="fa-solid fa-envelope email-icon fa-lg"></i>
+            <p class="send-email">oryopochodublin@venue.com</p>
+          </div>
+          <div class="house d-inline-flex">
+            <p><i class="fa-solid fa-house-chimney house-icon fa-lg"></i>
+              <a class="text-decoration-underline" target="_blank"
+                href="https://www.google.com/maps/place/118+R810,+Usher's+Quay,+Dublin,+Ireland/@53.3432007,-6.2801334,18.82z/data=!4m5!3m4!1s0x48670c25154703e3:0x4a2ae309715287cd!8m2!3d53.3430573!4d-6.2799739?hl=en">
+                13. Marrowbone Lane. Dublin 8
+              </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-5 d-block d-lg-none text-center d-flex contact-wraper-mobile">
+      <div class="col-6">
+        <div class="phone"><i class="fa-solid fa-phone phone-icon fa-lg"></i>
+          <p>+353 0486248856</p>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="house"><i class="fa-solid fa-house-chimney house-icon fa-lg"></i> </div>
+        <a id="location-link-footer" href="https://www.google.com/maps/place/118+R810,+Usher's+Quay,+Dublin,+Ireland/@53.3432007,-6.2801334,18.82z/data=!4m5!3m4!1s0x48670c25154703e3:0x4a2ae309715287cd!8m2!3d53.3430573!4d-6.2799739?hl=en">
+          13. Marrowbone Lane. Dublin 8
+        </a>
+      </div>
+      <div class="email"><i class="fa-solid fa-envelope email-icon fa-lg"></i>
+        <p class="send-email">oryopochodublin@venue.com</p>
+      </div>
+    </div>
+  </div>
+  <div class="separator wow fadeInDown mt-5" data-wow-duration="0.5s"></div>
+  <div class="row g-0 text-center copy-right">
+    <p>Copy Right <span id="year"></span></p>
+  </div>
+</footer>
+
+<!---- CONTACT FORM MODAL ------>
 {% include 'includes/contact_popup.html' %}
 
-{% endblock %}
-
-
 {% block postloadjs %}
-{{ block.super }}
-<script type="text/javascript" src="{% static 'js/validation.js' %}"></script>
+<!--------------------- SCRIP TAGS --------------------->
+<script src="{% static 'js/mouseover.js' %}"></script>
+<script src="{% static 'js/wow.min.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+<script src="{% static 'js/validation.js' %}"></script>
+<script src="{% static 'js/contactForm.js' %}"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key={{ maps_api_key }}&callback=initMap&v=weekly" defer></script>
+<script src="{% static 'js/initMap.js' %}"></script>
+
+<!------ COUNT CURRENT YEAR ------>
+<script>
+  const currentYear = new Date().getFullYear();
+  $("#year").text(currentYear)
+</script>
+
+<!------ CLOSE MESSAGES BOX ------>
+<script>
+  const closeMessage = $('#close-message');
+  closeMessage.on('click', function() {
+    $('.message-container').fadeOut()
+  });
+</script>
+{% endblock %}
 
 {% endblock %}
+

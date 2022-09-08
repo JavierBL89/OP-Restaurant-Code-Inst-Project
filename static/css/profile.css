@@ -137,7 +137,8 @@ body{
       font-size: 0.750rem;
     }
 
-    .cancelation-button-box button[type="submit"]{
+    .cancelation-button-box button[type="submit"],
+    .update-profile-box button[type="submit"]{
       color: rgb(219, 219, 219);
       padding-top: 5px;
       height: 30px;
@@ -148,12 +149,18 @@ body{
       width: 90%;
     }
 
-    .cancelation-button-box button[type="submit"]:hover{
+    .update-profile-box button[type="submit"]{
+      width: 40%;
+    }
+
+    .cancelation-button-box button[type="submit"]:hover,
+    .update-profile-box button[type="submit"]:hover{
       color: rgb(255, 177, 108);
       border-color: rgb(255, 177, 108);;
     }
 
-    .cancelation-button-box button[type="submit"]:focus{
+    .cancelation-button-box button[type="submit"]:focus,
+    .update-profile-box button[type="submit"]:focus{
       color: rgb(255, 177, 108);
       border-color: rgb(255, 177, 108);;
       letter-spacing: 1px;
@@ -216,7 +223,6 @@ body{
       width: 100%;
       min-height: 100%;
       padding-top: 1%;
-      /* padding-bottom: 100px; */
     }
   
     #update-confirm-container .back-home{
@@ -268,7 +274,8 @@ body{
       font-size: 0.750rem;
     }
 
-    .cancelation-button-box button[type="submit"]{
+    .cancelation-button-box button[type="submit"],
+    .update-profile-box button[type="submit"]{
       padding-top: 5px;
       color: rgb(219, 219, 219);
       height: 30px;
@@ -279,12 +286,18 @@ body{
       width: 50%;
     }
 
-    .cancelation-button-box button[type="submit"]:hover{
+    .update-profile-box button[type="submit"]{
+      width: 50%;
+    }
+
+    .cancelation-button-box button[type="submit"]:hover,
+    .update-profile-box button[type="submit"]:hover{
       color: rgb(255, 177, 108);
       border-color: rgb(255, 177, 108);;
     }
 
-    .cancelation-button-box button[type="submit"]:focus{
+    .cancelation-button-box button[type="submit"]:focus,
+    .update-profile-box button[type="submit"]:focus{
       color: rgb(255, 177, 108);
       border-color: rgb(255, 177, 108);;
       letter-spacing: 1px;
@@ -301,11 +314,6 @@ body{
     }
 
   /************ UPDATE AND CANCELATION CONFIRMATION PAGES */
-  /* .overlay-container-cancel-page{
-       width: 100%;
-      padding-top: 1%;
-      padding-bottom: 80px;
-  } */
 
   #cancel-confirm-container, #update-confirm-container{
     background-color: rgb(50, 50, 50);
@@ -348,10 +356,6 @@ body{
       min-height: 100%;
       padding-top: 1%;
     } 
-
-    #update-confirm-container .back-home{
-      padding-bottom: 5px;
-    }
 
      /********************** PROFILE PAGE*/
      #profile-container {
@@ -400,7 +404,8 @@ body{
       width: 60%;
     }
 
-    .cancelation-button-box button[type="submit"]{
+    .cancelation-button-box button[type="submit"],
+    .update-profile-box button[type="submit"]{
       padding-top: 5px;
       color: rgb(219, 219, 219);
       height: 30px;
@@ -411,12 +416,17 @@ body{
       width: 50%;
     }
 
-    .cancelation-button-box button[type="submit"]:hover{
+    .update-profile-box button[type="submit"]{
+      width: 20%;
+    }
+    .cancelation-button-box button[type="submit"]:hover,
+    .update-profile-box  button[type="submit"]:hover{
       color: rgb(255, 177, 108);
       border-color: rgb(255, 177, 108);;
     }
 
-    .cancelation-button-box button[type="submit"]:focus{
+    .cancelation-button-box button[type="submit"]:focus
+    .update-profile-box  button[type="submit"]:focus{
       color: rgb(255, 177, 108);
       border-color: rgb(255, 177, 108);;
       letter-spacing: 1px;
@@ -450,6 +460,10 @@ body{
   
   #update-confirm-container ~ #footer-container{
     margin-top: 200px;
+  }
+
+  #update-confirm-container .back-home{
+    padding-bottom: 5px;
   }
 
   #cancel-confirm-container h6, #update-confirm-container h6 {

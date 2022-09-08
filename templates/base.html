@@ -3,6 +3,7 @@
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,191 +11,103 @@
   <meta name="keyword:" content="">
   <title>One Pico | Finne Dinning Restaurant</title>
 
-  
+
   {% block core_css %}
   <!-- BOOTSTRAP  -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous" defer></script>
-  
+
   <!-- STYLESHEET -->
-   <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
   {% endblock %}
 
   {% block extra_css %}
   {% endblock %}
-  
-
-<!-- FONTS -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Roboto+Slab:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 
 
-<!-- CDN JQUERY-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Roboto+Slab:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 
 
-<!-- ICONS -->
+  <!-- CDN JQUERY-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+  <!-- ICONS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
-<!-------- FAVICONS ---------->
-<link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/apple-touch-icon.png' %}">
-<link rel="icon" type="image/x-icon" sizes="32x32" href="{% static 'images/favicon-32x32.png' %}">
-<link rel="icon" type="image/px-icon" sizes="16x16" href="{% static 'images/favicon-16x16.png' %}">
+  <!-------- FAVICONS ---------->
+  <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/apple-touch-icon.png' %}">
+  <link rel="icon" type="image/x-icon" sizes="32x32" href="{% static 'images/favicon-32x32.png' %}">
+  <link rel="icon" type="image/px-icon" sizes="16x16" href="{% static 'images/favicon-16x16.png' %}">
 </head>
+
 <body>
-    <!--------------------- HEADER --------------------->
-    <header class="header">
-      <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-            <div class="flex-row d-inline-flex text-center logo {% if home %}wow animate__bounceIn{% else %}{% endif %}" data-wow-delay="2s">
-              <h2 class="d-inline ">OP</h2>
-              <p class="d-inline">Fine Dinning Experience</p>
+  <!--------------------- HEADER --------------------->
+  <header class="header">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <div class="flex-row d-inline-flex text-center logo {% if home %}wow animate__bounceIn{% else %}{% endif %}" data-wow-delay="2s">
+            <h2 class="d-inline ">OP</h2>
+            <p class="d-inline">Fine Dinning Experience</p>
           </div>
         </a>
         <div class="separator d-sm-block d-lg-none wow animate__fadeIn" data-wow-delay="1.5s"></div>
-           <div class="row ">
-            {% if home %}
-            <ul class="navbar-nav ms-auto flex-row">
-              <div class="col-lg-6 d-lg-flex d-sm-flex text-center">
-                <li class="nav-item" id="dark-navbar-link">
-                  <a class="nav-link wow animate__fadeIn" data-wow-delay="0.5s" aria-current="page" href="#">STYLE</a>
-                </li>
-                <li class="w-100 nav-item">
-                  <a class="nav-link wow animate__fadeIn" data-wow-delay="0.5s" id="gallery_link" href="#gallery">GALLERY</a>
-                </li>
-          </div>
-          <div class="col-lg-6 d-lg-flex d-sm-flex text-center">
-                <li class="nav-item">
-                  <a class="nav-link wow animate__fadeIn" data-wow-delay="1s" href="#menus">MENUS</a>
-                </li>             
-                <li class="nav-item">
-                  <a class="nav-link wow animate__fadeIn" data-wow-delay="1s" aria-current="page" {% if user.is_authenticated %} href="{% url 'profile' %}"{% else %} href="{% url 'account_login' %}"{% endif %}>MANAGE MY BOOKINGS</a>
-                </li>              
+        <div class="row">
+          {% if home %}
+          <div class="col-12 col-lg-6 d-flex">
+            <ul class="navbar-nav flex-row ">
+              <li class="nav-item pe-4 pe-md-4 pe-lg-0" id="dark-navbar-link">
+                <a class="nav-link wow animate__fadeIn" data-wow-delay="0.5s" aria-current="page" href="#">STYLE</a>
+              </li>
+
+              <li class="nav-item ps-4 ps-md-4 ps-lg-0">
+                <a class="nav-link wow animate__fadeIn" data-wow-delay="0.5s" id="gallery_link" href="#gallery">GALLERY</a>
+              </li>
             </ul>
-            {% else %}
-            <ul class="navbar-nav ms-auto flex-row">
+          </div>
+          <div class="col-12 col-lg-6 d-flex navbar-column">
+            <ul class="navbar-nav flex-row">
+              <li class="nav-item">
+                <a id="navbar-menu-link" class="nav-link wow animate__fadeIn" data-wow-delay="1s" href="#menus">MENUS</a>
+              </li>
+
+              <li class="nav-item move">
+                <a class="text-center nav-link wow animate__fadeIn" data-wow-delay="1s" aria-current="page" {% if user.is_authenticated %} href="{% url 'profile' %}" {% else %} href="{% url 'account_login' %}" {% endif %}>MANAGE MY BOOKINGS</a>
+              </li>
+            </ul>
+          </div>
+
+          {% else %}
+          <div class="col-12">
+            <ul class="navbar-nav flex-row" id="puta">
               {% if user.is_authenticated %}
               <li class="nav-item">
-                <a class="nav-link"  id="logout" href="{% url 'account_logout' %}">LOGOUT</a>
+                <a class="nav-link" id="logout" href="{% url 'account_logout' %}">LOGOUT</a>
               </li>
               {% endif %}
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'home' %}">HOME</a>
               </li>
             </ul>
-            {% endif %}
           </div>
-           </div>
-           
+          {% endif %}
         </div>
-      </nav>
-    </header>
-    <div class="hero-container">
-        <div class="bg-image"></div>
-        <!-- {% include 'includes/messages.html' %} -->
-    </div>
-    {% block content %}
-
-    {% endblock content %}
-
-  <!--------------------- FOOTER --------------------->
-  <footer id="footer">
-    <div class="container-fluid wow fadeInDown" id="footer-container" data-wow-duration="1s">
-        <div class="row text-center">
-            <div class="col-6">
-              <ul class="ps-0">
-              <li class="footer-link"><a href="#about">Style</a></li>
-              <li class="footer-link"><a href="#gallery">Gallery</a></li>
-            </ul>
-            </div>
-            <div class="col-6">
-              <ul class="ps-0">
-                <li class="footer-link"><a href="#menus">Menus</a></li>
-                 <li class="footer-link"><a href="#reservations">Bookings</a></li>
-                 <li class="footer-link"><a {% if user.is_authenticated %} href="{% url 'profile' %}"{% else %} href="{% url 'account_login' %}"{% endif %}>Manage my bookings</a></li>
-              </ul> 
-            </div>       
-            <div class="col-12 d-flex text-center social-icons-box">
-              <div class="insta-icon"><a href="https://www.instagram.com/" target="_blank" ><i class="fa-brands fa-instagram-square fa-xl"></i></a></div>
-              <div class="twiter-icon"><a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-twitter-square fa-xl"></i></a></div>
-          </div>
-    </div>
-    <div class="row">
-      <div class="col dots-box d-flex">
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
       </div>
-    </div>
-       <div class="row d-none d-lg-block contact-wraper">
-         <div class="col-12 d-flex">
-          <div id="map"></div>
-          <div class="contact-container mt-4">
-            <div class="phone d-inline-flex"><i class="fa-solid fa-phone phone-icon fa-lg"></i> <p>+356248856</p></div>
-            <div class="email d-inline-flex"><i class="fa-solid fa-envelope email-icon fa-lg"></i> <p class="send-email">oryopochodublin@venue.com</p></div>
-            <div class="house d-inline-flex">
-              <p><i class="fa-solid fa-house-chimney house-icon fa-lg"></i>
-                <a class="text-decoration-underline" target="_blank" href="https://www.google.com/maps/place/118+R810,+Usher's+Quay,+Dublin,+Ireland/@53.3432007,-6.2801334,18.82z/data=!4m5!3m4!1s0x48670c25154703e3:0x4a2ae309715287cd!8m2!3d53.3430573!4d-6.2799739?hl=en">
-                  13. Marrowbone Lane. Dublin 8
-                 </a>
-            </div>
-        </div>
-         </div>
-       </div>
-       <div class="row mt-5 d-block d-lg-none text-center d-flex contact-wraper-mobile">
-        <div class="col-6">
-          <div class="phone"><i class="fa-solid fa-phone phone-icon fa-lg"></i> <p>+353 0486248856</p></div>
-        </div>
-        <div class="col-6">        
-         <div class="house"><i class="fa-solid fa-house-chimney house-icon fa-lg"></i> </div>
-             <a id="location-link-footer" href="https://www.google.com/maps/place/118+R810,+Usher's+Quay,+Dublin,+Ireland/@53.3432007,-6.2801334,18.82z/data=!4m5!3m4!1s0x48670c25154703e3:0x4a2ae309715287cd!8m2!3d53.3430573!4d-6.2799739?hl=en">
-              13. Marrowbone Lane. Dublin 8
-             </a>
-         </div>
-         <div class="email"><i class="fa-solid fa-envelope email-icon fa-lg"></i> <p class="send-email">oryopochodublin@venue.com</p></div>
-       </div>
-      </div>
-      <div class="separator wow fadeInDown mt-5" data-wow-duration="0.5s"></div>
-        <div class="row g-0 text-center copy-right">
-            <p>Copy Right <span id="year"></span></p>
-        </div>
-    </div>
+    </nav>
+  </header>
+  <div class="hero-container">
+    <div class="bg-image"></div>
+    <!-- {% include 'includes/messages.html' %} -->
+  </div>
+  {% block content %}
 
-</footer>
+  {% endblock content %}
 
-<!---- CONTACT FORM MODAL ------>
-{% include 'includes/contact_popup.html' %}
-
-{% block postloadjs %}
-<!--------------------- SCRIP TAGS --------------------->
-<script src="{% static 'js/mouseover.js' %}"></script>
-<script src="{% static 'js/wow.min.js' %}"></script>
-<script src="{% static 'js/main.js' %}"></script>
-<script src="{% static 'js/contactForm.js' %}"></script>
-<script 
-      src="https://maps.googleapis.com/maps/api/js?key={{ maps_api_key }}&callback=initMap&v=weekly"
-      defer
-></script>
-<script src="{% static 'js/initMap.js' %}"></script>
-<!-- AIzaSyAcWcFqwTSIkXjl0B9a8i4J6aVpIWkWk6c -->
-<!------ COUNT CURRENT YEAR ------>
-    <script>
-      const currentYear = new Date().getFullYear();
-      $("#year").text(currentYear)
-  </script>
-
-<!------ CLOSE MESSAGES BOX ------>
-<script>
-  const closeMessage = $('#close-message');
-  closeMessage.on('click', function(){
-    $('.message-container').fadeOut()
-  })
-</script>
+  
 </body>
-
-{% endblock %}
 </html>

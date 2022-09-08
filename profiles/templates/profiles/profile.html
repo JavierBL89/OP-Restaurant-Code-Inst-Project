@@ -22,7 +22,7 @@
         <div class="col mb-2">
           <!------- PERSONAL INFO COLLAPSE ------>
           <div class="personal-info-box text-start">
-            <a class="" type="button" role="button" data-bs-toggle="collapse" href="#personalInfo" aria-expanded="false" aria-controls="collapseExample">
+            <a class="" role="button" data-bs-toggle="collapse" href="#personalInfo" aria-expanded="false" aria-controls="collapseExample">
               <h6 class="text-muted">Personal info <i class="fa-solid fa-angle-down"></i></h6>
             </a>
             <hr class="hr-title mt-0">
@@ -42,7 +42,7 @@
                 </div>
                 <!------------ UPDATE INFO COLLAPSE ------------>
                 <div class="update-profile-box text-start">
-                  <a class="" type="button" role="button" data-bs-toggle="collapse" href="#updateProfile" aria-expanded="false" aria-controls="collapseExample">Update info details</a>
+                  <a role="button" data-bs-toggle="collapse" href="#updateProfile" aria-expanded="false" aria-controls="collapseExample">Update info details</a>
                   <div class="collapse" id="updateProfile">
                     <div class="card card-body text-start d-lg-flex">
                       <div class="row">
@@ -53,7 +53,7 @@
                             {{ profile_form.last_name | as_crispy_field }}
                             {{ profile_form.email | as_crispy_field }}
                           </div>
-                          <button type="submit" class="btn btn-outline-secondary cancel-booking">Update</a>
+                          <button type="submit" class="btn btn-outline-secondary cancel-booking">Update</button>
                         </form>
                       </div>
                     </div>
@@ -61,9 +61,9 @@
                 </div>
                 <!------------ DELETE ACCOUNT COLLAPSE ------------>
           <div class="delete-button-box text-start mt-2">
-            <a class="text-danger" type="button" role="button" data-bs-toggle="collapse" href="#puta" aria-expanded="false" aria-controls="collapseExample">Delete account</a>
+            <a class="text-danger" role="button" data-bs-toggle="collapse" href="#deletAccount" aria-expanded="false" aria-controls="collapseExample">Delete account</a>
             <p class="info">(Next comming reservations won't be canceled)</p>
-            <div class="collapse" id="puta">
+            <div class="collapse" id="deletAccount">
               <div class="card card-body text-start d--lg-flex">
                 <div class="row">
                   <div class="col-6">
@@ -73,7 +73,6 @@
                     <a href="{% url 'delete_profile' user.pk %}" class="btn btn-outline-secondary cancel-booking">Yes, I am</a>
                   </div>
                 </div>
-                </form>
               </div>
             </div>
             </div>
@@ -86,7 +85,7 @@
               <div class="col">
                 <div class="row d-flex text-start ms-0 mt-3" id="next-bookings-container">
                   <div class="next-booking-box px-0 text-start">
-                    <a class="" type="button" role="button" data-bs-toggle="collapse" href="#cancel_{{ booking.pk }}" aria-expanded="false" aria-controls="collapseExample">
+                    <a class="" role="button" data-bs-toggle="collapse" href="#cancel_{{ booking.pk }}" aria-expanded="false" aria-controls="collapseExample">
                       <h6 class="text-muted">Next bookings <i class="fa-solid fa-angle-down"></i></h6>
                     </a>
                     <hr class="hr-title mt-0">
@@ -124,7 +123,7 @@
                           </div>
                           <!------------ CANCEL BOOKING COLLAPSE ------------>
                           <div class="cancelation-button-box text-start">
-                            <a class="text-danger" type="button" role="button" data-bs-toggle="collapse" href="#cancel_{{ booking.pk }}" aria-expanded="false" aria-controls="collapseExample">Cancel reservation</a>
+                            <a class="text-danger" role="button" data-bs-toggle="collapse" href="#cancel_{{ booking.pk }}" aria-expanded="false" aria-controls="collapseExample">Cancel reservation</a>
                             <div class="collapse" id="cancel_{{ booking.pk }}">
                               <div class="card card-body text-start">
                                 <div class="row d-flex d-flex-row">
@@ -132,7 +131,7 @@
                                     <p class="d-flex-inline">Are you sure?</p>
                                   </div>
                                   <div class="col-6">
-                                    <form action="{% url 'cancel_booking' booking.id %}" method="POST" id="cancel-booking-form">
+                                    <form class="cancel-booking-form" action="{% url 'cancel_booking' booking.id %}" method="POST">
                                       {% csrf_token %}
                                       <button type="submit" class="btn btn-outline-secondary cancel-booking">Yes, I am</button>
                                     </form>
@@ -164,10 +163,12 @@
     </div>
   </div>
   </div>
-</div>
-  {% endblock %}
+
+  <!----------- FOOTER ----------->
+  {% include 'includes/footer.html' %}
 
   {% block postloadjs %}
+  {{ block.super }}
   <script type="text/javascript">
 
       jQuery(function(){
@@ -180,4 +181,5 @@
      });
 
   </script>
+  {% endblock %}
   {% endblock %}

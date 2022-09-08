@@ -1,6 +1,8 @@
 /******************************* COMMON PROPERTIES*/
 
-
+ ul{
+  margin: 0 auto;
+}
   .bg-image{
     position: absolute;
     z-index: 0;
@@ -492,6 +494,20 @@ form label {
       margin-left: 5px;
     }
   
+    .navbar-column{
+      padding-left: 10%;
+      padding-right: 0;
+    }
+
+    .move{
+      width: 200px;
+    }
+    
+    #navbar-menu-link{
+      padding-right: 60px;
+      padding-left: 0px;
+    }
+
     div .bg-image {
       width: 100%;
       height: 250px;
@@ -802,6 +818,7 @@ form label {
   /******************************************************************** TABLET SCREEN */
   @media only screen and (min-width:640px) and (max-width:950px) {
   
+
     /********************* HEADDINGS*/
     .headding h5 {
       margin-top: 100px;
@@ -854,6 +871,15 @@ form label {
       margin-left: 5px;
     }
 
+    .navbar-column{
+      padding-left: 27%;
+      padding-right: 20%;
+    }
+
+    .move{
+      width: 260px
+    }
+
    nav .separator{
      margin-top: 30px;
      margin-bottom: 10px;
@@ -863,7 +889,6 @@ form label {
       width: 100%;
       height: 500px;
       z-index: -1;
-
     }
   
     /*********************** RESERVATIONS SECTION *****/
