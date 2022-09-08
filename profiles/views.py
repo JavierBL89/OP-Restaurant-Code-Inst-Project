@@ -10,12 +10,14 @@ from onepico.models import Booking
 from .models import UserProfile
 from .forms import UserProfileForm
 from django.contrib.auth.decorators import login_required
+
 # Create your views here.
+
 
 class Profile(View):
 
     def get(self, request):
-        
+
         if request.user.is_authenticated:
             next_comming_bookings = []
             current_date = date.today()
@@ -23,7 +25,8 @@ class Profile(View):
             user = get_object_or_404(User, pk=user_id)
             profile = get_object_or_404(UserProfile, user=user)
             # attached possible bookings made as incognito to the new user
-            user_bookings_non_attached = Booking.objects.filter(email=user.email).all()
+            user_bookings_non_attached = Booking.objects. \
+                filter(email=user.email).all()
             print(user_bookings_non_attached)
 
             for booking in user_bookings_non_attached:
@@ -68,7 +71,7 @@ class UpdateConfirmation(View):
 class CancelationConfirmation(View):
 
     def get(self, request):
-        
+
         if request.user.is_authenticated:
             return render(request, 'profiles/cancelation_confirmation.html')
         else:
@@ -78,7 +81,7 @@ class CancelationConfirmation(View):
 class UpdateProfile(UpdateView):
 
     model = User
-    fields  = ['first_name', 'last_name', 'email']
+    fields = ['first_name', 'last_name', 'email']
     success_url = reverse_lazy('update_confirmation')
     template_name = 'profiles/update_confirmation.html'
 
@@ -88,4 +91,3 @@ class BookingCancelation(DeleteView):
     model = Booking
     success_url = reverse_lazy('cancelation_confirmation')
     template_name = "profiles/cancelation_confirmation.html"
-

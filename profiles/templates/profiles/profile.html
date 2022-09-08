@@ -22,7 +22,7 @@
         <div class="col mb-2">
           <!------- PERSONAL INFO COLLAPSE ------>
           <div class="personal-info-box text-start">
-            <a class="" role="button" data-bs-toggle="collapse" href="#personalInfo" aria-expanded="false" aria-controls="collapseExample">
+            <a class="" role="button" data-bs-toggle="collapse" href="#personalInfo" aria-expanded="false" aria-controls="personalInfo">
               <h6 class="text-muted">Personal info <i class="fa-solid fa-angle-down"></i></h6>
             </a>
             <hr class="hr-title mt-0">
@@ -42,7 +42,7 @@
                 </div>
                 <!------------ UPDATE INFO COLLAPSE ------------>
                 <div class="update-profile-box text-start">
-                  <a role="button" data-bs-toggle="collapse" href="#updateProfile" aria-expanded="false" aria-controls="collapseExample">Update info details</a>
+                  <a role="button" data-bs-toggle="collapse" href="#updateProfile" aria-expanded="false" aria-controls="updateProfile">Update info details</a>
                   <div class="collapse" id="updateProfile">
                     <div class="card card-body text-start d-lg-flex">
                       <div class="row">
@@ -61,7 +61,7 @@
                 </div>
                 <!------------ DELETE ACCOUNT COLLAPSE ------------>
           <div class="delete-button-box text-start mt-2">
-            <a class="text-danger" role="button" data-bs-toggle="collapse" href="#deletAccount" aria-expanded="false" aria-controls="collapseExample">Delete account</a>
+            <a class="text-danger" role="button" data-bs-toggle="collapse" href="#deletAccount" aria-expanded="false" aria-controls="deletAccount">Delete account</a>
             <p class="info">(Next comming reservations won't be canceled)</p>
             <div class="collapse" id="deletAccount">
               <div class="card card-body text-start d--lg-flex">
@@ -85,11 +85,11 @@
               <div class="col">
                 <div class="row d-flex text-start ms-0 mt-3" id="next-bookings-container">
                   <div class="next-booking-box px-0 text-start">
-                    <a class="" role="button" data-bs-toggle="collapse" href="#cancel_{{ booking.pk }}" aria-expanded="false" aria-controls="collapseExample">
+                    <a class="" role="button" data-bs-toggle="collapse" href="#nextComing-bookings" aria-expanded="false" aria-controls="nextComing-bookings">
                       <h6 class="text-muted">Next bookings <i class="fa-solid fa-angle-down"></i></h6>
                     </a>
                     <hr class="hr-title mt-0">
-                    <div class="collapse" id="cancel_{{ booking.pk }}">
+                    <div class="collapse" id="nextComing-bookings">
                       <div class="card card-body text-start d--lg-flex">
                         <small class="info mb-2">For any updates in your booking <br>please contact us!</small>
                         {% if next_comming_bookings %}
@@ -123,7 +123,7 @@
                           </div>
                           <!------------ CANCEL BOOKING COLLAPSE ------------>
                           <div class="cancelation-button-box text-start">
-                            <a class="text-danger" role="button" data-bs-toggle="collapse" href="#cancel_{{ booking.pk }}" aria-expanded="false" aria-controls="collapseExample">Cancel reservation</a>
+                            <a class="text-danger" role="button" data-bs-toggle="collapse" href="#cancel_{{ booking.pk }}" aria-expanded="false" aria-controls="cancel_{{ booking.pk }}">Cancel reservation</a>
                             <div class="collapse" id="cancel_{{ booking.pk }}">
                               <div class="card card-body text-start">
                                 <div class="row d-flex d-flex-row">
@@ -172,10 +172,10 @@
   <script type="text/javascript">
 
       jQuery(function(){
+        
         const profileContainer = $("#profile-container");
-
         setTimeout(function(){
-          profileContainer.fadeIn("slow")
+          profileContainer.fadeIn("slow");
         }, 0.800);
 
      });

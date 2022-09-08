@@ -84,14 +84,14 @@
   <!------ COUNT CURRENT YEAR ------>
   <script>
     const currentYear = new Date().getFullYear();
-    $("#year").text(currentYear)
+    $("#year").text(currentYear);
   </script>
   
   <!------ CLOSE MESSAGES BOX ------>
   <script>
     const closeMessage = $('#close-message');
     closeMessage.on('click', function() {
-      $('.message-container').fadeOut()
+      $('.message-container').fadeOut();
     });
   </script>
   {% endblock %}

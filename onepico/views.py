@@ -11,7 +11,7 @@ from contact.forms import ContactForm
 from django.http import HttpResponseRedirect
 from django.conf import settings
 from datetime import datetime
-from .reservation import  get_table_available, check_double_booking_date
+from .reservation import get_table_available, check_double_booking_date
 from django.contrib import messages
 
 
@@ -23,11 +23,9 @@ class HomePage(View):
         form = BookingForm()
         contact_form = ContactForm()
         home = True
-        maps_api_key = settings.MAPS_API_KEY
         context = {
             'form': form,
             'contact_form': contact_form,
-            'maps_api_key': maps_api_key,
             'home': home
         }
 
@@ -38,7 +36,6 @@ class FormView(View):
 
     def get(self, request):
         return render(request, 'reservation_confirmation.html')
-
 
     def post(self, request, *args, **kwargs):
         name = request.POST['name']
@@ -56,25 +53,41 @@ class FormView(View):
         if 'booking_comments' in request.POST:
             comment = request.POST['booking_comments']
 
-        
-        if check_double_booking_date(people, requested_date, requested_time, phone) == False:
+        if check_double_booking_date(people,
+                                     requested_date,
+                                     requested_time,
+                                     phone) == False:
             print("BOOKING CANCELED!! DOUBLE BOOKING DAY")
             double_booking_day = True
-            customer = Booking.objects.filter(phone=phone,date=requested_date).all()
+            customer = Booking.objects.filter(phone=phone,
+                                              date=requested_date).all()
             double_booking_day = {
                 'double_booking_day': double_booking_day,
                 'customer': customer
             }
-            return render(request, 'reservation_confirmation.html', double_booking_day)
-            
+            return render(request,
+                          'reservation_confirmation.html',
+                          double_booking_day)
+
         else:
-            new_booking = Booking(name=name, last_name=surname, party_size=people, prefix=prefix, phone=phone, date=requested_date, start_time=requested_time, email=email, excerpt=comment)
+            new_booking = Booking(name=name,
+                                  last_name=surname,
+                                  party_size=people,
+                                  prefix=prefix,
+                                  phone=phone,
+                                  date=requested_date,
+                                  start_time=requested_time,
+                                  email=email, excerpt=comment)
             new_booking.save()
             booking_id = new_booking.id
-            if get_table_available(people, requested_date, requested_time, booking_id) == True:
+            if get_table_available(people,
+                                   requested_date,
+                                   requested_time,
+                                   booking_id) == True:
 
                 if request.user.is_authenticated:
-                    user_profile = get_object_or_404(UserProfile, user=request.user)
+                    user_profile = get_object_or_404(UserProfile,
+                                                     user=request.user)
                     print('puta')
                     # Save info into user's account
                     user = get_object_or_404(User, pk=request.user.id)
@@ -88,18 +101,22 @@ class FormView(View):
                 print("BOOKING SUCCESSFUL")
                 booking_successful = True
                 booking_successful = {
-                'booking_successful': booking_successful
-            }
-                return render(request, 'reservation_confirmation.html', booking_successful)
+                    'booking_successful': booking_successful
+                }
+                return render(request,
+                              'reservation_confirmation.html',
+                              booking_successful)
             else:
                 new_booking.delete()
                 print("FULLY BOOKED")
                 fully_booked = True
                 fully_booked = {
-                'fully_booked': fully_booked
-            }
-                return render(request, 'reservation_confirmation.html', fully_booked)
-        
+                    'fully_booked': fully_booked
+                }
+                return render(request,
+                              'reservation_confirmation.html',
+                              fully_booked)
+
         return render(request, 'index.html')
 
 
@@ -107,16 +124,3 @@ class ReservationConfirmation(View):
 
     def get(self, request):
         return render(request, 'reservation_confirmation.html')
-
-
-
-
-
-
-
-
-
-
-
-
-

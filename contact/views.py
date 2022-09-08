@@ -16,7 +16,7 @@ class Contact(View):
         contact_name = request.POST['contact_name']
         contact_email = request.POST['contact_email']
         contact_comment = request.POST['contact_comment']
-        
+
         form = ContactForm(request.POST)
 
         if form.is_valid():
@@ -35,4 +35,3 @@ class Contact(View):
         return render(request, 'index.html', context)
 
         return redirect(reverse('home/index'))
-

@@ -19,7 +19,6 @@ class ContactForm(forms.ModelForm):
             'contact_comment': 'How can we help you?',
         }
 
-        self.fields['contact_name'].widget.attrs['autofocus'] = True
         self.fields['contact_comment'].widget.attrs['cols'] = '40'
         self.fields['contact_comment'].widget.attrs['rows'] = '4'
         for field in self.fields:
