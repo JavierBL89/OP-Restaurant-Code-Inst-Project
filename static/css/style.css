@@ -500,13 +500,13 @@ form label {
     }
 
     .move{
+      padding-left: 30px;
       width: 200px;
     }
     
     #navbar-menu-link{
-      padding-right: 60px;
+      padding-right: 10px;
       padding-left: 0px;
-      /* margin-left: 30px */
     }
 
     div .bg-image {
