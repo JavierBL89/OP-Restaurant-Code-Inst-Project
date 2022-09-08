@@ -506,6 +506,7 @@ form label {
     #navbar-menu-link{
       padding-right: 60px;
       padding-left: 0px;
+      /* margin-left: 30px */
     }
 
     div .bg-image {
@@ -699,7 +700,7 @@ form label {
       font-size: 1rem;
     }
 
-    #footer-container a[id="location-link-footer"] {
+    #footer-container a[class="location-link-footer"] {
       margin: 5px;
       font-size: 1rem;
       font-size: 0.900rem;
