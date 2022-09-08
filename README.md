@@ -1,8 +1,10 @@
 # Oryo Pocho Restaurant
 
+![Oryo Poxo](<static/images/Captura de pantalla (520).png>)
+
 This is a Restaurant site which provides valued information about the restaurant itself, and allows user make bookings easily whit a very intuitive navigation and a straightforward booking request form.
 
-- Go to live [Orio Pocho](<https://one-pico-restaurant.herokuapp.com/>)
+- Go to live [Orio Pocho](<https://oryo-poxo-restaurant.herokuapp.com>)
 
 # Table of contents
 
@@ -228,10 +230,8 @@ I would have loved to improve all the areas.
 
 - HTML
 
-  All HTML files were validated on [HTML W3 Validator](<https://validator.w3.org/>), all show a bunchfull of errors apparently caused by the {% static load %} tag.
+  All HTML files were validated on [HTML W3 Validator](<https://validator.w3.org/>), firstly all files showed a bunchfull of errors apparently caused by Django template tags. After taking the code from the page view source i could corrected the HTML errors and now they only show warnings
 
-  ![](<static/images/html-errors-1.png>)
-  ![](<static/images/html-errors-2.png>)
 
 - CSS
  
@@ -243,18 +243,12 @@ I would have loved to improve all the areas.
 
 - PEP8
 
-When validating i had to modify lots of long lines of code, however then when running the app,
-the app crushes and display errors as on the picture bellow.
-![](<static/images/error.png>)
+When validating i had to modify lots of long lines of code, i corrected most of them, but had to leave a few due to their state
 
-So i put some of the long lines back.
-![](<static/images/long-lines.png>)
+![](<static/images/Captura de pantalla (521).png>)
 
+![](<static/images/Captura de pantalla (522).png>)
 
-Due to small extra longer lines of code, i had to leave some errors from the file "reservation.py"
-
-![](<static/images/pep8.png>)
-![](<static/images/pep8-error.png>)
 
 ## Automated Testing
 
